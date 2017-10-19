@@ -16,5 +16,10 @@ namespace Rescue_911
         {
             InitializeComponent();
         }
+
+        public GetName(string xName) 
+        {
+            Name = xName;
+        }
     }
 }
