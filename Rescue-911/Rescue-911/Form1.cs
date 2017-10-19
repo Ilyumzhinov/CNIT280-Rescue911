@@ -12,14 +12,11 @@ namespace Rescue_911
             InitializeComponent();
         }
 
-        public GetName(string xName) 
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form2 itsName = new Form2();
-            
-            itsname.Show();
+            CallForm CallForm = new CallForm();
 
-
-            Name = xName;
+            CallForm.Show();
         }
     }
 }

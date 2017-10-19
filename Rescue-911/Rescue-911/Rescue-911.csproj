@@ -50,6 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Call Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Call Form.Designer.cs">
+      <DependentUpon>Call Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency Form.Designer.cs">
+      <DependentUpon>Emergency Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Call.cs" />
+    <Compile Include="Caller.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +72,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Call Form.resx">
+      <DependentUpon>Call Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency Form.resx">
+      <DependentUpon>Emergency Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

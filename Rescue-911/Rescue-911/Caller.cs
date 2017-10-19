@@ -1,0 +1,25 @@
+﻿using System;
+
+namespace Rescue_911
+{
+    class Caller
+    {
+        private int Caller_ID;
+        private string Name;
+        private string Last_Name;
+        private string Phone_Number;
+        private string Address;
+
+        public void SetCaller_ID(int xCaller_ID) { Caller_ID = xCaller_ID; }
+        public void SetName(string xName) { Name = xName; }
+        public void SetLast_Name(string xLastName) {Last_Name = xLastName; }
+        public void SetPhone_Number(string xPhoneNumber) { Phone_Number = xPhoneNumber; }
+        public void SetAddress(string xAddress) {Address = xAddress; }
+
+        public int GetCaller_ID() { return Caller_ID; }
+        public string GetName() { return Name; }
+        public string Get() { return Last_Name; }
+        public string GetPhone_Number() { return Phone_Number; }
+        public string GetAddress() { return Address; }
+    }
+}
