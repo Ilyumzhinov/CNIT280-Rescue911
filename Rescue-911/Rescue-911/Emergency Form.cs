@@ -16,5 +16,10 @@ namespace Rescue_911
         {
             InitializeComponent();
         }
+
+        private void btnLinkEmergency_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

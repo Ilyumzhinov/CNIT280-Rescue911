@@ -46,6 +46,7 @@ namespace Rescue_911
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            // Existence checks
             if (RequiredGraphsChecked[0] == false)
             {
                 cboCallPriority.Focus();
@@ -70,7 +71,7 @@ namespace Rescue_911
             {
                 txtTeamsReq.Focus();
             }
-            else
+            else // All checks are satisfied
             {
                 Current_Call.SetTeams_Required(teams);
                 Current_Call.SetState("logged");
@@ -78,7 +79,10 @@ namespace Rescue_911
                 if (txtLandmark.Text.Trim() != string.Empty)
                     Current_Call.SetLandmark(txtLandmark.Text);
 
-                this.Close();
+                // Open the Emergency Form
+                Emergency_Form EmergencyForm = new Emergency_Form();
+                EmergencyForm.Show();
+                //this.Close();
             }
         }
 
@@ -178,7 +182,5 @@ namespace Rescue_911
                 txtCallerLastName.Text = Current_Call.GetEmergency_Caller().GetLast_Name();
             }
         }
-
-
     }
 }
