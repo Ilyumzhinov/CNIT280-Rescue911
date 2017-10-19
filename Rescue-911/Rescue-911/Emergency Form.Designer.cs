@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.btnCreateEmergency = new System.Windows.Forms.Button();
             this.btnLinkEmergency = new System.Windows.Forms.Button();
+            this.lstEmergencies = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbState = new System.Windows.Forms.Label();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // label1
+            // lbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "EMERGENCY";
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(12, 9);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(142, 24);
+            this.lbTitle.TabIndex = 2;
+            this.lbTitle.Text = "EMERGENCY";
             // 
             // btnCreateEmergency
             // 
@@ -56,6 +62,7 @@
             this.btnCreateEmergency.TabIndex = 3;
             this.btnCreateEmergency.Text = "Create Emergency";
             this.btnCreateEmergency.UseVisualStyleBackColor = false;
+            this.btnCreateEmergency.Click += new System.EventHandler(this.btnCreateEmergency_Click);
             // 
             // btnLinkEmergency
             // 
@@ -72,15 +79,65 @@
             this.btnLinkEmergency.UseVisualStyleBackColor = false;
             this.btnLinkEmergency.Click += new System.EventHandler(this.btnLinkEmergency_Click);
             // 
+            // lstEmergencies
+            // 
+            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader2});
+            this.lstEmergencies.GridLines = true;
+            this.lstEmergencies.Location = new System.Drawing.Point(12, 169);
+            this.lstEmergencies.Name = "lstEmergencies";
+            this.lstEmergencies.ShowItemToolTips = true;
+            this.lstEmergencies.Size = new System.Drawing.Size(560, 97);
+            this.lstEmergencies.TabIndex = 5;
+            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
+            this.lstEmergencies.View = System.Windows.Forms.View.Details;
+            this.lstEmergencies.Visible = false;
+            this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Emergency ID";
+            this.columnHeader1.Width = 96;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Time Recevied";
+            this.columnHeader4.Width = 117;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "State";
+            this.columnHeader5.Width = 72;
+            // 
+            // lbState
+            // 
+            this.lbState.AutoSize = true;
+            this.lbState.Location = new System.Drawing.Point(17, 33);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(42, 16);
+            this.lbState.TabIndex = 6;
+            this.lbState.Text = "label1";
+            this.lbState.Visible = false;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Description";
+            this.columnHeader2.Width = 271;
+            // 
             // Emergency_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(254, 232);
+            this.ClientSize = new System.Drawing.Size(584, 366);
+            this.Controls.Add(this.lbState);
+            this.Controls.Add(this.lstEmergencies);
             this.Controls.Add(this.btnLinkEmergency);
             this.Controls.Add(this.btnCreateEmergency);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -93,8 +150,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Button btnCreateEmergency;
         private System.Windows.Forms.Button btnLinkEmergency;
+        private System.Windows.Forms.ListView lstEmergencies;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label lbState;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

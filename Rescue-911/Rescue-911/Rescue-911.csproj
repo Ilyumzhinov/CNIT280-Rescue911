@@ -62,6 +62,7 @@
     <Compile Include="Emergency Form.Designer.cs">
       <DependentUpon>Emergency Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergency.cs" />
     <Compile Include="Emergency_Call.cs" />
     <Compile Include="Caller.cs" />
     <Compile Include="Form1.cs">
