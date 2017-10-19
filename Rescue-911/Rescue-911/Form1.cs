@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rescue_911
@@ -19,6 +14,11 @@ namespace Rescue_911
 
         public GetName(string xName) 
         {
+            Form2 itsName = new Form2();
+            
+            itsname.Show();
+
+
             Name = xName;
         }
     }
