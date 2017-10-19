@@ -46,6 +46,8 @@ namespace Rescue_911
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            int teams;
+
             // Existence checks
             if (RequiredGraphsChecked[0] == false)
             {
@@ -67,7 +69,7 @@ namespace Rescue_911
             {
                 txtDescription.Focus();
             }
-            else if (int.TryParse(txtTeamsReq.Text, out int teams) == false)
+            else if (int.TryParse(txtTeamsReq.Text, out teams) == false)
             {
                 txtTeamsReq.Focus();
             }
@@ -95,7 +97,8 @@ namespace Rescue_911
 
         private void txtPhoneNumber_Leave(object sender, EventArgs e)
         {
-            if (int.TryParse(txtPhoneNumber.Text, out int number) && txtPhoneNumber.Text.Length == 10)
+            int number;
+            if (int.TryParse(txtPhoneNumber.Text, out number) && txtPhoneNumber.Text.Length == 10)
             {
                 Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
 
