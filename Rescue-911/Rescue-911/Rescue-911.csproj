@@ -56,6 +56,12 @@
     <Compile Include="Call Form.Designer.cs">
       <DependentUpon>Call Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Call Waiting Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Call Waiting Form.Designer.cs">
+      <DependentUpon>Call Waiting Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergency Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Call Form.resx">
       <DependentUpon>Call Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Call Waiting Form.resx">
+      <DependentUpon>Call Waiting Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Form.resx">
       <DependentUpon>Emergency Form.cs</DependentUpon>

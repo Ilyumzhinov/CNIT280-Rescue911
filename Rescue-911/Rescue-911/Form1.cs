@@ -18,5 +18,12 @@ namespace Rescue_911
 
             CallForm.Show();
         }
+
+        private void btnWaitingCall_Click(object sender, EventArgs e)
+        {
+            Call_Waiting_Form Waiting_Form = new Call_Waiting_Form();
+
+            Waiting_Form.Show();
+        }
     }
 }
