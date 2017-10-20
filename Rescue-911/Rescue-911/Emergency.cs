@@ -2,7 +2,7 @@
 
 namespace Rescue_911
 {
-    class Emergency
+    public class Emergency
     {
         private int Emergency_ID;
         private Emergency_Call[] Linked_Calls = new Emergency_Call[1];

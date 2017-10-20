@@ -2,7 +2,7 @@
 
 namespace Rescue_911
 {
-    class Emergency_Call
+    public class Emergency_Call
     {
         public Emergency_Call()
         {

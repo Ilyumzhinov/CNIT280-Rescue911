@@ -83,8 +83,9 @@ namespace Rescue_911
 
                 // Open the Emergency Form
                 Emergency_Form EmergencyForm = new Emergency_Form();
+                EmergencyForm.SetEmergency_Call(Current_Call);
                 EmergencyForm.Show();
-                this.Close();
+                //this.Close();
             }
         }
 

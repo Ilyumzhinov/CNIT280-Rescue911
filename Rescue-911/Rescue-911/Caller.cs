@@ -2,7 +2,7 @@
 
 namespace Rescue_911
 {
-    class Caller
+    public class Caller
     {
         private int Caller_ID;
         private string Name;
