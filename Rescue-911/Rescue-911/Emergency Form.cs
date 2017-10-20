@@ -13,7 +13,7 @@ namespace Rescue_911
 
             Current_Call = new Emergency_Call();
         }
-        int Teamsavalible = 120;
+       
         private void btnCreateEmergency_Click(object sender, EventArgs e)
         {
 

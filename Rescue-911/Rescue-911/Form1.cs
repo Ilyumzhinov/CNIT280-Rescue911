@@ -10,6 +10,7 @@ namespace Rescue_911
         public Form1()
         {
             InitializeComponent();
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,5 +26,7 @@ namespace Rescue_911
 
             Waiting_Form.Show();
         }
+
+        
     }
 }
