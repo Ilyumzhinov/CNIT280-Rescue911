@@ -79,7 +79,14 @@ namespace Rescue_911
 
         private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
                 emergencySelected = lstEmergencies.SelectedIndices[0];
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
