@@ -33,8 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnReceiveCall = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbContext = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -61,7 +62,7 @@
             this.btnWaitingCall.ForeColor = System.Drawing.Color.White;
             this.btnWaitingCall.Location = new System.Drawing.Point(250, 236);
             this.btnWaitingCall.Name = "btnWaitingCall";
-            this.btnWaitingCall.Size = new System.Drawing.Size(300, 50);
+            this.btnWaitingCall.Size = new System.Drawing.Size(215, 50);
             this.btnWaitingCall.TabIndex = 1;
             this.btnWaitingCall.Text = "Waiting call";
             this.btnWaitingCall.UseVisualStyleBackColor = false;
@@ -84,9 +85,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(12, 527);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 16);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Development Team:";
+            this.label2.Text = "Developers:";
             // 
             // label3
             // 
@@ -99,14 +100,42 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Artem Ilyumzhinov, Muhammad Zeeshan Khalid, Shuai Zhang, Jordan Sexton";
             // 
-            // pictureBox1
+            // btnReceiveCall
             // 
-            this.pictureBox1.Image = global::Rescue_911.Properties.Resources.medium;
-            this.pictureBox1.Location = new System.Drawing.Point(567, 400);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 150);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.btnReceiveCall.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnReceiveCall.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
+            this.btnReceiveCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReceiveCall.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceiveCall.ForeColor = System.Drawing.Color.White;
+            this.btnReceiveCall.Location = new System.Drawing.Point(471, 236);
+            this.btnReceiveCall.Name = "btnReceiveCall";
+            this.btnReceiveCall.Size = new System.Drawing.Size(79, 50);
+            this.btnReceiveCall.TabIndex = 5;
+            this.btnReceiveCall.Text = "Receive Call";
+            this.btnReceiveCall.UseVisualStyleBackColor = false;
+            this.btnReceiveCall.Click += new System.EventHandler(this.btnReceiveCall_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(468, 524);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Current context:";
+            // 
+            // lbContext
+            // 
+            this.lbContext.AutoSize = true;
+            this.lbContext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContext.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbContext.Location = new System.Drawing.Point(471, 540);
+            this.lbContext.Name = "lbContext";
+            this.lbContext.Size = new System.Drawing.Size(20, 16);
+            this.lbContext.TabIndex = 7;
+            this.lbContext.Text = "> ";
             // 
             // Form1
             // 
@@ -114,15 +143,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbContext);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnReceiveCall);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnWaitingCall);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Rescue-911";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +165,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnReceiveCall;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbContext;
     }
 }
 

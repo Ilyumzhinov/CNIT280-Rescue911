@@ -9,15 +9,10 @@ namespace Rescue_911
 
         public Emergency()
         {
-            //TEST DATA
-            Linked_Calls[0] = new Emergency_Call();
-            Linked_Calls[0].SetDateTime(DateTime.Now);
-            Linked_Calls[0].SetDescription("Something happened");
-            Linked_Calls[0].SetState("Logged");
-            //
         }
 
         public void SetEmergency_ID(int xEmergency_ID) { Emergency_ID = xEmergency_ID; }
+        public void SetLinked_Calls(Emergency_Call[] xCalls) { Linked_Calls = xCalls; }
 
         public int GetEmergency_ID() { return Emergency_ID; }
         public Emergency_Call[] GetLinkedCalls() { return Linked_Calls; }

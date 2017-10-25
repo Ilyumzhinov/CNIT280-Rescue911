@@ -11,15 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
+      
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -30,18 +22,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lstEmergencies = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnCreateDispatch = new System.Windows.Forms.Button();
+            this.lstTeams = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,39 +55,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(398, 68);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(43, 17);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(398, 92);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Dispatch Teams Available";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(134, 37);
@@ -112,19 +71,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Supervisor Name:";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Team 1",
-            "Team 2",
-            "Team 3",
-            "Team 4"});
-            this.listBox1.Location = new System.Drawing.Point(27, 251);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(261, 95);
-            this.listBox1.TabIndex = 8;
-            // 
             // lstEmergencies
             // 
             this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -134,6 +80,7 @@
             this.columnHeader2});
             this.lstEmergencies.GridLines = true;
             this.lstEmergencies.Location = new System.Drawing.Point(27, 129);
+            this.lstEmergencies.MultiSelect = false;
             this.lstEmergencies.Name = "lstEmergencies";
             this.lstEmergencies.ShowItemToolTips = true;
             this.lstEmergencies.Size = new System.Drawing.Size(560, 97);
@@ -141,17 +88,16 @@
             this.lstEmergencies.UseCompatibleStateImageBehavior = false;
             this.lstEmergencies.View = System.Windows.Forms.View.Details;
             this.lstEmergencies.Visible = false;
-            this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Emergency ID";
-            this.columnHeader1.Width = 96;
+            this.columnHeader1.Width = 80;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Time Recevied";
-            this.columnHeader4.Width = 117;
+            this.columnHeader4.Width = 130;
             // 
             // columnHeader5
             // 
@@ -165,7 +111,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(512, 323);
+            this.btnClose.Location = new System.Drawing.Point(512, 398);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 11;
@@ -173,20 +119,59 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnCreateDispatch
+            // 
+            this.btnCreateDispatch.Location = new System.Drawing.Point(398, 398);
+            this.btnCreateDispatch.Name = "btnCreateDispatch";
+            this.btnCreateDispatch.Size = new System.Drawing.Size(108, 23);
+            this.btnCreateDispatch.TabIndex = 12;
+            this.btnCreateDispatch.Text = "Send for approval";
+            this.btnCreateDispatch.UseVisualStyleBackColor = true;
+            this.btnCreateDispatch.Click += new System.EventHandler(this.btnCreateDispatch_Click);
+            // 
+            // lstTeams
+            // 
+            this.lstTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3});
+            this.lstTeams.GridLines = true;
+            this.lstTeams.Location = new System.Drawing.Point(27, 261);
+            this.lstTeams.MultiSelect = false;
+            this.lstTeams.Name = "lstTeams";
+            this.lstTeams.ShowItemToolTips = true;
+            this.lstTeams.Size = new System.Drawing.Size(560, 97);
+            this.lstTeams.TabIndex = 13;
+            this.lstTeams.UseCompatibleStateImageBehavior = false;
+            this.lstTeams.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Response Team ID";
+            this.columnHeader3.Width = 212;
+            // 
+            // lbResult
+            // 
+            this.lbResult.AutoSize = true;
+            this.lbResult.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbResult.Location = new System.Drawing.Point(395, 382);
+            this.lbResult.Name = "lbResult";
+            this.lbResult.Size = new System.Drawing.Size(46, 13);
+            this.lbResult.TabIndex = 14;
+            this.lbResult.Text = "success";
+            this.lbResult.Visible = false;
+            // 
             // Call_Waiting_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(607, 433);
+            this.Controls.Add(this.lbResult);
+            this.Controls.Add(this.lstTeams);
+            this.Controls.Add(this.btnCreateDispatch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lstEmergencies);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Call_Waiting_Form";
@@ -201,17 +186,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListView lstEmergencies;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCreateDispatch;
+        private System.Windows.Forms.ListView lstTeams;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label lbResult;
     }
 }
