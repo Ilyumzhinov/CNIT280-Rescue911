@@ -20,7 +20,7 @@ namespace Rescue_911
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CallForm CallForm = new CallForm();
+            CallForm CallForm = new CallForm(ref SD);
 
             CallForm.Show();
         }
