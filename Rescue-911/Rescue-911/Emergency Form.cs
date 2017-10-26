@@ -44,7 +44,7 @@ namespace Rescue_911
             {
                 if (null == SD.Calls[a])
                 {
-                    Calls_ID = a;
+                    //Calls_ID = a;
                     break;
                 }
             }
