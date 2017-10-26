@@ -41,19 +41,22 @@ namespace Rescue_911
             // EMERGENCY TEST DATA 
             Caller[] Callers = LoadCallers();
             Emergency_Call[] ECs = LoadEC(Callers);
-
+            Emergency_Call[] tempECs = new Emergency_Call[99];
 
             Emergencies = new Emergency[99];
             for (int i = 0; i < 3; i++)
             {
                 Emergencies[i] = new Emergency();
+                Emergencies[i].SetLinked_Calls(tempECs);
             }
 
-            Emergencies[0].SetLinked_Calls(new Emergency_Call[2] { ECs[0], ECs[3] });
+           
+            Emergencies[0].GetLinkedCalls()[0] = ECs[0];
+            Emergencies[0].GetLinkedCalls()[1]= ECs[3];
             Emergencies[0].SetEmergency_ID(0);
-            Emergencies[1].SetLinked_Calls(new Emergency_Call[1] { ECs[1] });
+            Emergencies[1].GetLinkedCalls()[0] = ECs[1];
             Emergencies[1].SetEmergency_ID(1);
-            Emergencies[2].SetLinked_Calls(new Emergency_Call[1] { ECs[2] });
+            Emergencies[2].GetLinkedCalls()[0] =  ECs[2];
             Emergencies[2].SetEmergency_ID(2);
             //
 
