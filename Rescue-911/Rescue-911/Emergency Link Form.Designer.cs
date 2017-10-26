@@ -194,6 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Emergency_Link_Form";
             this.Text = "Emergency Link Form";
+            this.Load += new System.EventHandler(this.Emergency_Link_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
