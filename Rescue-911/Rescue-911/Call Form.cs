@@ -51,34 +51,66 @@ namespace Rescue_911
             txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy ");
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (CheckFields() == false)
+                return;
+
+            // Open the Emergency Form
+            Emergency_Form EmergencyForm = new Emergency_Form(ref SD, Current_Call);
+
+            EmergencyForm.Show();
+            // To-Do: change this to the method inside the Emergency Form.
+            this.Close();
+        }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+            if (CheckFields() == false)
+                return;
+
+            // Open the Emergency Form
+            Emergency_Link_Form EmergencyLinkForm = new Emergency_Link_Form(ref SD, Current_Call);
+
+            EmergencyLinkForm.Show();
+            // To-Do: change this to the method inside the Emergency Link Form.
+            this.Close();
+        }
+
+        private bool CheckFields()
         {
             int teams;
 
             // Existence checks
-            if (Current_Call.GetPriority() == null)
+            if (Current_Call.GetPriority() == 0)
             {
                 cboCallPriority.Focus();
+                return false;
             }
             else if (Current_Call.GetEmergency_Caller().GetPhone_Number() == null)
             {
                 txtPhoneNumber.Focus();
+                return false;
             }
             else if (Current_Call.GetEmergency_Caller().GetName() == null)
             {
                 txtCallerName.Focus();
+                return false;
             }
             else if (Current_Call.GetAddress() == null)
             {
                 txtAddress.Focus();
+                return false;
             }
             else if (Current_Call.GetDescription() == null)
             {
                 txtDescription.Focus();
+                return false;
             }
             else if (int.TryParse(txtTeamsReq.Text, out teams) == false)
             {
                 txtTeamsReq.Focus();
+                return false;
             }
             else // All checks are satisfied
             {
@@ -87,18 +119,11 @@ namespace Rescue_911
 
                 Current_Call.GetEmergency_Caller().SetLast_Name(txtCallerLastName.Text);
                 Current_Call.SetLandmark(txtLandmark.Text);
- // Update the Shared Data values regarding the Calls.
+
+                // Update the Shared Data values regarding the Calls.
                 SD.Calls[Current_Call_Index] = Current_Call;
                 ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
-
-
-                // Open the Emergency Form
-                Emergency_Form EmergencyForm = new Emergency_Form(ref SD, Current_Call);
-
-               
-
-                EmergencyForm.Show();
-                this.Close();
+                return true;
             }
         }
 

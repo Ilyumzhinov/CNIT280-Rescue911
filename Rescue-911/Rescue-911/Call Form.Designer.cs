@@ -55,11 +55,12 @@
             this.txtCallerLastName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pnCaller = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnLink = new System.Windows.Forms.Button();
             this.pnCaller.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,13 +68,13 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(723, 392);
+            this.btnSubmit.Location = new System.Drawing.Point(648, 393);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(150, 23);
             this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Create New Emergency";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label1
             // 
@@ -363,6 +364,17 @@
             this.pnCaller.Size = new System.Drawing.Size(384, 160);
             this.pnCaller.TabIndex = 27;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 20);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "CALLER";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtTeamsReq);
@@ -376,6 +388,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 155);
             this.panel1.TabIndex = 28;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 20);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "CALL INFO";
             // 
             // panel2
             // 
@@ -391,17 +414,6 @@
             this.panel2.Size = new System.Drawing.Size(390, 250);
             this.panel2.TabIndex = 0;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 20);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "CALLER";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -413,16 +425,15 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "EMERGENCY";
             // 
-            // label15
+            // btnLink
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 20);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "CALL INFO";
+            this.btnLink.Location = new System.Drawing.Point(492, 393);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(150, 23);
+            this.btnLink.TabIndex = 29;
+            this.btnLink.Text = "Link to Emergency";
+            this.btnLink.UseVisualStyleBackColor = true;
+            this.btnLink.Click += new System.EventHandler(this.btnLink_Click);
             // 
             // CallForm
             // 
@@ -430,6 +441,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(814, 428);
+            this.Controls.Add(this.btnLink);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbCallState);
@@ -487,5 +499,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnLink;
     }
 }
