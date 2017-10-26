@@ -146,7 +146,7 @@ namespace Rescue_911
                 // Suggeted names from a database
                 //lstCallerNames.Items.Clear();
                 //int j = 0;
-                //for (int i = 0; i < CallerNamesTest.Count(); i++)
+                //for (int i = 0; i < SD.Count; i++)
                 //{
                 //    if (CallerPNTest[i] == txtPhoneNumber.Text)
                 //    {
@@ -156,7 +156,7 @@ namespace Rescue_911
                 //        j++;
                 //    }
                 //}
-                //
+
             }
         }
 
