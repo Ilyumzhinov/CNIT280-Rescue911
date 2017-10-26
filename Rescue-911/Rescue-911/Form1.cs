@@ -31,7 +31,7 @@ namespace Rescue_911
             {
                 if (SD.OpenForms[0, i] == null)
                 {
-                    SD.OpenForms[0, i] = new Call_Waiting_Form(ref SD);
+                    SD.OpenForms[0, i] = new Emergency_Management_Form(ref SD);
                     SD.OpenForms[0, i].Show();
                     break;
                 }

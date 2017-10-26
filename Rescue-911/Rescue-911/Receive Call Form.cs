@@ -6,7 +6,7 @@ namespace Rescue_911
     public partial class Receive_Call_Form : Form
     {
         private Response_Team Response_Team;
-        private Call_Waiting_Form[] CWFs;
+        private Emergency_Management_Form[] CWFs;
         private Emergency Emergency;
         private int emergencySelected;
         private Shared_Data SD;
@@ -34,12 +34,12 @@ namespace Rescue_911
                     j++;
             }
 
-            CWFs = new Call_Waiting_Form[j];
+            CWFs = new Emergency_Management_Form[j];
 
             for (int i = 0; i < SD.OpenForms.GetLength(0); i++)
             {
                 if (SD.OpenForms[0, i] != null)
-                    CWFs[i] = (Call_Waiting_Form)SD.OpenForms[0, i];
+                    CWFs[i] = (Emergency_Management_Form)SD.OpenForms[0, i];
             }
         }
 
@@ -58,7 +58,7 @@ namespace Rescue_911
 
             lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
 
-            foreach (Call_Waiting_Form CWF in CWFs)
+            foreach (Emergency_Management_Form CWF in CWFs)
             {
                 for (int i = 0; i < CWF.GetLstEmergencies().Items.Count; i++)
                 {
@@ -83,7 +83,7 @@ namespace Rescue_911
             lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
 
 
-            foreach (Call_Waiting_Form CWF in CWFs)
+            foreach (Emergency_Management_Form CWF in CWFs)
             {
                 for (int i = 0; i < CWF.GetLstEmergencies().Items.Count; i++)
                 {

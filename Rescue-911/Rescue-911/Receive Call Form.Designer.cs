@@ -40,9 +40,9 @@
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 26);
+            this.label1.Size = new System.Drawing.Size(344, 26);
             this.label1.TabIndex = 2;
-            this.label1.Text = "RESPONSE TEAM RECEIVE CALL FORM";
+            this.label1.Text = "Response Team Receive Call Form";
             // 
             // lbRT_ID
             // 
@@ -107,9 +107,9 @@
             this.lbDecision.AutoSize = true;
             this.lbDecision.Location = new System.Drawing.Point(14, 224);
             this.lbDecision.Name = "lbDecision";
-            this.lbDecision.Size = new System.Drawing.Size(93, 13);
+            this.lbDecision.Size = new System.Drawing.Size(67, 13);
             this.lbDecision.TabIndex = 30;
-            this.lbDecision.Text = "Dispatch Decision";
+            this.lbDecision.Text = "Dispatched?";
             this.lbDecision.Visible = false;
             // 
             // rbNo

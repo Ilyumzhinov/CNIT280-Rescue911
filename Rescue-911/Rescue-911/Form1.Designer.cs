@@ -64,7 +64,7 @@
             this.btnWaitingCall.Name = "btnWaitingCall";
             this.btnWaitingCall.Size = new System.Drawing.Size(215, 50);
             this.btnWaitingCall.TabIndex = 1;
-            this.btnWaitingCall.Text = "Waiting call";
+            this.btnWaitingCall.Text = "Emergency call";
             this.btnWaitingCall.UseVisualStyleBackColor = false;
             this.btnWaitingCall.Click += new System.EventHandler(this.btnWaitingCall_Click);
             // 

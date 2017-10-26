@@ -3,20 +3,21 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Call_Waiting_Form : Form
+    public partial class Emergency_Management_Form : Form
     {
         private Emergency[] ExistingEmergencies;
         private Response_Team[] ResponseTeams;
         private Shared_Data SD;
+        private int emergencySelected;
 
-        public Call_Waiting_Form(ref Shared_Data xSD)
+        public Emergency_Management_Form(ref Shared_Data xSD)
         {
             SD = xSD;
 
             InitializeComponent();
         }
 
-        public Call_Waiting_Form()
+        public Emergency_Management_Form()
         {
         }
 
@@ -31,13 +32,22 @@ namespace Rescue_911
                 lstTeams.Items.Add(new ListViewItem(RT.GetID().ToString()));
             }
 
+            lstEmergenciesFetch("Logged");
+        }
+
+        private void lstEmergenciesFetch(string state)
+        {
             // TEST DATA
             ExistingEmergencies = SD.Emergencies;
             //
+            lstEmergencies.Items.Clear();
 
             foreach (Emergency existingEmergency in ExistingEmergencies)
             {
                 int j = 0;
+
+                if (existingEmergency.GetLinkedCalls()[0].GetState() != state)
+                    continue;
 
                 foreach (Emergency_Call EC in existingEmergency.GetLinkedCalls())
                 {
@@ -63,6 +73,22 @@ namespace Rescue_911
                     }
                     j++;
                 }
+            }
+        }
+
+        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                emergencySelected = lstEmergencies.SelectedIndices[0];
+
+                lbDecision.Visible = true;
+                rbYes.Visible = true;
+                rbNo.Visible = true;
+            }
+            catch
+            {
+
             }
         }
 
@@ -107,6 +133,64 @@ namespace Rescue_911
         public ListView GetLstEmergencies()
         {
             return lstEmergencies;
+        }
+
+        private void rbYes_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
+                ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+
+                lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                rbYes.Checked = false;
+                lstEmergenciesFetch("Logged");
+
+
+
+                // To-Do: Update listViews in other forms.
+                // foreach (Emergency_Management_Form CWF in CWFs)
+                // {
+                //    for (int i = 0; i < CWF.GetLstEmergencies().Items.Count; i++)
+                //    {
+                //        if (CWF.GetLstEmergencies().Items[i].Text == Emergency.GetEmergency_ID().ToString())
+                //        {
+                //            CWF.GetLstEmergencies().Items[i].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                //        }
+                //    }
+                //}
+            }
+            catch { }
+        }
+
+        private void rbNo_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Waiting");
+                ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+
+                lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                rbNo.Checked = false;
+
+                lstEmergenciesFetch("Logged");
+
+
+                //foreach (Emergency_Management_Form CWF in CWFs)
+                //{
+                //    for (int i = 0; i < CWF.GetLstEmergencies().Items.Count; i++)
+                //    {
+                //        if (CWF.GetLstEmergencies().Items[i].Text == Emergency.GetEmergency_ID().ToString())
+                //        {
+                //            CWF.GetLstEmergencies().Items[i].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                //        }
+                //    }
+                //}
+            }
+            catch
+            {
+
+            }
         }
     }
 }
