@@ -31,16 +31,19 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lvemergencydecreption = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbemergencystats = new System.Windows.Forms.Label();
             this.lbemergencylocation = new System.Windows.Forms.Label();
-            this.lbel = new System.Windows.Forms.Label();
-            this.lbes = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
             this.btnLinkEmergency = new System.Windows.Forms.Button();
-            this.txtemergencyd = new System.Windows.Forms.TextBox();
             this.lbCallState = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lbCallID = new System.Windows.Forms.Label();
+            this.lbCallerID = new System.Windows.Forms.Label();
             this.lb11 = new System.Windows.Forms.Label();
+            this.lstEmergencies = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -56,7 +59,8 @@
             // lvemergencydecreption
             // 
             this.lvemergencydecreption.AutoSize = true;
-            this.lvemergencydecreption.Location = new System.Drawing.Point(25, 96);
+            this.lvemergencydecreption.ForeColor = System.Drawing.Color.DimGray;
+            this.lvemergencydecreption.Location = new System.Drawing.Point(12, 90);
             this.lvemergencydecreption.Name = "lvemergencydecreption";
             this.lvemergencydecreption.Size = new System.Drawing.Size(100, 16);
             this.lvemergencydecreption.TabIndex = 8;
@@ -70,41 +74,24 @@
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 12;
             // 
-            // lbemergencystats
-            // 
-            this.lbemergencystats.AutoSize = true;
-            this.lbemergencystats.Location = new System.Drawing.Point(59, 209);
-            this.lbemergencystats.Name = "lbemergencystats";
-            this.lbemergencystats.Size = new System.Drawing.Size(69, 16);
-            this.lbemergencystats.TabIndex = 9;
-            this.lbemergencystats.Text = "Call State:";
-            // 
             // lbemergencylocation
             // 
             this.lbemergencylocation.AutoSize = true;
-            this.lbemergencylocation.Location = new System.Drawing.Point(41, 193);
+            this.lbemergencylocation.ForeColor = System.Drawing.Color.DimGray;
+            this.lbemergencylocation.Location = new System.Drawing.Point(12, 58);
             this.lbemergencylocation.Name = "lbemergencylocation";
-            this.lbemergencylocation.Size = new System.Drawing.Size(87, 16);
+            this.lbemergencylocation.Size = new System.Drawing.Size(85, 16);
             this.lbemergencylocation.TabIndex = 7;
-            this.lbemergencylocation.Text = "Call Location:";
+            this.lbemergencylocation.Text = "Call Address:";
             // 
-            // lbel
+            // lbAddress
             // 
-            this.lbel.AutoSize = true;
-            this.lbel.Location = new System.Drawing.Point(176, 193);
-            this.lbel.Name = "lbel";
-            this.lbel.Size = new System.Drawing.Size(42, 16);
-            this.lbel.TabIndex = 18;
-            this.lbel.Text = "label4";
-            // 
-            // lbes
-            // 
-            this.lbes.AutoSize = true;
-            this.lbes.Location = new System.Drawing.Point(178, 209);
-            this.lbes.Name = "lbes";
-            this.lbes.Size = new System.Drawing.Size(42, 16);
-            this.lbes.TabIndex = 19;
-            this.lbes.Text = "label2";
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Location = new System.Drawing.Point(13, 74);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(54, 16);
+            this.lbAddress.TabIndex = 18;
+            this.lbAddress.Text = "address";
             // 
             // btnLinkEmergency
             // 
@@ -113,28 +100,20 @@
             this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLinkEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnLinkEmergency.Location = new System.Drawing.Point(367, 358);
+            this.btnLinkEmergency.Location = new System.Drawing.Point(359, 397);
             this.btnLinkEmergency.Name = "btnLinkEmergency";
             this.btnLinkEmergency.Size = new System.Drawing.Size(218, 35);
             this.btnLinkEmergency.TabIndex = 20;
             this.btnLinkEmergency.Text = "Link to emergency";
             this.btnLinkEmergency.UseVisualStyleBackColor = false;
+            this.btnLinkEmergency.Visible = false;
             this.btnLinkEmergency.Click += new System.EventHandler(this.btnLinkEmergency_Click);
-            // 
-            // txtemergencyd
-            // 
-            this.txtemergencyd.Location = new System.Drawing.Point(12, 115);
-            this.txtemergencyd.Multiline = true;
-            this.txtemergencyd.Name = "txtemergencyd";
-            this.txtemergencyd.ReadOnly = true;
-            this.txtemergencyd.Size = new System.Drawing.Size(552, 74);
-            this.txtemergencyd.TabIndex = 22;
             // 
             // lbCallState
             // 
             this.lbCallState.AutoSize = true;
             this.lbCallState.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCallState.Location = new System.Drawing.Point(195, 33);
+            this.lbCallState.Location = new System.Drawing.Point(221, 33);
             this.lbCallState.Name = "lbCallState";
             this.lbCallState.Size = new System.Drawing.Size(37, 16);
             this.lbCallState.TabIndex = 30;
@@ -146,19 +125,19 @@
             this.label12.ForeColor = System.Drawing.Color.DimGray;
             this.label12.Location = new System.Drawing.Point(146, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 16);
+            this.label12.Size = new System.Drawing.Size(69, 16);
             this.label12.TabIndex = 29;
-            this.label12.Text = "State:";
+            this.label12.Text = "Call State:";
             // 
-            // lbCallID
+            // lbCallerID
             // 
-            this.lbCallID.AutoSize = true;
-            this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(79, 33);
-            this.lbCallID.Name = "lbCallID";
-            this.lbCallID.Size = new System.Drawing.Size(20, 16);
-            this.lbCallID.TabIndex = 28;
-            this.lbCallID.Text = "ID";
+            this.lbCallerID.AutoSize = true;
+            this.lbCallerID.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbCallerID.Location = new System.Drawing.Point(79, 33);
+            this.lbCallerID.Name = "lbCallerID";
+            this.lbCallerID.Size = new System.Drawing.Size(20, 16);
+            this.lbCallerID.TabIndex = 28;
+            this.lbCallerID.Text = "ID";
             // 
             // lb11
             // 
@@ -170,22 +149,71 @@
             this.lb11.TabIndex = 27;
             this.lb11.Text = "Caller ID:";
             // 
+            // lstEmergencies
+            // 
+            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader2});
+            this.lstEmergencies.GridLines = true;
+            this.lstEmergencies.Location = new System.Drawing.Point(16, 151);
+            this.lstEmergencies.MultiSelect = false;
+            this.lstEmergencies.Name = "lstEmergencies";
+            this.lstEmergencies.ShowItemToolTips = true;
+            this.lstEmergencies.Size = new System.Drawing.Size(561, 228);
+            this.lstEmergencies.TabIndex = 31;
+            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
+            this.lstEmergencies.View = System.Windows.Forms.View.Details;
+            this.lstEmergencies.Visible = false;
+            this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Emergency ID";
+            this.columnHeader1.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Time Recevied";
+            this.columnHeader4.Width = 130;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "State";
+            this.columnHeader5.Width = 72;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Description";
+            this.columnHeader2.Width = 271;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(15, 109);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(120, 20);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(560, 20);
+            this.txtDescription.TabIndex = 32;
+            // 
             // Emergency_Link_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(597, 405);
+            this.ClientSize = new System.Drawing.Size(589, 444);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lstEmergencies);
             this.Controls.Add(this.lbCallState);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.lbCallID);
+            this.Controls.Add(this.lbCallerID);
             this.Controls.Add(this.lb11);
-            this.Controls.Add(this.txtemergencyd);
             this.Controls.Add(this.btnLinkEmergency);
-            this.Controls.Add(this.lbes);
-            this.Controls.Add(this.lbel);
+            this.Controls.Add(this.lbAddress);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbemergencystats);
             this.Controls.Add(this.lvemergencydecreption);
             this.Controls.Add(this.lbemergencylocation);
             this.Controls.Add(this.lbTitle);
@@ -205,15 +233,18 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lvemergencydecreption;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbemergencystats;
         private System.Windows.Forms.Label lbemergencylocation;
-        private System.Windows.Forms.Label lbel;
-        private System.Windows.Forms.Label lbes;
+        private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Button btnLinkEmergency;
-        private System.Windows.Forms.TextBox txtemergencyd;
         private System.Windows.Forms.Label lbCallState;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lbCallID;
+        private System.Windows.Forms.Label lbCallerID;
         private System.Windows.Forms.Label lb11;
+        private System.Windows.Forms.ListView lstEmergencies;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TextBox txtDescription;
     }
 }

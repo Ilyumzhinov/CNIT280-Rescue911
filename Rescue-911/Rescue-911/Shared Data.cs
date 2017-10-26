@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
@@ -10,8 +11,8 @@ namespace Rescue_911
 
         public Form[,] OpenForms;
         public Response_Team[] ResponseTeams;
-        public Emergency[] Emergencies;
-        public Emergency_Call[] Calls;
+        public List<Emergency> Emergencies = new List<Emergency>();
+        public List<Emergency_Call> Calls = new List<Emergency_Call>();
 
         public Shared_Data()
         {
@@ -41,31 +42,27 @@ namespace Rescue_911
             // EMERGENCY TEST DATA 
             Caller[] Callers = LoadCallers();
             Emergency_Call[] ECs = LoadEC(Callers);
-            Emergency_Call[] tempECs = new Emergency_Call[99];
 
-            Emergencies = new Emergency[99];
             for (int i = 0; i < 3; i++)
             {
-                Emergencies[i] = new Emergency();
-                Emergencies[i].SetLinked_Calls(tempECs);
+                Emergencies.Add(new Emergency());
             }
 
-           
-            Emergencies[0].GetLinkedCalls()[0] = ECs[0];
-            Emergencies[0].GetLinkedCalls()[1]= ECs[3];
+            Emergencies[0].AddLinked_Call(ECs[0]);
+            Emergencies[0].AddLinked_Call(ECs[3]);
             Emergencies[0].SetEmergency_ID(0);
-            Emergencies[1].GetLinkedCalls()[0] = ECs[1];
+
+            Emergencies[1].AddLinked_Call(ECs[1]);
             Emergencies[1].SetEmergency_ID(1);
-            Emergencies[2].GetLinkedCalls()[0] =  ECs[2];
+
+            Emergencies[2].AddLinked_Call(ECs[2]);
             Emergencies[2].SetEmergency_ID(2);
             //
 
             // CALLS TEST DATA
-            Calls = new Emergency_Call[99];
-
             for (int i = 0; i < ECs.Length; i++)
             {
-                Calls[i] = ECs[i];
+                Calls.Add(ECs[i]);
             }        
             //
         }

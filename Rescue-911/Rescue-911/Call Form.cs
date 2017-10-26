@@ -19,15 +19,16 @@ namespace Rescue_911
             Current_Call.SetDateTime(DateTime.Now);
 
             int maxCaller_ID = 0;
-            for (int i = 0; i < (SD.Calls.Length - 1); i++)
+            for (int i = 0; i < SD.Calls.Capacity; i++)
             {
-                if (SD.Calls[i] == null)
+                if ((SD.Calls.Capacity - i) == 1)
                 {
-                    Current_Call_Index = i;
+                    Current_Call_Index = i + 1;
 
                     Current_Call.GetEmergency_Caller().SetCaller_ID(SD.Calls[i - 1].GetEmergency_Caller().GetCaller_ID() + 1);
-                    Current_Call.SetState("not logged");
+                    Current_Call.SetState("Not Logged");
 
+                    SD.Calls.Add(Current_Call);
                     // Update the Shared Data values regarding the Calls.
                     ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
 

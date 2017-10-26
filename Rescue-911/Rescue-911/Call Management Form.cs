@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
     public partial class Emergency_Management_Form : Form
     {
-        private Emergency[] ExistingEmergencies;
-        private Response_Team[] ResponseTeams;
         private Shared_Data SD;
         private int emergencySelected;
 
@@ -23,37 +22,34 @@ namespace Rescue_911
 
         private void Call_Waiting_Form_Load(object sender, EventArgs e)
         {
-            // Receving Shared Data.
-            ResponseTeams = SD.ResponseTeams;
-
             // Populating the listBox with the response teams.
-            foreach (Response_Team RT in ResponseTeams)
+            foreach (Response_Team RT in SD.ResponseTeams)
             {
                 lstTeams.Items.Add(new ListViewItem(RT.GetID().ToString()));
             }
 
-            lstEmergenciesFetch("Logged");
+            lstEmergenciesFetch("Logged", SD.Emergencies);
         }
 
-        private void lstEmergenciesFetch(string state)
+        private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
         {
-            // TEST DATA
-            ExistingEmergencies = SD.Emergencies;
-            //
             lstEmergencies.Items.Clear();
 
-            foreach (Emergency existingEmergency in ExistingEmergencies)
+            foreach (Emergency iEmergency in ExistingEmergencies)
             {
                 int j = 0;
 
-                if (existingEmergency.GetLinkedCalls()[0].GetState() != state)
+                if (iEmergency.GetLinkedCalls()[0].GetState() != state)
                     continue;
 
-                foreach (Emergency_Call EC in existingEmergency.GetLinkedCalls())
+                foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
                 {
+                    if (EC == null)
+                        break;
+
                     if (j == 0)
                     {
-                        ListViewItem lstItem = new ListViewItem(existingEmergency.GetEmergency_ID().ToString());
+                        ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
 
                         lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
                         lstItem.SubItems.Add(EC.GetState());
@@ -103,14 +99,14 @@ namespace Rescue_911
         {
             try
             {
-                foreach (Emergency iEmergency in ExistingEmergencies)
+                foreach (Emergency iEmergency in SD.Emergencies)
                 {
                     if (lstEmergencies.SelectedItems[0].Text != iEmergency.GetEmergency_ID().ToString())
                         continue;
 
                     // Create a new Receive Call Form and pass emergency into it
                     // Also, pass team information into it
-                    SD.OpenForms[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Receive_Call_Form(iEmergency, ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
+                    SD.OpenForms[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Receive_Call_Form(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
 
                     // Update the Shared Data values regarding the Forms.
                     ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
@@ -144,7 +140,7 @@ namespace Rescue_911
 
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbYes.Checked = false;
-                lstEmergenciesFetch("Logged");
+                lstEmergenciesFetch("Logged", SD.Emergencies);
 
 
 
@@ -173,7 +169,7 @@ namespace Rescue_911
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbNo.Checked = false;
 
-                lstEmergenciesFetch("Logged");
+                lstEmergenciesFetch("Logged", SD.Emergencies);
 
 
                 //foreach (Emergency_Management_Form CWF in CWFs)

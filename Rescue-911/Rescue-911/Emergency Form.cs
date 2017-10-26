@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
@@ -34,13 +35,13 @@ namespace Rescue_911
 
         private void Emergency_Form_Load(object sender, EventArgs e)
         {
-            for (int a = 0; a < SD.Emergencies.Length; a++) {
+            for (int a = 0; a < SD.Emergencies.Capacity; a++) {
                 if (null == SD.Emergencies[a]) {
                     enmergency_ID = a;
                     break;
                 }
             }
-            for (int a = 0; a < SD.Calls.Length; a++)
+            for (int a = 0; a < SD.Calls.Capacity; a++)
             {
                 if (null == SD.Calls[a])
                 {
@@ -48,12 +49,10 @@ namespace Rescue_911
                     break;
                 }
             }
-           
-            Emergency_Call[] ECalls = new Emergency_Call[1000];
-            ECalls[0] = SD.Calls[Calls_ID-1];
+
 
             E.SetEmergency_ID(enmergency_ID);
-            E.SetLinked_Calls(ECalls);
+            E.AddLinked_Call(SD.Calls[Calls_ID - 1]);
         
 
             lbes.Text = Current_Call.GetTeams_Required().ToString();
