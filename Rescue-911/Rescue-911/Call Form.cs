@@ -70,9 +70,9 @@ namespace Rescue_911
                 return;
 
             // Open the Emergency Form
-            Emergency_Link_Form EmergencyLinkForm = new Emergency_Link_Form(ref SD, Current_Call);
+            //Emergency_Link_Form EmergencyLinkForm = new Emergency_Link_Form(ref SD, Current_Call);
 
-            EmergencyLinkForm.Show();
+            //EmergencyLinkForm.Show();
             // To-Do: change this to the method inside the Emergency Link Form.
             this.Close();
         }

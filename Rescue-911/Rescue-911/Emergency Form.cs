@@ -48,7 +48,7 @@ namespace Rescue_911
                     break;
                 }
             }
-            Current_Call.SetState("ready");
+           
             Emergency_Call[] ECalls = new Emergency_Call[1000];
             ECalls[0] = SD.Calls[Calls_ID-1];
 
