@@ -57,5 +57,11 @@ namespace Rescue_911
         {
 
         }
+
+        private void emtlogformbuttom_Click(object sender, EventArgs e)
+        {
+            EMT_login_shift emtlogform = new EMT_login_shift();
+            emtlogform.Show();
+        }
     }
 }

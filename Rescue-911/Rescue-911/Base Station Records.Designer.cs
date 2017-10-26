@@ -106,7 +106,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Base_Station_Records";
             this.Text = "Base_Station_Records";
-            this.Load += new System.EventHandler(this.Base_Station_Records_Load);
+       
             this.ResumeLayout(false);
             this.PerformLayout();
 

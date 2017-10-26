@@ -53,9 +53,6 @@ namespace Rescue_911
             mIndex++;
         }
 
-        private void Base_Station_Records_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
