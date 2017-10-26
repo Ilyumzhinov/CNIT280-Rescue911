@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base Station Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base Station Records.Designer.cs">
+      <DependentUpon>Base Station Records.cs</DependentUpon>
+    </Compile>
     <Compile Include="Call Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <Compile Include="Response Team.cs" />
     <Compile Include="Shared Data.cs" />
+    <EmbeddedResource Include="Base Station Records.resx">
+      <DependentUpon>Base Station Records.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Call Form.resx">
       <DependentUpon>Call Form.cs</DependentUpon>
     </EmbeddedResource>
