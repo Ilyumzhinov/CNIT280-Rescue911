@@ -87,14 +87,15 @@ namespace Rescue_911
 
                 Current_Call.GetEmergency_Caller().SetLast_Name(txtCallerLastName.Text);
                 Current_Call.SetLandmark(txtLandmark.Text);
-
-                // Open the Emergency Form
-                Emergency_Form EmergencyForm = new Emergency_Form();
-                EmergencyForm.SetEmergency_Call(Current_Call);
-
-                // Update the Shared Data values regarding the Calls.
+ // Update the Shared Data values regarding the Calls.
                 SD.Calls[Current_Call_Index] = Current_Call;
                 ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+
+
+                // Open the Emergency Form
+                Emergency_Form EmergencyForm = new Emergency_Form(ref SD, Current_Call);
+
+               
 
                 EmergencyForm.Show();
                 this.Close();
