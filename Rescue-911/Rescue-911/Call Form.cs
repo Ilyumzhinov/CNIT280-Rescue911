@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
@@ -19,9 +20,9 @@ namespace Rescue_911
             Current_Call.SetDateTime(DateTime.Now);
 
             int maxCaller_ID = 0;
-            for (int i = 0; i < SD.Calls.Capacity; i++)
+            for (int i = 0; i < SD.Calls.Count; i++)
             {
-                if ((SD.Calls.Capacity - i) == 1)
+                if ((SD.Calls.Count - i) == 1)
                 {
                     Current_Call_Index = i + 1;
 
@@ -38,7 +39,7 @@ namespace Rescue_911
                 {
                     if (maxCaller_ID > SD.Calls[i].GetEmergency_Caller().GetCaller_ID())
                         maxCaller_ID = SD.Calls[i].GetEmergency_Caller().GetCaller_ID();
-                }
+                } 
             }
             InitializeComponent();
         }
@@ -195,6 +196,12 @@ namespace Rescue_911
             //    txtCallerName.Text = Current_Call.GetEmergency_Caller().GetName();
             //    txtCallerLastName.Text = Current_Call.GetEmergency_Caller().GetLast_Name();
             //}
+        }
+
+        private void CallForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (CheckFields() == false)
+                SD.Calls.RemoveAt(SD.Calls.Count - 1);
         }
     }
 }

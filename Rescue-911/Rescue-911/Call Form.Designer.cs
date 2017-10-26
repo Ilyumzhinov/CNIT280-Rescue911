@@ -453,6 +453,7 @@
             this.Controls.Add(this.pnCaller);
             this.Name = "CallForm";
             this.Text = "Call Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallForm_FormClosing);
             this.Load += new System.EventHandler(this.CallForm_Load);
             this.pnCaller.ResumeLayout(false);
             this.pnCaller.PerformLayout();
