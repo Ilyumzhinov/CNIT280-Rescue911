@@ -50,6 +50,7 @@ namespace Rescue_911
             MessageBox.Show("Record Saved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtRecordDate.Text = "";
             txtRecords.Text = "";
+            mIndex++;
         }
 
         private void Base_Station_Records_Load(object sender, EventArgs e)
