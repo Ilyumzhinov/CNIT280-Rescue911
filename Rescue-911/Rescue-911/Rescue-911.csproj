@@ -62,11 +62,11 @@
     <Compile Include="Call Form.Designer.cs">
       <DependentUpon>Call Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Call Waiting Form.cs">
+    <Compile Include="Call Management Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Call Waiting Form.Designer.cs">
-      <DependentUpon>Call Waiting Form.cs</DependentUpon>
+    <Compile Include="Call Management Form.Designer.cs">
+      <DependentUpon>Call Management Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Dispatch Related Times.cs">
       <SubType>Form</SubType>
@@ -112,8 +112,8 @@
     <EmbeddedResource Include="Call Form.resx">
       <DependentUpon>Call Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Call Waiting Form.resx">
-      <DependentUpon>Call Waiting Form.cs</DependentUpon>
+    <EmbeddedResource Include="Call Management Form.resx">
+      <DependentUpon>Call Management Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dispatch Related Times.resx">
       <DependentUpon>Dispatch Related Times.cs</DependentUpon>
