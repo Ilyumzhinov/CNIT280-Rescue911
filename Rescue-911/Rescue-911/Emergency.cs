@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
     public class Emergency
     {
         private int Emergency_ID;
-        private Emergency_Call[] Linked_Calls = new Emergency_Call[1];
-
+        private Emergency_Call[] Linked_Calls;
         public Emergency()
-        {
+        { 
+
         }
 
         public void SetEmergency_ID(int xEmergency_ID) { Emergency_ID = xEmergency_ID; }
