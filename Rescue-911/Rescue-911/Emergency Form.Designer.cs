@@ -29,20 +29,13 @@
         private void InitializeComponent()
         {
             this.lbTitle = new System.Windows.Forms.Label();
-            this.btnCreateEmergency = new System.Windows.Forms.Button();
-            this.btnLinkEmergency = new System.Windows.Forms.Button();
-            this.lstEmergencies = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbState = new System.Windows.Forms.Label();
-            this.lbemergencylocation = new System.Windows.Forms.Label();
             this.lvemergencydecreption = new System.Windows.Forms.Label();
-            this.lbemergencystats = new System.Windows.Forms.Label();
             this.lbemergencyid = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbemergencyid1 = new System.Windows.Forms.Label();
+            this.lbemergencystats = new System.Windows.Forms.Label();
+            this.lbemergencylocation = new System.Windows.Forms.Label();
             this.lbel = new System.Windows.Forms.Label();
             this.lbes = new System.Windows.Forms.Label();
             this.btnCreateEmergency1 = new System.Windows.Forms.Button();
@@ -60,74 +53,6 @@
             this.lbTitle.Text = "Emergency";
             this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
             // 
-            // btnCreateEmergency
-            // 
-            this.btnCreateEmergency.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnCreateEmergency.FlatAppearance.BorderSize = 0;
-            this.btnCreateEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnCreateEmergency.Location = new System.Drawing.Point(20, 87);
-            this.btnCreateEmergency.Name = "btnCreateEmergency";
-            this.btnCreateEmergency.Size = new System.Drawing.Size(218, 35);
-            this.btnCreateEmergency.TabIndex = 3;
-            this.btnCreateEmergency.Text = "Create Emergency";
-            this.btnCreateEmergency.UseVisualStyleBackColor = false;
-            this.btnCreateEmergency.Click += new System.EventHandler(this.btnCreateEmergency_Click);
-            // 
-            // btnLinkEmergency
-            // 
-            this.btnLinkEmergency.BackColor = System.Drawing.Color.SlateGray;
-            this.btnLinkEmergency.FlatAppearance.BorderSize = 0;
-            this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnLinkEmergency.Location = new System.Drawing.Point(20, 128);
-            this.btnLinkEmergency.Name = "btnLinkEmergency";
-            this.btnLinkEmergency.Size = new System.Drawing.Size(218, 35);
-            this.btnLinkEmergency.TabIndex = 4;
-            this.btnLinkEmergency.Text = "Link to Emergency";
-            this.btnLinkEmergency.UseVisualStyleBackColor = false;
-            this.btnLinkEmergency.Click += new System.EventHandler(this.btnLinkEmergency_Click);
-            // 
-            // lstEmergencies
-            // 
-            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader2});
-            this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(12, 169);
-            this.lstEmergencies.Name = "lstEmergencies";
-            this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(560, 97);
-            this.lstEmergencies.TabIndex = 5;
-            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
-            this.lstEmergencies.View = System.Windows.Forms.View.Details;
-            this.lstEmergencies.Visible = false;
-            this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Emergency ID";
-            this.columnHeader1.Width = 96;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Time Recevied";
-            this.columnHeader4.Width = 117;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "State";
-            this.columnHeader5.Width = 72;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Description";
-            this.columnHeader2.Width = 271;
-            // 
             // lbState
             // 
             this.lbState.AutoSize = true;
@@ -138,35 +63,15 @@
             this.lbState.Text = "label1";
             this.lbState.Visible = false;
             // 
-            // lbemergencylocation
-            // 
-            this.lbemergencylocation.AutoSize = true;
-            this.lbemergencylocation.Location = new System.Drawing.Point(41, 193);
-            this.lbemergencylocation.Name = "lbemergencylocation";
-            this.lbemergencylocation.Size = new System.Drawing.Size(131, 16);
-            this.lbemergencylocation.TabIndex = 7;
-            this.lbemergencylocation.Text = "Emergency Location:";
-            this.lbemergencylocation.Visible = false;
-            // 
             // lvemergencydecreption
             // 
             this.lvemergencydecreption.AutoSize = true;
-            this.lvemergencydecreption.Location = new System.Drawing.Point(28, 96);
+            this.lvemergencydecreption.Location = new System.Drawing.Point(25, 96);
             this.lvemergencydecreption.Name = "lvemergencydecreption";
             this.lvemergencydecreption.Size = new System.Drawing.Size(144, 16);
             this.lvemergencydecreption.TabIndex = 8;
             this.lvemergencydecreption.Text = "Emergency Descrption:";
             this.lvemergencydecreption.Visible = false;
-            // 
-            // lbemergencystats
-            // 
-            this.lbemergencystats.AutoSize = true;
-            this.lbemergencystats.Location = new System.Drawing.Point(59, 209);
-            this.lbemergencystats.Name = "lbemergencystats";
-            this.lbemergencystats.Size = new System.Drawing.Size(113, 16);
-            this.lbemergencystats.TabIndex = 9;
-            this.lbemergencystats.Text = "Emergency State:";
-            this.lbemergencystats.Visible = false;
             // 
             // lbemergencyid
             // 
@@ -198,6 +103,26 @@
             this.lbemergencyid1.TabIndex = 16;
             this.lbemergencyid1.Text = "label2";
             this.lbemergencyid1.Visible = false;
+            // 
+            // lbemergencystats
+            // 
+            this.lbemergencystats.AutoSize = true;
+            this.lbemergencystats.Location = new System.Drawing.Point(59, 209);
+            this.lbemergencystats.Name = "lbemergencystats";
+            this.lbemergencystats.Size = new System.Drawing.Size(113, 16);
+            this.lbemergencystats.TabIndex = 9;
+            this.lbemergencystats.Text = "Emergency State:";
+            this.lbemergencystats.Visible = false;
+            // 
+            // lbemergencylocation
+            // 
+            this.lbemergencylocation.AutoSize = true;
+            this.lbemergencylocation.Location = new System.Drawing.Point(41, 193);
+            this.lbemergencylocation.Name = "lbemergencylocation";
+            this.lbemergencylocation.Size = new System.Drawing.Size(131, 16);
+            this.lbemergencylocation.TabIndex = 7;
+            this.lbemergencylocation.Text = "Emergency Location:";
+            this.lbemergencylocation.Visible = false;
             // 
             // lbel
             // 
@@ -232,12 +157,11 @@
             this.btnCreateEmergency1.TabIndex = 20;
             this.btnCreateEmergency1.Text = "Creat a emergency";
             this.btnCreateEmergency1.UseVisualStyleBackColor = false;
-            this.btnCreateEmergency1.Visible = false;
             this.btnCreateEmergency1.Click += new System.EventHandler(this.btnCreateEmergency1_Click);
             // 
             // txtemergencyd
             // 
-            this.txtemergencyd.Location = new System.Drawing.Point(20, 116);
+            this.txtemergencyd.Location = new System.Drawing.Point(12, 115);
             this.txtemergencyd.Multiline = true;
             this.txtemergencyd.Name = "txtemergencyd";
             this.txtemergencyd.ReadOnly = true;
@@ -262,9 +186,6 @@
             this.Controls.Add(this.lvemergencydecreption);
             this.Controls.Add(this.lbemergencylocation);
             this.Controls.Add(this.lbState);
-            this.Controls.Add(this.lstEmergencies);
-            this.Controls.Add(this.btnLinkEmergency);
-            this.Controls.Add(this.btnCreateEmergency);
             this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -279,20 +200,13 @@
         #endregion
 
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.Button btnCreateEmergency;
-        private System.Windows.Forms.Button btnLinkEmergency;
-        private System.Windows.Forms.ListView lstEmergencies;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label lbState;
-        private System.Windows.Forms.Label lbemergencylocation;
         private System.Windows.Forms.Label lvemergencydecreption;
-        private System.Windows.Forms.Label lbemergencystats;
         private System.Windows.Forms.Label lbemergencyid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbemergencyid1;
+        private System.Windows.Forms.Label lbemergencystats;
+        private System.Windows.Forms.Label lbemergencylocation;
         private System.Windows.Forms.Label lbel;
         private System.Windows.Forms.Label lbes;
         private System.Windows.Forms.Button btnCreateEmergency1;
