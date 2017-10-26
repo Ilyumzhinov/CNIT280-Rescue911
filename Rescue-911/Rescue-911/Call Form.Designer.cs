@@ -233,7 +233,7 @@
             // 
             this.lbCallID.AutoSize = true;
             this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(63, 48);
+            this.lbCallID.Location = new System.Drawing.Point(72, 48);
             this.lbCallID.Name = "lbCallID";
             this.lbCallID.Size = new System.Drawing.Size(18, 13);
             this.lbCallID.TabIndex = 24;

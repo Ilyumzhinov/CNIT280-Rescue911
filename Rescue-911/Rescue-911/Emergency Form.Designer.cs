@@ -50,7 +50,6 @@
             this.lbTitle.Size = new System.Drawing.Size(124, 24);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Emergency";
-            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
             // 
             // lvemergencydecreption
             // 

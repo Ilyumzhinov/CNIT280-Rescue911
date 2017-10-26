@@ -81,6 +81,12 @@
     <Compile Include="Emergency Form.Designer.cs">
       <DependentUpon>Emergency Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergency Link Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency Link Form.Designer.cs">
+      <DependentUpon>Emergency Link Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergency.cs" />
     <Compile Include="Emergency_Call.cs" />
     <Compile Include="Caller.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Form.resx">
       <DependentUpon>Emergency Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency Link Form.resx">
+      <DependentUpon>Emergency Link Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
