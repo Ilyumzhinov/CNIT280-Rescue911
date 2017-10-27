@@ -29,6 +29,7 @@ namespace Rescue_911
         }
         private void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
+            
             SD.Emergencies.Add(E);
             ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
             this.Close();

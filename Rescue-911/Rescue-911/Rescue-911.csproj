@@ -90,6 +90,7 @@
     <Compile Include="Emergency.cs" />
     <Compile Include="Emergency_Call.cs" />
     <Compile Include="Caller.cs" />
+    <Compile Include="EMT.cs" />
     <Compile Include="EMT_login_shift.cs">
       <SubType>Form</SubType>
     </Compile>

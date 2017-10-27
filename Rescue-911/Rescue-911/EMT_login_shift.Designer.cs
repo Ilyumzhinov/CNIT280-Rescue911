@@ -39,9 +39,11 @@
             this.LBshifttime = new System.Windows.Forms.Label();
             this.LBcurrenttime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.labemtid = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -55,8 +57,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(300, 50);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Enter";
+            this.button1.Text = "SHIFT LOG IN";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnWaitingCall
             // 
@@ -71,7 +74,7 @@
             this.btnWaitingCall.TabIndex = 2;
             this.btnWaitingCall.Text = "SHIFT LOG OUT";
             this.btnWaitingCall.UseVisualStyleBackColor = false;
-            this.btnWaitingCall.Visible = false;
+            this.btnWaitingCall.Click += new System.EventHandler(this.btnWaitingCall_Click);
             // 
             // label1
             // 
@@ -81,27 +84,24 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "EMT ID:";
-            this.label1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(522, 9);
+            this.label2.Location = new System.Drawing.Point(486, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Total Worked Hours:";
-            this.label2.Visible = false;
             // 
             // LBtotalworkedhours
             // 
             this.LBtotalworkedhours.AutoSize = true;
-            this.LBtotalworkedhours.Location = new System.Drawing.Point(634, 9);
+            this.LBtotalworkedhours.Location = new System.Drawing.Point(598, 6);
             this.LBtotalworkedhours.Name = "LBtotalworkedhours";
             this.LBtotalworkedhours.Size = new System.Drawing.Size(35, 13);
             this.LBtotalworkedhours.TabIndex = 6;
             this.LBtotalworkedhours.Text = "label3";
-            this.LBtotalworkedhours.Visible = false;
             // 
             // label3
             // 
@@ -111,7 +111,6 @@
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "SHIFT TIME:";
-            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -121,7 +120,6 @@
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "CURRENT TIME:";
-            this.label4.Visible = false;
             // 
             // LBshifttime
             // 
@@ -131,7 +129,6 @@
             this.LBshifttime.Size = new System.Drawing.Size(35, 13);
             this.LBshifttime.TabIndex = 9;
             this.LBshifttime.Text = "label5";
-            this.LBshifttime.Visible = false;
             // 
             // LBcurrenttime
             // 
@@ -140,49 +137,66 @@
             this.LBcurrenttime.Name = "LBcurrenttime";
             this.LBcurrenttime.Size = new System.Drawing.Size(0, 13);
             this.LBcurrenttime.TabIndex = 10;
-            this.LBcurrenttime.Visible = false;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.Visible = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(540, 25);
+            this.label5.Location = new System.Drawing.Point(504, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Response Team:";
-            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(634, 25);
+            this.label6.Location = new System.Drawing.Point(598, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "label6";
-            this.label6.Visible = false;
+            // 
+            // labemtid
+            // 
+            this.labemtid.AutoSize = true;
+            this.labemtid.Location = new System.Drawing.Point(108, 46);
+            this.labemtid.Name = "labemtid";
+            this.labemtid.Size = new System.Drawing.Size(35, 13);
+            this.labemtid.TabIndex = 14;
+            this.labemtid.Text = "label7";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(545, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Logtime:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(598, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "NOT READY";
             // 
             // EMT_login_shift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 521);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labemtid);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LBcurrenttime);
             this.Controls.Add(this.LBshifttime);
             this.Controls.Add(this.label4);
@@ -211,8 +225,10 @@
         private System.Windows.Forms.Label LBshifttime;
         private System.Windows.Forms.Label LBcurrenttime;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labemtid;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

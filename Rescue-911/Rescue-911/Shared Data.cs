@@ -14,6 +14,8 @@ namespace Rescue_911
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
 
+        public EMT[] EMTs = new EMT[10];
+
         public Shared_Data()
         {
             //
@@ -39,6 +41,22 @@ namespace Rescue_911
             ResponseTeams[2].SetShift("they work...");
             //
 
+            EMTs[0] = new EMT();
+            EMTs[0].setEmtID (0.ToString());
+            EMTs[0].setResponseTeamID(1.ToString());
+            EMTs[0].setShifttime("15:00 PM");
+            EMTs[1] = new EMT();
+            EMTs[1].setEmtID(1.ToString());
+            EMTs[1].setResponseTeamID(1.ToString());
+            EMTs[1].setShifttime("15:00 PM");
+            EMTs[2] = new EMT();
+            EMTs[2].setEmtID(2.ToString());
+            EMTs[2].setResponseTeamID(1.ToString());
+            EMTs[2].setShifttime("15:00 PM");
+            EMTs[3] = new EMT();
+            EMTs[3].setEmtID(0.ToString());
+            EMTs[3].setResponseTeamID(1.ToString());
+            EMTs[3].setShifttime("15:00 PM");
             // EMERGENCY TEST DATA 
             Caller[] Callers = LoadCallers();
             Emergency_Call[] ECs = LoadEC(Callers);
@@ -66,7 +84,7 @@ namespace Rescue_911
             }        
             //
         }
-
+        
         private Caller[] LoadCallers()
         {
             // CALLERS TEST DATA
@@ -113,18 +131,22 @@ namespace Rescue_911
             }
 
             Emergency_Calls[0].SetDateTime(DateTime.Parse("10/24/2017 7:10:24 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Emergency_Calls[0].SetPriority(3);
             Emergency_Calls[0].SetDescription("The man got hit by a big snow flake.");
             Emergency_Calls[0].SetState("Logged");
 
             Emergency_Calls[1].SetDateTime(DateTime.Parse("10/23/2017 10:14:59 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Emergency_Calls[1].SetPriority(2);
             Emergency_Calls[1].SetDescription("The man got attacked by a huge spider on his balcony.");
             Emergency_Calls[1].SetState("Logged");
 
             Emergency_Calls[2].SetDateTime(DateTime.Parse("10/23/2017 11:48:23 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Emergency_Calls[2].SetPriority(1);
             Emergency_Calls[2].SetDescription("An incident regarding a banana slip.");
             Emergency_Calls[2].SetState("Logged");
 
             Emergency_Calls[3].SetDateTime(DateTime.Parse("10/23/2017 5:11:00 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Emergency_Calls[3].SetPriority(3);
             Emergency_Calls[3].SetDescription("The man was run over by a cyclist. Cyclyst needs help.");
             Emergency_Calls[3].SetState("Logged");
 
