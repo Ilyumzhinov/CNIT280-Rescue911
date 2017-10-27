@@ -37,6 +37,8 @@
             this.rbNo = new System.Windows.Forms.RadioButton();
             this.lbDecision = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
@@ -70,6 +72,7 @@
             this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader4,
+            this.columnHeader7,
             this.columnHeader5,
             this.columnHeader2});
             this.lstEmergencies.GridLines = true;
@@ -77,7 +80,7 @@
             this.lstEmergencies.MultiSelect = false;
             this.lstEmergencies.Name = "lstEmergencies";
             this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(560, 97);
+            this.lstEmergencies.Size = new System.Drawing.Size(785, 97);
             this.lstEmergencies.TabIndex = 10;
             this.lstEmergencies.UseCompatibleStateImageBehavior = false;
             this.lstEmergencies.View = System.Windows.Forms.View.Details;
@@ -106,7 +109,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(512, 398);
+            this.btnClose.Location = new System.Drawing.Point(733, 395);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 11;
@@ -116,7 +119,7 @@
             // 
             // btnCreateDispatch
             // 
-            this.btnCreateDispatch.Location = new System.Drawing.Point(398, 398);
+            this.btnCreateDispatch.Location = new System.Drawing.Point(619, 395);
             this.btnCreateDispatch.Name = "btnCreateDispatch";
             this.btnCreateDispatch.Size = new System.Drawing.Size(108, 23);
             this.btnCreateDispatch.TabIndex = 12;
@@ -127,13 +130,14 @@
             // lstTeams
             // 
             this.lstTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader6});
             this.lstTeams.GridLines = true;
             this.lstTeams.Location = new System.Drawing.Point(27, 261);
             this.lstTeams.MultiSelect = false;
             this.lstTeams.Name = "lstTeams";
             this.lstTeams.ShowItemToolTips = true;
-            this.lstTeams.Size = new System.Drawing.Size(560, 97);
+            this.lstTeams.Size = new System.Drawing.Size(785, 97);
             this.lstTeams.TabIndex = 13;
             this.lstTeams.UseCompatibleStateImageBehavior = false;
             this.lstTeams.View = System.Windows.Forms.View.Details;
@@ -147,7 +151,7 @@
             // 
             this.lbResult.AutoSize = true;
             this.lbResult.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbResult.Location = new System.Drawing.Point(395, 382);
+            this.lbResult.Location = new System.Drawing.Point(616, 379);
             this.lbResult.Name = "lbResult";
             this.lbResult.Size = new System.Drawing.Size(46, 13);
             this.lbResult.TabIndex = 14;
@@ -157,7 +161,7 @@
             // rbYes
             // 
             this.rbYes.AutoSize = true;
-            this.rbYes.Location = new System.Drawing.Point(180, 398);
+            this.rbYes.Location = new System.Drawing.Point(496, 398);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(43, 17);
             this.rbYes.TabIndex = 15;
@@ -169,7 +173,7 @@
             // rbNo
             // 
             this.rbNo.AutoSize = true;
-            this.rbNo.Location = new System.Drawing.Point(238, 398);
+            this.rbNo.Location = new System.Drawing.Point(554, 398);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(39, 17);
             this.rbNo.TabIndex = 16;
@@ -181,7 +185,7 @@
             // lbDecision
             // 
             this.lbDecision.AutoSize = true;
-            this.lbDecision.Location = new System.Drawing.Point(177, 382);
+            this.lbDecision.Location = new System.Drawing.Point(493, 382);
             this.lbDecision.Name = "lbDecision";
             this.lbDecision.Size = new System.Drawing.Size(67, 13);
             this.lbDecision.TabIndex = 31;
@@ -198,12 +202,21 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Emergency Management Form";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Grade";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.DisplayIndex = 2;
+            this.columnHeader7.Text = "Priority";
+            // 
             // Emergency_Management_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(607, 433);
+            this.ClientSize = new System.Drawing.Size(824, 433);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbDecision);
             this.Controls.Add(this.rbNo);
@@ -242,5 +255,7 @@
         private System.Windows.Forms.RadioButton rbNo;
         private System.Windows.Forms.Label lbDecision;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

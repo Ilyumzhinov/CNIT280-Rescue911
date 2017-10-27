@@ -22,12 +22,7 @@ namespace Rescue_911
 
         private void Call_Waiting_Form_Load(object sender, EventArgs e)
         {
-            // Populating the listBox with the response teams.
-            foreach (Response_Team RT in SD.ResponseTeams)
-            {
-                lstTeams.Items.Add(new ListViewItem(RT.GetID().ToString()));
-            }
-
+         
             lstEmergenciesFetch("Logged", SD.Emergencies);
         }
 
@@ -52,6 +47,7 @@ namespace Rescue_911
                         ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
 
                         lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
+                        lstItem.SubItems.Add(EC.GetPriority().ToString());
                         lstItem.SubItems.Add(EC.GetState());
                         lstItem.SubItems.Add(EC.GetDescription());
 
@@ -62,6 +58,7 @@ namespace Rescue_911
                         ListViewItem lstItem = new ListViewItem();
 
                         lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
+                        lstItem.SubItems.Add(EC.GetPriority().ToString());
                         lstItem.SubItems.Add(EC.GetState());
                         lstItem.SubItems.Add(EC.GetDescription());
 
@@ -77,6 +74,40 @@ namespace Rescue_911
             try
             {
                 emergencySelected = lstEmergencies.SelectedIndices[0];
+
+                lstTeams.Items.Clear();
+                // Populating the listBox with the response teams.
+                foreach (Response_Team RT in SD.ResponseTeams)
+                {
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 2)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <=3 && RT.GetGrade() > 1)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 4 && RT.GetGrade() > 2)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+                }
+
+
 
                 lbDecision.Visible = true;
                 rbYes.Visible = true;
