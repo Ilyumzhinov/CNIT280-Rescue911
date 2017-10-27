@@ -143,7 +143,7 @@ namespace Rescue_911
                 Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
 
 
-                // Suggeted names from a database
+                //To-Do: Suggeted names from a database
                 //lstCallerNames.Items.Clear();
                 //int j = 0;
                 //for (int i = 0; i < SD.Count; i++)
