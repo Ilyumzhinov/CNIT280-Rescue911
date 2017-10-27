@@ -36,7 +36,10 @@
             this.btnReceiveCall = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lbContext = new System.Windows.Forms.Label();
+            this.btnBSRecord = new System.Windows.Forms.Button();
+            this.btnDispatchTimes = new System.Windows.Forms.Button();
             this.emtlogformbuttom = new System.Windows.Forms.Button();
+            this.btnDispatchReport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -138,14 +141,44 @@
             this.lbContext.TabIndex = 7;
             this.lbContext.Text = "> ";
             // 
+            // btnBSRecord
+            // 
+            this.btnBSRecord.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBSRecord.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnBSRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBSRecord.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBSRecord.ForeColor = System.Drawing.Color.White;
+            this.btnBSRecord.Location = new System.Drawing.Point(335, 308);
+            this.btnBSRecord.Name = "btnBSRecord";
+            this.btnBSRecord.Size = new System.Drawing.Size(215, 50);
+            this.btnBSRecord.TabIndex = 9;
+            this.btnBSRecord.Text = "Base Station Record";
+            this.btnBSRecord.UseVisualStyleBackColor = false;
+            this.btnBSRecord.Click += new System.EventHandler(this.btnBSRecord_Click);
+            // 
+            // btnDispatchTimes
+            // 
+            this.btnDispatchTimes.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDispatchTimes.FlatAppearance.BorderColor = System.Drawing.Color.MediumPurple;
+            this.btnDispatchTimes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDispatchTimes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDispatchTimes.ForeColor = System.Drawing.Color.White;
+            this.btnDispatchTimes.Location = new System.Drawing.Point(250, 380);
+            this.btnDispatchTimes.Name = "btnDispatchTimes";
+            this.btnDispatchTimes.Size = new System.Drawing.Size(215, 50);
+            this.btnDispatchTimes.TabIndex = 10;
+            this.btnDispatchTimes.Text = "Dispatch and arrival times";
+            this.btnDispatchTimes.UseVisualStyleBackColor = false;
+            this.btnDispatchTimes.Click += new System.EventHandler(this.btnDispatchTimes_Click);
+            // 
             // emtlogformbuttom
             // 
-            this.emtlogformbuttom.BackColor = System.Drawing.Color.White;
+            this.emtlogformbuttom.BackColor = System.Drawing.Color.Black;
             this.emtlogformbuttom.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.emtlogformbuttom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emtlogformbuttom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emtlogformbuttom.ForeColor = System.Drawing.Color.Black;
-            this.emtlogformbuttom.Location = new System.Drawing.Point(250, 309);
+            this.emtlogformbuttom.ForeColor = System.Drawing.Color.White;
+            this.emtlogformbuttom.Location = new System.Drawing.Point(250, 308);
             this.emtlogformbuttom.Name = "emtlogformbuttom";
             this.emtlogformbuttom.Size = new System.Drawing.Size(79, 50);
             this.emtlogformbuttom.TabIndex = 8;
@@ -153,12 +186,30 @@
             this.emtlogformbuttom.UseVisualStyleBackColor = false;
             this.emtlogformbuttom.Click += new System.EventHandler(this.emtlogformbuttom_Click);
             // 
+            // btnDispatchReport
+            // 
+            this.btnDispatchReport.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDispatchReport.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDispatchReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDispatchReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDispatchReport.ForeColor = System.Drawing.Color.White;
+            this.btnDispatchReport.Location = new System.Drawing.Point(471, 380);
+            this.btnDispatchReport.Name = "btnDispatchReport";
+            this.btnDispatchReport.Size = new System.Drawing.Size(79, 50);
+            this.btnDispatchReport.TabIndex = 11;
+            this.btnDispatchReport.Text = "Dispatch Report";
+            this.btnDispatchReport.UseVisualStyleBackColor = false;
+            this.btnDispatchReport.Click += new System.EventHandler(this.btnDispatchReport_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.btnDispatchReport);
+            this.Controls.Add(this.btnDispatchTimes);
+            this.Controls.Add(this.btnBSRecord);
             this.Controls.Add(this.emtlogformbuttom);
             this.Controls.Add(this.lbContext);
             this.Controls.Add(this.label4);
@@ -186,7 +237,10 @@
         private System.Windows.Forms.Button btnReceiveCall;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbContext;
+        private System.Windows.Forms.Button btnBSRecord;
+        private System.Windows.Forms.Button btnDispatchTimes;
         private System.Windows.Forms.Button emtlogformbuttom;
+        private System.Windows.Forms.Button btnDispatchReport;
     }
 }
 

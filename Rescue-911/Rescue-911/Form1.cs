@@ -60,8 +60,26 @@ namespace Rescue_911
 
         private void emtlogformbuttom_Click(object sender, EventArgs e)
         {
-            EMT_login_shift emtlogform = new EMT_login_shift();
+            EMT_login_shift emtlogform = new EMT_login_shift(SD);
             emtlogform.Show();
+        }
+
+        private void btnBSRecord_Click(object sender, EventArgs e)
+        {
+            Base_Station_Records BSR = new Base_Station_Records();
+            BSR.Show();
+        }
+
+        private void btnDispatchTimes_Click(object sender, EventArgs e)
+        {
+            Dispatch_Related_Times DRT = new Dispatch_Related_Times(ref SD);
+            DRT.Show();
+        }
+
+        private void btnDispatchReport_Click(object sender, EventArgs e)
+        {
+            Dispatch_Report DR = new Dispatch_Report(ref SD);
+            DR.Show();
         }
     }
 }
