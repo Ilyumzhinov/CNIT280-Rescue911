@@ -29,15 +29,15 @@ namespace Rescue_911
             ResponseTeams = new Response_Team[3];
             ResponseTeams[0] = new Response_Team();
             ResponseTeams[0].SetID(1);
-            ResponseTeams[0].SetGrade('1');
+            ResponseTeams[0].SetGrade(1);
             ResponseTeams[0].SetShift("somewhen...");
             ResponseTeams[1] = new Response_Team();
             ResponseTeams[1].SetID(2);
-            ResponseTeams[1].SetGrade('3');
+            ResponseTeams[1].SetGrade(3);
             ResponseTeams[1].SetShift("it happens...");
             ResponseTeams[2] = new Response_Team();
             ResponseTeams[2].SetID(3);
-            ResponseTeams[2].SetGrade('2');
+            ResponseTeams[2].SetGrade(2);
             ResponseTeams[2].SetShift("they work...");
             //
 
@@ -131,22 +131,26 @@ namespace Rescue_911
             }
 
             Emergency_Calls[0].SetDateTime(DateTime.Parse("10/24/2017 7:10:24 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Emergency_Calls[0].SetAddress("102 N Chauncey Ave, West-Lafayette");
             Emergency_Calls[0].SetPriority(3);
             Emergency_Calls[0].SetDescription("The man got hit by a big snow flake.");
             Emergency_Calls[0].SetState("Logged");
 
             Emergency_Calls[1].SetDateTime(DateTime.Parse("10/23/2017 10:14:59 AM", System.Globalization.CultureInfo.InvariantCulture));
             Emergency_Calls[1].SetPriority(2);
+            Emergency_Calls[1].SetAddress("1198 Third Street, West-Lafayette");
             Emergency_Calls[1].SetDescription("The man got attacked by a huge spider on his balcony.");
             Emergency_Calls[1].SetState("Logged");
 
             Emergency_Calls[2].SetDateTime(DateTime.Parse("10/23/2017 11:48:23 AM", System.Globalization.CultureInfo.InvariantCulture));
             Emergency_Calls[2].SetPriority(1);
+            Emergency_Calls[2].SetAddress("600 E. Grand Avenue, Navy Pier, Chicago");
             Emergency_Calls[2].SetDescription("An incident regarding a banana slip.");
             Emergency_Calls[2].SetState("Logged");
 
             Emergency_Calls[3].SetDateTime(DateTime.Parse("10/23/2017 5:11:00 AM", System.Globalization.CultureInfo.InvariantCulture));
             Emergency_Calls[3].SetPriority(3);
+            Emergency_Calls[3].SetAddress("1600 Amphitheatre Parkway, Mountain View");
             Emergency_Calls[3].SetDescription("The man was run over by a cyclist. Cyclyst needs help.");
             Emergency_Calls[3].SetState("Logged");
 

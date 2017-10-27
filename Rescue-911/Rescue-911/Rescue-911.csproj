@@ -74,6 +74,12 @@
     <Compile Include="Dispatch Related Times.Designer.cs">
       <DependentUpon>Dispatch Related Times.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dispatch Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dispatch Report.Designer.cs">
+      <DependentUpon>Dispatch Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dispatch.cs" />
     <Compile Include="Emergency Form.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dispatch Related Times.resx">
       <DependentUpon>Dispatch Related Times.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dispatch Report.resx">
+      <DependentUpon>Dispatch Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Form.resx">
       <DependentUpon>Emergency Form.cs</DependentUpon>
