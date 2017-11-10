@@ -111,7 +111,7 @@ namespace Rescue_911
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Linkepatientandsub sb = new Linkepatientandsub();
+            Linkepatientandsub sb = new Linkepatientandsub(SD);
             sb.Show();
         }
     }

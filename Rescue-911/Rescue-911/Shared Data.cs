@@ -13,7 +13,7 @@ namespace Rescue_911
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
-        public List<Patient> patients = new List<Patient>();
+        public List<patient> patients = new List<patient>();
         public List<EMT> EMTs = new List<EMT>();
 
         public Shared_Data()
@@ -40,6 +40,23 @@ namespace Rescue_911
             ResponseTeams[2].SetGrade(2);
             ResponseTeams[2].SetShift("they work...");
             //
+
+            patients.Add(new patient());
+            patients[0].setage("14");
+            patients[0].setbd("feb");
+            patients[0].setbloodtype("o");
+            patients[0].setcomplication("ddd");
+            patients[0].SetName("ssss");
+            patients[0].SetLast_Name("bbbb");
+            patients.Add(new patient());
+            patients[1].setage("14");
+            patients[1].setbd("feb");
+            patients[1].setbloodtype("o");
+            patients[1].setcomplication("ddd");
+            patients[1].SetName("1111");
+            patients[1].SetLast_Name("2222");
+
+
 
             EMTs = LoadEMTs();
             // EMERGENCY TEST DATA 

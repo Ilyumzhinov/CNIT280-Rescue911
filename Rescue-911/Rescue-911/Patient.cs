@@ -6,15 +6,26 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public class patient:Person
+    public class patient : Person
     {
         private string age;
         private string bd;
         private string bloodtype;
         private string complication;
-        public patient() {
+        private string subscribe;
+        public void setsubsc(string sub) {
+            subscribe = sub;
+        }
 
-           
+        public string getsubsc()
+        {
+            return subscribe;
+        }
+
+        public patient()
+        {
+
+
         }
         public void setage(string xage)
         {
@@ -36,7 +47,8 @@ namespace Rescue_911
             complication = xcomplication;
 
         }
-        public string getage() {
+        public string getage()
+        {
             return age;
 
         }
