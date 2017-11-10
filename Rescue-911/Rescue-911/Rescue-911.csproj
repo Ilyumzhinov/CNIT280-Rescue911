@@ -122,6 +122,7 @@
     <Compile Include="Patient Information.Designer.cs">
       <DependentUpon>Patient Information.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

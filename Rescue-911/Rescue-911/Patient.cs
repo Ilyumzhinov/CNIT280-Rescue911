@@ -6,38 +6,18 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public class Patient:
+    class patient:Person
     {
+       private string age { get; set; }
+        private string bd { get; set; }
+        private string bloodtype { get; set; }
+        private string complication { get; set; }
+        public patient(string age, string bd,string bloodtype, string complication) {
 
-        private string Bloodtype;
-        private DateTime birthday;
-        private string name;
-        private double weight;
-        
-        public Patient(string xBloodtype,DateTime xbirthday, Caller xcaller,double xweight ) {
-
-            birthday = xbirthday;           
-            Bloodtype = xBloodtype;
-            weight = xweight;
+            this.age = age;
+            this.bd = bd;
+            this.bloodtype = bloodtype;
+            this.complication = complication;
         }
-      
-        public string getbloodtype() {
-
-            return Bloodtype;
-        }
-        public DateTime getbirthday() {
-
-            return birthday;
-        }
-
-
-
-        
-
-
-
-
-
     }
-    
 }

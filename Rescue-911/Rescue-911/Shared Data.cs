@@ -72,7 +72,7 @@ namespace Rescue_911
         
         private EMT[] LoadEMTs()
         {
-            EMT[] xEMTs = new EMT[3];
+            EMT[] xEMTs = new EMT[4];
             xEMTs[0] = new EMT();
             xEMTs[0].SetName("Jane");
             xEMTs[0].SetPassword("qwerty");
