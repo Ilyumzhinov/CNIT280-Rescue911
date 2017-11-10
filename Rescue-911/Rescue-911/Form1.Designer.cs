@@ -58,6 +58,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Log call";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnWaitingCall
@@ -73,6 +74,7 @@
             this.btnWaitingCall.TabIndex = 1;
             this.btnWaitingCall.Text = "Emergency call";
             this.btnWaitingCall.UseVisualStyleBackColor = false;
+            this.btnWaitingCall.Visible = false;
             this.btnWaitingCall.Click += new System.EventHandler(this.btnWaitingCall_Click);
             // 
             // label1
@@ -157,6 +159,7 @@
             this.btnBSRecord.TabIndex = 9;
             this.btnBSRecord.Text = "Base Station Record";
             this.btnBSRecord.UseVisualStyleBackColor = false;
+            this.btnBSRecord.Visible = false;
             this.btnBSRecord.Click += new System.EventHandler(this.btnBSRecord_Click);
             // 
             // btnDispatchTimes
@@ -211,7 +214,7 @@
             this.buttonpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonpatient.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonpatient.ForeColor = System.Drawing.Color.White;
-            this.buttonpatient.Location = new System.Drawing.Point(79, 292);
+            this.buttonpatient.Location = new System.Drawing.Point(79, 308);
             this.buttonpatient.Name = "buttonpatient";
             this.buttonpatient.Size = new System.Drawing.Size(144, 50);
             this.buttonpatient.TabIndex = 12;
@@ -226,7 +229,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(79, 226);
+            this.button2.Location = new System.Drawing.Point(79, 236);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 50);
             this.button2.TabIndex = 13;
