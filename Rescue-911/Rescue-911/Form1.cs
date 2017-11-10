@@ -85,8 +85,14 @@ namespace Rescue_911
     
         private void buttonpatient_Click(object sender, EventArgs e)
         {
-            Patient_Information patientinformation = new Patient_Information();
+            Patient patientinformation = new Patient();
             patientinformation.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Linkepatientandsub sb = new Linkepatientandsub();
+            sb.Show();
         }
     }
 }

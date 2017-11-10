@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Patient_Information : Form
+    public partial class Patient : Form
     {
-        public Patient_Information()
+        public Patient()
         {
             InitializeComponent();
         }

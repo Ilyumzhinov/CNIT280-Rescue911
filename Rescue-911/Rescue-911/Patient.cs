@@ -6,18 +6,54 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    class patient:Person
+    public class patient:Person
     {
-       private string age { get; set; }
-        private string bd { get; set; }
-        private string bloodtype { get; set; }
-        private string complication { get; set; }
-        public patient(string age, string bd,string bloodtype, string complication) {
+        private string age;
+        private string bd;
+        private string bloodtype;
+        private string complication;
+        public patient() {
 
-            this.age = age;
-            this.bd = bd;
-            this.bloodtype = bloodtype;
-            this.complication = complication;
+           
+        }
+        public void setage(string xage)
+        {
+            age = xage;
+
+        }
+        public void setbd(string xbd)
+        {
+            bd = xbd;
+
+        }
+        public void setbloodtype(string xbloodtype)
+        {
+            bloodtype = xbloodtype;
+
+        }
+        public void setcomplication(string xcomplication)
+        {
+            complication = xcomplication;
+
+        }
+        public string getage() {
+            return age;
+
+        }
+        public string getbd()
+        {
+            return bd;
+
+        }
+        public string getbloodtype()
+        {
+            return bloodtype;
+
+        }
+        public string getcomplication()
+        {
+            return complication;
+
         }
     }
 }

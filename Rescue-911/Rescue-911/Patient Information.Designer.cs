@@ -1,6 +1,6 @@
 ﻿namespace Rescue_911
 {
-    partial class Patient_Information
+    partial class Patient
     {
         /// <summary>
         /// Required designer variable.

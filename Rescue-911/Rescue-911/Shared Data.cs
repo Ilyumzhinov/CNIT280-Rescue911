@@ -13,7 +13,7 @@ namespace Rescue_911
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
-
+        public List<patient> patients = new List<patient>();
         public EMT[] EMTs = new EMT[10];
 
         public Shared_Data()
@@ -66,10 +66,38 @@ namespace Rescue_911
             for (int i = 0; i < ECs.Length; i++)
             {
                 Calls.Add(ECs[i]);
-            }        
+            }
             //
+
+
+            //patien
+            for (int i = 0; i < 3; i++)
+            {
+                patients.Add(new patient());
+            }
+            patients[0].setage("20");
+            patients[1].setage("21");
+            patients[2].setage("22");
+            patients[0].setbd("feb");
+            patients[1].setbd("march");
+            patients[2].setbd("may");
+            patients[0].setbloodtype("a");
+            patients[1].setbloodtype("b");
+            patients[2].setbloodtype("o");
+            patients[0].setcomplication("aaaaa");
+            patients[1].setcomplication("bbbbb");
+            patients[2].setcomplication("bbbbb");
+            patients[0].SetName("qqqqq");
+            patients[1].SetName("wwwww");
+            patients[2].SetName("eeeee");
+            patients[0].SetLast_Name("rrrrr");
+            patients[1].SetLast_Name("ttttt");
+            patients[2].SetLast_Name("yyyyy");
+            
         }
-        
+        public List<patient> getpatient() {
+            return patients;
+        }
         private EMT[] LoadEMTs()
         {
             EMT[] xEMTs = new EMT[4];
