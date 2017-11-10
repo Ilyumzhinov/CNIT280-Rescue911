@@ -89,12 +89,14 @@ namespace Rescue_911
 
             xEMTs[2] = new EMT();
             xEMTs[2].SetName("John");
-
+            xEMTs[2].SetPassword("john");
             xEMTs[2].SetEmployee_ID(2);
             xEMTs[2].setResponseTeamID(1.ToString());
             xEMTs[2].setShifttime("15:00 PM");
 
             xEMTs[3] = new EMT();
+            xEMTs[3].SetName("Shawn");
+            xEMTs[3].SetPassword("anything");
             xEMTs[3].SetEmployee_ID(3);
             xEMTs[3].setResponseTeamID(3.ToString());
             xEMTs[3].setShifttime("15:00 PM");

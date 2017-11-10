@@ -17,6 +17,6 @@ namespace Rescue_911
 
         public void SetPassword(string xPassword) { Password = xPassword; }
 
-        public int GetPassword() { return Password; }
+        public string GetPassword() { return Password; }
     }
 }
