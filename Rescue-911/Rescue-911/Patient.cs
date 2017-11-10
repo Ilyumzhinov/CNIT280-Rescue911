@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public class Patient:perso
+    public class Patient
     {
 
         private string Bloodtype;
