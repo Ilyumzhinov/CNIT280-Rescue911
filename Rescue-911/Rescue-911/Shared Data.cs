@@ -13,8 +13,8 @@ namespace Rescue_911
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
-        public List<patient> patients = new List<patient>();
-        public EMT[] EMTs = new EMT[10];
+
+        public List<EMT> EMTs = new List<EMT>();
 
         public Shared_Data()
         {
@@ -66,70 +66,42 @@ namespace Rescue_911
             for (int i = 0; i < ECs.Length; i++)
             {
                 Calls.Add(ECs[i]);
-            }
+            }        
             //
-
-
-            //patien
-            for (int i = 0; i < 3; i++)
-            {
-                patients.Add(new patient());
-            }
-            patients[0].setage("20");
-            patients[1].setage("21");
-            patients[2].setage("22");
-            patients[0].setbd("feb");
-            patients[1].setbd("march");
-            patients[2].setbd("may");
-            patients[0].setbloodtype("a");
-            patients[1].setbloodtype("b");
-            patients[2].setbloodtype("o");
-            patients[0].setcomplication("aaaaa");
-            patients[1].setcomplication("bbbbb");
-            patients[2].setcomplication("bbbbb");
-            patients[0].SetName("qqqqq");
-            patients[1].SetName("wwwww");
-            patients[2].SetName("eeeee");
-            patients[0].SetLast_Name("rrrrr");
-            patients[1].SetLast_Name("ttttt");
-            patients[2].SetLast_Name("yyyyy");
-            
         }
-        public List<patient> getpatient() {
-            return patients;
-        }
-        private EMT[] LoadEMTs()
+        
+        private List<EMT> LoadEMTs()
         {
-            EMT[] xEMTs = new EMT[4];
-            xEMTs[0] = new EMT();
+            List<EMT> xEMTs = new List<EMT>();
+            xEMTs.Add(new EMT());
             xEMTs[0].SetName("Jane");
             xEMTs[0].SetPassword("qwerty");
             xEMTs[0].SetEmployee_ID(0);
             xEMTs[0].setResponseTeamID(1.ToString());
             xEMTs[0].setShifttime("15:00 PM");
 
-            xEMTs[1] = new EMT();
+            xEMTs.Add(new EMT());
             xEMTs[1].SetName("Tyler");
             xEMTs[1].SetPassword("123");
             xEMTs[1].SetEmployee_ID(1);
             xEMTs[1].setResponseTeamID(2.ToString());
             xEMTs[1].setShifttime("15:00 PM");
 
-            xEMTs[2] = new EMT();
+            xEMTs.Add(new EMT());
             xEMTs[2].SetName("John");
             xEMTs[2].SetPassword("john");
             xEMTs[2].SetEmployee_ID(2);
             xEMTs[2].setResponseTeamID(1.ToString());
             xEMTs[2].setShifttime("15:00 PM");
 
-            xEMTs[3] = new EMT();
+            xEMTs.Add(new EMT());
             xEMTs[3].SetName("Shawn");
             xEMTs[3].SetPassword("anything");
             xEMTs[3].SetEmployee_ID(3);
             xEMTs[3].setResponseTeamID(3.ToString());
             xEMTs[3].setShifttime("15:00 PM");
 
-            return EMTs;
+            return xEMTs;
         }
 
         private Caller[] LoadCallers()

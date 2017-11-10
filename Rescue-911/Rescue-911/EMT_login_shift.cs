@@ -22,7 +22,7 @@ namespace Rescue_911
             InitializeComponent();
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            emts = xSD.EMTs;
+            emts = xSD.EMTs.ToArray();
 
 
         }

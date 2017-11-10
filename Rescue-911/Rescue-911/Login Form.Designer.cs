@@ -34,18 +34,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLoginOther = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 67);
+            this.label1.Location = new System.Drawing.Point(198, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 31);
+            this.label1.Size = new System.Drawing.Size(90, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select your role";
+            this.label1.Text = "Hello!";
             // 
             // txtPassword
             // 
@@ -59,7 +59,7 @@
             this.txtName.Location = new System.Drawing.Point(289, 126);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 1;
             // 
             // label2
             // 
@@ -81,32 +81,33 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Teal;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.Location = new System.Drawing.Point(204, 219);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(185, 50);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Log in";
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "Log in as EMT";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // button2
+            // btnLoginOther
             // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(204, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 50);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Log in";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLoginOther.BackColor = System.Drawing.Color.Teal;
+            this.btnLoginOther.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnLoginOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginOther.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoginOther.ForeColor = System.Drawing.Color.White;
+            this.btnLoginOther.Location = new System.Drawing.Point(204, 289);
+            this.btnLoginOther.Name = "btnLoginOther";
+            this.btnLoginOther.Size = new System.Drawing.Size(185, 50);
+            this.btnLoginOther.TabIndex = 4;
+            this.btnLoginOther.Text = "Log in as other";
+            this.btnLoginOther.UseVisualStyleBackColor = false;
+            this.btnLoginOther.Click += new System.EventHandler(this.btnLoginOther_Click);
             // 
             // Login_Form
             // 
@@ -114,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(580, 382);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLoginOther);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -135,6 +136,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoginOther;
     }
 }

@@ -7,15 +7,15 @@ namespace Rescue_911
     {
         public Shared_Data SD;
 
-        public Form1()
+        public Form1(Shared_Data xSD)
         {
-            InitializeComponent();
-
-            SD = new Shared_Data();
+            SD = xSD;
             SD.OpenForms[2, 0] = this;
 
             //JUST FOR NOW, the context:
-            lbContext.Text += "User: " + SD.ResponseTeams[0] + " ";
+         //   lbContext.Text += "User: " + SD.ResponseTeams[0].GetID() + " ";
+
+            InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
