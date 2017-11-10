@@ -81,5 +81,12 @@ namespace Rescue_911
             Dispatch_Report DR = new Dispatch_Report(ref SD);
             DR.Show();
         }
+
+    
+        private void buttonpatient_Click(object sender, EventArgs e)
+        {
+            Patient_Information patientinformation = new Patient_Information();
+            patientinformation.Show();
+        }
     }
 }

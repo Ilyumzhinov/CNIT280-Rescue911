@@ -40,6 +40,7 @@
             this.btnDispatchTimes = new System.Windows.Forms.Button();
             this.emtlogformbuttom = new System.Windows.Forms.Button();
             this.btnDispatchReport = new System.Windows.Forms.Button();
+            this.buttonpatient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -201,12 +202,27 @@
             this.btnDispatchReport.UseVisualStyleBackColor = false;
             this.btnDispatchReport.Click += new System.EventHandler(this.btnDispatchReport_Click);
             // 
+            // buttonpatient
+            // 
+            this.buttonpatient.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonpatient.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonpatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonpatient.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonpatient.ForeColor = System.Drawing.Color.White;
+            this.buttonpatient.Location = new System.Drawing.Point(79, 292);
+            this.buttonpatient.Name = "buttonpatient";
+            this.buttonpatient.Size = new System.Drawing.Size(144, 50);
+            this.buttonpatient.TabIndex = 12;
+            this.buttonpatient.Text = "Patient Information";
+            this.buttonpatient.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.buttonpatient);
             this.Controls.Add(this.btnDispatchReport);
             this.Controls.Add(this.btnDispatchTimes);
             this.Controls.Add(this.btnBSRecord);
@@ -241,6 +257,7 @@
         private System.Windows.Forms.Button btnDispatchTimes;
         private System.Windows.Forms.Button emtlogformbuttom;
         private System.Windows.Forms.Button btnDispatchReport;
+        private System.Windows.Forms.Button buttonpatient;
     }
 }
 

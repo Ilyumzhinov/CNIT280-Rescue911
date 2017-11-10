@@ -67,6 +67,7 @@ namespace Rescue_911
             DateTime TEMP = DateTime.Now;
 
             TimeSpan temp2 = TEMP.Subtract(emts[1].getshiftlogintime());
+          
             emts[1].updatetotaolshifttime(temp2);
             LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0,8);
             label8.Text = "End";
