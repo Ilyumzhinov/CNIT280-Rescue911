@@ -25,7 +25,7 @@ namespace Rescue_911
             List<patient> a = sd.patients;
             for (int b = 0; b < a.Count(); b++) {
 
-                listBox1.Items.Add(a[b].GetLast_Name() + a[b].GetName()+"     "+ a[b].getsubsc());
+                listBox1.Items.Add(a[b].GetLast_Name()+", " + a[b].GetName()+"     "+ a[b].getsubsc());
             }
           
         }
@@ -45,7 +45,7 @@ namespace Rescue_911
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
                 sd.patients = a;
                 ((Form1)sd.OpenForms[2, 0]).UpdateSD(sd);
@@ -68,7 +68,7 @@ namespace Rescue_911
                 for (int i = 0; i < a.Count();i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
                 sd.patients = a;
                 ((Form1)sd.OpenForms[2, 0]).UpdateSD(sd);
@@ -90,7 +90,7 @@ namespace Rescue_911
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
                 sd.patients = a;
 

@@ -43,18 +43,18 @@ namespace Rescue_911
 
             patients.Add(new patient());
             patients[0].setage("14");
-            patients[0].setbd("feb");
+            patients[0].setbd("13 feb");
             patients[0].setbloodtype("o");
-            patients[0].setcomplication("ddd");
-            patients[0].SetName("ssss");
-            patients[0].SetLast_Name("bbbb");
+            patients[0].setcomplication("Losed Blood");
+            patients[0].SetName("calven");
+            patients[0].SetLast_Name("UV");
             patients.Add(new patient());
-            patients[1].setage("14");
-            patients[1].setbd("feb");
+            patients[1].setage("20");
+            patients[1].setbd("13 feb");
             patients[1].setbloodtype("o");
-            patients[1].setcomplication("ddd");
-            patients[1].SetName("1111");
-            patients[1].SetLast_Name("2222");
+            patients[1].setcomplication("In pain ");
+            patients[1].SetName("John");
+            patients[1].SetLast_Name("Smith");
 
 
 

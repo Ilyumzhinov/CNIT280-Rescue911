@@ -61,5 +61,25 @@ namespace Rescue_911
         {
 
         }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBloodType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtComplications_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -217,6 +217,7 @@
             this.buttonpatient.TabIndex = 12;
             this.buttonpatient.Text = "Patient Information";
             this.buttonpatient.UseVisualStyleBackColor = false;
+            this.buttonpatient.Click += new System.EventHandler(this.buttonpatient_Click_1);
             // 
             // button2
             // 
