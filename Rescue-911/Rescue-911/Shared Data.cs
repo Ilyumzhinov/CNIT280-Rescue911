@@ -13,7 +13,7 @@ namespace Rescue_911
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
-
+        public List<Patient> patients = new List<Patient>();
         public List<EMT> EMTs = new List<EMT>();
 
         public Shared_Data()
