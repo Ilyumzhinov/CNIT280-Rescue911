@@ -41,22 +41,7 @@ namespace Rescue_911
             ResponseTeams[2].SetShift("they work...");
             //
 
-            EMTs[0] = new EMT();
-            EMTs[0].setEmtID (0.ToString());
-            EMTs[0].setResponseTeamID(1.ToString());
-            EMTs[0].setShifttime("15:00 PM");
-            EMTs[1] = new EMT();
-            EMTs[1].setEmtID(1.ToString());
-            EMTs[1].setResponseTeamID(1.ToString());
-            EMTs[1].setShifttime("15:00 PM");
-            EMTs[2] = new EMT();
-            EMTs[2].setEmtID(2.ToString());
-            EMTs[2].setResponseTeamID(1.ToString());
-            EMTs[2].setShifttime("15:00 PM");
-            EMTs[3] = new EMT();
-            EMTs[3].setEmtID(0.ToString());
-            EMTs[3].setResponseTeamID(1.ToString());
-            EMTs[3].setShifttime("15:00 PM");
+            EMTs = LoadEMTs();
             // EMERGENCY TEST DATA 
             Caller[] Callers = LoadCallers();
             Emergency_Call[] ECs = LoadEC(Callers);
@@ -85,6 +70,38 @@ namespace Rescue_911
             //
         }
         
+        private EMT[] LoadEMTs()
+        {
+            EMT[] xEMTs = new EMT[3];
+            xEMTs[0] = new EMT();
+            xEMTs[0].SetName("Jane");
+            xEMTs[0].SetPassword("qwerty");
+            xEMTs[0].SetEmployee_ID(0);
+            xEMTs[0].setResponseTeamID(1.ToString());
+            xEMTs[0].setShifttime("15:00 PM");
+
+            xEMTs[1] = new EMT();
+            xEMTs[1].SetName("Tyler");
+            xEMTs[1].SetPassword("123");
+            xEMTs[1].SetEmployee_ID(1);
+            xEMTs[1].setResponseTeamID(2.ToString());
+            xEMTs[1].setShifttime("15:00 PM");
+
+            xEMTs[2] = new EMT();
+            xEMTs[2].SetName("John");
+
+            xEMTs[2].SetEmployee_ID(2);
+            xEMTs[2].setResponseTeamID(1.ToString());
+            xEMTs[2].setShifttime("15:00 PM");
+
+            xEMTs[3] = new EMT();
+            xEMTs[3].SetEmployee_ID(3);
+            xEMTs[3].setResponseTeamID(3.ToString());
+            xEMTs[3].setShifttime("15:00 PM");
+
+            return EMTs;
+        }
+
         private Caller[] LoadCallers()
         {
             // CALLERS TEST DATA
