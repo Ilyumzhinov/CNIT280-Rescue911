@@ -10,8 +10,6 @@ namespace Rescue_911
 
         public Emergency_Management_Form(ref Shared_Data xSD) : base(ref xSD)
         {
-            Name = "Emergency Call";
-
             InitializeComponent();
         }
 

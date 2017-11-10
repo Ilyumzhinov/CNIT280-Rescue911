@@ -13,8 +13,6 @@ namespace Rescue_911
 
         public CallForm(ref Shared_Data xSD) : base(ref xSD)
         {
-            Name = "Log Call";
-
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
 
@@ -71,7 +69,7 @@ namespace Rescue_911
                 return;
 
             // Open the Emergency Form
-            Emergency_Link_Form EmergencyLinkForm = new Emergency_Link_Form(ref SD, Current_Call);
+            Emergency_Link_Form EmergencyLinkForm = new Emergency_Link_Form(ref SD);
 
             EmergencyLinkForm.Show();
             // To-Do: change this to the method inside the Emergency Link Form.

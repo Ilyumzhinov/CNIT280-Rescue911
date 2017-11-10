@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Link_Form : Form
+    public partial class Emergency_Link_Form : General_Form
     {
-        private Shared_Data SD;
         private Emergency_Call Current_Call;
         private int emergencySelected;
 
-        public Emergency_Link_Form(ref Shared_Data xSD, Emergency_Call xCurrent_Call)
+        public Emergency_Link_Form(ref Shared_Data xSD) : base(ref xSD)
         {
             SD = xSD;
-            Current_Call = xCurrent_Call;
+            // Change it
+            Current_Call = SD.Calls[SD.Calls.Count -1];
 
             InitializeComponent();
         }
@@ -22,7 +22,6 @@ namespace Rescue_911
         {
             try
             {
-
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].AddLinked_Call(Current_Call);
 
                 ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);

@@ -86,7 +86,7 @@ namespace Rescue_911
 
         private void btnBSRecord_Click(object sender, EventArgs e)
         {
-            Base_Station_Records BSR = new Base_Station_Records();
+            Base_Station_Records BSR = new Base_Station_Records(ref SD);
             BSR.Show();
         }
 

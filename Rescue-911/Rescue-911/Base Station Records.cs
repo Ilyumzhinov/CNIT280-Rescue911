@@ -11,13 +11,11 @@ using System.IO;
 
 namespace Rescue_911
 {
-    public partial class Base_Station_Records : Form
+    public partial class Base_Station_Records : General_Form
     {
-        public Base_Station_Records()
+        public Base_Station_Records(ref Shared_Data xSD) : base(ref xSD)
         {
             InitializeComponent();
-
-            Name = "Base Station Record";
         }
 
         private void label1_Click(object sender, EventArgs e)

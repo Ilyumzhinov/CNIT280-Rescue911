@@ -241,6 +241,7 @@
             this.layoutPanel.Name = "layoutPanel";
             this.layoutPanel.Size = new System.Drawing.Size(200, 100);
             this.layoutPanel.TabIndex = 14;
+            this.layoutPanel.Visible = false;
             // 
             // Form1
             // 
