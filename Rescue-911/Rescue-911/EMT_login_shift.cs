@@ -23,8 +23,10 @@ namespace Rescue_911
             timer1.Enabled = true;
             timer1.Interval = 1000;
             emts = xSD.EMTs.ToArray();
-
-
+        }
+        public EMT_login_shift()
+        {
+            Name = "EMT Log";
         }
 
         private void EMT_login_shift_Load(object sender, EventArgs e)

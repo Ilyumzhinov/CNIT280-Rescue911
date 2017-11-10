@@ -24,6 +24,11 @@ namespace Rescue_911
             InitializeComponent();
         }
 
+        public Dispatch_Report()
+        {
+            Name = "Dispatch Report";
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // Existence checks

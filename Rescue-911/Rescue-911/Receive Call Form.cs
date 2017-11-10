@@ -3,28 +3,28 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Receive_Call_Form : Form
+    public partial class Receive_Call_Form : General_Form
     {
         private Response_Team Response_Team;
         private Emergency_Management_Form[] CWFs;
         private Emergency Emergency;
         private int emergencySelected;
-        private Shared_Data SD;
-        public Receive_Call_Form(Response_Team xRT, ref Shared_Data xSD)
+        public Receive_Call_Form(ref Shared_Data xSD) : base(ref xSD)
         {
             InitializeComponent();
 
-            Response_Team = xRT;
+            // CHANGE
+            Response_Team = xSD.ResponseTeams[0];
             SD = xSD;
         }
 
-        public Receive_Call_Form(Emergency xEmergency, Response_Team xRT, ref Shared_Data xSD)
+        public Receive_Call_Form(Emergency xEmergency, Response_Team xRT, ref Shared_Data xSD) : this(ref xSD)
         {
             InitializeComponent();
 
+            Name = "Receive Call";
             Emergency = xEmergency;
             Response_Team = xRT;
-            SD = xSD;
 
             // RE-DO THIS
             int j = 0;

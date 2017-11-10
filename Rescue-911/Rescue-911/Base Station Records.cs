@@ -16,6 +16,8 @@ namespace Rescue_911
         public Base_Station_Records()
         {
             InitializeComponent();
+
+            Name = "Base Station Record";
         }
 
         private void label1_Click(object sender, EventArgs e)

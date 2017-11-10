@@ -19,6 +19,10 @@ namespace Rescue_911
             SD = xSD;
             InitializeComponent();
         }
+        public Dispatch_Related_Times()
+        {
+            Name = "Dispatch and arrival times";
+        }
 
         private void Dispatch_Related_Times_Load(object sender, EventArgs e)
         {

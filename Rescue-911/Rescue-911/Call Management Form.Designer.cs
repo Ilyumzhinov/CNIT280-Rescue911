@@ -229,7 +229,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Emergency_Management_Form";
+            this.Name = "Emergency Management Form";
             this.Text = "Emergency Management Form";
             this.Load += new System.EventHandler(this.Call_Waiting_Form_Load);
             this.ResumeLayout(false);

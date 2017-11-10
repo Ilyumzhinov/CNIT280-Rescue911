@@ -4,20 +4,15 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Management_Form : Form
+    public partial class Emergency_Management_Form : General_Form
     {
-        private Shared_Data SD;
         private int emergencySelected;
 
-        public Emergency_Management_Form(ref Shared_Data xSD)
+        public Emergency_Management_Form(ref Shared_Data xSD) : base(ref xSD)
         {
-            SD = xSD;
+            Name = "Emergency Call";
 
             InitializeComponent();
-        }
-
-        public Emergency_Management_Form()
-        {
         }
 
         private void Call_Waiting_Form_Load(object sender, EventArgs e)

@@ -6,15 +6,14 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class CallForm : Form
+    public partial class CallForm : General_Form
     {
-        Shared_Data SD;
         Emergency_Call Current_Call;
         private int Current_Call_Index;
 
-        public CallForm(ref Shared_Data xSD)
+        public CallForm(ref Shared_Data xSD) : base(ref xSD)
         {
-            SD = xSD;
+            Name = "Log Call";
 
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);

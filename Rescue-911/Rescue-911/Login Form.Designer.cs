@@ -82,10 +82,10 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Location = new System.Drawing.Point(204, 219);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(185, 50);
@@ -96,11 +96,11 @@
             // 
             // btnLoginOther
             // 
-            this.btnLoginOther.BackColor = System.Drawing.Color.Teal;
-            this.btnLoginOther.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnLoginOther.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoginOther.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnLoginOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoginOther.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginOther.ForeColor = System.Drawing.Color.White;
+            this.btnLoginOther.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnLoginOther.Location = new System.Drawing.Point(204, 289);
             this.btnLoginOther.Name = "btnLoginOther";
             this.btnLoginOther.Size = new System.Drawing.Size(185, 50);

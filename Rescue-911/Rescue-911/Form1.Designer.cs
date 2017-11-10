@@ -42,6 +42,7 @@
             this.btnDispatchReport = new System.Windows.Forms.Button();
             this.buttonpatient = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // button1
@@ -232,12 +233,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // layoutPanel
+            // 
+            this.layoutPanel.AutoSize = true;
+            this.layoutPanel.Location = new System.Drawing.Point(556, 92);
+            this.layoutPanel.Name = "layoutPanel";
+            this.layoutPanel.Size = new System.Drawing.Size(200, 100);
+            this.layoutPanel.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.layoutPanel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonpatient);
             this.Controls.Add(this.btnDispatchReport);
@@ -276,6 +286,7 @@
         private System.Windows.Forms.Button btnDispatchReport;
         private System.Windows.Forms.Button buttonpatient;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel layoutPanel;
     }
 }
 

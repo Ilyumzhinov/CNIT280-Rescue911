@@ -34,8 +34,13 @@ namespace Rescue_911
                 if (txtPassword.Text != iEMT.GetPassword())
                     continue;
 
-                Form1 f1 = new Form1(SD);
+                // Adding accessible Forms for an EMT
+                List<Type> AccessibleForms = new List<Type>();
+                AccessibleForms.Add(typeof(CallForm));
+                AccessibleForms.Add(typeof(Emergency_Management_Form));
+                AccessibleForms.Add(typeof(Receive_Call_Form));
 
+                Form1 f1 = new Form1(SD, AccessibleForms);
                 f1.Show();
                 this.Hide();
             }
@@ -43,7 +48,17 @@ namespace Rescue_911
 
         private void btnLoginOther_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(SD);
+            // Adding accessible Forms for a somebody
+            List<Type> AccessibleForms = new List<Type>();
+
+            AccessibleForms.Add(typeof(CallForm));
+            AccessibleForms.Add(typeof(Emergency_Management_Form));
+            AccessibleForms.Add(typeof(Receive_Call_Form));
+            AccessibleForms.Add(typeof(EMT_login_shift));
+            AccessibleForms.Add(typeof(Dispatch_Related_Times));
+            AccessibleForms.Add(typeof(Dispatch_Report));
+
+            Form1 f1 = new Form1(SD, AccessibleForms);
 
             f1.Show();
             this.Hide();

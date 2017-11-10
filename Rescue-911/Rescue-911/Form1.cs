@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace Rescue_911
 {
@@ -7,15 +9,32 @@ namespace Rescue_911
     {
         public Shared_Data SD;
 
-        public Form1(Shared_Data xSD)
+        public Form1(Shared_Data xSD, List<Type> xAcccessibleForms)
         {
+            InitializeComponent();
+
             SD = xSD;
             SD.OpenForms[2, 0] = this;
 
             //JUST FOR NOW, the context:
-         //   lbContext.Text += "User: " + SD.ResponseTeams[0].GetID() + " ";
+            //   lbContext.Text += "User: " + SD.ResponseTeams[0].GetID() + " ";
 
-            InitializeComponent();
+            for (int i = 0; i < xAcccessibleForms.Count; i++)
+            {
+                Form instance = (General_Form)(Activator.CreateInstance(xAcccessibleForms[i], new object[] {  SD }));
+
+              //  Form RCF = ;
+                Button b = new Button();
+                b.Size = new System.Drawing.Size(100, 50);
+                //   b.Location = new System.Drawing.Point(0, 0);
+                b.Text = instance.Text;
+
+                b.Click += (sender, e) =>
+                {
+                    instance.Show();
+                };
+                layoutPanel.Controls.Add(b);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,7 +62,8 @@ namespace Rescue_911
            
             if (SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] == null)
             {
-                SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] = new Receive_Call_Form(SD.ResponseTeams[0], ref SD);
+                // CHANGE HARDCODED PART
+                SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] = new Receive_Call_Form(ref SD);
             }
             SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)].Show();
         }

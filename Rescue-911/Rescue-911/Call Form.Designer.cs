@@ -1,6 +1,6 @@
 ﻿namespace Rescue_911
 {
-    partial class CallForm
+    public partial class CallForm
     {
         /// <summary>
         /// Required designer variable.
