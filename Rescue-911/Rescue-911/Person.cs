@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public abstract class Person
+    public class Person
     {
         private string Name;
         private string Last_Name;

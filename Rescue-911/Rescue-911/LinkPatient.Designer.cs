@@ -1,6 +1,6 @@
 ﻿namespace Rescue_911
 {
-    partial class Linkepatientandsub
+    partial class LinkPatient
     {
         /// <summary>
         /// Required designer variable.
@@ -81,8 +81,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
-            this.Name = "Linkepatientandsub";
-            this.Text = "Linkepatientandsub";
+            this.Name = "LinkPatient";
+            this.Text = base.Text;
             this.Load += new System.EventHandler(this.Linkepatientandsub_Load);
             this.ResumeLayout(false);
 

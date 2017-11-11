@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBill = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,16 +45,6 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(12, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(173, 24);
-            this.lbTitle.TabIndex = 4;
-            this.lbTitle.Text = "Dispatch Report";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtBill);
@@ -66,7 +55,7 @@
             this.panel2.Controls.Add(this.txtProcedureDetails);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(16, 50);
+            this.panel2.Location = new System.Drawing.Point(12, 122);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 320);
             this.panel2.TabIndex = 5;
@@ -156,7 +145,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(513, 347);
+            this.btnSubmit.Location = new System.Drawing.Point(560, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 6;
@@ -168,7 +157,7 @@
             // 
             this.lbEmergencyID.AutoSize = true;
             this.lbEmergencyID.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbEmergencyID.Location = new System.Drawing.Point(230, 33);
+            this.lbEmergencyID.Location = new System.Drawing.Point(95, 46);
             this.lbEmergencyID.Name = "lbEmergencyID";
             this.lbEmergencyID.Size = new System.Drawing.Size(30, 13);
             this.lbEmergencyID.TabIndex = 30;
@@ -178,7 +167,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(147, 33);
+            this.label12.Location = new System.Drawing.Point(12, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 29;
@@ -209,17 +198,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(615, 395);
+            this.ClientSize = new System.Drawing.Size(647, 454);
             this.Controls.Add(this.lbEmergencyID);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbCallID);
             this.Controls.Add(this.lb11);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbTitle);
             this.Name = "Dispatch_Report";
-            this.Text = "Dispatch_Report";
+            this.Text = this.Text;
             this.Load += new System.EventHandler(this.Dispatch_Report_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.btnSubmit, 0);
+            this.Controls.SetChildIndex(this.lb11, 0);
+            this.Controls.SetChildIndex(this.lbCallID, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.lbEmergencyID, 0);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -228,8 +222,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnLoginOther = new System.Windows.Forms.Button();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(289, 165);
+            this.txtPassword.Location = new System.Drawing.Point(289, 170);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 2;
@@ -97,10 +99,10 @@
             // btnLoginOther
             // 
             this.btnLoginOther.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoginOther.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnLoginOther.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
             this.btnLoginOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoginOther.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginOther.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnLoginOther.ForeColor = System.Drawing.Color.LightSlateGray;
             this.btnLoginOther.Location = new System.Drawing.Point(204, 289);
             this.btnLoginOther.Name = "btnLoginOther";
             this.btnLoginOther.Size = new System.Drawing.Size(185, 50);
@@ -109,12 +111,37 @@
             this.btnLoginOther.UseVisualStyleBackColor = false;
             this.btnLoginOther.Click += new System.EventHandler(this.btnLoginOther_Click);
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.ForeColor = System.Drawing.Color.Red;
+            this.lbName.Location = new System.Drawing.Point(395, 129);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(52, 13);
+            this.lbName.TabIndex = 6;
+            this.lbName.Text = "not found";
+            this.lbName.Visible = false;
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.ForeColor = System.Drawing.Color.Red;
+            this.lbPassword.Location = new System.Drawing.Point(395, 173);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(47, 13);
+            this.lbPassword.TabIndex = 7;
+            this.lbPassword.Text = "try again";
+            this.lbPassword.Visible = false;
+            // 
             // Login_Form
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(580, 382);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.btnLoginOther);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
@@ -122,8 +149,11 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Login_Form";
             this.Text = "Login Form";
+            this.Activated += new System.EventHandler(this.Login_Form_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +167,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnLoginOther;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbPassword;
     }
 }

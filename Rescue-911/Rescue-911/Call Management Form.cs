@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Management_Form : General_Form
+    public partial class Emergency_Management_Form : Special_Form
     {
         private int emergencySelected;
 
-        public Emergency_Management_Form(ref Shared_Data xSD) : base(ref xSD)
+        public Emergency_Management_Form(ref Shared_Data xSD) : base(ref xSD, "Emergency Management")
         {
             InitializeComponent();
         }
@@ -133,7 +133,7 @@ namespace Rescue_911
                     SD.OpenForms[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Receive_Call_Form(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
 
                     // Update the Shared Data values regarding the Forms.
-                    ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+                    ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
                     lbResult.Visible = true;
                 }
@@ -160,7 +160,7 @@ namespace Rescue_911
             try
             {
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
-                ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbYes.Checked = false;
@@ -188,7 +188,7 @@ namespace Rescue_911
             try
             {
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Waiting");
-                ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbNo.Checked = false;

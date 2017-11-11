@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.lb11 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,21 +75,11 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(5, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(333, 37);
-            this.lbTitle.TabIndex = 1;
-            this.lbTitle.Text = "CALL LOGGING FORM";
-            // 
             // lb11
             // 
             this.lb11.AutoSize = true;
             this.lb11.ForeColor = System.Drawing.Color.DimGray;
-            this.lb11.Location = new System.Drawing.Point(16, 48);
+            this.lb11.Location = new System.Drawing.Point(12, 46);
             this.lb11.Name = "lb11";
             this.lb11.Size = new System.Drawing.Size(50, 13);
             this.lb11.TabIndex = 2;
@@ -233,7 +222,7 @@
             // 
             this.lbCallID.AutoSize = true;
             this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(72, 48);
+            this.lbCallID.Location = new System.Drawing.Point(68, 46);
             this.lbCallID.Name = "lbCallID";
             this.lbCallID.Size = new System.Drawing.Size(18, 13);
             this.lbCallID.TabIndex = 24;
@@ -243,7 +232,7 @@
             // 
             this.lbCallState.AutoSize = true;
             this.lbCallState.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCallState.Location = new System.Drawing.Point(191, 48);
+            this.lbCallState.Location = new System.Drawing.Point(187, 46);
             this.lbCallState.Name = "lbCallState";
             this.lbCallState.Size = new System.Drawing.Size(30, 13);
             this.lbCallState.TabIndex = 26;
@@ -253,7 +242,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(150, 48);
+            this.label12.Location = new System.Drawing.Point(146, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 25;
@@ -448,13 +437,21 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbCallID);
             this.Controls.Add(this.lb11);
-            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pnCaller);
             this.Name = "CallForm";
-            this.Text = "Call Form";
+            this.Text = this.Text;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallForm_FormClosing);
             this.Load += new System.EventHandler(this.CallForm_Load);
+            this.Controls.SetChildIndex(this.pnCaller, 0);
+            this.Controls.SetChildIndex(this.btnSubmit, 0);
+            this.Controls.SetChildIndex(this.lb11, 0);
+            this.Controls.SetChildIndex(this.lbCallID, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.lbCallState, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.btnLink, 0);
             this.pnCaller.ResumeLayout(false);
             this.pnCaller.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -469,7 +466,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lb11;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;

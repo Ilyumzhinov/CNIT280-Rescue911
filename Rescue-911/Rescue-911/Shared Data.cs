@@ -8,7 +8,7 @@ namespace Rescue_911
 {
     public class Shared_Data
     {
-
+        public Login_Form LoginForm;
         public Form[,] OpenForms;
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();

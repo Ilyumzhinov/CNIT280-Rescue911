@@ -5,7 +5,6 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -20,7 +19,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.lbRT_ID = new System.Windows.Forms.Label();
             this.lb11 = new System.Windows.Forms.Label();
             this.lstEmergencies = new System.Windows.Forms.ListView();
@@ -34,21 +32,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Response Team Receive Call Form";
-            // 
             // lbRT_ID
             // 
             this.lbRT_ID.AutoSize = true;
             this.lbRT_ID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbRT_ID.Location = new System.Drawing.Point(122, 35);
+            this.lbRT_ID.Location = new System.Drawing.Point(120, 46);
             this.lbRT_ID.Name = "lbRT_ID";
             this.lbRT_ID.Size = new System.Drawing.Size(18, 13);
             this.lbRT_ID.TabIndex = 26;
@@ -58,7 +46,7 @@
             // 
             this.lb11.AutoSize = true;
             this.lb11.ForeColor = System.Drawing.Color.DimGray;
-            this.lb11.Location = new System.Drawing.Point(14, 35);
+            this.lb11.Location = new System.Drawing.Point(12, 46);
             this.lb11.Name = "lb11";
             this.lb11.Size = new System.Drawing.Size(102, 13);
             this.lb11.TabIndex = 25;
@@ -161,19 +149,23 @@
             this.Controls.Add(this.lstEmergencies);
             this.Controls.Add(this.lbRT_ID);
             this.Controls.Add(this.lb11);
-            this.Controls.Add(this.label1);
             this.Name = "Receive_Call_Form";
             this.Text = "Receive Call Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Receive_Call_Form_FormClosing);
             this.Load += new System.EventHandler(this.Receive_Call_Form_Load);
+            this.Controls.SetChildIndex(this.lb11, 0);
+            this.Controls.SetChildIndex(this.lbRT_ID, 0);
+            this.Controls.SetChildIndex(this.lstEmergencies, 0);
+            this.Controls.SetChildIndex(this.rbYes, 0);
+            this.Controls.SetChildIndex(this.rbNo, 0);
+            this.Controls.SetChildIndex(this.lbDecision, 0);
+            this.Controls.SetChildIndex(this.btnClose, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbRT_ID;
         private System.Windows.Forms.Label lb11;
         private System.Windows.Forms.ListView lstEmergencies;

@@ -10,52 +10,51 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Linkepatientandsub : Form
+    public partial class LinkPatient : Special_Form
     {
-        Shared_Data sd;
-        public Linkepatientandsub(Shared_Data xsd)
+        public LinkPatient(ref Shared_Data xSD) : base(ref xSD, "Link Patient")
         {
-            sd = xsd ;
             InitializeComponent();
         }
-       
+
         private void Linkepatientandsub_Load(object sender, EventArgs e)
         {
-            
-            List<patient> a = sd.patients;
-            for (int b = 0; b < a.Count(); b++) {
 
-                listBox1.Items.Add(a[b].GetLast_Name()+", " + a[b].GetName()+"     "+ a[b].getsubsc());
+            List<patient> a = SD.patients;
+            for (int b = 0; b < a.Count(); b++)
+            {
+
+                listBox1.Items.Add(a[b].GetLast_Name() + ", " + a[b].GetName() + "     " + a[b].getsubsc());
             }
-          
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            List<patient> a = sd.patients;
+            List<patient> a = SD.patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
             }
-            else { 
-            int b = listBox1.SelectedIndex;
-            a[b].setsubsc("non subscriber");
+            else
+            {
+                int b = listBox1.SelectedIndex;
+                a[b].setsubsc("non subscriber");
                 listBox1.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                sd.patients = a;
-                ((Form1)sd.OpenForms[2, 0]).UpdateSD(sd);
-
+                SD.patients = a;
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            List<patient> a = sd.patients;
+            List<patient> a = SD.patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
@@ -65,19 +64,19 @@ namespace Rescue_911
                 int b = listBox1.SelectedIndex;
                 a[b].setsubsc("subscriber");
                 listBox1.Items.Clear();
-                for (int i = 0; i < a.Count();i++)
+                for (int i = 0; i < a.Count(); i++)
                 {
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                sd.patients = a;
-                ((Form1)sd.OpenForms[2, 0]).UpdateSD(sd);
+                SD.patients = a;
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<patient> a = sd.patients;
+            List<patient> a = SD.patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
@@ -92,9 +91,9 @@ namespace Rescue_911
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                sd.patients = a;
+                SD.patients = a;
 
-                ((Form1)sd.OpenForms[2, 0]).UpdateSD(sd);
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Rescue_911
 {
-    partial class Patient
+    partial class Patient_Information_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lblInformation = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.txtBloodType = new System.Windows.Forms.TextBox();
@@ -44,38 +43,27 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(289, 352);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(217, 301);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 19);
+            this.btnSearch.Size = new System.Drawing.Size(93, 26);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lblInformation
-            // 
-            this.lblInformation.AutoSize = true;
-            this.lblInformation.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformation.Location = new System.Drawing.Point(9, 7);
-            this.lblInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(357, 37);
-            this.lblInformation.TabIndex = 1;
-            this.lblInformation.Text = "PATIENT INFORMATION";
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(121, 112);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Location = new System.Drawing.Point(81, 61);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(128, 20);
             this.txtName.TabIndex = 2;
             // 
             // txtBirthdate
             // 
-            this.txtBirthdate.Location = new System.Drawing.Point(417, 112);
-            this.txtBirthdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBirthdate.Location = new System.Drawing.Point(377, 61);
+            this.txtBirthdate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBirthdate.Name = "txtBirthdate";
             this.txtBirthdate.ReadOnly = true;
             this.txtBirthdate.Size = new System.Drawing.Size(116, 20);
@@ -84,8 +72,8 @@
             // 
             // txtBloodType
             // 
-            this.txtBloodType.Location = new System.Drawing.Point(121, 202);
-            this.txtBloodType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBloodType.Location = new System.Drawing.Point(81, 151);
+            this.txtBloodType.Margin = new System.Windows.Forms.Padding(2);
             this.txtBloodType.Name = "txtBloodType";
             this.txtBloodType.ReadOnly = true;
             this.txtBloodType.Size = new System.Drawing.Size(128, 20);
@@ -94,8 +82,8 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(417, 202);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAge.Location = new System.Drawing.Point(377, 151);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(2);
             this.txtAge.Name = "txtAge";
             this.txtAge.ReadOnly = true;
             this.txtAge.Size = new System.Drawing.Size(116, 20);
@@ -105,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 115);
+            this.label1.Location = new System.Drawing.Point(11, 64);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -115,7 +103,7 @@
             // lblBloodType
             // 
             this.lblBloodType.AutoSize = true;
-            this.lblBloodType.Location = new System.Drawing.Point(40, 206);
+            this.lblBloodType.Location = new System.Drawing.Point(0, 155);
             this.lblBloodType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBloodType.Name = "lblBloodType";
             this.lblBloodType.Size = new System.Drawing.Size(61, 13);
@@ -125,7 +113,7 @@
             // lblBirthDate
             // 
             this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Location = new System.Drawing.Point(358, 115);
+            this.lblBirthDate.Location = new System.Drawing.Point(318, 64);
             this.lblBirthDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBirthDate.Name = "lblBirthDate";
             this.lblBirthDate.Size = new System.Drawing.Size(54, 13);
@@ -135,7 +123,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(367, 206);
+            this.lblAge.Location = new System.Drawing.Point(327, 155);
             this.lblAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(26, 13);
@@ -145,7 +133,7 @@
             // lblComplications
             // 
             this.lblComplications.AutoSize = true;
-            this.lblComplications.Location = new System.Drawing.Point(51, 279);
+            this.lblComplications.Location = new System.Drawing.Point(12, 201);
             this.lblComplications.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblComplications.Name = "lblComplications";
             this.lblComplications.Size = new System.Drawing.Size(72, 13);
@@ -154,8 +142,8 @@
             // 
             // txtComplications
             // 
-            this.txtComplications.Location = new System.Drawing.Point(53, 295);
-            this.txtComplications.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComplications.Location = new System.Drawing.Point(14, 217);
+            this.txtComplications.Margin = new System.Windows.Forms.Padding(2);
             this.txtComplications.Multiline = true;
             this.txtComplications.Name = "txtComplications";
             this.txtComplications.ReadOnly = true;
@@ -163,11 +151,11 @@
             this.txtComplications.TabIndex = 11;
             this.txtComplications.TextChanged += new System.EventHandler(this.txtComplications_TextChanged);
             // 
-            // Patient
+            // Patient_Information_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 380);
+            this.ClientSize = new System.Drawing.Size(510, 339);
             this.Controls.Add(this.txtComplications);
             this.Controls.Add(this.lblComplications);
             this.Controls.Add(this.lblAge);
@@ -178,12 +166,22 @@
             this.Controls.Add(this.txtBloodType);
             this.Controls.Add(this.txtBirthdate);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblInformation);
             this.Controls.Add(this.btnSearch);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Patient";
-            this.Text = "Patient_Information";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Patient_Information_Form";
+            this.Text = "Patient Information Form";
             this.Load += new System.EventHandler(this.Patient_Load);
+            this.Controls.SetChildIndex(this.btnSearch, 0);
+            this.Controls.SetChildIndex(this.txtName, 0);
+            this.Controls.SetChildIndex(this.txtBirthdate, 0);
+            this.Controls.SetChildIndex(this.txtBloodType, 0);
+            this.Controls.SetChildIndex(this.txtAge, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.lblBloodType, 0);
+            this.Controls.SetChildIndex(this.lblBirthDate, 0);
+            this.Controls.SetChildIndex(this.lblAge, 0);
+            this.Controls.SetChildIndex(this.lblComplications, 0);
+            this.Controls.SetChildIndex(this.txtComplications, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +190,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lblInformation;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtBirthdate;
         private System.Windows.Forms.TextBox txtBloodType;

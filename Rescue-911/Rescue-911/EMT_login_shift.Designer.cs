@@ -79,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 47);
+            this.label1.Location = new System.Drawing.Point(59, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 3;
@@ -88,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(486, 6);
+            this.label2.Location = new System.Drawing.Point(498, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 5;
@@ -97,7 +97,7 @@
             // LBtotalworkedhours
             // 
             this.LBtotalworkedhours.AutoSize = true;
-            this.LBtotalworkedhours.Location = new System.Drawing.Point(598, 6);
+            this.LBtotalworkedhours.Location = new System.Drawing.Point(610, 48);
             this.LBtotalworkedhours.Name = "LBtotalworkedhours";
             this.LBtotalworkedhours.Size = new System.Drawing.Size(35, 13);
             this.LBtotalworkedhours.TabIndex = 6;
@@ -106,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 27);
+            this.label3.Location = new System.Drawing.Point(36, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 7;
@@ -115,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 6);
+            this.label4.Location = new System.Drawing.Point(14, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 8;
@@ -124,7 +124,7 @@
             // LBshifttime
             // 
             this.LBshifttime.AutoSize = true;
-            this.LBshifttime.Location = new System.Drawing.Point(107, 27);
+            this.LBshifttime.Location = new System.Drawing.Point(112, 69);
             this.LBshifttime.Name = "LBshifttime";
             this.LBshifttime.Size = new System.Drawing.Size(35, 13);
             this.LBshifttime.TabIndex = 9;
@@ -133,10 +133,11 @@
             // LBcurrenttime
             // 
             this.LBcurrenttime.AutoSize = true;
-            this.LBcurrenttime.Location = new System.Drawing.Point(106, 6);
+            this.LBcurrenttime.Location = new System.Drawing.Point(113, 48);
             this.LBcurrenttime.Name = "LBcurrenttime";
             this.LBcurrenttime.Size = new System.Drawing.Size(0, 13);
             this.LBcurrenttime.TabIndex = 10;
+            this.LBcurrenttime.Text = "time";
             // 
             // timer1
             // 
@@ -145,7 +146,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(504, 27);
+            this.label5.Location = new System.Drawing.Point(516, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 12;
@@ -154,7 +155,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(598, 27);
+            this.label6.Location = new System.Drawing.Point(610, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 13;
@@ -163,7 +164,7 @@
             // labemtid
             // 
             this.labemtid.AutoSize = true;
-            this.labemtid.Location = new System.Drawing.Point(108, 46);
+            this.labemtid.Location = new System.Drawing.Point(112, 88);
             this.labemtid.Name = "labemtid";
             this.labemtid.Size = new System.Drawing.Size(35, 13);
             this.labemtid.TabIndex = 14;
@@ -172,7 +173,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(545, 46);
+            this.label7.Location = new System.Drawing.Point(557, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 15;
@@ -181,7 +182,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(598, 46);
+            this.label8.Location = new System.Drawing.Point(610, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 16;
@@ -189,6 +190,7 @@
             // 
             // EMT_login_shift
             // 
+            this.AcceptButton = this.btnWaitingCall;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -208,7 +210,22 @@
             this.Controls.Add(this.btnWaitingCall);
             this.Controls.Add(this.button1);
             this.Name = "EMT_login_shift";
+            this.Text = this.Text;
             this.Load += new System.EventHandler(this.EMT_login_shift_Load);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btnWaitingCall, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.LBtotalworkedhours, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.LBshifttime, 0);
+            this.Controls.SetChildIndex(this.LBcurrenttime, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.labemtid, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

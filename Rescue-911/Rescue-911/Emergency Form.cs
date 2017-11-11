@@ -4,17 +4,14 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Form : Form
+    public partial class Emergency_Form : Special_Form
     {
-        private Shared_Data SD;
         private Emergency_Call Current_Call;
         private Emergency E = new Emergency();
-        public Emergency_Form(ref Shared_Data xSD, Emergency_Call xEC)
+        public Emergency_Form(ref Shared_Data xSD, Emergency_Call xEC) : base(ref xSD, "Emergency")
         {
-            SD = xSD;
             Current_Call = xEC;
             InitializeComponent();
-
         }
         private void Emergency_Form_Load(object sender, EventArgs e)
         {
@@ -31,7 +28,7 @@ namespace Rescue_911
         {
             
             SD.Emergencies.Add(E);
-            ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+            ((Login_Form)SD.LoginForm).UpdateSD(SD);
             this.Close();
         }
     }

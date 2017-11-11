@@ -21,10 +21,10 @@ namespace Rescue_911
         {
             return "Response Team ID " + ID.ToString();
         }
-        public void setEMt(EMT xemt) {
-            EMTs.Add(xemt);
+        public void SetEMt(List<EMT> xEMTs) {
+            EMTs = xEMTs;
         }
-        public List<EMT> getEmt() {
+        public List<EMT> GetEmt() {
             return EMTs;
         }
     }

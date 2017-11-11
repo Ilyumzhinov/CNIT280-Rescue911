@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Patient : Form
+    public partial class Patient_Information_Form : Special_Form
     {
-        public Patient()
+        public Patient_Information_Form(ref Shared_Data xSD) : base(ref xSD, "Patient Information")
         {
             InitializeComponent();
         }
@@ -54,7 +54,7 @@ namespace Rescue_911
                 }
             }
             MessageBox.Show("Patient not found!");
-           
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

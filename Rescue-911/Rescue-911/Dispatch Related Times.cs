@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Dispatch_Related_Times : Form
+    public partial class Dispatch_Related_Times : Special_Form
     {
-        private Shared_Data SD;
-
-        public Dispatch_Related_Times(ref Shared_Data xSD)
+        public Dispatch_Related_Times(ref Shared_Data xSD) : base(ref xSD, "Dispatch Related Times")
         {
-            SD = xSD;
             InitializeComponent();
-        }
-        public Dispatch_Related_Times()
-        {
-            Name = "Dispatch and arrival times";
         }
 
         private void Dispatch_Related_Times_Load(object sender, EventArgs e)

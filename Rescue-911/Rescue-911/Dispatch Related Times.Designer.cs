@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTitle = new System.Windows.Forms.Label();
             this.lstEmergencies = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -41,16 +40,6 @@
             this.btnDispatchTime = new System.Windows.Forms.Button();
             this.btnRecordArrival = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(12, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(281, 24);
-            this.lbTitle.TabIndex = 3;
-            this.lbTitle.Text = "Dispatch and Arrival Times";
             // 
             // lstEmergencies
             // 
@@ -75,6 +64,11 @@
             this.columnHeader1.Text = "Emergency ID";
             this.columnHeader1.Width = 80;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Location";
+            this.columnHeader5.Width = 97;
+            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Time Dispatched";
@@ -84,11 +78,6 @@
             // 
             this.columnHeader6.Text = "Arrival Time";
             this.columnHeader6.Width = 115;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Location";
-            this.columnHeader5.Width = 97;
             // 
             // label3
             // 
@@ -156,18 +145,22 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lstEmergencies);
-            this.Controls.Add(this.lbTitle);
             this.Name = "Dispatch_Related_Times";
-            this.Text = "Dispatch_Related_Times";
+            this.Text = this.Text;
             this.Load += new System.EventHandler(this.Dispatch_Related_Times_Load);
+            this.Controls.SetChildIndex(this.lstEmergencies, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.btnClose, 0);
+            this.Controls.SetChildIndex(this.dtPicker, 0);
+            this.Controls.SetChildIndex(this.btnDispatchTime, 0);
+            this.Controls.SetChildIndex(this.btnRecordArrival, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.ListView lstEmergencies;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader4;

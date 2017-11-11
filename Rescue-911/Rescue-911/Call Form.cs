@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class CallForm : General_Form
+    public partial class CallForm : Special_Form
     {
         Emergency_Call Current_Call;
         private int Current_Call_Index;
 
-        public CallForm(ref Shared_Data xSD) : base(ref xSD)
+        public CallForm(ref Shared_Data xSD) : base(ref xSD, "Log Call")
         {
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
@@ -28,7 +28,7 @@ namespace Rescue_911
 
                     SD.Calls.Add(Current_Call);
                     // Update the Shared Data values regarding the Calls.
-                    ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+                    ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
                     break;
                 }
@@ -121,7 +121,7 @@ namespace Rescue_911
 
                 // Update the Shared Data values regarding the Calls.
                 SD.Calls[Current_Call_Index] = Current_Call;
-                ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+                ((Login_Form)SD.LoginForm).UpdateSD(SD);
                 return true;
             }
         }

@@ -5,7 +5,6 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -229,8 +228,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Emergency Call";
-            this.Text = "Emergency Call";
+            this.Name = "CallManagementForm";
+            this.Text = base.Text;
             this.Load += new System.EventHandler(this.Call_Waiting_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

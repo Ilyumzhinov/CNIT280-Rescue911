@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Dispatch_Report : Form
+    public partial class Dispatch_Report : Special_Form
     {
-        private Shared_Data SD;
         //To-Do: change it to dispatch object
         private Emergency CurrentDispatch;
 
-        public Dispatch_Report(ref Shared_Data xSD)
+        public Dispatch_Report(ref Shared_Data xSD) : base(ref xSD, "Dispatch Report")
         {
-            SD = xSD;
             CurrentDispatch = SD.Emergencies[1];
 
             InitializeComponent();
-        }
-
-        public Dispatch_Report()
-        {
-            Name = "Dispatch Report";
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

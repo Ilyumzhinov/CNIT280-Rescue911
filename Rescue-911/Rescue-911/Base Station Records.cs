@@ -11,18 +11,12 @@ using System.IO;
 
 namespace Rescue_911
 {
-    public partial class Base_Station_Records : General_Form
+    public partial class Base_Station_Records : Special_Form
     {
-        public Base_Station_Records(ref Shared_Data xSD) : base(ref xSD)
+        public Base_Station_Records(ref Shared_Data xSD) : base(ref xSD, "Base Station Records")
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private int mIndex = 0;
         private const int cSize = 50;

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rescue_911
@@ -18,36 +12,62 @@ namespace Rescue_911
         {
             SD = new Shared_Data();
 
+            SD.LoginForm = this;
+
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty || txtPassword.Text.Trim() == string.Empty)
+            if (txtName.Text.Trim() == string.Empty && txtPassword.Text.Trim() == string.Empty)
+            {
+                txtName.Focus();
                 return;
+            }
+
+            lbName.Visible = false;
+            lbPassword.Visible = false;
+            string nameFound = string.Empty;
 
             foreach (EMT iEMT in SD.EMTs)
             {
                 if (txtName.Text != iEMT.GetName())
                     continue;
 
+                nameFound = iEMT.GetName();
+
                 if (txtPassword.Text != iEMT.GetPassword())
                     continue;
 
+                this.Hide();
+
                 // Adding accessible Forms for an EMT
                 List<Type> AccessibleForms = new List<Type>();
-                AccessibleForms.Add(typeof(CallForm));
-                AccessibleForms.Add(typeof(Emergency_Management_Form));
                 AccessibleForms.Add(typeof(Receive_Call_Form));
+                AccessibleForms.Add(typeof(EMT_login_shift));
+                AccessibleForms.Add(typeof(Dispatch_Report));
+                AccessibleForms.Add(typeof(Patient_Information_Form));
 
-                Form1 f1 = new Form1(SD, AccessibleForms);
-                f1.Show();
-                this.Hide();
+                Main_Form MF = new Main_Form(SD, AccessibleForms, iEMT);
+                MF.Show();
+            }
+
+            if (nameFound == string.Empty)
+            {
+                txtName.Focus();
+                lbName.Visible = true;
+            }
+            else
+            {
+                txtPassword.Focus();
+                lbPassword.Visible = true;
             }
         }
 
         private void btnLoginOther_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             // Adding accessible Forms for a somebody
             List<Type> AccessibleForms = new List<Type>();
 
@@ -55,13 +75,33 @@ namespace Rescue_911
             AccessibleForms.Add(typeof(Emergency_Management_Form));
             AccessibleForms.Add(typeof(Receive_Call_Form));
             AccessibleForms.Add(typeof(EMT_login_shift));
+            AccessibleForms.Add(typeof(Base_Station_Records));
             AccessibleForms.Add(typeof(Dispatch_Related_Times));
             AccessibleForms.Add(typeof(Dispatch_Report));
+            AccessibleForms.Add(typeof(LinkPatient));
+            AccessibleForms.Add(typeof(Patient_Information_Form));
 
-            Form1 f1 = new Form1(SD, AccessibleForms);
+            Person fakePerson = new Person();
+            fakePerson.SetName("Other");
+            fakePerson.SetLast_Name("Person");
+            fakePerson.SetAddress("Cupertino, California");
+            fakePerson.SetPhone_Number("1-100-200-3456");
 
-            f1.Show();
-            this.Hide();
+            Main_Form MF = new Main_Form(SD, AccessibleForms, fakePerson);
+
+            MF.Show();
+        }
+
+        public void UpdateSD(Shared_Data xSD)
+        {
+            SD = xSD;
+        }
+
+        private void Login_Form_Activated(object sender, EventArgs e)
+        {
+            txtPassword.Clear();
+            lbName.Visible = false;
+            lbPassword.Visible = false;
         }
     }
 }

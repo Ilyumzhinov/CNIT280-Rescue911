@@ -10,28 +10,21 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class EMT_login_shift : Form
+    public partial class EMT_login_shift : Special_Form
     {
-
-        private Shared_Data SD;
         private EMT[] emts;
-        public EMT_login_shift(Shared_Data xSD)
+
+        public EMT_login_shift(ref Shared_Data xSD) : base(ref xSD, "EMT Shift Login")
         {
-            SD = xSD;
-            
             InitializeComponent();
             timer1.Enabled = true;
             timer1.Interval = 1000;
+
             emts = xSD.EMTs.ToArray();
-        }
-        public EMT_login_shift()
-        {
-            Name = "EMT Log";
         }
 
         private void EMT_login_shift_Load(object sender, EventArgs e)
         {
-
             LBshifttime.Text = emts[1].getshifttime();
             LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0, 8);
             label6.Text = emts[1].getResponseTeamID();

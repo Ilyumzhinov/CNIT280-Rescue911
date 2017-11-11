@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Receive_Call_Form : General_Form
+    public partial class Receive_Call_Form : Special_Form
     {
         private Response_Team Response_Team;
         private Emergency_Management_Form[] CWFs;
         private Emergency Emergency;
         private int emergencySelected;
-        public Receive_Call_Form(ref Shared_Data xSD) : base(ref xSD)
+        public Receive_Call_Form(ref Shared_Data xSD) : base(ref xSD, "Receive Call")
         {
             InitializeComponent();
 
@@ -54,7 +54,7 @@ namespace Rescue_911
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
-            ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+            ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
             lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
 
@@ -78,7 +78,7 @@ namespace Rescue_911
         private void rbNo_CheckedChanged(object sender, EventArgs e)
         {
             SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Declined");
-            ((Form1)SD.OpenForms[2, 0]).UpdateSD(SD);
+            ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
             lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
 

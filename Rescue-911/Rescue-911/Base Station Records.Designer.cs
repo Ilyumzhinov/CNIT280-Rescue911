@@ -46,8 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "BASE STATION RECORDS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = this.Text;
             // 
             // label2
             // 
@@ -123,7 +122,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Base_Station_Records";
-            this.Text = "Base_Station_Records";
+            this.Text = base.Text;
             this.ResumeLayout(false);
             this.PerformLayout();
 
