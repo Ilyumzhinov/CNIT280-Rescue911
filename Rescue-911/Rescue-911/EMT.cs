@@ -31,6 +31,7 @@ namespace Rescue_911
         public void updatetotaolshifttime(TimeSpan xtime) {
 
             TotalShifttime+=xtime;
+           
         }
         public void setstatus(string xstatus) {
             status = xstatus;

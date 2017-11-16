@@ -37,9 +37,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(25, 25);
+            this.listBox1.Location = new System.Drawing.Point(25, 49);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(256, 173);
+            this.listBox1.Size = new System.Drawing.Size(358, 173);
             this.listBox1.TabIndex = 0;
             // 
             // button1
@@ -72,17 +72,17 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Linkepatientandsub
+            // LinkPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 389);
+            this.ClientSize = new System.Drawing.Size(593, 396);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Name = "LinkPatient";
-            this.Text = base.Text;
+            this.Text = this.Text;
             this.Load += new System.EventHandler(this.Linkepatientandsub_Load);
             this.ResumeLayout(false);
 

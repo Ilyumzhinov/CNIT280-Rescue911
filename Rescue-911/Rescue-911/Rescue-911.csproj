@@ -203,6 +203,9 @@
     <EmbeddedResource Include="EMT_login_shift.resx">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LinkPatient.resx">
+      <DependentUpon>LinkPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,7 +234,6 @@
     <EmbeddedResource Include="Special_Form.resx">
       <DependentUpon>Special_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

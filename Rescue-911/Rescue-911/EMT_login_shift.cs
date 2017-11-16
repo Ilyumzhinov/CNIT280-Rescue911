@@ -21,24 +21,29 @@ namespace Rescue_911
             timer1.Interval = 1000;
 
             emts = xSD.EMTs.ToArray();
+           
         }
 
         private void EMT_login_shift_Load(object sender, EventArgs e)
         {
-            LBshifttime.Text = emts[1].getshifttime();
-            LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0, 8);
-            label6.Text = emts[1].getResponseTeamID();
-            labemtid.Text = emts[1].GetEmployee_ID().ToString();
             if (emts[1].getstatus() == "STARTED")
             {
-                label8.Text = emts[1].getstatus();
-            }
-            else if (DateTime.Now.Hour.ToString() == "21") {
 
-                label8.Text = "READY";
-            }
-            else label8.Text = " NOT READY";
-
+                LBshifttime.Text = emts[1].getshifttime();
+                LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0, 8);
+                label6.Text = emts[1].getResponseTeamID();
+                labemtid.Text = emts[1].GetEmployee_ID().ToString();
+                if (emts[1].getstatus() == "STARTED")
+                {
+                    label8.Text = emts[1].getstatus();
+                }
+                else if (DateTime.Now.Hour.ToString() == "21")
+                {
+                    label8.Text = "READY";
+                }
+                else label8.Text = " NOT READY";
+            }else
+            btnWaitingCall.Enabled = false;
 
         }
      
@@ -53,17 +58,19 @@ namespace Rescue_911
             emts[1].setShiftLoginTime(DateTime.Now);
             label8.Text = "STARTED";
             emts[1].setstatus("STARTED");
-
+            btnWaitingCall.Enabled = true;
 
         }
 
         private void btnWaitingCall_Click(object sender, EventArgs e)
         {
+           
             DateTime TEMP = DateTime.Now;
 
             TimeSpan temp2 = TEMP.Subtract(emts[1].getshiftlogintime());
           
             emts[1].updatetotaolshifttime(temp2);
+            btnWaitingCall.Enabled = false;
             LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0,8);
             label8.Text = "End";
             emts[1].setstatus("End");

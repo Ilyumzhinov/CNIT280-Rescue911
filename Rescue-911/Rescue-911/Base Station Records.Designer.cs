@@ -44,7 +44,7 @@
             this.label1.Location = new System.Drawing.Point(9, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 37);
+            this.label1.Size = new System.Drawing.Size(213, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = this.Text;
             // 
@@ -62,7 +62,7 @@
             // txtRecords
             // 
             this.txtRecords.Location = new System.Drawing.Point(15, 158);
-            this.txtRecords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRecords.Margin = new System.Windows.Forms.Padding(2);
             this.txtRecords.Multiline = true;
             this.txtRecords.Name = "txtRecords";
             this.txtRecords.Size = new System.Drawing.Size(671, 192);
@@ -83,9 +83,9 @@
             // 
             this.btnRecord.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecord.Location = new System.Drawing.Point(334, 357);
-            this.btnRecord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(56, 19);
+            this.btnRecord.Size = new System.Drawing.Size(59, 34);
             this.btnRecord.TabIndex = 5;
             this.btnRecord.Text = "Submit";
             this.btnRecord.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(703, 385);
+            this.ClientSize = new System.Drawing.Size(703, 402);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.label3);
@@ -120,9 +120,9 @@
             this.Controls.Add(this.txtRecordDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Base_Station_Records";
-            this.Text = base.Text;
+            this.Text = this.Text;
             this.ResumeLayout(false);
             this.PerformLayout();
 
