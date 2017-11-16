@@ -9,45 +9,29 @@ namespace Rescue_911
     public partial class CallForm : Special_Form
     {
         Emergency_Call Current_Call;
-        private int Current_Call_Index;
+        List<Patient> Suggested_Patients = new List<Patient>();
 
         public CallForm(ref Shared_Data xSD) : base(ref xSD, "Log Call")
         {
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
 
-            int maxCaller_ID = 0;
-            for (int i = 0; i < SD.Calls.Count; i++)
-            {
-                if ((SD.Calls.Count - i) == 1)
-                {
-                    Current_Call_Index = i + 1;
+            Current_Call.SetState("Not Logged");
 
-                    Current_Call.GetEmergency_Caller().SetCaller_ID(SD.Calls[i - 1].GetEmergency_Caller().GetCaller_ID() + 1);
-                    Current_Call.SetState("Not Logged");
+            SD.Calls.Add(Current_Call);
+            // Update the Shared Data values regarding the Calls.
+            ((Login_Form)SD.LoginForm).UpdateSD(SD);
 
-                    SD.Calls.Add(Current_Call);
-                    // Update the Shared Data values regarding the Calls.
-                    ((Login_Form)SD.LoginForm).UpdateSD(SD);
-
-                    break;
-                }
-                else
-                {
-                    if (maxCaller_ID > SD.Calls[i].GetEmergency_Caller().GetCaller_ID())
-                        maxCaller_ID = SD.Calls[i].GetEmergency_Caller().GetCaller_ID();
-                } 
-            }
             InitializeComponent();
         }
 
         private void CallForm_Load(object sender, EventArgs e)
         {
-            lbCallID.Text = Current_Call.GetEmergency_Caller().GetCaller_ID().ToString();
-
             lbCallState.Text = Current_Call.GetState();
 
             txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy ");
+
+            txtPhoneNumber.Focus();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -116,11 +100,10 @@ namespace Rescue_911
                 Current_Call.SetTeams_Required(teams);
                 Current_Call.SetState("Logged");
 
-                Current_Call.GetEmergency_Caller().SetLast_Name(txtCallerLastName.Text);
                 Current_Call.SetLandmark(txtLandmark.Text);
 
                 // Update the Shared Data values regarding the Calls.
-                SD.Calls[Current_Call_Index] = Current_Call;
+                SD.Calls.Add(Current_Call);
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
                 return true;
             }
@@ -139,22 +122,6 @@ namespace Rescue_911
             if (int.TryParse(txtPhoneNumber.Text, out number) && txtPhoneNumber.Text.Length == 10)
             {
                 Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
-
-
-                //To-Do: Suggeted names from a database
-                //lstCallerNames.Items.Clear();
-                //int j = 0;
-                //for (int i = 0; i < SD.Count; i++)
-                //{
-                //    if (CallerPNTest[i] == txtPhoneNumber.Text)
-                //    {
-                //        SuggestedCallerIDs[j] = i;
-                //        lstCallerNames.Items.Add(CallerNamesTest[i] + " " + CallerLNamesTest[i]);
-
-                //        j++;
-                //    }
-                //}
-
             }
         }
 
@@ -178,28 +145,51 @@ namespace Rescue_911
 
         private void lstCallerNames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (lstCallerNames.SelectedIndex != -1)
-            //{
-            //    foreach (int index in SuggestedCallerIDs)
-            //    {
-            //        if (index == lstCallerNames.SelectedIndex)
-            //        {
-            //            Current_Call.GetEmergency_Caller().SetCaller_ID(SuggestedCallerIDs[index]);
-            //            Current_Call.GetEmergency_Caller().SetName(CallerNamesTest[SuggestedCallerIDs[index]]);
-            //            Current_Call.GetEmergency_Caller().SetLast_Name(CallerLNamesTest[SuggestedCallerIDs[index]]);
-            //        }
-            //    }
+            if (lstCallerNames.SelectedIndex != -1)
+            {
+                Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
 
-            //    lbCallID.Text = Current_Call.GetEmergency_Caller().GetCaller_ID().ToString();
-            //    txtCallerName.Text = Current_Call.GetEmergency_Caller().GetName();
-            //    txtCallerLastName.Text = Current_Call.GetEmergency_Caller().GetLast_Name();
-            //}
+                txtCallerName.Text = Suggested_Patients[lstCallerNames.SelectedIndex].GetName() + ", " + Suggested_Patients[lstCallerNames.SelectedIndex].GetLast_Name();
+
+                txtCallerName.Enabled = false;
+            }
         }
 
         private void CallForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (CheckFields() == false)
                 SD.Calls.RemoveAt(SD.Calls.Count - 1);
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            //To-Do: Suggeted names from a database
+            lstCallerNames.Items.Clear();
+            Suggested_Patients.Clear();
+
+            int j = 0;
+            for (int i = 0; i < SD.Patients.Count; i++)
+            {
+                if (SD.Patients[i].GetAssociatedPNumber() == null)
+                    continue;
+
+                foreach (Caller iNumber in SD.Patients[i].GetAssociatedPNumber())
+                {
+                    if (iNumber.GetPhone_Number() == txtPhoneNumber.Text)
+                    {
+                        Suggested_Patients.Add(SD.Patients[i]);
+
+                        lstCallerNames.Items.Add(Suggested_Patients[j].GetName() + " " + Suggested_Patients[j].GetLast_Name());
+
+                        j++;
+                    }
+                }
+            }
+            if (j == 0)
+            {
+                txtCallerName.Clear();
+                txtCallerName.Enabled = true;
+            }
         }
     }
 }

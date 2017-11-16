@@ -2,12 +2,16 @@
 
 namespace Rescue_911
 {
-    public class Caller : Person
+    public class Caller
     {
-        private int Caller_ID;
+        private string Phone_Number;
+        private string Name;
 
-        public void SetCaller_ID(int xCaller_ID) { Caller_ID = xCaller_ID; }
+        public void SetPhone_Number(string xPhone_Number) { Phone_Number = xPhone_Number; }
+        public void SetName(string xName) { Name = xName; }
 
-        public int GetCaller_ID() { return Caller_ID; }
+
+        public string GetPhone_Number() { return Phone_Number; }
+        public string GetName() { return Name; }
     }
 }

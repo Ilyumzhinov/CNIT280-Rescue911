@@ -6,55 +6,54 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public class patient : Person
+    public class Patient : Person
     {
         private string age;
-        private string bd;
         private string bloodtype;
         private string complication;
         private string subscribe;
+        private List<Caller> AssociatedPNumbers;
+
+        public Patient()
+        {
+            AssociatedPNumbers = new List<Caller>(); }
+
         public void setsubsc(string sub) {
             subscribe = sub;
         }
 
-        public string getsubsc()
-        {
-            return subscribe;
-        }
-
-        public patient()
-        {
-
-
-        }
         public void setage(string xage)
         {
             age = xage;
 
         }
-        public void setbd(string xbd)
-        {
-            bd = xbd;
 
-        }
         public void setbloodtype(string xbloodtype)
         {
             bloodtype = xbloodtype;
 
         }
+
         public void setcomplication(string xcomplication)
         {
             complication = xcomplication;
 
         }
+
+        public void AddAssociatedPNumber(Caller xPhoneNumber)
+        {
+            AssociatedPNumbers.Add(xPhoneNumber);
+        }
+
+        public List<Caller> GetAssociatedPNumber()
+        {
+            return AssociatedPNumbers;
+
+        }
+
         public string getage()
         {
             return age;
-
-        }
-        public string getbd()
-        {
-            return bd;
 
         }
         public string getbloodtype()
@@ -66,6 +65,11 @@ namespace Rescue_911
         {
             return complication;
 
+        }
+
+        public string getsubsc()
+        {
+            return subscribe;
         }
     }
 }

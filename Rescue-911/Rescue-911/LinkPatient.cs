@@ -20,7 +20,7 @@ namespace Rescue_911
         private void Linkepatientandsub_Load(object sender, EventArgs e)
         {
 
-            List<patient> a = SD.patients;
+            List<Patient> a = SD.Patients;
             for (int b = 0; b < a.Count(); b++)
             {
 
@@ -32,7 +32,7 @@ namespace Rescue_911
         private void button1_Click(object sender, EventArgs e)
         {
 
-            List<patient> a = SD.patients;
+            List<Patient> a = SD.Patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
@@ -47,14 +47,14 @@ namespace Rescue_911
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                SD.patients = a;
+                SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            List<patient> a = SD.patients;
+            List<Patient> a = SD.Patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
@@ -69,14 +69,14 @@ namespace Rescue_911
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                SD.patients = a;
+                SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<patient> a = SD.patients;
+            List<Patient> a = SD.Patients;
             if (listBox1.SelectedIndex == -1)
             {
                 return;
@@ -91,7 +91,7 @@ namespace Rescue_911
 
                     listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
                 }
-                SD.patients = a;
+                SD.Patients = a;
 
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
             }

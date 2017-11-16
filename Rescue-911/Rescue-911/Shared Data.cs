@@ -13,7 +13,7 @@ namespace Rescue_911
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
-        public List<patient> patients = new List<patient>();
+        public List<Patient> Patients = new List<Patient>();
         public List<EMT> EMTs = new List<EMT>();
 
         public Shared_Data()
@@ -21,9 +21,10 @@ namespace Rescue_911
             //
             // 0 dimension: Call Waiting Forms.
             // 1 dimension: Receive Call Form.
-            // 2 dimension: Main form.
-            OpenForms = new Form[99, 99];
+            OpenForms = new Form[99, 2];
             //
+            Caller[] Callers = LoadCallers();
+
 
             // RT TEST DATA
             ResponseTeams = new Response_Team[3];
@@ -41,26 +42,26 @@ namespace Rescue_911
             ResponseTeams[2].SetShift("they work...");
             //
 
-            patients.Add(new patient());
-            patients[0].setage("14");
-            patients[0].setbd("13 feb");
-            patients[0].setbloodtype("o");
-            patients[0].setcomplication("Losed Blood");
-            patients[0].SetName("calven");
-            patients[0].SetLast_Name("UV");
-            patients.Add(new patient());
-            patients[1].setage("20");
-            patients[1].setbd("13 feb");
-            patients[1].setbloodtype("o");
-            patients[1].setcomplication("In pain ");
-            patients[1].SetName("John");
-            patients[1].SetLast_Name("Smith");
-
+            Patients.Add(new Patient());
+            Patients[0].setage("14");
+            Patients[0].SetDOB("13 feb");
+            Patients[0].setbloodtype("o");
+            Patients[0].setcomplication("Losed Blood");
+            Patients[0].SetName("Calven");
+            Patients[0].SetLast_Name("Yuvenov");
+            Patients[0].AddAssociatedPNumber(Callers[0]);
+            Patients.Add(new Patient());
+            Patients[1].setage("20");
+            Patients[1].SetDOB("13 feb");
+            Patients[1].setbloodtype("o");
+            Patients[1].setcomplication("In pain ");
+            Patients[1].SetName("John");
+            Patients[1].SetLast_Name("Smith");
+            Patients[1].AddAssociatedPNumber(Callers[1]);
 
 
             EMTs = LoadEMTs();
-            // EMERGENCY TEST DATA 
-            Caller[] Callers = LoadCallers();
+
             Emergency_Call[] ECs = LoadEC(Callers);
 
             for (int i = 0; i < 3; i++)
@@ -129,28 +130,17 @@ namespace Rescue_911
             for (int i = 0; i < ECallers.Length; i++)
             {
                 ECallers[i] = new Caller();
-                ECallers[i].SetCaller_ID(i);
             }
 
-            ECallers[0].SetName("Artem");
-            ECallers[0].SetLast_Name("Ilyumzhinov");
             ECallers[0].SetPhone_Number("1231231231");
-            ECallers[0].SetAddress("102 N Chauncey Ave, West-Lafayette");
 
-            ECallers[1].SetName("Kevin");
-            ECallers[1].SetLast_Name("Zhang");
             ECallers[1].SetPhone_Number("1231231231");
-            ECallers[1].SetAddress("1198 Third Street, West-Lafayette");
 
             ECallers[2].SetName("Jordan");
-            ECallers[2].SetLast_Name("Sexton");
             ECallers[2].SetPhone_Number("1111111111");
-            ECallers[2].SetAddress("600 E. Grand Avenue, Navy Pier, Chicago");
 
             ECallers[3].SetName("Zeeshan");
-            ECallers[3].SetLast_Name("Khalib");
             ECallers[3].SetPhone_Number("1234567890");
-            ECallers[3].SetAddress("1600 Amphitheatre Parkway, Mountain View");
 
             return ECallers;
         }

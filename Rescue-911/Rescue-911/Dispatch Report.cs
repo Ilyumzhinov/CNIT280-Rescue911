@@ -54,7 +54,6 @@ namespace Rescue_911
         private void Dispatch_Report_Load(object sender, EventArgs e)
         {
             // To-Do: make it dynamic
-            lbCallID.Text = CurrentDispatch.GetLinkedCalls()[0].GetEmergency_Caller().GetCaller_ID().ToString();
 
             lbEmergencyID.Text = CurrentDispatch.GetEmergency_ID().ToString();
         }

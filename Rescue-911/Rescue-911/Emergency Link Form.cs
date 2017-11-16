@@ -46,7 +46,6 @@ namespace Rescue_911
     
         private void Emergency_Link_Form_Load(object sender, EventArgs e)
         {
-            lbCallerID.Text = Current_Call.GetEmergency_Caller().GetCaller_ID().ToString();
             lbCallState.Text = Current_Call.GetState();
             lbAddress.Text = Current_Call.GetAddress();
             txtDescription.Text = Current_Call.GetDescription();

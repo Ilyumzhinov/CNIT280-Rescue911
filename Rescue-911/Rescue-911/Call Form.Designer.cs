@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.lb11 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtLandmark = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@
             this.cboCallPriority = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTeamsReq = new System.Windows.Forms.TextBox();
-            this.lbCallID = new System.Windows.Forms.Label();
             this.lbCallState = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +48,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lstCallerNames = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCallerLastName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pnCaller = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -74,16 +70,6 @@
             this.btnSubmit.Text = "Create New Emergency";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // lb11
-            // 
-            this.lb11.AutoSize = true;
-            this.lb11.ForeColor = System.Drawing.Color.DimGray;
-            this.lb11.Location = new System.Drawing.Point(12, 46);
-            this.lb11.Name = "lb11";
-            this.lb11.Size = new System.Drawing.Size(50, 13);
-            this.lb11.TabIndex = 2;
-            this.lb11.Text = "Caller ID:";
             // 
             // txtAddress
             // 
@@ -218,21 +204,11 @@
             this.txtTeamsReq.TabIndex = 10;
             this.txtTeamsReq.Text = "1";
             // 
-            // lbCallID
-            // 
-            this.lbCallID.AutoSize = true;
-            this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(68, 46);
-            this.lbCallID.Name = "lbCallID";
-            this.lbCallID.Size = new System.Drawing.Size(18, 13);
-            this.lbCallID.TabIndex = 24;
-            this.lbCallID.Text = "ID";
-            // 
             // lbCallState
             // 
             this.lbCallState.AutoSize = true;
             this.lbCallState.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCallState.Location = new System.Drawing.Point(187, 46);
+            this.lbCallState.Location = new System.Drawing.Point(53, 46);
             this.lbCallState.Name = "lbCallState";
             this.lbCallState.Size = new System.Drawing.Size(30, 13);
             this.lbCallState.TabIndex = 26;
@@ -242,7 +218,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(146, 46);
+            this.label12.Location = new System.Drawing.Point(12, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 25;
@@ -288,6 +264,7 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(253, 22);
             this.txtPhoneNumber.TabIndex = 10;
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             this.txtPhoneNumber.Leave += new System.EventHandler(this.txtPhoneNumber_Leave);
             // 
             // lstCallerNames
@@ -304,54 +281,31 @@
             this.lstCallerNames.TabIndex = 15;
             this.lstCallerNames.SelectedIndexChanged += new System.EventHandler(this.lstCallerNames_SelectedIndexChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(3, 124);
-            this.label7.MinimumSize = new System.Drawing.Size(120, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Last Name";
-            // 
-            // txtCallerLastName
-            // 
-            this.txtCallerLastName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCallerLastName.Location = new System.Drawing.Point(128, 121);
-            this.txtCallerLastName.MinimumSize = new System.Drawing.Size(120, 20);
-            this.txtCallerLastName.Name = "txtCallerLastName";
-            this.txtCallerLastName.Size = new System.Drawing.Size(253, 22);
-            this.txtCallerLastName.TabIndex = 14;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(3, 60);
+            this.label11.Location = new System.Drawing.Point(4, 58);
             this.label11.MinimumSize = new System.Drawing.Size(120, 13);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 16);
             this.label11.TabIndex = 16;
-            this.label11.Text = "Suggestions";
+            this.label11.Text = "Suggested Patient";
             // 
             // pnCaller
             // 
             this.pnCaller.Controls.Add(this.label13);
             this.pnCaller.Controls.Add(this.label11);
-            this.pnCaller.Controls.Add(this.txtCallerLastName);
-            this.pnCaller.Controls.Add(this.label7);
             this.pnCaller.Controls.Add(this.lstCallerNames);
             this.pnCaller.Controls.Add(this.txtPhoneNumber);
             this.pnCaller.Controls.Add(this.label6);
             this.pnCaller.Controls.Add(this.txtCallerName);
             this.pnCaller.Controls.Add(this.label5);
-            this.pnCaller.Location = new System.Drawing.Point(12, 255);
+            this.pnCaller.Location = new System.Drawing.Point(12, 79);
             this.pnCaller.Name = "pnCaller";
-            this.pnCaller.Size = new System.Drawing.Size(384, 160);
-            this.pnCaller.TabIndex = 27;
+            this.pnCaller.Size = new System.Drawing.Size(384, 116);
+            this.pnCaller.TabIndex = 1;
             // 
             // label13
             // 
@@ -373,10 +327,10 @@
             this.panel1.Controls.Add(this.cboCallPriority);
             this.panel1.Controls.Add(this.txtCallDateTime);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(12, 79);
+            this.panel1.Location = new System.Drawing.Point(12, 211);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 155);
-            this.panel1.TabIndex = 28;
+            this.panel1.TabIndex = 2;
             // 
             // label15
             // 
@@ -401,7 +355,7 @@
             this.panel2.Location = new System.Drawing.Point(408, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 250);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 3;
             // 
             // label14
             // 
@@ -429,14 +383,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(814, 428);
+            this.ClientSize = new System.Drawing.Size(820, 436);
             this.Controls.Add(this.btnLink);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbCallState);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.lbCallID);
-            this.Controls.Add(this.lb11);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pnCaller);
             this.Name = "CallForm";
@@ -445,8 +397,6 @@
             this.Load += new System.EventHandler(this.CallForm_Load);
             this.Controls.SetChildIndex(this.pnCaller, 0);
             this.Controls.SetChildIndex(this.btnSubmit, 0);
-            this.Controls.SetChildIndex(this.lb11, 0);
-            this.Controls.SetChildIndex(this.lbCallID, 0);
             this.Controls.SetChildIndex(this.label12, 0);
             this.Controls.SetChildIndex(this.lbCallState, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -466,7 +416,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label lb11;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLandmark;
@@ -479,7 +428,6 @@
         private System.Windows.Forms.ComboBox cboCallPriority;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTeamsReq;
-        private System.Windows.Forms.Label lbCallID;
         private System.Windows.Forms.Label lbCallState;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
@@ -487,8 +435,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.ListBox lstCallerNames;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCallerLastName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pnCaller;
         private System.Windows.Forms.Label label13;
