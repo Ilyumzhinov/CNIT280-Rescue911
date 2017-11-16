@@ -7,9 +7,16 @@ namespace Rescue_911
     {
         private int Emergency_ID;
         private List<Emergency_Call> Linked_Calls = new List<Emergency_Call>();
+        private Shared_Data sD;
+
         public Emergency()
         { 
 
+        }
+
+        public Emergency(ref Shared_Data sD)
+        {
+            this.sD = sD;
         }
 
         public void SetEmergency_ID(int xEmergency_ID) { Emergency_ID = xEmergency_ID; }
