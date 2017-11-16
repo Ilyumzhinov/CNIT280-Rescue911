@@ -43,21 +43,21 @@ namespace Rescue_911
             //
 
             Patients.Add(new Patient());
-            Patients[0].setage("14");
+       
             Patients[0].SetDOB("13 feb");
             Patients[0].setbloodtype("o");
             Patients[0].setcomplication("Losed Blood");
             Patients[0].SetName("Calven");
             Patients[0].SetLast_Name("Yuvenov");
-            Patients[0].AddAssociatedPNumber(Callers[0]);
+        
             Patients.Add(new Patient());
-            Patients[1].setage("20");
+         
             Patients[1].SetDOB("13 feb");
             Patients[1].setbloodtype("o");
             Patients[1].setcomplication("In pain ");
             Patients[1].SetName("John");
             Patients[1].SetLast_Name("Smith");
-            Patients[1].AddAssociatedPNumber(Callers[1]);
+          
 
 
             EMTs = LoadEMTs();

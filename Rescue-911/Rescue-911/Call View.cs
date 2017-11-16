@@ -136,36 +136,7 @@ namespace Rescue_911
             }
         }
 
-        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
-        {
-            //To-Do: Suggeted names from a database
-            lstCallerNames.Items.Clear();
-            Suggested_Patients.Clear();
-
-            int j = 0;
-            for (int i = 0; i < SD.Patients.Count; i++)
-            {
-                if (SD.Patients[i].GetAssociatedPNumber() == null)
-                    continue;
-
-                foreach (Caller iNumber in SD.Patients[i].GetAssociatedPNumber())
-                {
-                    if (iNumber.GetPhone_Number() == txtPhoneNumber.Text)
-                    {
-                        Suggested_Patients.Add(SD.Patients[i]);
-
-                        lstCallerNames.Items.Add(Suggested_Patients[j].GetName() + " " + Suggested_Patients[j].GetLast_Name());
-
-                        j++;
-                    }
-                }
-            }
-            if (j == 0)
-            {
-                txtCallerName.Clear();
-                txtCallerName.Enabled = true;
-            }
-        }
+       
 
         private void btnAddEmer_Click(object sender, EventArgs e)
         {

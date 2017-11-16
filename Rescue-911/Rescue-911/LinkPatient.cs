@@ -24,7 +24,7 @@ namespace Rescue_911
             for (int b = 0; b < a.Count(); b++)
             {
 
-                listBox1.Items.Add(a[b].GetLast_Name() + ", " + a[b].GetName() + "     " + a[b].getsubsc());
+                listBox1.Items.Add(a[b].GetLast_Name() + ", " + a[b].GetName() + "     " + a[b].getSubscribtion().GetSubtitle());
             }
 
         }
@@ -40,12 +40,12 @@ namespace Rescue_911
             else
             {
                 int b = listBox1.SelectedIndex;
-                a[b].setsubsc("non subscriber");
+                a[b].getSubscribtion().setSubtitle("non subscriber");
                 listBox1.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
                 }
                 SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
@@ -62,12 +62,12 @@ namespace Rescue_911
             else
             {
                 int b = listBox1.SelectedIndex;
-                a[b].setsubsc("subscriber");
+                a[b].getSubscribtion().setSubtitle("subscriber");
                 listBox1.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
                 }
                 SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
@@ -84,12 +84,12 @@ namespace Rescue_911
             else
             {
                 int b = listBox1.SelectedIndex;
-                a[b].setsubsc("indirec subscriber");
+                a[b].getSubscribtion().setSubtitle("indirec subscriber");
                 listBox1.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getsubsc());
+                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
                 }
                 SD.Patients = a;
 

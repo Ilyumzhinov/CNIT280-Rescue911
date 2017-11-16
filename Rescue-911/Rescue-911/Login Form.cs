@@ -85,7 +85,7 @@ namespace Rescue_911
             fakePerson.SetName("Other");
             fakePerson.SetLast_Name("Person");
             fakePerson.SetAddress("Cupertino, California");
-            fakePerson.SetPhone_Number("1-100-200-3456");
+
 
             Main_Form MF = new Main_Form(SD, AccessibleForms, fakePerson);
 

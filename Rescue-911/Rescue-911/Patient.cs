@@ -28,6 +28,6 @@ namespace Rescue_911
         public char getGender() { return Gender; }
         public string getbloodtype() {return BloodType;  }
         public string getComplication(){return complication; }
-     
+        public SUB getSubscribtion() { return Subscribtion; }
     }
 }
