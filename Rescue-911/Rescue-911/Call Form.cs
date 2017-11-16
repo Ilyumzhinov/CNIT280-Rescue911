@@ -8,12 +8,14 @@ namespace Rescue_911
 {
     public partial class CallForm : Special_Form
     {
+        private Shared_Data SD;
         Emergency_Call Current_Call;
         List<Patient> Suggested_Patients = new List<Patient>();
         Call_View CV;
 
-        public CallForm(ref Shared_Data xSD) : base(ref xSD, "Log Call")
+        public CallForm(ref Shared_Data xSD)
         {
+            SD = xSD;
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
 
@@ -29,7 +31,7 @@ namespace Rescue_911
         private void CallForm_Load(object sender, EventArgs e)
         {
             CV = new Call_View(ref SD);
-            CV.Dock = DockStyle.Bottom;
+            CV.Dock = DockStyle.Fill;
             CV.OnUserControlButtonClicked += new EventHandler(btnEmergency_click);
             CV.Show();
 

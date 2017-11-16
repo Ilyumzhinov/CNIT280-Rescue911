@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Special_Form
@@ -37,7 +36,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.lbTitle);
             this.Name = "Special_Form";
             this.Text = "Special Form";
             this.ResumeLayout(false);
@@ -46,7 +44,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbTitle;
     }
 }

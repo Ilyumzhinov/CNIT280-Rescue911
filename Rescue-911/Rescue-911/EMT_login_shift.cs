@@ -43,10 +43,10 @@ namespace Rescue_911
         }
      
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            LBcurrenttime.Text = DateTime.Now.ToLongTimeString();
-        }
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    LBcurrenttime.Text = DateTime.Now.ToLongTimeString();
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {

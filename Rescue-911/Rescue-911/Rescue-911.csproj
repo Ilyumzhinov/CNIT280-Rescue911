@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="Response Team.cs" />
     <Compile Include="Shared Data.cs" />
+    <Compile Include="Special View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Special View.Designer.cs">
+      <DependentUpon>Special View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Special_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </Compile>
     <EmbeddedResource Include="Receive Call Form.resx">
       <DependentUpon>Receive Call Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Special View.resx">
+      <DependentUpon>Special View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Special_Form.resx">
       <DependentUpon>Special_Form.cs</DependentUpon>

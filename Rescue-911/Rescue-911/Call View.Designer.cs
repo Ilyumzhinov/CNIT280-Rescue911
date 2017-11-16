@@ -148,7 +148,7 @@
             this.panel1.Controls.Add(this.cboCallPriority);
             this.panel1.Controls.Add(this.txtCallDateTime);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(3, 135);
+            this.panel1.Location = new System.Drawing.Point(3, 202);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 155);
             this.panel1.TabIndex = 2;
@@ -242,7 +242,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtCallerName);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(3, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(384, 116);
             this.panel2.TabIndex = 1;
@@ -331,14 +331,14 @@
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(399, 3);
+            this.panel3.Location = new System.Drawing.Point(399, 107);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(390, 250);
             this.panel3.TabIndex = 3;
             // 
             // btnEmergency
             // 
-            this.btnEmergency.Location = new System.Drawing.Point(639, 267);
+            this.btnEmergency.Location = new System.Drawing.Point(639, 363);
             this.btnEmergency.Name = "btnEmergency";
             this.btnEmergency.Size = new System.Drawing.Size(150, 23);
             this.btnEmergency.TabIndex = 29;
@@ -348,7 +348,7 @@
             // 
             // btnAddEmer
             // 
-            this.btnAddEmer.Location = new System.Drawing.Point(483, 267);
+            this.btnAddEmer.Location = new System.Drawing.Point(483, 363);
             this.btnAddEmer.Name = "btnAddEmer";
             this.btnAddEmer.Size = new System.Drawing.Size(150, 23);
             this.btnAddEmer.TabIndex = 30;
@@ -366,8 +366,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "Call_View";
-            this.Size = new System.Drawing.Size(795, 297);
+            this.Size = new System.Drawing.Size(795, 389);
             this.Load += new System.EventHandler(this.Call_View_Load);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.btnEmergency, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.btnAddEmer, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -375,6 +380,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

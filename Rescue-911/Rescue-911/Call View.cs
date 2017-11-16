@@ -6,19 +6,16 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Call_View : UserControl
+    public partial class Call_View : Special_View
     {
-        Shared_Data SD;
         Emergency_Call Current_Call;
         List<Patient> Suggested_Patients = new List<Patient>();
         public delegate void ButtonClickedEventHandler(object sender, EventArgs e);
         public event EventHandler OnUserControlButtonClicked;
 
-        public Call_View(ref Shared_Data xSD)
+        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call")
         {
             InitializeComponent();
-
-            SD = xSD;
 
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
