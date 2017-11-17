@@ -23,9 +23,15 @@ namespace Rescue_911
             List<Patient> a = SD.Patients;
             for (int b = 0; b < a.Count(); b++)
             {
-
-                listBox1.Items.Add(a[b].GetLast_Name() + ", " + a[b].GetName() + "     " + a[b].getSubscribtion().GetSubtitle());
+                ListViewItem lvi = new ListViewItem(a[b].GetLast_Name() + ", " + a[b].GetName());
+                
+                lvi.SubItems.Add(a[b].getSubscribtion().GetSubtitle());
+                lstsubs.Items.Add(lvi);
+               
             }
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
 
         }
 
@@ -33,67 +39,109 @@ namespace Rescue_911
         {
 
             List<Patient> a = SD.Patients;
-            if (listBox1.SelectedIndex == -1)
+            int temp = 0;
+            if (lstsubs.SelectedItems.Count > 0)
+            {
+                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+            }
+            if (temp == -1)
             {
                 return;
             }
             else
             {
-                int b = listBox1.SelectedIndex;
-                a[b].getSubscribtion().setSubtitle("non subscriber");
-                listBox1.Items.Clear();
+               
+                a[temp].getSubscribtion().setSubtitle("non subscriber");
+                lstsubs.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
+                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
+                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+                    lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             List<Patient> a = SD.Patients;
-            if (listBox1.SelectedIndex == -1)
+            int temp = 0;
+            if (lstsubs.SelectedItems.Count > 0)
+            {
+                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+            }
+            if (temp == -1)
             {
                 return;
             }
             else
             {
-                int b = listBox1.SelectedIndex;
-                a[b].getSubscribtion().setSubtitle("subscriber");
-                listBox1.Items.Clear();
+                
+                a[temp].getSubscribtion().setSubtitle("subscriber");
+                lstsubs.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
+                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
+
+                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+                    lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             List<Patient> a = SD.Patients;
-            if (listBox1.SelectedIndex == -1)
+            int temp=0;
+            if (lstsubs.SelectedItems.Count > 0)
+            {
+                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+            }
+            if (temp == -1)
             {
                 return;
             }
             else
             {
-                int b = listBox1.SelectedIndex;
-                a[b].getSubscribtion().setSubtitle("indirec subscriber");
-                listBox1.Items.Clear();
+               
+                a[temp].getSubscribtion().setSubtitle("indirec subscriber");
+                lstsubs.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
 
-                    listBox1.Items.Add(a[i].GetLast_Name() + ", " + a[i].GetName() + "     " + a[i].getSubscribtion().GetSubtitle());
+                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
+
+                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+                    lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
 
                 ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+            }
+        }
+
+        private void lstsubs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstsubs.SelectedItems.Count > 0) {
+
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
             }
         }
     }

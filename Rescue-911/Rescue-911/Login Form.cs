@@ -16,7 +16,10 @@ namespace Rescue_911
 
             InitializeComponent();
         }
-
+        public void UpdateSD(Shared_Data xSD)
+        {
+            SD = xSD;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Trim() == string.Empty && txtPassword.Text.Trim() == string.Empty)
@@ -92,10 +95,7 @@ namespace Rescue_911
             MF.Show();
         }
 
-        public void UpdateSD(Shared_Data xSD)
-        {
-            SD = xSD;
-        }
+       
 
         private void Login_Form_Activated(object sender, EventArgs e)
         {
@@ -103,5 +103,7 @@ namespace Rescue_911
             lbName.Visible = false;
             lbPassword.Visible = false;
         }
+
+        
     }
 }

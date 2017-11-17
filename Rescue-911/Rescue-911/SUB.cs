@@ -14,9 +14,9 @@ namespace Rescue_911
         private double MonthlyFee;
         private string TotalMonths;
         private string Subtitle;
-        private Provider provider;
+        private Provider provider =new Provider();
 
-    
+        public SUB() { }
         public SUB(string SubscriberMembershipNumber,
          DateTime SubscriptionDate,
          DateTime RenewalDate,

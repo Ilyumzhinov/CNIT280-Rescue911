@@ -14,7 +14,7 @@ namespace Rescue_911
         private char Gender;
         private string BloodType;
         private string complication;
-        private SUB Subscribtion;
+        private SUB Subscribtion =new SUB();
 
         public void setPatientID(string xPatientID) { PatientID = xPatientID; }
         public void setInsuranceID(string xInsuranceID) { InsuranceID = xInsuranceID; }

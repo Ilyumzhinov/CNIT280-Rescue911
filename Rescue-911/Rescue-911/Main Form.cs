@@ -54,7 +54,10 @@ namespace Rescue_911
                 layoutPanel.Controls.Add(b);
             }
         }
-
+        public void UpdateSD(Shared_Data xSD)
+        {
+            SD = xSD;
+        }
         // Do the visual as well as functional button setup.
         private void SetUpButton(ref Button xBtn, Type xT)
         {
