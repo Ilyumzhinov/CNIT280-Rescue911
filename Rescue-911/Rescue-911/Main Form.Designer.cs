@@ -31,12 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lb1 = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
-            this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbAccessLevel = new System.Windows.Forms.Label();
-            this.lb2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.sideBar = new Rescue_911.Sidebar();
+            this.special_View1 = new Rescue_911.Special_View();
             this.SuspendLayout();
             // 
             // label1
@@ -70,62 +67,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Artem Ilyumzhinov,\r\n\r\nZeeshan Khalid,\r\n\r\nShuai Zhang,\r\n\r\nJordan Sexton";
             // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.ForeColor = System.Drawing.Color.Black;
-            this.lb1.Location = new System.Drawing.Point(16, 46);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(83, 16);
-            this.lb1.TabIndex = 6;
-            this.lb1.Text = "Current user:";
-            // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbUser.Location = new System.Drawing.Point(16, 62);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(20, 16);
-            this.lbUser.TabIndex = 7;
-            this.lbUser.Text = "> ";
-            // 
-            // layoutPanel
-            // 
-            this.layoutPanel.AutoSize = true;
-            this.layoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.layoutPanel.Location = new System.Drawing.Point(250, 100);
-            this.layoutPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.layoutPanel.MinimumSize = new System.Drawing.Size(250, 50);
-            this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(333, 50);
-            this.layoutPanel.TabIndex = 1;
-            // 
-            // lbAccessLevel
-            // 
-            this.lbAccessLevel.AutoSize = true;
-            this.lbAccessLevel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAccessLevel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbAccessLevel.Location = new System.Drawing.Point(16, 104);
-            this.lbAccessLevel.Name = "lbAccessLevel";
-            this.lbAccessLevel.Size = new System.Drawing.Size(20, 16);
-            this.lbAccessLevel.TabIndex = 15;
-            this.lbAccessLevel.Text = "> ";
-            // 
-            // lb2
-            // 
-            this.lb2.AutoSize = true;
-            this.lb2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2.ForeColor = System.Drawing.Color.Black;
-            this.lb2.Location = new System.Drawing.Point(16, 88);
-            this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(85, 16);
-            this.lb2.TabIndex = 14;
-            this.lb2.Text = "Access level:";
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -133,44 +74,49 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.btnLogout.Location = new System.Drawing.Point(19, 137);
+            this.btnLogout.Location = new System.Drawing.Point(281, 249);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(85, 27);
             this.btnLogout.TabIndex = 16;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // sideBar
+            // 
+            this.sideBar.AutoSize = true;
+            this.sideBar.BackColor = System.Drawing.Color.White;
+            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sideBar.Location = new System.Drawing.Point(0, 0);
+            this.sideBar.MinimumSize = new System.Drawing.Size(150, 0);
+            this.sideBar.Name = "sideBar";
+            this.sideBar.Size = new System.Drawing.Size(150, 562);
+            this.sideBar.TabIndex = 17;
+            // 
+            // special_View1
+            // 
+            this.special_View1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.special_View1.Location = new System.Drawing.Point(150, 0);
+            this.special_View1.Name = "special_View1";
+            this.special_View1.Size = new System.Drawing.Size(634, 562);
+            this.special_View1.TabIndex = 18;
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.special_View1);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.lbAccessLevel);
-            this.Controls.Add(this.lb2);
-            this.Controls.Add(this.layoutPanel);
-            this.Controls.Add(this.lbUser);
-            this.Controls.Add(this.lb1);
+            this.Controls.Add(this.sideBar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Main_Form";
             this.Text = "Rescue-911";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.lb1, 0);
-            this.Controls.SetChildIndex(this.lbUser, 0);
-            this.Controls.SetChildIndex(this.layoutPanel, 0);
-            this.Controls.SetChildIndex(this.lb2, 0);
-            this.Controls.SetChildIndex(this.lbAccessLevel, 0);
-            this.Controls.SetChildIndex(this.btnLogout, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,12 +126,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Label lbUser;
-        private System.Windows.Forms.FlowLayoutPanel layoutPanel;
-        private System.Windows.Forms.Label lbAccessLevel;
-        private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.Button btnLogout;
+        private Sidebar sideBar;
+        private Special_View special_View1;
     }
 }
 
