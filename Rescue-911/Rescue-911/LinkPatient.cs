@@ -12,6 +12,7 @@ namespace Rescue_911
 {
     public partial class LinkPatient : Special_Form
     {
+       
         public LinkPatient(ref Shared_Data xSD) : base(ref xSD, "Link Patient")
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace Rescue_911
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             List<Patient> a = SD.Patients;
             int temp = 0;
             if (lstsubs.SelectedItems.Count > 0)
@@ -82,6 +84,10 @@ namespace Rescue_911
             }
             else
             {
+                if (txtSub.Text == "") {
+                    MessageBox.Show("Please Input SUB ID");
+                    return;
+                }else 
                 
                 a[temp].getSubscribtion().setSubtitle("subscriber");
                 lstsubs.Items.Clear();
@@ -115,8 +121,15 @@ namespace Rescue_911
             }
             else
             {
-               
-                a[temp].getSubscribtion().setSubtitle("indirec subscriber");
+                if (txtSub.Text == ""||txtProvider.Text=="")
+                {
+                    MessageBox.Show("Please Input provider and SUB ID");
+                    return;
+                }
+                else
+
+
+                    a[temp].getSubscribtion().setSubtitle("indirec subscriber");
                 lstsubs.Items.Clear();
                 for (int i = 0; i < a.Count(); i++)
                 {
@@ -144,5 +157,7 @@ namespace Rescue_911
                 button3.Enabled = true;
             }
         }
+
+       
     }
 }
