@@ -39,7 +39,7 @@ namespace Rescue_911
                 Special_Form instance = (Special_Form)(Activator.CreateInstance(xAcccessibleForms[i], new object[] { SD }));
 
                 Button b = new Button();
-                b.Size = new System.Drawing.Size(layoutPanel.Width, 60);
+                b.Size = new System.Drawing.Size(layoutPanel.Width, 40);
                 b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 b.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 b.ForeColor = System.Drawing.Color.White;
