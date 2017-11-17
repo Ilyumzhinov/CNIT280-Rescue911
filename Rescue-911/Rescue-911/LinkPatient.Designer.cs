@@ -46,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtProvider = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -206,13 +205,7 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Provider ID";
             // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // LinkPatient
+           
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,6 +245,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtProvider;
         private System.Windows.Forms.Label label2;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
     }
 }
