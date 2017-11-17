@@ -31,7 +31,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
@@ -40,13 +39,14 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSend = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listbox1 = new System.Windows.Forms.ListBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 32);
+            this.label3.Location = new System.Drawing.Point(28, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 15;
@@ -54,10 +54,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 29);
+            this.textBox1.Location = new System.Drawing.Point(108, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(116, 20);
             this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "10005";
             // 
             // textBox2
             // 
@@ -65,18 +66,12 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(389, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 17;
+            this.textBox2.Text = "200";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 108);
+            this.label1.Location = new System.Drawing.Point(38, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 18;
@@ -85,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 108);
+            this.label2.Location = new System.Drawing.Point(28, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 19;
@@ -107,7 +102,7 @@
             this.columnHeader5,
             this.columnHeader4});
             this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(49, 188);
+            this.lstEmergencies.Location = new System.Drawing.Point(41, 189);
             this.lstEmergencies.MultiSelect = false;
             this.lstEmergencies.Name = "lstEmergencies";
             this.lstEmergencies.ShowItemToolTips = true;
@@ -140,30 +135,37 @@
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listbox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(49, 336);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(267, 95);
-            this.listBox1.TabIndex = 23;
+            this.listbox1.FormattingEnabled = true;
+            this.listbox1.Location = new System.Drawing.Point(49, 336);
+            this.listbox1.Name = "listbox1";
+            this.listbox1.Size = new System.Drawing.Size(267, 95);
+            this.listbox1.TabIndex = 23;
             // 
-            // Invoice
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 67);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 24;
+            // 
+            // Invoice_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 529);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.listbox1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lstEmergencies);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
-            this.Name = "Invoice";
+            this.Name = "Invoice_Form";
             this.Text = "Invoice";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,7 +177,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGenerate;
@@ -184,6 +185,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listbox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

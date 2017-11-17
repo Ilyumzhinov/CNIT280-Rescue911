@@ -217,6 +217,9 @@
     <EmbeddedResource Include="EMT_login_shift.resx">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoice Form.resx">
+      <DependentUpon>Invoice Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Link Patient View.resx">
       <DependentUpon>Link Patient View.cs</DependentUpon>
     </EmbeddedResource>
