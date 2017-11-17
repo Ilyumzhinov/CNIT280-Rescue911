@@ -82,7 +82,7 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(377, 151);
+            this.txtAge.Location = new System.Drawing.Point(366, 155);
             this.txtAge.Margin = new System.Windows.Forms.Padding(2);
             this.txtAge.Name = "txtAge";
             this.txtAge.ReadOnly = true;
@@ -171,17 +171,6 @@
             this.Name = "Patient_Information_Form";
             this.Text = "Patient Information Form";
             this.Load += new System.EventHandler(this.Patient_Load);
-            this.Controls.SetChildIndex(this.btnSearch, 0);
-            this.Controls.SetChildIndex(this.txtName, 0);
-            this.Controls.SetChildIndex(this.txtBirthdate, 0);
-            this.Controls.SetChildIndex(this.txtBloodType, 0);
-            this.Controls.SetChildIndex(this.txtAge, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.lblBloodType, 0);
-            this.Controls.SetChildIndex(this.lblBirthDate, 0);
-            this.Controls.SetChildIndex(this.lblAge, 0);
-            this.Controls.SetChildIndex(this.lblComplications, 0);
-            this.Controls.SetChildIndex(this.txtComplications, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
