@@ -119,6 +119,12 @@
     <Compile Include="EMT_login_shift.Designer.cs">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
     </Compile>
+    <Compile Include="Link Patient View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Link Patient View.Designer.cs">
+      <DependentUpon>Link Patient View.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinkPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EMT_login_shift.resx">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Link Patient View.resx">
+      <DependentUpon>Link Patient View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LinkPatient.resx">
       <DependentUpon>LinkPatient.cs</DependentUpon>
