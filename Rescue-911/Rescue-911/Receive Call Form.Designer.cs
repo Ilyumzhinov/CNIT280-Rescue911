@@ -67,7 +67,6 @@
             this.lstEmergencies.TabIndex = 27;
             this.lstEmergencies.UseCompatibleStateImageBehavior = false;
             this.lstEmergencies.View = System.Windows.Forms.View.Details;
-            this.lstEmergencies.Visible = false;
             this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -153,13 +152,6 @@
             this.Text = "Receive Call Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Receive_Call_Form_FormClosing);
             this.Load += new System.EventHandler(this.Receive_Call_Form_Load);
-            this.Controls.SetChildIndex(this.lb11, 0);
-            this.Controls.SetChildIndex(this.lbRT_ID, 0);
-            this.Controls.SetChildIndex(this.lstEmergencies, 0);
-            this.Controls.SetChildIndex(this.rbYes, 0);
-            this.Controls.SetChildIndex(this.rbNo, 0);
-            this.Controls.SetChildIndex(this.lbDecision, 0);
-            this.Controls.SetChildIndex(this.btnClose, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

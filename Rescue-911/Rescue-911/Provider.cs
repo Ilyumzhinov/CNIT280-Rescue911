@@ -22,7 +22,10 @@ namespace Rescue_911
         }
         public Provider() {}
 
-
+        public string getCompanyId() { return CompanyId; }
+        public string getProviderType() { return ProviderType; }
+        public string getProviderName( ) { return ProviderName; }
+        public string getAddress() { return Address; }
         public void setCompanyId(string CompanyId) { this.CompanyId = CompanyId; }
         public void setProviderType(string ProviderType) { this.ProviderType = ProviderType; }
         public void setProviderName(string ProviderName) { this.ProviderName = ProviderName; }

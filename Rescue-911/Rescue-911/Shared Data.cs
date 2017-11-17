@@ -57,7 +57,41 @@ namespace Rescue_911
             Patients[1].setcomplication("In pain ");
             Patients[1].SetName("John");
             Patients[1].SetLast_Name("Smith");
-          
+
+            Patients.Add(new Patient());
+
+            Patients[2].SetDOB("2 feb");
+            Patients[2].setbloodtype("o");
+            Patients[2].setcomplication("Losed Blood");
+            Patients[2].SetName("kevin");
+            Patients[2].SetLast_Name("zhang");
+
+            Patients.Add(new Patient());
+
+            Patients[3].SetDOB("13 feb");
+            Patients[3].setbloodtype("o");
+            Patients[3].setcomplication("Losed Blood");
+            Patients[3].SetName("artem");
+            Patients[3].SetLast_Name("sub");
+
+
+
+            Patients.Add(new Patient());
+
+            Patients[4].SetDOB("13 feb");
+            Patients[4].setbloodtype("o");
+            Patients[4].setcomplication("Losed Blood");
+            Patients[4].SetName("jassica");
+            Patients[4].SetLast_Name("kanban");
+
+
+            Patients.Add(new Patient());
+
+            Patients[5].SetDOB("13 feb");
+            Patients[5].setbloodtype("o");
+            Patients[5].setcomplication("Losed Blood");
+            Patients[5].SetName("zoe");
+            Patients[5].SetLast_Name("abbe");
 
 
             EMTs = LoadEMTs();
