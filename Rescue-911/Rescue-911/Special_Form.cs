@@ -20,6 +20,8 @@ namespace Rescue_911
         public Special_Form(ref Shared_Data xSD, string xTitle) : this()
         {
             SD = xSD;
+
+            this.Text = xTitle;
         }
 
         public Special_Form()

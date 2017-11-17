@@ -119,6 +119,12 @@
     <Compile Include="EMT_login_shift.Designer.cs">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice Form.Designer.cs">
+      <DependentUpon>Invoice Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Link Patient View.cs">
       <SubType>UserControl</SubType>
     </Compile>

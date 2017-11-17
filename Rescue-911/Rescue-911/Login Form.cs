@@ -83,6 +83,7 @@ namespace Rescue_911
             AccessibleForms.Add(typeof(Dispatch_Report));
             AccessibleForms.Add(typeof(LinkPatient));
             AccessibleForms.Add(typeof(Patient_Information_Form));
+            AccessibleForms.Add(typeof(Invoice_Form));
 
             Person fakePerson = new Person();
             fakePerson.SetName("Other");

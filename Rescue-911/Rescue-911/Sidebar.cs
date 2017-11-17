@@ -134,6 +134,13 @@ namespace Rescue_911
 
                 xBtn.Click += new System.EventHandler(this.btnPatientInto_Click);
             }
+            else if (xT == typeof(Invoice_Form))
+            {
+                xBtn.BackColor = System.Drawing.Color.Pink;
+                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Pink;
+
+                xBtn.Click += new System.EventHandler(this.btnInvoice_Click);
+            }
 
             // Another way of creating this event
             //  b.Click += (sender, e) =>
@@ -142,6 +149,12 @@ namespace Rescue_911
             // };
 
         }
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            Invoice_Form IV = new Invoice_Form(ref SD);
+            IV.Show();
+        }
+
 
         private void btnWaitingCall_Click(object sender, EventArgs e)
         {
