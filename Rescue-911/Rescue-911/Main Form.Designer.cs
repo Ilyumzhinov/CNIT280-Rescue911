@@ -115,7 +115,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "Main_Form";
-            this.Text = "Rescue-911";
+            this.Text = "----------------------------------------------------";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

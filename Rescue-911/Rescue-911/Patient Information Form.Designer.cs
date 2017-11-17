@@ -68,6 +68,8 @@
             this.txtBirthdate.ReadOnly = true;
             this.txtBirthdate.Size = new System.Drawing.Size(116, 20);
             this.txtBirthdate.TabIndex = 3;
+            this.txtBirthdate.Text = "---------------------------------------------------------------------------------" +
+    "------------------------";
             this.txtBirthdate.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtBloodType

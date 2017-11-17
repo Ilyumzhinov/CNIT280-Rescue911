@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Receive_Call_Form : Special_Form
+    public partial class Response_Team_Information_Form : Special_Form
     {
         private Response_Team Response_Team;
         private Emergency_Management_Form[] CWFs;
         private Emergency Emergency;
         private int emergencySelected;
-        public Receive_Call_Form(ref Shared_Data xSD) : base(ref xSD, "Receive Call")
+        public Response_Team_Information_Form(ref Shared_Data xSD) : base(ref xSD, "Receive Call")
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace Rescue_911
             SD = xSD;
         }
 
-        public Receive_Call_Form(Emergency xEmergency, Response_Team xRT, ref Shared_Data xSD) : this(ref xSD)
+        public Response_Team_Information_Form(Emergency xEmergency, Response_Team xRT, ref Shared_Data xSD) : this(ref xSD)
         {
             InitializeComponent();
 
@@ -134,22 +134,7 @@ namespace Rescue_911
             }
         }
 
-        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                emergencySelected = lstEmergencies.SelectedIndices[0];
-
-                lbDecision.Visible = true;
-                rbYes.Visible = true;
-                rbNo.Visible = true;
-            }
-            catch
-            {
-
-            }
-        }
-
+       
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -159,6 +144,60 @@ namespace Rescue_911
         {
             this.Hide();
             e.Cancel = true; // this cancels the close event.
+        }
+
+        private void lstTeams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                emergencySelected = lstEmergencies.SelectedIndices[0];
+
+                lstTeams.Items.Clear();
+                // Populating the listBox with the response teams.
+                foreach (Response_Team RT in SD.ResponseTeams)
+                {
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 2)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 3 && RT.GetGrade() > 1)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+
+                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 4 && RT.GetGrade() > 2)
+                    {
+                        ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+
+                        lstItem.SubItems.Add(RT.GetGrade().ToString());
+                        lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                        continue;
+                    }
+                }
+
+
+
+                lbDecision.Visible = true;
+                rbYes.Visible = true;
+                rbNo.Visible = true;
+            }
+            catch
+            {
+
+            }
         }
     }
 }

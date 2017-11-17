@@ -46,7 +46,7 @@ namespace Rescue_911
 
                 // Adding accessible Forms for an EMT
                 List<Type> AccessibleForms = new List<Type>();
-                AccessibleForms.Add(typeof(Receive_Call_Form));
+                AccessibleForms.Add(typeof(Response_Team_Information_Form));
                 AccessibleForms.Add(typeof(EMT_login_shift));
                 AccessibleForms.Add(typeof(Dispatch_Report));
                 AccessibleForms.Add(typeof(Patient_Information_Form));
@@ -76,7 +76,7 @@ namespace Rescue_911
 
             AccessibleForms.Add(typeof(CallForm));
             AccessibleForms.Add(typeof(Emergency_Management_Form));
-            AccessibleForms.Add(typeof(Receive_Call_Form));
+            AccessibleForms.Add(typeof(Response_Team_Information_Form));
             AccessibleForms.Add(typeof(EMT_login_shift));
             AccessibleForms.Add(typeof(Base_Station_Records));
             AccessibleForms.Add(typeof(Dispatch_Related_Times));

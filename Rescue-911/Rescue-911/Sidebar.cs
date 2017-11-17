@@ -85,7 +85,7 @@ namespace Rescue_911
 
                 xBtn.Click += new System.EventHandler(this.btnWaitingCall_Click);
             }
-            else if (xT == typeof(Receive_Call_Form))
+            else if (xT == typeof(Response_Team_Information_Form))
             {
                 xBtn.BackColor = System.Drawing.Color.SandyBrown;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
@@ -162,7 +162,7 @@ namespace Rescue_911
             if (SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] == null)
             {
                 // CHANGE HARDCODED PART
-                SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] = new Receive_Call_Form(ref SD);
+                SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] = new Response_Team_Information_Form(ref SD);
             }
             SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)].Show();
         }

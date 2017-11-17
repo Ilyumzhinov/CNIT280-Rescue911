@@ -25,19 +25,19 @@
             this.lstEmergencies = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCreateDispatch = new System.Windows.Forms.Button();
             this.lstTeams = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbResult = new System.Windows.Forms.Label();
             this.rbYes = new System.Windows.Forms.RadioButton();
             this.rbNo = new System.Windows.Forms.RadioButton();
             this.lbDecision = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
@@ -96,6 +96,10 @@
             this.columnHeader4.Text = "Time Recevied";
             this.columnHeader4.Width = 130;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Priority";
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "State";
@@ -145,6 +149,10 @@
             // 
             this.columnHeader3.Text = "Response Team ID";
             this.columnHeader3.Width = 212;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Grade";
             // 
             // lbResult
             // 
@@ -201,15 +209,6 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Emergency Management Form";
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Grade";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.DisplayIndex = 2;
-            this.columnHeader7.Text = "Priority";
-            // 
             // Emergency_Management_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,8 +227,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "CallManagementForm";
-            this.Text = base.Text;
+            this.Name = "Emergency_Management_Form";
+            this.Text = this.Text;
             this.Load += new System.EventHandler(this.Call_Waiting_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

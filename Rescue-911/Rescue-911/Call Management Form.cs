@@ -130,7 +130,7 @@ namespace Rescue_911
 
                     // Create a new Receive Call Form and pass emergency into it
                     // Also, pass team information into it
-                    SD.OpenForms[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Receive_Call_Form(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
+                    SD.OpenForms[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Response_Team_Information_Form(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
 
                     // Update the Shared Data values regarding the Forms.
                     ((Login_Form)SD.LoginForm).UpdateSD(SD);
