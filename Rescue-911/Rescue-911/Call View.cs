@@ -27,7 +27,7 @@ namespace Rescue_911
 
         private void Call_View_Load(object sender, EventArgs e)
         {
-            txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy ");
+            txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
 
             txtPhoneNumber.Focus();
         }

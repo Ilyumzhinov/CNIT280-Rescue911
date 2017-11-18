@@ -75,7 +75,7 @@ namespace Rescue_911
             b.UseVisualStyleBackColor = false;
             b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // Spacing between buttons
-            b.Margin = new Padding(0, 0, 0, 0);
+            b.Margin = new Padding(0, 10, 0, 0);
 
             SetUpButton(ref b, typeof(Login_View));
 

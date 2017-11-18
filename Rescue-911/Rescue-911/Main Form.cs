@@ -51,9 +51,12 @@ namespace Rescue_911
         //Displaying the Main screen when the Login screen is closed.
         private void MainView_Prepare(object sender, EventArgs e)
         {
-            sideBar.Visible = true;
-            sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
-            sideBar.CallButton_Click += new EventHandler(CallView_Prepare);
+            if (sideBar.Visible == false)
+            {
+                sideBar.Visible = true;
+                sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
+                sideBar.CallButton_Click += new EventHandler(CallView_Prepare);
+            }
 
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
         }
@@ -62,7 +65,12 @@ namespace Rescue_911
         {
             Current_View.Dispose();
 
+            Special_View SVtemp = Current_View;
+
             Call_View CallView = (Call_View)SetView(typeof(Call_View));
+
+            Current_View.SetPrevious_View(SVtemp);
+            Current_View.BackButton_Click += new EventHandler(MainView_Prepare);
         }
         //
 
@@ -75,7 +83,7 @@ namespace Rescue_911
 
         private Special_View SetView(Type xSpecialView)
         {
-            Current_View = (Special_View)(Activator.CreateInstance(xSpecialView, new object[] { SD })); ;
+            Current_View = (Special_View)(Activator.CreateInstance(xSpecialView, new object[] { SD }));
 
             if (Current_View.GetMiddleAligned() == false)
             {
