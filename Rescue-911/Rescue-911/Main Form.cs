@@ -77,7 +77,9 @@ namespace Rescue_911
             if (Current_View.GetMiddleAligned() == false)
             {
                 this.SizeChanged -= new EventHandler(Main_Form_SizeChanged);
+                Current_View.AutoSize = true;
                 Current_View.Dock = DockStyle.Fill;
+                //Current_View.Anchor = AnchorStyles.Top;
             }
             else
             {
