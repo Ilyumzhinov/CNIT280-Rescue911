@@ -9,13 +9,15 @@ namespace Rescue_911
     public partial class Sidebar : UserControl
     {
         private Shared_Data SD;
+        public event EventHandler LogoutButton_Click;
+        public event EventHandler CallButton_Click;
 
         public Sidebar()
         {
             InitializeComponent();
         }
 
-        public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleForms, Person xUserType)
+        public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Person xUserType)
         {
             SD = xSD;
 
@@ -26,22 +28,26 @@ namespace Rescue_911
             layoutPanel.Width = this.Width;
             layoutPanel.BorderStyle = BorderStyle.None;
 
-            PopulateMenu(xAcccessibleForms);
+            PopulateMenu(xAcccessibleViews);
             System.Windows.Forms.PaintEventArgs e;
         }
 
         // This method is used to dynamically populate the form with buttons.
         // Reference on LayoutPanel: https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel#positioning-controls-using-docking-and-anchoring
-        private void PopulateMenu(List<Type> xAcccessibleForms)
+        private void PopulateMenu(List<Type> xAcccessibleViews)
         {
-            for (int i = 0; i < xAcccessibleForms.Count; i++)
-            {
-                Special_Form instance = (Special_Form)(Activator.CreateInstance(xAcccessibleForms[i], new object[] { SD }));
+            Special_View instance;
+            Button b;
 
-                Button b = new Button();
-                b.Size = new System.Drawing.Size(layoutPanel.Width, 40);
+            for (int i = 0; i < xAcccessibleViews.Count; i++)
+            {
+                // This is wasteful
+                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { SD }));
+
+                b = new Button();
+                b.Size = new System.Drawing.Size(layoutPanel.Width, 25);
                 b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                b.Font = new System.Drawing.Font("Corbel", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                b.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 b.ForeColor = System.Drawing.Color.White;
                 b.Name = "btn" + i;
                 b.Tag = i;
@@ -50,10 +56,30 @@ namespace Rescue_911
                 b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // Spacing between buttons
                 b.Margin = new Padding(0, 0, 0, 5);
-                SetUpButton(ref b, xAcccessibleForms[i]);
+                SetUpButton(ref b, xAcccessibleViews[i]);
 
                 layoutPanel.Controls.Add(b);
             }
+
+            // Create a Logout button.
+            // To-Do: This is wasteful
+            b = new Button();
+            b.Size = new System.Drawing.Size(layoutPanel.Width, 25);
+            b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            b.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            b.ForeColor = System.Drawing.Color.LightSlateGray;
+            b.Name = "btn" + xAcccessibleViews.Count;
+            b.Tag = xAcccessibleViews.Count;
+            b.TabIndex = xAcccessibleViews.Count;
+            b.Text = "Logout";
+            b.UseVisualStyleBackColor = false;
+            b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // Spacing between buttons
+            b.Margin = new Padding(0, 0, 0, 5);
+
+            SetUpButton(ref b, typeof(Login_View));
+
+            layoutPanel.Controls.Add(b);
         }
 
         // Reference:
@@ -71,75 +97,82 @@ namespace Rescue_911
         // Do the visual as well as functional button setup.
         private void SetUpButton(ref Button xBtn, Type xT)
         {
-            if (xT == typeof(CallForm))
+            if (xT == typeof(Call_View))
             {
                 xBtn.BackColor = System.Drawing.Color.Teal;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
 
                 xBtn.Click += new System.EventHandler(this.btnCallLog_Click);
             }
-            else if (xT == typeof(Emergency_Management_Form))
+            else if (xT == typeof(Emergency_Management_View))
             {
                 xBtn.BackColor = System.Drawing.Color.IndianRed;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
 
                 xBtn.Click += new System.EventHandler(this.btnWaitingCall_Click);
             }
-            else if (xT == typeof(Response_Team_Information_Form))
+            else if (xT == typeof(Response_Team_Information_View))
             {
                 xBtn.BackColor = System.Drawing.Color.SandyBrown;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
 
                 xBtn.Click += new System.EventHandler(this.btnReceiveCall_Click);
             }
-            else if (xT == typeof(EMT_login_shift))
+            else if (xT == typeof(EMT_Login_Shift_View))
             {
                 xBtn.BackColor = System.Drawing.Color.Black;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
 
                 xBtn.Click += new System.EventHandler(this.btnEMTLogin);
             }
-            else if (xT == typeof(Base_Station_Records))
+            else if (xT == typeof(Base_Station_Records_View))
             {
                 xBtn.BackColor = System.Drawing.Color.SteelBlue;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
 
                 xBtn.Click += new System.EventHandler(this.btnBSRecord_Click);
             }
-            else if (xT == typeof(Dispatch_Related_Times))
+            else if (xT == typeof(Dispatch_Related_Times_View))
             {
                 xBtn.BackColor = System.Drawing.Color.MediumPurple;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.MediumPurple;
 
                 xBtn.Click += new System.EventHandler(this.btnDispatchTimes_Click);
             }
-            else if (xT == typeof(Dispatch_Report))
+            else if (xT == typeof(Dispatch_Report_View))
             {
                 xBtn.BackColor = System.Drawing.Color.PaleVioletRed;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
 
                 xBtn.Click += new System.EventHandler(this.btnDispatchReport_Click);
             }
-            else if (xT == typeof(LinkPatient))
+            else if (xT == typeof(Link_Patient_View))
             {
                 xBtn.BackColor = System.Drawing.Color.Peru;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
 
                 xBtn.Click += new System.EventHandler(this.btnLinkPatient_Click);
             }
-            else if (xT == typeof(Patient_Information_Form))
+            else if (xT == typeof(Patient_Information_View))
             {
                 xBtn.BackColor = System.Drawing.Color.Orchid;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
 
                 xBtn.Click += new System.EventHandler(this.btnPatientInto_Click);
             }
-            else if (xT == typeof(Invoice_Form))
+            else if (xT == typeof(Invoice_View))
             {
                 xBtn.BackColor = System.Drawing.Color.Pink;
                 xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Pink;
 
                 xBtn.Click += new System.EventHandler(this.btnInvoice_Click);
+            }
+            else if (xT == typeof(Login_View))
+            {
+                xBtn.BackColor = System.Drawing.Color.Transparent;
+                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
+
+                xBtn.Click += new System.EventHandler(this.btnLogout_Click);
             }
 
             // Another way of creating this event
@@ -149,21 +182,31 @@ namespace Rescue_911
             // };
 
         }
-        private void btnInvoice_Click(object sender, EventArgs e)
+
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            Invoice_Form IV = new Invoice_Form(ref SD);
-            IV.Show();
+            this.Hide();
+
+            layoutPanel.Controls.Clear();
+
+            if (LogoutButton_Click != null)
+                LogoutButton_Click(this, e);
         }
 
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            Invoice_View IV = new Invoice_View(ref SD);
+            IV.Show();
+        }
 
         private void btnWaitingCall_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 99; i++)
             {
-                if (SD.OpenForms[0, i] == null)
+                if (SD.OpenViews[0, i] == null)
                 {
-                    SD.OpenForms[0, i] = new Emergency_Management_Form(ref SD);
-                    SD.OpenForms[0, i].Show();
+                    SD.OpenViews[0, i] = new Emergency_Management_View(ref SD);
+                    SD.OpenViews[0, i].Show();
                     break;
                 }
             }
@@ -172,67 +215,58 @@ namespace Rescue_911
         private void btnReceiveCall_Click(object sender, EventArgs e)
         {
 
-            if (SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] == null)
+            if (SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)] == null)
             {
                 // CHANGE HARDCODED PART
-                SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)] = new Response_Team_Information_Form(ref SD);
+                SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)] = new Response_Team_Information_View(ref SD);
             }
-            SD.OpenForms[1, (SD.ResponseTeams[0].GetID() - 1)].Show();
+            SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)].Show();
         }
 
         private void btnEMTLogin(object sender, EventArgs e)
         {
-            EMT_login_shift emtlogform = new EMT_login_shift(ref SD);
+            EMT_Login_Shift_View emtlogform = new EMT_Login_Shift_View(ref SD);
             emtlogform.Show();
         }
 
         private void btnBSRecord_Click(object sender, EventArgs e)
         {
-            Base_Station_Records BSR = new Base_Station_Records(ref SD);
+            Base_Station_Records_View BSR = new Base_Station_Records_View(ref SD);
             BSR.Show();
         }
 
         private void btnDispatchTimes_Click(object sender, EventArgs e)
         {
-            Dispatch_Related_Times DRT = new Dispatch_Related_Times(ref SD);
+            Dispatch_Related_Times_View DRT = new Dispatch_Related_Times_View(ref SD);
             DRT.Show();
         }
 
         private void btnDispatchReport_Click(object sender, EventArgs e)
         {
-            Dispatch_Report DR = new Dispatch_Report(ref SD);
+            Dispatch_Report_View DR = new Dispatch_Report_View(ref SD);
             DR.Show();
         }
 
 
         private void btnPatientInto_Click(object sender, EventArgs e)
         {
-            Patient_Information_Form PI = new Patient_Information_Form(ref SD);
+            Patient_Information_View PI = new Patient_Information_View(ref SD);
             PI.Show();
         }
 
         private void btnLinkPatient_Click(object sender, EventArgs e)
         {
-            LinkPatient sb = new LinkPatient(ref SD);
+            Link_Patient_View sb = new Link_Patient_View(ref SD);
             sb.Show();
-        }
-
-        private void buttonpatient_Click_1(object sender, EventArgs e)
-        {
-            Patient_Information_Form a = new Patient_Information_Form(ref SD);
-            a.Show();
         }
 
         private void btnCallLog_Click(object sender, EventArgs e)
         {
-            CallForm CF = new CallForm(ref SD);
+            Call_View CF = new Call_View(ref SD);
             CF.Show();
-        }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            SD.LoginForm.Show();
+            if (CallButton_Click != null)
+                CallButton_Click(this, e);
         }
     }
 }

@@ -109,7 +109,7 @@
             this.Controls.Add(this.label2);
             this.MinimumSize = new System.Drawing.Size(150, 0);
             this.Name = "Sidebar";
-            this.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
+            this.Padding = new System.Windows.Forms.Padding(5, 10, 6, 0);
             this.Size = new System.Drawing.Size(150, 300);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LinePaint);
             this.ResumeLayout(false);

@@ -54,14 +54,18 @@
             this.btnBack.Text = "Back to Previous View";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Special_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbTitle);
+            this.MaximumSize = new System.Drawing.Size(650, 1000);
             this.Name = "Special_View";
             this.Size = new System.Drawing.Size(300, 300);
             this.ResumeLayout(false);

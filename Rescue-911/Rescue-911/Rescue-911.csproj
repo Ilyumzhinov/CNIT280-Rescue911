@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base Station Records View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base Station Records View.Designer.cs">
+      <DependentUpon>Base Station Records View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base Station Records.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,23 +71,29 @@
     <Compile Include="Call Form.Designer.cs">
       <DependentUpon>Call Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Call Management Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Call Management Form.Designer.cs">
-      <DependentUpon>Call Management Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Call View.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Call View.Designer.cs">
       <DependentUpon>Call View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dispatch Related Times View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dispatch Related Times View.Designer.cs">
+      <DependentUpon>Dispatch Related Times View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dispatch Related Times.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dispatch Related Times.Designer.cs">
       <DependentUpon>Dispatch Related Times.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch Report View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dispatch Report View.Designer.cs">
+      <DependentUpon>Dispatch Report View.cs</DependentUpon>
     </Compile>
     <Compile Include="Dispatch Report.cs">
       <SubType>Form</SubType>
@@ -108,10 +120,22 @@
     <Compile Include="Emergency Link Form.Designer.cs">
       <DependentUpon>Emergency Link Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergency Management View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emergency Management View.Designer.cs">
+      <DependentUpon>Emergency Management View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergency.cs" />
     <Compile Include="Emergency_Call.cs" />
     <Compile Include="Caller.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EMT Login Shift View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EMT Login Shift View.Designer.cs">
+      <DependentUpon>EMT Login Shift View.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMT.cs" />
     <Compile Include="EMT_login_shift.cs">
       <SubType>Form</SubType>
@@ -125,23 +149,23 @@
     <Compile Include="Invoice Form.Designer.cs">
       <DependentUpon>Invoice Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice View.Designer.cs">
+      <DependentUpon>Invoice View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Link Patient View.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Link Patient View.Designer.cs">
       <DependentUpon>Link Patient View.cs</DependentUpon>
     </Compile>
-    <Compile Include="LinkPatient.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Login View.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LinkPatient.Designer.cs">
-      <DependentUpon>LinkPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login Form.Designer.cs">
-      <DependentUpon>Login Form.cs</DependentUpon>
+    <Compile Include="Login View.Designer.cs">
+      <DependentUpon>Login View.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Form.cs">
       <SubType>Form</SubType>
@@ -149,22 +173,34 @@
     <Compile Include="Main Form.Designer.cs">
       <DependentUpon>Main Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main View.Designer.cs">
+      <DependentUpon>Main View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient Information Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Patient Information Form.Designer.cs">
       <DependentUpon>Patient Information Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient Information View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient Information View.Designer.cs">
+      <DependentUpon>Patient Information View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
-    <Compile Include="Receive Call Form.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Response Team Information View.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Receive Call Form.Designer.cs">
-      <DependentUpon>Receive Call Form.cs</DependentUpon>
+    <Compile Include="Response Team Information View.Designer.cs">
+      <DependentUpon>Response Team Information View.cs</DependentUpon>
     </Compile>
     <Compile Include="Response Team.cs" />
     <Compile Include="Shared Data.cs" />
@@ -187,20 +223,26 @@
       <DependentUpon>Special_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="SUB.cs" />
+    <EmbeddedResource Include="Base Station Records View.resx">
+      <DependentUpon>Base Station Records View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base Station Records.resx">
       <DependentUpon>Base Station Records.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Call Form.resx">
       <DependentUpon>Call Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Call Management Form.resx">
-      <DependentUpon>Call Management Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Call View.resx">
       <DependentUpon>Call View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dispatch Related Times View.resx">
+      <DependentUpon>Dispatch Related Times View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dispatch Related Times.resx">
       <DependentUpon>Dispatch Related Times.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dispatch Report View.resx">
+      <DependentUpon>Dispatch Report View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dispatch Report.resx">
       <DependentUpon>Dispatch Report.cs</DependentUpon>
@@ -214,26 +256,38 @@
     <EmbeddedResource Include="Emergency Link Form.resx">
       <DependentUpon>Emergency Link Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Emergency Management View.resx">
+      <DependentUpon>Emergency Management View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMT Login Shift View.resx">
+      <DependentUpon>EMT Login Shift View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMT_login_shift.resx">
       <DependentUpon>EMT_login_shift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice Form.resx">
       <DependentUpon>Invoice Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoice View.resx">
+      <DependentUpon>Invoice View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Link Patient View.resx">
       <DependentUpon>Link Patient View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LinkPatient.resx">
-      <DependentUpon>LinkPatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login Form.resx">
-      <DependentUpon>Login Form.cs</DependentUpon>
+    <EmbeddedResource Include="Login View.resx">
+      <DependentUpon>Login View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Form.resx">
       <DependentUpon>Main Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main View.resx">
+      <DependentUpon>Main View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Patient Information Form.resx">
       <DependentUpon>Patient Information Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient Information View.resx">
+      <DependentUpon>Patient Information View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,8 +299,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Receive Call Form.resx">
-      <DependentUpon>Receive Call Form.cs</DependentUpon>
+    <EmbeddedResource Include="Response Team Information View.resx">
+      <DependentUpon>Response Team Information View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>

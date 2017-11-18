@@ -28,7 +28,7 @@ namespace Rescue_911
         {
             
             SD.Emergencies.Add(E);
-            ((Login_Form)SD.LoginForm).UpdateSD(SD);
+            ((Main_Form)SD.MainForm).UpdateSD(SD);
             this.Close();
         }
     }

@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.lbViewArea = new System.Windows.Forms.Label();
             this.sideBar = new Rescue_911.Sidebar();
-            this.special_View1 = new Rescue_911.Special_View();
             this.SuspendLayout();
             // 
             // label1
@@ -45,28 +43,6 @@
             this.label1.Size = new System.Drawing.Size(0, 37);
             this.label1.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(655, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Developers:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(655, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 112);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Artem Ilyumzhinov,\r\n\r\nZeeshan Khalid,\r\n\r\nShuai Zhang,\r\n\r\nJordan Sexton";
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -74,49 +50,56 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.btnLogout.Location = new System.Drawing.Point(281, 249);
+            this.btnLogout.Location = new System.Drawing.Point(212, 327);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(85, 27);
             this.btnLogout.TabIndex = 16;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Visible = false;
+            // 
+            // lbViewArea
+            // 
+            this.lbViewArea.AutoSize = true;
+            this.lbViewArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbViewArea.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lbViewArea.Location = new System.Drawing.Point(229, 220);
+            this.lbViewArea.Name = "lbViewArea";
+            this.lbViewArea.Size = new System.Drawing.Size(397, 73);
+            this.lbViewArea.TabIndex = 17;
+            this.lbViewArea.Text = "VIEW AREA";
+            this.lbViewArea.Visible = false;
             // 
             // sideBar
             // 
+            this.sideBar.AutoScroll = true;
             this.sideBar.AutoSize = true;
             this.sideBar.BackColor = System.Drawing.Color.White;
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBar.Location = new System.Drawing.Point(0, 0);
+            this.sideBar.Margin = new System.Windows.Forms.Padding(3, 3, 550, 3);
             this.sideBar.MinimumSize = new System.Drawing.Size(150, 0);
             this.sideBar.Name = "sideBar";
+            this.sideBar.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
             this.sideBar.Size = new System.Drawing.Size(150, 562);
-            this.sideBar.TabIndex = 17;
-            // 
-            // special_View1
-            // 
-            this.special_View1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.special_View1.Location = new System.Drawing.Point(150, 0);
-            this.special_View1.Name = "special_View1";
-            this.special_View1.Size = new System.Drawing.Size(634, 562);
-            this.special_View1.TabIndex = 18;
+            this.sideBar.TabIndex = 1;
+            this.sideBar.Visible = false;
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.special_View1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.sideBar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.MaximizeBox = false;
+            this.Controls.Add(this.lbViewArea);
             this.Name = "Main_Form";
-            this.Text = "----------------------------------------------------";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
+            this.Text = "ERIS by Group 18";
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,11 +107,9 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogout;
         private Sidebar sideBar;
-        private Special_View special_View1;
+        private System.Windows.Forms.Label lbViewArea;
     }
 }
 

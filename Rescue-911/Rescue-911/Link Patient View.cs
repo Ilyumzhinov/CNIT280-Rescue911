@@ -15,7 +15,7 @@ namespace Rescue_911
         int non = 0;
         int sub = 0;
         int indirectsub = 0;
-        public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient")
+        public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient", false)
         {
             InitializeComponent();
         }
@@ -97,7 +97,7 @@ namespace Rescue_911
                     lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
-                ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                ((Main_Form)SD.MainForm).UpdateSD(SD);
                 button1.Enabled = false;
                 button3.Enabled = false;
                 button2.Enabled = false;
@@ -167,7 +167,7 @@ namespace Rescue_911
                 }
                 SD.Patients = a;
 
-                ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                ((Main_Form)SD.MainForm).UpdateSD(SD);
                 button1.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -237,7 +237,7 @@ namespace Rescue_911
                     lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
-                ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                ((Main_Form)SD.MainForm).UpdateSD(SD);
                 button1.Enabled = false;
                 button3.Enabled = false;
                 button2.Enabled = false;

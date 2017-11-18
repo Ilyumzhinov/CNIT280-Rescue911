@@ -8,8 +8,8 @@ namespace Rescue_911
 {
     public class Shared_Data
     {
-        public Login_Form LoginForm;
-        public Form[,] OpenForms;
+        public Main_Form MainForm;
+        public Special_View[,] OpenViews;
         public Response_Team[] ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
@@ -21,7 +21,7 @@ namespace Rescue_911
             //
             // 0 dimension: Call Waiting Forms.
             // 1 dimension: Receive Call Form.
-            OpenForms = new Form[99, 2];
+            OpenViews = new Special_View[99, 2];
             //
             Caller[] Callers = LoadCallers();
 

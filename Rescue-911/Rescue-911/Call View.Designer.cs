@@ -62,7 +62,7 @@
             // txtTeamsReq
             // 
             this.txtTeamsReq.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTeamsReq.Location = new System.Drawing.Point(127, 95);
+            this.txtTeamsReq.Location = new System.Drawing.Point(103, 98);
             this.txtTeamsReq.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtTeamsReq.Name = "txtTeamsReq";
             this.txtTeamsReq.Size = new System.Drawing.Size(252, 22);
@@ -112,7 +112,7 @@
             "Stable case",
             "Serious case",
             "Critical trauma"});
-            this.cboCallPriority.Location = new System.Drawing.Point(127, 61);
+            this.cboCallPriority.Location = new System.Drawing.Point(103, 64);
             this.cboCallPriority.Name = "cboCallPriority";
             this.cboCallPriority.Size = new System.Drawing.Size(253, 24);
             this.cboCallPriority.TabIndex = 6;
@@ -121,7 +121,7 @@
             // txtCallDateTime
             // 
             this.txtCallDateTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCallDateTime.Location = new System.Drawing.Point(129, 29);
+            this.txtCallDateTime.Location = new System.Drawing.Point(104, 32);
             this.txtCallDateTime.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallDateTime.Name = "txtCallDateTime";
             this.txtCallDateTime.ReadOnly = true;
@@ -143,14 +143,14 @@
             // 
             this.panel1.Controls.Add(this.txtTeamsReq);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cboCallPriority);
             this.panel1.Controls.Add(this.txtCallDateTime);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 202);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 155);
+            this.panel1.Size = new System.Drawing.Size(367, 155);
             this.panel1.TabIndex = 2;
             // 
             // label5
@@ -183,7 +183,7 @@
             this.lstCallerNames.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lstCallerNames.FormattingEnabled = true;
             this.lstCallerNames.ItemHeight = 16;
-            this.lstCallerNames.Location = new System.Drawing.Point(128, 54);
+            this.lstCallerNames.Location = new System.Drawing.Point(104, 54);
             this.lstCallerNames.MultiColumn = true;
             this.lstCallerNames.Name = "lstCallerNames";
             this.lstCallerNames.Size = new System.Drawing.Size(253, 20);
@@ -193,7 +193,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(128, 25);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(104, 26);
             this.txtPhoneNumber.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(253, 22);
@@ -204,7 +204,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 92);
+            this.label7.Location = new System.Drawing.Point(4, 89);
             this.label7.MinimumSize = new System.Drawing.Size(120, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 16);
@@ -214,7 +214,7 @@
             // txtCallerName
             // 
             this.txtCallerName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCallerName.Location = new System.Drawing.Point(128, 86);
+            this.txtCallerName.Location = new System.Drawing.Point(104, 86);
             this.txtCallerName.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallerName.Name = "txtCallerName";
             this.txtCallerName.Size = new System.Drawing.Size(253, 22);
@@ -235,15 +235,15 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lstCallerNames);
             this.panel2.Controls.Add(this.txtPhoneNumber);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtCallerName);
             this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(3, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(384, 116);
+            this.panel2.Size = new System.Drawing.Size(367, 116);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -261,7 +261,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 35);
+            this.label10.Location = new System.Drawing.Point(3, 32);
             this.label10.MinimumSize = new System.Drawing.Size(120, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 16);
@@ -271,7 +271,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(127, 95);
+            this.txtDescription.Location = new System.Drawing.Point(107, 107);
             this.txtDescription.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -282,7 +282,7 @@
             // txtLandmark
             // 
             this.txtLandmark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLandmark.Location = new System.Drawing.Point(127, 63);
+            this.txtLandmark.Location = new System.Drawing.Point(107, 64);
             this.txtLandmark.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtLandmark.Name = "txtLandmark";
             this.txtLandmark.Size = new System.Drawing.Size(252, 22);
@@ -291,7 +291,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(127, 29);
+            this.txtAddress.Location = new System.Drawing.Point(107, 29);
             this.txtAddress.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(252, 22);
@@ -324,20 +324,20 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.txtDescription);
             this.panel3.Controls.Add(this.txtLandmark);
             this.panel3.Controls.Add(this.txtAddress);
-            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(399, 107);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(3, 363);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(390, 250);
+            this.panel3.Size = new System.Drawing.Size(367, 250);
             this.panel3.TabIndex = 3;
             // 
             // btnEmergency
             // 
-            this.btnEmergency.Location = new System.Drawing.Point(639, 363);
+            this.btnEmergency.Location = new System.Drawing.Point(220, 648);
             this.btnEmergency.Name = "btnEmergency";
             this.btnEmergency.Size = new System.Drawing.Size(150, 23);
             this.btnEmergency.TabIndex = 29;
@@ -347,7 +347,7 @@
             // 
             // btnAddEmer
             // 
-            this.btnAddEmer.Location = new System.Drawing.Point(483, 363);
+            this.btnAddEmer.Location = new System.Drawing.Point(220, 619);
             this.btnAddEmer.Name = "btnAddEmer";
             this.btnAddEmer.Size = new System.Drawing.Size(150, 23);
             this.btnAddEmer.TabIndex = 30;
@@ -365,7 +365,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "Call_View";
-            this.Size = new System.Drawing.Size(795, 389);
+            this.Size = new System.Drawing.Size(373, 684);
             this.Load += new System.EventHandler(this.Call_View_Load);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

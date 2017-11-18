@@ -13,7 +13,7 @@ namespace Rescue_911
         public delegate void ButtonClickedEventHandler(object sender, EventArgs e);
         public event EventHandler OnUserControlButtonClicked;
 
-        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call")
+        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call", false)
         {
             InitializeComponent();
 
@@ -85,7 +85,7 @@ namespace Rescue_911
 
                 // Update the Shared Data values regarding the Calls.
                 SD.Calls.Add(Current_Call);
-                ((Login_Form)SD.LoginForm).UpdateSD(SD);
+                ((Main_Form)SD.MainForm).UpdateSD(SD);
                 return true;
             }
         }

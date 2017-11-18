@@ -8,7 +8,6 @@ namespace Rescue_911
 {
     public partial class CallForm : Special_Form
     {
-        private Shared_Data SD;
         Emergency_Call Current_Call;
         List<Patient> Suggested_Patients = new List<Patient>();
         Call_View CV;
@@ -23,7 +22,7 @@ namespace Rescue_911
 
             SD.Calls.Add(Current_Call);
             // Update the Shared Data values regarding the Calls.
-            ((Login_Form)SD.LoginForm).UpdateSD(SD);
+            ((Main_Form)SD.MainForm).UpdateSD(SD);
 
             InitializeComponent();
         }
@@ -31,7 +30,6 @@ namespace Rescue_911
         private void CallForm_Load(object sender, EventArgs e)
         {
             CV = new Call_View(ref SD);
-            CV.Dock = DockStyle.Fill;
             CV.OnUserControlButtonClicked += new EventHandler(btnEmergency_click);
             CV.Show();
 
@@ -41,7 +39,7 @@ namespace Rescue_911
         private void btnEmergency_click(object sender, EventArgs e)
         {
             Emergency_Link_View EmergencyLinkControl = new Emergency_Link_View(ref SD);
-            EmergencyLinkControl.Dock = DockStyle.Fill;
+            EmergencyLinkControl.Dock = DockStyle.Right;
             EmergencyLinkControl.Show();
 
             this.Controls.Add(EmergencyLinkControl);
