@@ -52,10 +52,10 @@ namespace Rescue_911
                 b.Name = "btn" + i;
                 b.Tag = i;
                 b.TabIndex = i;
-                b.Text = "Open " + instance.Text;
+                b.Text = instance.Text;
                 b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // Spacing between buttons
-                b.Margin = new Padding(0, 0, 0, 5);
+                b.Margin = new Padding(0, 0, 0, 0);
                 SetUpButton(ref b, xAcccessibleViews[i]);
 
                 layoutPanel.Controls.Add(b);
@@ -75,7 +75,7 @@ namespace Rescue_911
             b.UseVisualStyleBackColor = false;
             b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // Spacing between buttons
-            b.Margin = new Padding(0, 0, 0, 5);
+            b.Margin = new Padding(0, 0, 0, 0);
 
             SetUpButton(ref b, typeof(Login_View));
 

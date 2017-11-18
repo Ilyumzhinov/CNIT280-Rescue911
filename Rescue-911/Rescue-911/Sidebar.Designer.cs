@@ -44,7 +44,7 @@
             this.layoutPanel.Margin = new System.Windows.Forms.Padding(0, 30, 0, 50);
             this.layoutPanel.MinimumSize = new System.Drawing.Size(100, 50);
             this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(100, 50);
+            this.layoutPanel.Size = new System.Drawing.Size(138, 50);
             this.layoutPanel.TabIndex = 5;
             // 
             // label1
@@ -99,7 +99,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.layoutPanel);
@@ -110,7 +109,7 @@
             this.MinimumSize = new System.Drawing.Size(150, 0);
             this.Name = "Sidebar";
             this.Padding = new System.Windows.Forms.Padding(5, 10, 6, 0);
-            this.Size = new System.Drawing.Size(150, 300);
+            this.Size = new System.Drawing.Size(150, 188);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LinePaint);
             this.ResumeLayout(false);
             this.PerformLayout();

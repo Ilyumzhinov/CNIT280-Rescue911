@@ -65,7 +65,7 @@
             this.txtTeamsReq.Location = new System.Drawing.Point(103, 98);
             this.txtTeamsReq.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtTeamsReq.Name = "txtTeamsReq";
-            this.txtTeamsReq.Size = new System.Drawing.Size(252, 22);
+            this.txtTeamsReq.Size = new System.Drawing.Size(251, 22);
             this.txtTeamsReq.TabIndex = 10;
             this.txtTeamsReq.Text = "1";
             // 
@@ -114,7 +114,7 @@
             "Critical trauma"});
             this.cboCallPriority.Location = new System.Drawing.Point(103, 64);
             this.cboCallPriority.Name = "cboCallPriority";
-            this.cboCallPriority.Size = new System.Drawing.Size(253, 24);
+            this.cboCallPriority.Size = new System.Drawing.Size(251, 24);
             this.cboCallPriority.TabIndex = 6;
             this.cboCallPriority.SelectedIndexChanged += new System.EventHandler(this.cboCallPriority_SelectedIndexChanged);
             // 
@@ -125,7 +125,7 @@
             this.txtCallDateTime.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallDateTime.Name = "txtCallDateTime";
             this.txtCallDateTime.ReadOnly = true;
-            this.txtCallDateTime.Size = new System.Drawing.Size(252, 22);
+            this.txtCallDateTime.Size = new System.Drawing.Size(250, 22);
             this.txtCallDateTime.TabIndex = 4;
             // 
             // label4
@@ -148,7 +148,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 202);
+            this.panel1.Location = new System.Drawing.Point(17, 211);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 155);
             this.panel1.TabIndex = 2;
@@ -186,7 +186,7 @@
             this.lstCallerNames.Location = new System.Drawing.Point(104, 54);
             this.lstCallerNames.MultiColumn = true;
             this.lstCallerNames.Name = "lstCallerNames";
-            this.lstCallerNames.Size = new System.Drawing.Size(253, 20);
+            this.lstCallerNames.Size = new System.Drawing.Size(250, 20);
             this.lstCallerNames.TabIndex = 15;
             this.lstCallerNames.SelectedIndexChanged += new System.EventHandler(this.lstCallerNames_SelectedIndexChanged);
             // 
@@ -196,7 +196,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(104, 26);
             this.txtPhoneNumber.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(253, 22);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(250, 22);
             this.txtPhoneNumber.TabIndex = 1;
             this.txtPhoneNumber.Leave += new System.EventHandler(this.txtPhoneNumber_Leave);
             // 
@@ -217,7 +217,7 @@
             this.txtCallerName.Location = new System.Drawing.Point(104, 86);
             this.txtCallerName.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallerName.Name = "txtCallerName";
-            this.txtCallerName.Size = new System.Drawing.Size(253, 22);
+            this.txtCallerName.Size = new System.Drawing.Size(250, 22);
             this.txtCallerName.TabIndex = 12;
             this.txtCallerName.Leave += new System.EventHandler(this.txtCallerName_Leave);
             // 
@@ -241,7 +241,7 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(3, 74);
+            this.panel2.Location = new System.Drawing.Point(17, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(367, 116);
             this.panel2.TabIndex = 1;
@@ -275,7 +275,7 @@
             this.txtDescription.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(252, 140);
+            this.txtDescription.Size = new System.Drawing.Size(247, 140);
             this.txtDescription.TabIndex = 20;
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
@@ -285,7 +285,7 @@
             this.txtLandmark.Location = new System.Drawing.Point(107, 64);
             this.txtLandmark.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtLandmark.Name = "txtLandmark";
-            this.txtLandmark.Size = new System.Drawing.Size(252, 22);
+            this.txtLandmark.Size = new System.Drawing.Size(247, 22);
             this.txtLandmark.TabIndex = 18;
             // 
             // txtAddress
@@ -294,7 +294,7 @@
             this.txtAddress.Location = new System.Drawing.Point(107, 29);
             this.txtAddress.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(252, 22);
+            this.txtAddress.Size = new System.Drawing.Size(247, 22);
             this.txtAddress.TabIndex = 16;
             this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
@@ -330,26 +330,26 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(3, 363);
+            this.panel3.Location = new System.Drawing.Point(390, 86);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(367, 250);
+            this.panel3.Size = new System.Drawing.Size(365, 280);
             this.panel3.TabIndex = 3;
             // 
             // btnEmergency
             // 
-            this.btnEmergency.Location = new System.Drawing.Point(220, 648);
+            this.btnEmergency.Location = new System.Drawing.Point(409, 372);
             this.btnEmergency.Name = "btnEmergency";
             this.btnEmergency.Size = new System.Drawing.Size(150, 23);
             this.btnEmergency.TabIndex = 29;
-            this.btnEmergency.Text = "Proceed to Emergency";
+            this.btnEmergency.Text = "Link to Emergency";
             this.btnEmergency.UseVisualStyleBackColor = true;
             this.btnEmergency.Click += new System.EventHandler(this.btnEmergency_click);
             // 
             // btnAddEmer
             // 
-            this.btnAddEmer.Location = new System.Drawing.Point(220, 619);
+            this.btnAddEmer.Location = new System.Drawing.Point(565, 372);
             this.btnAddEmer.Name = "btnAddEmer";
-            this.btnAddEmer.Size = new System.Drawing.Size(150, 23);
+            this.btnAddEmer.Size = new System.Drawing.Size(192, 23);
             this.btnAddEmer.TabIndex = 30;
             this.btnAddEmer.Text = "Add Emergency";
             this.btnAddEmer.UseVisualStyleBackColor = true;
@@ -365,7 +365,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "Call_View";
-            this.Size = new System.Drawing.Size(373, 684);
+            this.Size = new System.Drawing.Size(763, 441);
             this.Load += new System.EventHandler(this.Call_View_Load);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

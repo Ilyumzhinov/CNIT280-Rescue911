@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Rescue_911
 {
@@ -23,7 +24,7 @@ namespace Rescue_911
 
             this.Text = xTitle;
             this.lbTitle.Text = xTitle;
-            //this.lbTitle.Dock = DockStyle.Top;
+            this.BackColor = Color.Transparent;
             this.lbTitle.Visible = true;
         }
 

@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Rescue_911
 {
@@ -21,6 +23,7 @@ namespace Rescue_911
 
             InitializeComponent();
         }
+
 
         // SETTING UP THE VIEWS
         //Displaying the Login screen when the app is launched.
@@ -77,9 +80,7 @@ namespace Rescue_911
             if (Current_View.GetMiddleAligned() == false)
             {
                 this.SizeChanged -= new EventHandler(Main_Form_SizeChanged);
-                Current_View.AutoSize = true;
                 Current_View.Dock = DockStyle.Fill;
-                //Current_View.Anchor = AnchorStyles.Top;
             }
             else
             {
@@ -107,5 +108,6 @@ namespace Rescue_911
         {
             SD = xSD;
         }
+
     }
 }
