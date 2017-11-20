@@ -15,10 +15,18 @@ namespace Rescue_911
         int non = 0;
         int sub = 0;
         int indirectsub = 0;
-        public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient", false)
+
+        // CONSTRUCTORS
+        //To-display the view.
+        public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient", false, Color.Peru)
         {
             InitializeComponent();
         }
+
+        //To-instantiate the view.
+        public Link_Patient_View() : base("Link Patient", false, Color.Peru)
+        { }
+        //
 
         private void Linkepatientandsub_Load(object sender, EventArgs e)
         {

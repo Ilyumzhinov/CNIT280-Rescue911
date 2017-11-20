@@ -52,11 +52,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnEmergency = new System.Windows.Forms.Button();
             this.btnAddEmer = new System.Windows.Forms.Button();
+            this.btnEmergency = new System.Windows.Forms.Button();
+            this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.layoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTeamsReq
@@ -148,10 +150,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(17, 211);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 155);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 3;
             // 
             // label5
             // 
@@ -241,7 +243,7 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(17, 86);
+            this.panel2.Location = new System.Drawing.Point(376, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(367, 116);
             this.panel2.TabIndex = 1;
@@ -323,31 +325,23 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnAddEmer);
             this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.btnEmergency);
             this.panel3.Controls.Add(this.txtDescription);
             this.panel3.Controls.Add(this.txtLandmark);
             this.panel3.Controls.Add(this.txtAddress);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(390, 86);
+            this.panel3.Location = new System.Drawing.Point(3, 164);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(365, 280);
             this.panel3.TabIndex = 3;
             // 
-            // btnEmergency
-            // 
-            this.btnEmergency.Location = new System.Drawing.Point(409, 372);
-            this.btnEmergency.Name = "btnEmergency";
-            this.btnEmergency.Size = new System.Drawing.Size(150, 23);
-            this.btnEmergency.TabIndex = 29;
-            this.btnEmergency.Text = "Link to Emergency";
-            this.btnEmergency.UseVisualStyleBackColor = true;
-            this.btnEmergency.Click += new System.EventHandler(this.btnEmergency_click);
-            // 
             // btnAddEmer
             // 
-            this.btnAddEmer.Location = new System.Drawing.Point(565, 372);
+            this.btnAddEmer.Location = new System.Drawing.Point(162, 253);
             this.btnAddEmer.Name = "btnAddEmer";
             this.btnAddEmer.Size = new System.Drawing.Size(192, 23);
             this.btnAddEmer.TabIndex = 30;
@@ -355,29 +349,47 @@
             this.btnAddEmer.UseVisualStyleBackColor = true;
             this.btnAddEmer.Click += new System.EventHandler(this.btnAddEmer_Click);
             // 
+            // btnEmergency
+            // 
+            this.btnEmergency.Location = new System.Drawing.Point(6, 253);
+            this.btnEmergency.Name = "btnEmergency";
+            this.btnEmergency.Size = new System.Drawing.Size(150, 23);
+            this.btnEmergency.TabIndex = 29;
+            this.btnEmergency.Text = "Link to Emergency";
+            this.btnEmergency.UseVisualStyleBackColor = true;
+            this.btnEmergency.Click += new System.EventHandler(this.btnEmergency_click);
+            // 
+            // layoutPanel
+            // 
+            this.layoutPanel.AutoScroll = true;
+            this.layoutPanel.AutoSize = true;
+            this.layoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.layoutPanel.Controls.Add(this.panel1);
+            this.layoutPanel.Controls.Add(this.panel2);
+            this.layoutPanel.Controls.Add(this.panel3);
+            this.layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutPanel.Location = new System.Drawing.Point(5, 90);
+            this.layoutPanel.MaximumSize = new System.Drawing.Size(800, 2000);
+            this.layoutPanel.Name = "layoutPanel";
+            this.layoutPanel.Size = new System.Drawing.Size(769, 508);
+            this.layoutPanel.TabIndex = 4;
+            // 
             // Call_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnAddEmer);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnEmergency);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.layoutPanel);
             this.Name = "Call_View";
-            this.Size = new System.Drawing.Size(763, 441);
+            this.Size = new System.Drawing.Size(779, 603);
             this.Load += new System.EventHandler(this.Call_View_Load);
-            this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.btnEmergency, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.btnAddEmer, 0);
+            this.Controls.SetChildIndex(this.layoutPanel, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.layoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,5 +423,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnEmergency;
         private System.Windows.Forms.Button btnAddEmer;
+        private System.Windows.Forms.FlowLayoutPanel layoutPanel;
     }
 }

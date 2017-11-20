@@ -13,7 +13,9 @@ namespace Rescue_911
         public delegate void ButtonClickedEventHandler(object sender, EventArgs e);
         public event EventHandler OnUserControlButtonClicked;
 
-        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call", false)
+        // CONSTRUCTORS
+        //To-display the view.
+        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call", false, Color.Teal)
         {
             InitializeComponent();
 
@@ -24,6 +26,11 @@ namespace Rescue_911
 
             // SD.Calls.Add(Current_Call);
         }
+
+        //To-instantiate the view.
+        public Call_View() : base("Log Call", false, Color.Teal)
+        {}
+        //
 
         private void Call_View_Load(object sender, EventArgs e)
         {

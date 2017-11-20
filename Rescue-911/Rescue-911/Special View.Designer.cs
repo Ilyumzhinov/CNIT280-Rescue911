@@ -36,8 +36,9 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(10, 33);
+            this.lbTitle.Location = new System.Drawing.Point(5, 31);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(82, 37);
@@ -47,6 +48,9 @@
             // btnBack
             // 
             this.btnBack.AutoSize = true;
+            this.btnBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -54,9 +58,9 @@
             this.btnBack.Location = new System.Drawing.Point(5, 5);
             this.btnBack.Margin = new System.Windows.Forms.Padding(0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(218, 31);
+            this.btnBack.Size = new System.Drawing.Size(290, 26);
             this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back to Previous View";
+            this.btnBack.Text = "< PREVIOUS VIEW";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Visible = false;
@@ -65,10 +69,11 @@
             // lbDesc
             // 
             this.lbDesc.AutoSize = true;
+            this.lbDesc.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDesc.ForeColor = System.Drawing.Color.Gray;
-            this.lbDesc.Location = new System.Drawing.Point(14, 70);
-            this.lbDesc.Margin = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.lbDesc.Location = new System.Drawing.Point(5, 68);
+            this.lbDesc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 15);
             this.lbDesc.Name = "lbDesc";
             this.lbDesc.Size = new System.Drawing.Size(70, 17);
             this.lbDesc.TabIndex = 3;
@@ -82,8 +87,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.lbDesc);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbTitle);
+            this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Special_View";
             this.Padding = new System.Windows.Forms.Padding(5);

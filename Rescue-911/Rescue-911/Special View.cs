@@ -17,6 +17,7 @@ namespace Rescue_911
         //Primitives
         protected Shared_Data SD;
         private bool MiddleAligned;
+        private Color Colour;
         private string dTitle;
         private string dDesc;
 
@@ -29,17 +30,18 @@ namespace Rescue_911
 
 
         // CONSTRUCTORS
-        //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue.
-        public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, string xDesc = "") : this()
+        //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue
+        
+        //To-display the view.
+        public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
         {
-            // Setting up the view
             SD = xSD;
             MiddleAligned = xMiddleAligned;
-            SetTitle(xTitle);
-
+            Colour = xColour;
 
             this.BackColor = Color.Transparent;
 
+            SetTitle(xTitle);
             if (xDesc != "")
             {
                 SetDesc(xDesc);
@@ -49,6 +51,21 @@ namespace Rescue_911
         private Special_View()
         {
             InitializeComponent();
+        }
+
+        //To-instantiate
+        public Special_View(string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "")
+        {
+            MiddleAligned = xMiddleAligned;
+            Colour = xColour;
+
+            this.BackColor = Color.Transparent;
+
+            SetTitle(xTitle);
+            if (xDesc != "")
+            {
+                SetDesc(xDesc);
+            }
         }
         //
 
@@ -69,7 +86,7 @@ namespace Rescue_911
         {
             Previous_View = xPrevious_View;
 
-            btnBack.Text = "Back to " + Previous_View.GetTitle();
+            btnBack.Text = "< " + Previous_View.GetTitle().ToUpper();
 
             btnBack.Visible = true;
         }
@@ -77,9 +94,13 @@ namespace Rescue_911
         public void SetTitle(string xTitle)
         {
             dTitle = xTitle;
-            this.Text = xTitle;
-            this.lbTitle.Text = xTitle;
-            this.lbTitle.Visible = true;
+
+            if (lbTitle != null)
+            {
+                this.Text = xTitle;
+                this.lbTitle.Text = xTitle;
+                this.lbTitle.Visible = true;
+            }
         }
 
         public void SetDesc(string xDesc)
@@ -90,6 +111,7 @@ namespace Rescue_911
         }
 
         public bool GetMiddleAligned() { return MiddleAligned; }
+        public Color GetColour() { return Colour; }
 
         public string GetTitle() { return dTitle; }
 

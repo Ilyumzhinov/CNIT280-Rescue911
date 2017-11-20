@@ -29,7 +29,6 @@ namespace Rescue_911
             layoutPanel.BorderStyle = BorderStyle.None;
 
             PopulateMenu(xAcccessibleViews);
-            System.Windows.Forms.PaintEventArgs e;
         }
 
         // This method is used to dynamically populate the form with buttons.
@@ -41,45 +40,34 @@ namespace Rescue_911
 
             for (int i = 0; i < xAcccessibleViews.Count; i++)
             {
-                // This is wasteful
-                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { SD }));
+                // Creating an instance of a view to get its attributes.
+                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
 
                 b = new Button();
                 b.Size = new System.Drawing.Size(layoutPanel.Width, 25);
                 b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                b.FlatAppearance.BorderSize = 0;
                 b.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                b.ForeColor = System.Drawing.Color.White;
+                b.ForeColor = instance.GetColour();
                 b.Name = "btn" + i;
                 b.Tag = i;
                 b.TabIndex = i;
-                b.Text = instance.Text;
+                b.Text = instance.GetTitle();
                 b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // Spacing between buttons
                 b.Margin = new Padding(0, 0, 0, 0);
                 SetUpButton(ref b, xAcccessibleViews[i]);
 
                 layoutPanel.Controls.Add(b);
+
+                // Special rules for the Logout button.
+                if (i == (xAcccessibleViews.Count - 1))
+                {
+                    b.Text = "Logout";
+                    b.BackColor = Color.WhiteSmoke;
+                    b.Margin = new Padding(0, 10, 0, 0);
+                }
             }
-
-            // Create a Logout button.
-            // To-Do: This is wasteful
-            b = new Button();
-            b.Size = new System.Drawing.Size(layoutPanel.Width, 25);
-            b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            b.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            b.ForeColor = System.Drawing.Color.LightSlateGray;
-            b.Name = "btn" + xAcccessibleViews.Count;
-            b.Tag = xAcccessibleViews.Count;
-            b.TabIndex = xAcccessibleViews.Count;
-            b.Text = "Logout";
-            b.UseVisualStyleBackColor = false;
-            b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // Spacing between buttons
-            b.Margin = new Padding(0, 10, 0, 0);
-
-            SetUpButton(ref b, typeof(Login_View));
-
-            layoutPanel.Controls.Add(b);
         }
 
         // Reference:
@@ -98,82 +86,27 @@ namespace Rescue_911
         private void SetUpButton(ref Button xBtn, Type xT)
         {
             if (xT == typeof(Call_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Teal;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-
                 xBtn.Click += new System.EventHandler(this.btnCallLog_Click);
-            }
             else if (xT == typeof(Emergency_Management_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.IndianRed;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-
                 xBtn.Click += new System.EventHandler(this.btnWaitingCall_Click);
-            }
             else if (xT == typeof(Response_Team_Information_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.SandyBrown;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
-
                 xBtn.Click += new System.EventHandler(this.btnReceiveCall_Click);
-            }
             else if (xT == typeof(EMT_Login_Shift_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Black;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-
                 xBtn.Click += new System.EventHandler(this.btnEMTLogin);
-            }
             else if (xT == typeof(Base_Station_Records_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.SteelBlue;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-
                 xBtn.Click += new System.EventHandler(this.btnBSRecord_Click);
-            }
             else if (xT == typeof(Dispatch_Related_Times_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.MediumPurple;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.MediumPurple;
-
                 xBtn.Click += new System.EventHandler(this.btnDispatchTimes_Click);
-            }
             else if (xT == typeof(Dispatch_Report_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.PaleVioletRed;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.PaleVioletRed;
-
                 xBtn.Click += new System.EventHandler(this.btnDispatchReport_Click);
-            }
             else if (xT == typeof(Link_Patient_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Peru;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Peru;
-
                 xBtn.Click += new System.EventHandler(this.btnLinkPatient_Click);
-            }
             else if (xT == typeof(Patient_Information_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Orchid;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
-
                 xBtn.Click += new System.EventHandler(this.btnPatientInto_Click);
-            }
             else if (xT == typeof(Invoice_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Pink;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.Pink;
-
                 xBtn.Click += new System.EventHandler(this.btnInvoice_Click);
-            }
             else if (xT == typeof(Login_View))
-            {
-                xBtn.BackColor = System.Drawing.Color.Transparent;
-                xBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray;
-
                 xBtn.Click += new System.EventHandler(this.btnLogout_Click);
-            }
 
             // Another way of creating this event
             //  b.Click += (sender, e) =>

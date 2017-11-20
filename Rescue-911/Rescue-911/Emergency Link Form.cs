@@ -7,7 +7,6 @@ namespace Rescue_911
     public partial class Emergency_Link_Form : Special_Form
     {
         private Emergency_Call Current_Call;
-        private int emergencySelected;
 
         public Emergency_Link_Form(ref Shared_Data xSD) : base(ref xSD, "Emergency Link")
         {
