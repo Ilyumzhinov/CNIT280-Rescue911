@@ -8,10 +8,10 @@ namespace Rescue_911
 {
     public partial class Call_View : Special_View
     {
-        Emergency_Call Current_Call;
-        List<Patient> Suggested_Patients = new List<Patient>();
-        public delegate void ButtonClickedEventHandler(object sender, EventArgs e);
-        public event EventHandler OnUserControlButtonClicked;
+        private Emergency_Call Current_Call;
+        private List<Patient> Suggested_Patients = new List<Patient>();
+
+        public event EventHandler LinkEmergencyButton_Click;
 
         // CONSTRUCTORS
         //To-display the view.
@@ -24,7 +24,11 @@ namespace Rescue_911
 
             Current_Call.SetState("Not Logged");
 
-            // SD.Calls.Add(Current_Call);
+            //SD.Calls.Add(Current_Call);
+
+            txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
+
+            txtPhoneNumber.Focus();
         }
 
         //To-instantiate the view.
@@ -32,21 +36,22 @@ namespace Rescue_911
         {}
         //
 
-        private void Call_View_Load(object sender, EventArgs e)
-        {
-            txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
 
-            txtPhoneNumber.Focus();
-        }
-
-        private void btnEmergency_click(object sender, EventArgs e)
+        // EVENTS
+        private void btnLinkEmergency_Click(object sender, EventArgs e)
         {
             if (CheckFields() == false)
                 return;
 
-            if (OnUserControlButtonClicked != null)
-                OnUserControlButtonClicked(this, e);
+            LinkEmergencyButton_Click?.Invoke(this, e);
         }
+
+        private void btnAddEmer_Click(object sender, EventArgs e)
+        {
+            //Emergency_Form Em = new Emergency_Form(ref SD, Current_Call);
+            //Em.Show();
+        }
+        //
 
         private bool CheckFields()
         {
@@ -143,12 +148,6 @@ namespace Rescue_911
             }
         }
 
-       
-
-        private void btnAddEmer_Click(object sender, EventArgs e)
-        {
-            Emergency_Form Em = new Emergency_Form(ref SD, Current_Call);
-            Em.Show();
-        }
+        public Emergency_Call GetEmergency_Call() { return Current_Call; }
     }
 }

@@ -59,18 +59,6 @@
     <Compile Include="Base Station Records View.Designer.cs">
       <DependentUpon>Base Station Records View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base Station Records.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Base Station Records.Designer.cs">
-      <DependentUpon>Base Station Records.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Call Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Call Form.Designer.cs">
-      <DependentUpon>Call Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Call View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,42 +71,24 @@
     <Compile Include="Dispatch Related Times View.Designer.cs">
       <DependentUpon>Dispatch Related Times View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dispatch Related Times.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dispatch Related Times.Designer.cs">
-      <DependentUpon>Dispatch Related Times.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dispatch Report View.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Dispatch Report View.Designer.cs">
       <DependentUpon>Dispatch Report View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dispatch Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dispatch Report.Designer.cs">
-      <DependentUpon>Dispatch Report.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dispatch.cs" />
-    <Compile Include="Emergency Form.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Emergency Add View.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Emergency Form.Designer.cs">
-      <DependentUpon>Emergency Form.cs</DependentUpon>
+    <Compile Include="Emergency Add View.Designer.cs">
+      <DependentUpon>Emergency Add View.cs</DependentUpon>
     </Compile>
     <Compile Include="Emergency Link View.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Emergency Link View.Designer.cs">
       <DependentUpon>Emergency Link View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Emergency Link Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Emergency Link Form.Designer.cs">
-      <DependentUpon>Emergency Link Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Emergency Management View.cs">
       <SubType>UserControl</SubType>
@@ -137,18 +107,6 @@
       <DependentUpon>EMT Login Shift View.cs</DependentUpon>
     </Compile>
     <Compile Include="EMT.cs" />
-    <Compile Include="EMT_login_shift.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EMT_login_shift.Designer.cs">
-      <DependentUpon>EMT_login_shift.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Invoice Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invoice Form.Designer.cs">
-      <DependentUpon>Invoice Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Invoice View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,12 +136,6 @@
     </Compile>
     <Compile Include="Main View.Designer.cs">
       <DependentUpon>Main View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Patient Information Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Patient Information Form.Designer.cs">
-      <DependentUpon>Patient Information Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient Information View.cs">
       <SubType>UserControl</SubType>
@@ -216,21 +168,9 @@
     <Compile Include="Special View.Designer.cs">
       <DependentUpon>Special View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Special_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Special_Form.Designer.cs">
-      <DependentUpon>Special_Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="SUB.cs" />
     <EmbeddedResource Include="Base Station Records View.resx">
       <DependentUpon>Base Station Records View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Base Station Records.resx">
-      <DependentUpon>Base Station Records.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Call Form.resx">
-      <DependentUpon>Call Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Call View.resx">
       <DependentUpon>Call View.cs</DependentUpon>
@@ -238,35 +178,20 @@
     <EmbeddedResource Include="Dispatch Related Times View.resx">
       <DependentUpon>Dispatch Related Times View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dispatch Related Times.resx">
-      <DependentUpon>Dispatch Related Times.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dispatch Report View.resx">
       <DependentUpon>Dispatch Report View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dispatch Report.resx">
-      <DependentUpon>Dispatch Report.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Emergency Form.resx">
-      <DependentUpon>Emergency Form.cs</DependentUpon>
+    <EmbeddedResource Include="Emergency Add View.resx">
+      <DependentUpon>Emergency Add View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Link View.resx">
       <DependentUpon>Emergency Link View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Emergency Link Form.resx">
-      <DependentUpon>Emergency Link Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Management View.resx">
       <DependentUpon>Emergency Management View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EMT Login Shift View.resx">
       <DependentUpon>EMT Login Shift View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EMT_login_shift.resx">
-      <DependentUpon>EMT_login_shift.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Invoice Form.resx">
-      <DependentUpon>Invoice Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice View.resx">
       <DependentUpon>Invoice View.cs</DependentUpon>
@@ -282,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main View.resx">
       <DependentUpon>Main View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Patient Information Form.resx">
-      <DependentUpon>Patient Information Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient Information View.resx">
       <DependentUpon>Patient Information View.cs</DependentUpon>
@@ -307,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Special View.resx">
       <DependentUpon>Special View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Special_Form.resx">
-      <DependentUpon>Special_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

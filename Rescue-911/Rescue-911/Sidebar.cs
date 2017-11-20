@@ -11,6 +11,7 @@ namespace Rescue_911
         // DATA STRUCTURE
         //Primitives
         private Shared_Data SD;
+        private Button mSelectedButton;
 
         //Composite Data
         private List<Button> Buttons;
@@ -37,6 +38,7 @@ namespace Rescue_911
 
 
         // FUNCTIONAL METHODS
+        //This method is called from the outside and has the data to be populated.
         public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Person xUserType)
         {
             SD = xSD;
@@ -51,8 +53,8 @@ namespace Rescue_911
             PopulateMenu(xAcccessibleViews);
         }
 
-        // This method is used to dynamically populate the form with buttons.
-        // Reference on LayoutPanel: https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel#positioning-controls-using-docking-and-anchoring
+        //This method is used to dynamically populate the form with buttons.
+        //Reference on LayoutPanel: https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel#positioning-controls-using-docking-and-anchoring
         private void PopulateMenu(List<Type> xAcccessibleViews)
         {
             Special_View instance;
@@ -60,27 +62,28 @@ namespace Rescue_911
 
             for (int i = 0; i < xAcccessibleViews.Count; i++)
             {
-                // Creating an instance of a view to get its attributes.
+                //Creating an instance of a view to get its attributes.
                 instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
 
                 Buttons.Add(new Button());
                 Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 25);
+                Buttons[i].Cursor = System.Windows.Forms.Cursors.Hand;
                 Buttons[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 Buttons[i].FlatAppearance.BorderSize = 0;
                 Buttons[i].Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 Buttons[i].ForeColor = instance.GetColour();
-                Buttons[i].Name ="btn" + i.ToString();
+                Buttons[i].Name = "btn" + i.ToString();
                 Buttons[i].Tag = i;
                 Buttons[i].TabIndex = i;
                 Buttons[i].Text = instance.GetTitle();
                 Buttons[i].TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
-                // Spacing between buttons
+                //Spacing between buttons
                 Buttons[i].Margin = new Padding(0, 0, 0, 0);
 
                 layoutPanel.Controls.Add(Buttons[i]);
 
-                // Special rules for the Logout button.
+                //Special rules for the Logout button.
                 if (i == (xAcccessibleViews.Count - 1))
                 {
                     Buttons[i].Text = "Logout";
@@ -88,13 +91,18 @@ namespace Rescue_911
                     Buttons[i].Margin = new Padding(0, 10, 0, 0);
                 }
 
-                // Do the funcitonal button setup
-                //SetUpButton(ref b, xAcccessibleViews[i]);
-
-                // Uniform way of creating the click event
+                // Doing the funcitonal button setup
+                //Uniform way of creating the click event
                 Buttons[i].Click += (sender, e) =>
                 {
                     Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { SD }));
+
+                    MenuElement_Changed(sender, e);
+
+                    ((Button)sender).BackColor = viewInstance.GetColour();
+                    ((Button)sender).Enabled = false;
+                    ((Button)sender).ForeColor = Color.White;
+
                     viewInstance.Show();
 
                     SetUpButton((Button)sender, e, xAcccessibleViews[((Button)sender).TabIndex]);
@@ -102,19 +110,7 @@ namespace Rescue_911
             }
         }
 
-        // Reference:
-        // https://www.youtube.com/watch?v=s94WCTDMtbw
-        private void LinePaint(object sender, PaintEventArgs e)
-        {
-            Graphics gObject = this.CreateGraphics();
-
-            Brush colour = new SolidBrush(Color.LightSkyBlue);
-            Pen colourPen = new Pen(colour, 8);
-
-            gObject.FillRectangle(colour, this.Width - 1, 0, 1, this.Height);
-        }
-
-        // Do the functional button setup.
+        //Do the functional button setup.
         private void SetUpButton(Button sender, EventArgs e, Type t)
         {
             if (t == typeof(Call_View))
@@ -165,6 +161,41 @@ namespace Rescue_911
 
                 LogoutButton_Click?.Invoke(this, e);
             }
+        }
+        //
+
+
+        // EVENTS
+        public void MenuElement_Changed(object sender, EventArgs e)
+        {
+            // The first time a button gets selected.
+            if (mSelectedButton == null)
+            {
+                mSelectedButton = (Button)sender;
+            }
+
+            // Activate the previously selected button.
+            if (mSelectedButton != (Button)sender)
+            {
+                mSelectedButton.Enabled = true;
+                mSelectedButton.ForeColor = mSelectedButton.BackColor;
+                mSelectedButton.BackColor = Color.Transparent;
+
+                mSelectedButton = (Button)sender;
+            }
+        }
+        //
+
+        // Draws a vertical line that separates the control.
+        //Reference: https://www.youtube.com/watch?v=s94WCTDMtbw
+        private void LinePaint(object sender, PaintEventArgs e)
+        {
+            Graphics gObject = this.CreateGraphics();
+
+            Brush colour = new SolidBrush(SystemColors.MenuHighlight);
+            Pen colourPen = new Pen(colour, 8);
+
+            gObject.FillRectangle(colour, this.Width - 1, 0, 1, this.Height);
         }
         //
     }

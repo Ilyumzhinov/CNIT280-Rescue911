@@ -91,6 +91,7 @@
             this.lbAccessLevel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAccessLevel.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbAccessLevel.Location = new System.Drawing.Point(5, 58);
+            this.lbAccessLevel.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lbAccessLevel.Name = "lbAccessLevel";
             this.lbAccessLevel.Size = new System.Drawing.Size(20, 16);
             this.lbAccessLevel.TabIndex = 15;

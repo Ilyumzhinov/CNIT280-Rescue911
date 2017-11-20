@@ -38,12 +38,13 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(5, 31);
+            this.lbTitle.Location = new System.Drawing.Point(5, 32);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(82, 37);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Title";
+            this.lbTitle.Visible = false;
             // 
             // btnBack
             // 
@@ -53,12 +54,12 @@
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnBack.Location = new System.Drawing.Point(5, 5);
             this.btnBack.Margin = new System.Windows.Forms.Padding(0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(290, 26);
+            this.btnBack.Size = new System.Drawing.Size(290, 27);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "< PREVIOUS VIEW";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -70,12 +71,12 @@
             // 
             this.lbDesc.AutoSize = true;
             this.lbDesc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDesc.ForeColor = System.Drawing.Color.Gray;
-            this.lbDesc.Location = new System.Drawing.Point(5, 68);
+            this.lbDesc.Location = new System.Drawing.Point(5, 69);
             this.lbDesc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 15);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(70, 17);
+            this.lbDesc.Size = new System.Drawing.Size(83, 20);
             this.lbDesc.TabIndex = 3;
             this.lbDesc.Text = "Description";
             this.lbDesc.Visible = false;

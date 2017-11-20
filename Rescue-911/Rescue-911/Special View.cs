@@ -25,13 +25,12 @@ namespace Rescue_911
         private Special_View Previous_View;
 
         //Event Handlers
-        public event EventHandler BackButton_Click;
+
         //
 
 
         // CONSTRUCTORS
         //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue
-        
         //To-display the view.
         public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
         {
@@ -69,14 +68,11 @@ namespace Rescue_911
         //
 
 
-
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Previous_View.Show();
+            SD.MainForm.View_Switch(Previous_View);
 
-            if (BackButton_Click != null)
-                BackButton_Click(this, e);
+            this.Dispose();
         }
 
 
@@ -110,11 +106,14 @@ namespace Rescue_911
         }
 
         public bool GetMiddleAligned() { return MiddleAligned; }
+
         public Color GetColour() { return Colour; }
 
         public string GetTitle() { return dTitle; }
 
         public string GetDesc() { return dDesc; }
+
+        public Special_View GetPrevious_View() { return Previous_View; }
        //
     }
 }

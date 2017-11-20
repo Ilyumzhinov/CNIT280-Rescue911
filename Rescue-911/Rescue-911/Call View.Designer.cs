@@ -53,7 +53,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddEmer = new System.Windows.Forms.Button();
-            this.btnEmergency = new System.Windows.Forms.Button();
+            this.btnLinkEmergency = new System.Windows.Forms.Button();
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -122,6 +122,7 @@
             // 
             // txtCallDateTime
             // 
+            this.txtCallDateTime.Enabled = false;
             this.txtCallDateTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCallDateTime.Location = new System.Drawing.Point(104, 32);
             this.txtCallDateTime.MinimumSize = new System.Drawing.Size(120, 20);
@@ -327,7 +328,7 @@
             // 
             this.panel3.Controls.Add(this.btnAddEmer);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.btnEmergency);
+            this.panel3.Controls.Add(this.btnLinkEmergency);
             this.panel3.Controls.Add(this.txtDescription);
             this.panel3.Controls.Add(this.txtLandmark);
             this.panel3.Controls.Add(this.txtAddress);
@@ -345,19 +346,19 @@
             this.btnAddEmer.Name = "btnAddEmer";
             this.btnAddEmer.Size = new System.Drawing.Size(192, 23);
             this.btnAddEmer.TabIndex = 30;
-            this.btnAddEmer.Text = "Add Emergency";
+            this.btnAddEmer.Text = "Add New Emergency";
             this.btnAddEmer.UseVisualStyleBackColor = true;
             this.btnAddEmer.Click += new System.EventHandler(this.btnAddEmer_Click);
             // 
-            // btnEmergency
+            // btnLinkEmergency
             // 
-            this.btnEmergency.Location = new System.Drawing.Point(6, 253);
-            this.btnEmergency.Name = "btnEmergency";
-            this.btnEmergency.Size = new System.Drawing.Size(150, 23);
-            this.btnEmergency.TabIndex = 29;
-            this.btnEmergency.Text = "Link to Emergency";
-            this.btnEmergency.UseVisualStyleBackColor = true;
-            this.btnEmergency.Click += new System.EventHandler(this.btnEmergency_click);
+            this.btnLinkEmergency.Location = new System.Drawing.Point(6, 253);
+            this.btnLinkEmergency.Name = "btnLinkEmergency";
+            this.btnLinkEmergency.Size = new System.Drawing.Size(150, 23);
+            this.btnLinkEmergency.TabIndex = 29;
+            this.btnLinkEmergency.Text = "Link to Emergency";
+            this.btnLinkEmergency.UseVisualStyleBackColor = true;
+            this.btnLinkEmergency.Click += new System.EventHandler(this.btnLinkEmergency_Click);
             // 
             // layoutPanel
             // 
@@ -368,10 +369,11 @@
             this.layoutPanel.Controls.Add(this.panel2);
             this.layoutPanel.Controls.Add(this.panel3);
             this.layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutPanel.Location = new System.Drawing.Point(5, 90);
+            this.layoutPanel.Location = new System.Drawing.Point(5, 89);
+            this.layoutPanel.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.layoutPanel.MaximumSize = new System.Drawing.Size(800, 2000);
             this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(769, 508);
+            this.layoutPanel.Size = new System.Drawing.Size(769, 749);
             this.layoutPanel.TabIndex = 4;
             // 
             // Call_View
@@ -380,8 +382,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutPanel);
             this.Name = "Call_View";
-            this.Size = new System.Drawing.Size(779, 603);
-            this.Load += new System.EventHandler(this.Call_View_Load);
+            this.Size = new System.Drawing.Size(779, 843);
             this.Controls.SetChildIndex(this.layoutPanel, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -421,7 +422,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnEmergency;
+        private System.Windows.Forms.Button btnLinkEmergency;
         private System.Windows.Forms.Button btnAddEmer;
         private System.Windows.Forms.FlowLayoutPanel layoutPanel;
     }

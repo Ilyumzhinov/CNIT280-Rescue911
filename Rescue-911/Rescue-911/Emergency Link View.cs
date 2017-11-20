@@ -1,21 +1,19 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Link_View : UserControl
+    public partial class Emergency_Link_View : Special_View
     {
-        private Shared_Data SD;
         private Emergency_Call Current_Call;
         private int emergencySelected;
 
-        public Emergency_Link_View(ref Shared_Data xSD)
+        public Emergency_Link_View(ref Shared_Data xSD, Emergency_Call xCurrentCall) : base(ref xSD, "Link to Emergency", false, Color.Green)
         {
-            SD = xSD;
-
             // Change it
-            Current_Call = SD.Calls[SD.Calls.Count - 1];
+            Current_Call = xCurrentCall;
 
             InitializeComponent();
 
