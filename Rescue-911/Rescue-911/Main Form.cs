@@ -53,9 +53,19 @@ namespace Rescue_911
         {
             if (sideBar.Visible == false)
             {
-                sideBar.Visible = true;
-                sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
                 sideBar.CallButton_Click += new EventHandler(CallView_Prepare);
+                sideBar.EmergencyManagement_Click += new EventHandler(EmergencyManagementView_Prepare);
+                sideBar.ResponseTeamInfoButton_Click += new EventHandler(ResponseTeamInfoView_Prepare);
+                sideBar.EMTLoginShiftButton_Click += new EventHandler(EMTLoginShiftView_Prepare);
+                sideBar.BaseStationRecordsButton_Click += new EventHandler(BaseStationRecordsView_Prepare);
+                sideBar.DispatchRelatedTimesButton_Click += new EventHandler(DispatchRelatedTimesView_Prepare);
+                sideBar.DispatchReportButton_Click += new EventHandler(DispatchReportView_Prepare);
+                sideBar.LinkPatientButton_Click += new EventHandler(LinkPatientView_Prepare);
+                sideBar.PatientInformationButton_Click += new EventHandler(PatientInformationView_Prepare);
+                sideBar.InvoiceButton_Click += new EventHandler(InvoiceView_Prepare);
+                sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
+
+                sideBar.Visible = true;
             }
 
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
@@ -63,14 +73,52 @@ namespace Rescue_911
 
         private void CallView_Prepare(object sender, EventArgs e)
         {
-            Current_View.Dispose();
+            SetTypicalView(typeof(Call_View));
+        }
 
-            Special_View SVtemp = Current_View;
+        private void EmergencyManagementView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Emergency_Management_View));
+        }
 
-            Call_View CallView = (Call_View)SetView(typeof(Call_View));
+        private void ResponseTeamInfoView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Response_Team_Information_View));
+        }
 
-            Current_View.SetPrevious_View(SVtemp);
-            Current_View.BackButton_Click += new EventHandler(MainView_Prepare);
+        private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(EMT_Login_Shift_View));
+        }
+
+        private void BaseStationRecordsView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Base_Station_Records_View));
+        }
+
+        private void DispatchRelatedTimesView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Dispatch_Related_Times_View));
+        }
+
+        private void DispatchReportView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Dispatch_Report_View));
+        }
+
+        private void LinkPatientView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Link_Patient_View));
+        }
+
+        private void PatientInformationView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Patient_Information_View));
+        }
+
+        private void InvoiceView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Invoice_View));
         }
         //
 
@@ -103,6 +151,20 @@ namespace Rescue_911
             Current_View.BringToFront();
 
             return Current_View;
+        }
+
+        private void SetTypicalView(Type xTypicalView)
+        {
+            Special_View SVtemp = Current_View;
+
+            Current_View.Dispose();
+
+            SetView(xTypicalView);
+
+            Current_View.SetPrevious_View(SVtemp);
+
+            // To-Do: Change this
+            Current_View.BackButton_Click += new EventHandler(MainView_Prepare);
         }
         //
 

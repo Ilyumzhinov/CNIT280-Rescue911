@@ -8,15 +8,35 @@ namespace Rescue_911
 {
     public partial class Sidebar : UserControl
     {
+        // DATA STRUCTURE
+        //Primitives
         private Shared_Data SD;
-        public event EventHandler LogoutButton_Click;
+
+        //Composite Data
+        private List<Button> Buttons;
+
+        //Event Handlers
         public event EventHandler CallButton_Click;
+        public event EventHandler EmergencyManagement_Click;
+        public event EventHandler ResponseTeamInfoButton_Click;
+        public event EventHandler EMTLoginShiftButton_Click;
+        public event EventHandler BaseStationRecordsButton_Click;
+        public event EventHandler DispatchRelatedTimesButton_Click;
+        public event EventHandler DispatchReportButton_Click;
+        public event EventHandler LinkPatientButton_Click;
+        public event EventHandler PatientInformationButton_Click;
+        public event EventHandler InvoiceButton_Click;
+        public event EventHandler LogoutButton_Click;
+        //
+
 
         public Sidebar()
         {
             InitializeComponent();
         }
 
+
+        // FUNCTIONAL METHODS
         public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Person xUserType)
         {
             SD = xSD;
@@ -36,37 +56,49 @@ namespace Rescue_911
         private void PopulateMenu(List<Type> xAcccessibleViews)
         {
             Special_View instance;
-            Button b;
+            Buttons = new List<Button>();
 
             for (int i = 0; i < xAcccessibleViews.Count; i++)
             {
                 // Creating an instance of a view to get its attributes.
                 instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
 
-                b = new Button();
-                b.Size = new System.Drawing.Size(layoutPanel.Width, 25);
-                b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                b.FlatAppearance.BorderSize = 0;
-                b.Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                b.ForeColor = instance.GetColour();
-                b.Name = "btn" + i;
-                b.Tag = i;
-                b.TabIndex = i;
-                b.Text = instance.GetTitle();
-                b.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                // Spacing between buttons
-                b.Margin = new Padding(0, 0, 0, 0);
-                SetUpButton(ref b, xAcccessibleViews[i]);
+                Buttons.Add(new Button());
+                Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 25);
+                Buttons[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                Buttons[i].FlatAppearance.BorderSize = 0;
+                Buttons[i].Font = new System.Drawing.Font("Corbel", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                Buttons[i].ForeColor = instance.GetColour();
+                Buttons[i].Name ="btn" + i.ToString();
+                Buttons[i].Tag = i;
+                Buttons[i].TabIndex = i;
+                Buttons[i].Text = instance.GetTitle();
+                Buttons[i].TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
-                layoutPanel.Controls.Add(b);
+                // Spacing between buttons
+                Buttons[i].Margin = new Padding(0, 0, 0, 0);
+
+                layoutPanel.Controls.Add(Buttons[i]);
 
                 // Special rules for the Logout button.
                 if (i == (xAcccessibleViews.Count - 1))
                 {
-                    b.Text = "Logout";
-                    b.BackColor = Color.WhiteSmoke;
-                    b.Margin = new Padding(0, 10, 0, 0);
+                    Buttons[i].Text = "Logout";
+                    Buttons[i].BackColor = Color.WhiteSmoke;
+                    Buttons[i].Margin = new Padding(0, 10, 0, 0);
                 }
+
+                // Do the funcitonal button setup
+                //SetUpButton(ref b, xAcccessibleViews[i]);
+
+                // Uniform way of creating the click event
+                Buttons[i].Click += (sender, e) =>
+                {
+                    Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { SD }));
+                    viewInstance.Show();
+
+                    SetUpButton((Button)sender, e, xAcccessibleViews[((Button)sender).TabIndex]);
+                };
             }
         }
 
@@ -82,124 +114,58 @@ namespace Rescue_911
             gObject.FillRectangle(colour, this.Width - 1, 0, 1, this.Height);
         }
 
-        // Do the visual as well as functional button setup.
-        private void SetUpButton(ref Button xBtn, Type xT)
+        // Do the functional button setup.
+        private void SetUpButton(Button sender, EventArgs e, Type t)
         {
-            if (xT == typeof(Call_View))
-                xBtn.Click += new System.EventHandler(this.btnCallLog_Click);
-            else if (xT == typeof(Emergency_Management_View))
-                xBtn.Click += new System.EventHandler(this.btnWaitingCall_Click);
-            else if (xT == typeof(Response_Team_Information_View))
-                xBtn.Click += new System.EventHandler(this.btnReceiveCall_Click);
-            else if (xT == typeof(EMT_Login_Shift_View))
-                xBtn.Click += new System.EventHandler(this.btnEMTLogin);
-            else if (xT == typeof(Base_Station_Records_View))
-                xBtn.Click += new System.EventHandler(this.btnBSRecord_Click);
-            else if (xT == typeof(Dispatch_Related_Times_View))
-                xBtn.Click += new System.EventHandler(this.btnDispatchTimes_Click);
-            else if (xT == typeof(Dispatch_Report_View))
-                xBtn.Click += new System.EventHandler(this.btnDispatchReport_Click);
-            else if (xT == typeof(Link_Patient_View))
-                xBtn.Click += new System.EventHandler(this.btnLinkPatient_Click);
-            else if (xT == typeof(Patient_Information_View))
-                xBtn.Click += new System.EventHandler(this.btnPatientInto_Click);
-            else if (xT == typeof(Invoice_View))
-                xBtn.Click += new System.EventHandler(this.btnInvoice_Click);
-            else if (xT == typeof(Login_View))
-                xBtn.Click += new System.EventHandler(this.btnLogout_Click);
-
-            // Another way of creating this event
-            //  b.Click += (sender, e) =>
-            // {
-            //    instance.Show();
-            // };
-
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            layoutPanel.Controls.Clear();
-
-            if (LogoutButton_Click != null)
-                LogoutButton_Click(this, e);
-        }
-
-        private void btnInvoice_Click(object sender, EventArgs e)
-        {
-            Invoice_View IV = new Invoice_View(ref SD);
-            IV.Show();
-        }
-
-        private void btnWaitingCall_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 99; i++)
+            if (t == typeof(Call_View))
             {
-                if (SD.OpenViews[0, i] == null)
-                {
-                    SD.OpenViews[0, i] = new Emergency_Management_View(ref SD);
-                    SD.OpenViews[0, i].Show();
-                    break;
-                }
+                CallButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Emergency_Management_View))
+            {
+                EmergencyManagement_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Response_Team_Information_View))
+            {
+                ResponseTeamInfoButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(EMT_Login_Shift_View))
+            {
+                EMTLoginShiftButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Base_Station_Records_View))
+            {
+                BaseStationRecordsButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Dispatch_Related_Times_View))
+            {
+                DispatchRelatedTimesButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Dispatch_Report_View))
+            {
+                DispatchReportButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Link_Patient_View))
+            {
+                LinkPatientButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Patient_Information_View))
+            {
+                PatientInformationButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Invoice_View))
+            {
+                InvoiceButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Login_View))
+            {
+                this.Hide();
+
+                layoutPanel.Controls.Clear();
+
+                LogoutButton_Click?.Invoke(this, e);
             }
         }
-
-        private void btnReceiveCall_Click(object sender, EventArgs e)
-        {
-
-            if (SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)] == null)
-            {
-                // CHANGE HARDCODED PART
-                SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)] = new Response_Team_Information_View(ref SD);
-            }
-            SD.OpenViews[1, (SD.ResponseTeams[0].GetID() - 1)].Show();
-        }
-
-        private void btnEMTLogin(object sender, EventArgs e)
-        {
-            EMT_Login_Shift_View emtlogform = new EMT_Login_Shift_View(ref SD);
-            emtlogform.Show();
-        }
-
-        private void btnBSRecord_Click(object sender, EventArgs e)
-        {
-            Base_Station_Records_View BSR = new Base_Station_Records_View(ref SD);
-            BSR.Show();
-        }
-
-        private void btnDispatchTimes_Click(object sender, EventArgs e)
-        {
-            Dispatch_Related_Times_View DRT = new Dispatch_Related_Times_View(ref SD);
-            DRT.Show();
-        }
-
-        private void btnDispatchReport_Click(object sender, EventArgs e)
-        {
-            Dispatch_Report_View DR = new Dispatch_Report_View(ref SD);
-            DR.Show();
-        }
-
-
-        private void btnPatientInto_Click(object sender, EventArgs e)
-        {
-            Patient_Information_View PI = new Patient_Information_View(ref SD);
-            PI.Show();
-        }
-
-        private void btnLinkPatient_Click(object sender, EventArgs e)
-        {
-            Link_Patient_View sb = new Link_Patient_View(ref SD);
-            sb.Show();
-        }
-
-        private void btnCallLog_Click(object sender, EventArgs e)
-        {
-            Call_View CF = new Call_View(ref SD);
-            CF.Show();
-
-            if (CallButton_Click != null)
-                CallButton_Click(this, e);
-        }
+        //
     }
 }

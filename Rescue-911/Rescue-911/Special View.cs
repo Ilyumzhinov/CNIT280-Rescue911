@@ -47,7 +47,6 @@ namespace Rescue_911
                 SetDesc(xDesc);
             }
         }
-
         private Special_View()
         {
             InitializeComponent();
