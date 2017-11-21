@@ -47,7 +47,7 @@
             this.lbViewArea.AutoSize = true;
             this.lbViewArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbViewArea.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbViewArea.Location = new System.Drawing.Point(229, 220);
+            this.lbViewArea.Location = new System.Drawing.Point(289, 234);
             this.lbViewArea.Name = "lbViewArea";
             this.lbViewArea.Size = new System.Drawing.Size(397, 73);
             this.lbViewArea.TabIndex = 17;
@@ -76,9 +76,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Controls.Add(this.lbViewArea);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbViewArea);
             this.Name = "Main_Form";
             this.Text = "ERIS by Group 18";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);

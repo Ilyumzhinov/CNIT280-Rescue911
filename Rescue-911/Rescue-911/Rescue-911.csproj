@@ -90,6 +90,12 @@
     <Compile Include="Emergency Link View.Designer.cs">
       <DependentUpon>Emergency Link View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergency List.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emergency List.Designer.cs">
+      <DependentUpon>Emergency List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergency Management View.cs">
       <SubType>UserControl</SubType>
     </Compile>
