@@ -8,6 +8,7 @@ namespace Rescue_911
 {
     public class Shared_Data
     {
+        // Change the access level to private and write Gets/Sets for all of them.
         public List<Main_Form> MainForms;
         public List<Response_Team> ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
@@ -25,8 +26,8 @@ namespace Rescue_911
         }
         public void SetResponseTeams(List<Response_Team> xRT) { ResponseTeams = xRT; }
         private List<Response_Team> GetResponseTeams() { return ResponseTeams; }
-        public void SetEmergencies(List<Emergency> xEmergencies) { Emergencies = xEmergencies; }
-        private List<Emergency> GetEmergencies() { return Emergencies; }
+        public void SetEmergencies(List<Emergency> xEmergencies) {  Emergencies = xEmergencies;}
+        public List<Emergency> GetEmergencies() { return Emergencies; }
         public void SetCalls(List<Emergency_Call> xCalls) { Calls = xCalls; }
         private List<Emergency_Call> GetCalls() { return Calls; }
         public void SetPatients(List<Patient> xPatients) { Patients = xPatients; }
@@ -125,12 +126,15 @@ namespace Rescue_911
             Emergencies[0].AddLinked_Call(ECs[0]);
             Emergencies[0].AddLinked_Call(ECs[3]);
             Emergencies[0].SetEmergency_ID(0);
+            Emergencies[0].SetEType("Broken bones");
 
             Emergencies[1].AddLinked_Call(ECs[1]);
             Emergencies[1].SetEmergency_ID(1);
+            Emergencies[1].SetEType("Poison");
 
             Emergencies[2].AddLinked_Call(ECs[2]);
             Emergencies[2].SetEmergency_ID(2);
+            Emergencies[2].SetEType("Broken bones");
             //
 
             // CALLS TEST DATA

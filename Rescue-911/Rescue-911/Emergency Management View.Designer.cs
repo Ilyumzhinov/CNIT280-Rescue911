@@ -49,6 +49,22 @@
             // 
             // lstEmergencies
             // 
+            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader4,
+            this.columnHeader7,
+            this.columnHeader5,
+            this.columnHeader2});
+            this.lstEmergencies.GridLines = true;
+            this.lstEmergencies.Location = new System.Drawing.Point(12, 193);
+            this.lstEmergencies.MultiSelect = false;
+            this.lstEmergencies.Name = "lstEmergencies";
+            this.lstEmergencies.ShowItemToolTips = true;
+            this.lstEmergencies.Size = new System.Drawing.Size(785, 97);
+            this.lstEmergencies.TabIndex = 10;
+            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
+            this.lstEmergencies.View = System.Windows.Forms.View.Details;
+            this.lstEmergencies.Visible = false;
             // 
             // columnHeader1
             // 
@@ -73,26 +89,10 @@
             // 
             this.columnHeader2.Text = "Description";
             this.columnHeader2.Width = 271;
-            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader4,
-            this.columnHeader7,
-            this.columnHeader5,
-            this.columnHeader2});
-            this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(17, 160);
-            this.lstEmergencies.MultiSelect = false;
-            this.lstEmergencies.Name = "lstEmergencies";
-            this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(785, 97);
-            this.lstEmergencies.TabIndex = 10;
-            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
-            this.lstEmergencies.View = System.Windows.Forms.View.Details;
-            this.lstEmergencies.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 99);
+            this.button1.Location = new System.Drawing.Point(12, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 36);
             this.button1.TabIndex = 1;
@@ -102,7 +102,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 68);
+            this.textBox1.Location = new System.Drawing.Point(145, 101);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
@@ -110,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 71);
+            this.label1.Location = new System.Drawing.Point(2, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(609, 426);
+            this.button3.Location = new System.Drawing.Point(604, 459);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 23);
             this.button3.TabIndex = 12;
@@ -128,6 +128,18 @@
             // 
             // lstTeams
             // 
+            this.lstTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader6});
+            this.lstTeams.GridLines = true;
+            this.lstTeams.Location = new System.Drawing.Point(12, 325);
+            this.lstTeams.MultiSelect = false;
+            this.lstTeams.Name = "lstTeams";
+            this.lstTeams.ShowItemToolTips = true;
+            this.lstTeams.Size = new System.Drawing.Size(785, 97);
+            this.lstTeams.TabIndex = 13;
+            this.lstTeams.UseCompatibleStateImageBehavior = false;
+            this.lstTeams.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader3
             // 
@@ -137,24 +149,12 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Grade";
-            this.lstTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader6});
-            this.lstTeams.GridLines = true;
-            this.lstTeams.Location = new System.Drawing.Point(17, 292);
-            this.lstTeams.MultiSelect = false;
-            this.lstTeams.Name = "lstTeams";
-            this.lstTeams.ShowItemToolTips = true;
-            this.lstTeams.Size = new System.Drawing.Size(785, 97);
-            this.lstTeams.TabIndex = 13;
-            this.lstTeams.UseCompatibleStateImageBehavior = false;
-            this.lstTeams.View = System.Windows.Forms.View.Details;
             // 
             // lbResult
             // 
             this.lbResult.AutoSize = true;
             this.lbResult.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbResult.Location = new System.Drawing.Point(606, 410);
+            this.lbResult.Location = new System.Drawing.Point(601, 443);
             this.lbResult.Name = "lbResult";
             this.lbResult.Size = new System.Drawing.Size(46, 13);
             this.lbResult.TabIndex = 14;
@@ -164,7 +164,7 @@
             // rbYes
             // 
             this.rbYes.AutoSize = true;
-            this.rbYes.Location = new System.Drawing.Point(486, 429);
+            this.rbYes.Location = new System.Drawing.Point(481, 462);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(43, 17);
             this.rbYes.TabIndex = 15;
@@ -176,7 +176,7 @@
             // rbNo
             // 
             this.rbNo.AutoSize = true;
-            this.rbNo.Location = new System.Drawing.Point(544, 429);
+            this.rbNo.Location = new System.Drawing.Point(539, 462);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(39, 17);
             this.rbNo.TabIndex = 16;
@@ -188,7 +188,7 @@
             // lbDecision
             // 
             this.lbDecision.AutoSize = true;
-            this.lbDecision.Location = new System.Drawing.Point(483, 413);
+            this.lbDecision.Location = new System.Drawing.Point(478, 446);
             this.lbDecision.Name = "lbDecision";
             this.lbDecision.Size = new System.Drawing.Size(67, 13);
             this.lbDecision.TabIndex = 31;
@@ -210,7 +210,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Name = "Emergency_Management_View";
-            this.Size = new System.Drawing.Size(812, 458);
+            this.Size = new System.Drawing.Size(812, 489);
             this.Controls.SetChildIndex(this.button3, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.lstTeams, 0);

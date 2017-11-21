@@ -193,6 +193,9 @@
     <EmbeddedResource Include="Emergency Link View.resx">
       <DependentUpon>Emergency Link View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Emergency List.resx">
+      <DependentUpon>Emergency List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Emergency Management View.resx">
       <DependentUpon>Emergency Management View.cs</DependentUpon>
     </EmbeddedResource>

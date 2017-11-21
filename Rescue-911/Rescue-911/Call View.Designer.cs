@@ -68,7 +68,7 @@
             this.txtTeamsReq.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtTeamsReq.Name = "txtTeamsReq";
             this.txtTeamsReq.Size = new System.Drawing.Size(251, 22);
-            this.txtTeamsReq.TabIndex = 10;
+            this.txtTeamsReq.TabIndex = 1;
             this.txtTeamsReq.Text = "1";
             // 
             // label1
@@ -117,7 +117,7 @@
             this.cboCallPriority.Location = new System.Drawing.Point(103, 64);
             this.cboCallPriority.Name = "cboCallPriority";
             this.cboCallPriority.Size = new System.Drawing.Size(251, 24);
-            this.cboCallPriority.TabIndex = 6;
+            this.cboCallPriority.TabIndex = 2;
             this.cboCallPriority.SelectedIndexChanged += new System.EventHandler(this.cboCallPriority_SelectedIndexChanged);
             // 
             // txtCallDateTime
@@ -129,7 +129,7 @@
             this.txtCallDateTime.Name = "txtCallDateTime";
             this.txtCallDateTime.ReadOnly = true;
             this.txtCallDateTime.Size = new System.Drawing.Size(250, 22);
-            this.txtCallDateTime.TabIndex = 4;
+            this.txtCallDateTime.TabIndex = 3;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 155);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 1;
             // 
             // label5
             // 
@@ -190,7 +190,7 @@
             this.lstCallerNames.MultiColumn = true;
             this.lstCallerNames.Name = "lstCallerNames";
             this.lstCallerNames.Size = new System.Drawing.Size(250, 20);
-            this.lstCallerNames.TabIndex = 15;
+            this.lstCallerNames.TabIndex = 2;
             this.lstCallerNames.SelectedIndexChanged += new System.EventHandler(this.lstCallerNames_SelectedIndexChanged);
             // 
             // txtPhoneNumber
@@ -221,7 +221,7 @@
             this.txtCallerName.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallerName.Name = "txtCallerName";
             this.txtCallerName.Size = new System.Drawing.Size(250, 22);
-            this.txtCallerName.TabIndex = 12;
+            this.txtCallerName.TabIndex = 3;
             this.txtCallerName.Leave += new System.EventHandler(this.txtCallerName_Leave);
             // 
             // label8
@@ -247,7 +247,7 @@
             this.panel2.Location = new System.Drawing.Point(376, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(367, 116);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
             // 
             // label9
             // 
@@ -279,7 +279,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(247, 140);
-            this.txtDescription.TabIndex = 20;
+            this.txtDescription.TabIndex = 3;
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // txtLandmark
@@ -289,7 +289,7 @@
             this.txtLandmark.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtLandmark.Name = "txtLandmark";
             this.txtLandmark.Size = new System.Drawing.Size(247, 22);
-            this.txtLandmark.TabIndex = 18;
+            this.txtLandmark.TabIndex = 2;
             // 
             // txtAddress
             // 
@@ -298,7 +298,7 @@
             this.txtAddress.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(247, 22);
-            this.txtAddress.TabIndex = 16;
+            this.txtAddress.TabIndex = 1;
             this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
             // label11

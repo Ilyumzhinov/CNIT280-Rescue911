@@ -30,6 +30,7 @@ namespace Rescue_911
             InitializeComponent();
         }
 
+
         // SETTING UP THE VIEWS
         //Updating the Current_View
         public void View_Switch(Special_View sender)
@@ -209,27 +210,22 @@ namespace Rescue_911
         {
             Special_View SVtemp = Current_View;
 
-            //Current_View.Dispose();
-
             SetView(xTypicalView);
 
             Current_View.SetPrevious_View(SVtemp);
 
             return Current_View;
         }
-
-        public void UpdateSD(Shared_Data xSD)
-        {
-            SD = xSD;
-        }
         //
 
-
+        // EVENTS
+        //SizeChanged is used to Middle align views which have a property MiddleAligned set to true.
         private void Main_Form_SizeChanged(object sender, EventArgs e)
         {
             Current_View.Location = new System.Drawing.Point((int)(this.Width / 2.0) - (int)(Current_View.Width / 2.0), 15);
         }
 
+        //Prevent Application from terminating when only the first Main_Form is closed.
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             for(int i = 0; i < SD.MainForms.Count; i++)
@@ -248,12 +244,11 @@ namespace Rescue_911
                     {
                         e.Cancel = true;
                         this.Dispose(false);
-
-                       // SD.MainForms[0].Focus();
                         return;
                     }
                 }
             }
         }
+        //
     }
 }

@@ -104,12 +104,6 @@ namespace Rescue_911
             }
         }
 
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Receive_Call_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();

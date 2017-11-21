@@ -8,9 +8,9 @@ namespace Rescue_911
     public partial class Emergency_Link_View : Special_View
     {
         private Emergency_Call Current_Call;
-        private int emergencySelected;
+        private Emergency mSelectedEmergency;
 
-        public Emergency_Link_View(ref Shared_Data xSD, Emergency_Call xCurrentCall) : base(ref xSD, "Link to Emergency", false, Color.Green)
+        public Emergency_Link_View(ref Shared_Data xSD, Emergency_Call xCurrentCall) : base(ref xSD, "Link to Emergency", false, Color.Green, "This cannot be undone")
         {
             // Change it
             Current_Call = xCurrentCall;
@@ -21,10 +21,12 @@ namespace Rescue_911
             lbAddress.Text = Current_Call.GetAddress();
             txtDescription.Text = Current_Call.GetDescription();
 
+            // Emergency list set-up.
             if (SD.Emergencies[0] != null)
             {
-                lstEmergencies.Visible = true;
-                lstEmergenciesFetch("Logged", SD.Emergencies);
+                emergencyList.Width = this.Width;
+                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+                emergencyList.SetEmergency_List(ref SD.Emergencies);
             }
         }
 
@@ -32,82 +34,30 @@ namespace Rescue_911
         {
             try
             {
-                SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].AddLinked_Call(Current_Call);
+                foreach (Emergency iEmergency in SD.GetEmergencies())
+                {
+                    if (iEmergency.GetEmergency_ID() == mSelectedEmergency.GetEmergency_ID())
+                    {
+                        iEmergency.AddLinked_Call(Current_Call);
+                    }
+                }
 
-                SD.UpdateSD(ref SD);
-
-                lstEmergenciesFetch("Logged", SD.Emergencies);
-
-                btnLinkEmergency.Visible = false;
-
-                // To-Do: Update listViews in other forms.
-                // foreach (Emergency_Management_Form CWF in CWFs)
-                // {
-                //    for (int i = 0; i < CWF.GetLstEmergencies().Items.Count; i++)
-                //    {
-                //        if (CWF.GetLstEmergencies().Items[i].Text == Emergency.GetEmergency_ID().ToString())
-                //        {
-                //            CWF.GetLstEmergencies().Items[i].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
-                //        }
-                //    }
-                //}
+                SD.SetEmergencies(SD.Emergencies);
             }
             catch { }
         }
 
-        private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
+        private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
-            lstEmergencies.Items.Clear();
+            btnLinkEmergency.Visible = true;
 
-            foreach (Emergency iEmergency in ExistingEmergencies)
-            {
-                int j = 0;
-
-                if (iEmergency.GetLinkedCalls()[0].GetState() != state)
-                    continue;
-
-                foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
-                {
-                    if (EC == null)
-                        break;
-
-                    if (j == 0)
-                    {
-                        ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    else
-                    {
-                        ListViewItem lstItem = new ListViewItem();
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    j++;
-                }
-            }
+            mSelectedEmergency = (Emergency)sender;
         }
 
-        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
+
+            private void Emergency_Link_View_SizeChanged(object sender, EventArgs e)
         {
-            try
-            {
-                emergencySelected = lstEmergencies.SelectedIndices[0];
-
-                btnLinkEmergency.Visible = true;
-            }
-            catch
-            {
-
-            }
+            emergencyList.Width = this.Width;
         }
     }
 }
