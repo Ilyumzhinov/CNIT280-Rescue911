@@ -50,7 +50,7 @@ namespace Rescue_911
         //Displaying the Main screen when the Login screen is closed.
         private void MainView_Prepare(object sender, EventArgs e)
         {
-            if (sideBar.Visible == false)
+            if (sideBar.IsPopulated == false)
             {
                 sideBar.CallButton_Click += new EventHandler(CallView_Prepare);
                 sideBar.EmergencyManagement_Click += new EventHandler(EmergencyManagementView_Prepare);
@@ -64,9 +64,11 @@ namespace Rescue_911
                 sideBar.InvoiceButton_Click += new EventHandler(InvoiceView_Prepare);
                 sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
 
-                sideBar.Visible = true;
+                sideBar.IsPopulated = true;
+                
             }
 
+            sideBar.Visible = true;
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
         }
 

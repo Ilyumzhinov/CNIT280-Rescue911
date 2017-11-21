@@ -10,6 +10,7 @@ namespace Rescue_911
     {
         // DATA STRUCTURE
         //Primitives
+        public bool IsPopulated;
         private Shared_Data SD;
         private Button mSelectedButton;
 

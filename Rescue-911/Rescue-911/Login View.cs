@@ -56,6 +56,8 @@ namespace Rescue_911
                 ((Main_Form)this.Parent).SetSideBar(ref SD, AccessibleViews, iEMT);
 
                 LoginButton_Click?.Invoke(this, e);
+
+                this.Dispose();
             }
 
             if (nameFound == string.Empty)
@@ -96,6 +98,8 @@ namespace Rescue_911
             ((Main_Form)this.Parent).SetSideBar(ref SD, AccessibleViews, fakePerson);
 
             LoginButton_Click?.Invoke(this, e);
+
+            this.Dispose();
         }
 
         // To-Do: Adjust to a View

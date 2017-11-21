@@ -44,6 +44,7 @@
             this.lbTitle.Size = new System.Drawing.Size(82, 37);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Title";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbTitle.Visible = false;
             // 
             // btnBack
