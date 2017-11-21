@@ -43,8 +43,6 @@ namespace Rescue_911
                 if (txtPassword.Text != iEMT.GetPassword())
                     continue;
 
-                this.Hide();
-
                 // Adding accessible Forms for an EMT
                 List<Type> AccessibleViews = new List<Type>();
                 AccessibleViews.Add(typeof(Response_Team_Information_View));
@@ -55,7 +53,7 @@ namespace Rescue_911
 
                 // Accessing the main form and telling it what to do.
                 // Reference: https://social.msdn.microsoft.com/Forums/en-US/99df9c07-c117-465a-9207-fa3534982021/how-to-get-the-mainform-reference?forum=winforms
-                ((Main_Form)Application.OpenForms[0]).SetSideBar(ref SD, AccessibleViews, iEMT);
+                ((Main_Form)this.Parent).SetSideBar(ref SD, AccessibleViews, iEMT);
 
                 LoginButton_Click?.Invoke(this, e);
             }
@@ -74,8 +72,6 @@ namespace Rescue_911
 
         private void btnLoginOther_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
             // Adding accessible Forms for a somebody
             List<Type> AccessibleViews = new List<Type>();
 
@@ -97,7 +93,7 @@ namespace Rescue_911
             fakePerson.SetAddress("Cupertino, California");
 
 
-            ((Main_Form)Application.OpenForms[0]).SetSideBar(ref SD, AccessibleViews, fakePerson);
+            ((Main_Form)this.Parent).SetSideBar(ref SD, AccessibleViews, fakePerson);
 
             LoginButton_Click?.Invoke(this, e);
         }
@@ -108,6 +104,12 @@ namespace Rescue_911
             txtPassword.Clear();
             lbName.Visible = false;
             lbPassword.Visible = false;
+        }
+
+        private void btnNewMain_Click(object sender, EventArgs e)
+        {
+            Main_Form M = new Main_Form(ref SD);
+            M.Show();
         }
     }
 }

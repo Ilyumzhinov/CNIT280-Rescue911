@@ -32,7 +32,7 @@ namespace Rescue_911
         {
 
             SD.Emergencies.Add(E);
-            ((Main_Form)SD.MainForm).UpdateSD(SD);
+            SD.UpdateSD(ref SD);
         }
     }
 }

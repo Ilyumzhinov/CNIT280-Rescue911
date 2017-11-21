@@ -97,7 +97,9 @@ namespace Rescue_911
 
                 // Update the Shared Data values regarding the Calls.
                 SD.Calls.Add(Current_Call);
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+
+                ;
+                SD.UpdateSD(ref SD);
                 return true;
             }
         }

@@ -66,7 +66,7 @@ namespace Rescue_911
                 instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
 
                 Buttons.Add(new Button());
-                Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 25);
+                Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 35);
                 Buttons[i].Cursor = System.Windows.Forms.Cursors.Hand;
                 Buttons[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 Buttons[i].FlatAppearance.BorderSize = 0;
@@ -105,13 +105,13 @@ namespace Rescue_911
 
                     viewInstance.Show();
 
-                    SetUpButton((Button)sender, e, xAcccessibleViews[((Button)sender).TabIndex]);
+                    SetUpButton(e, xAcccessibleViews[((Button)sender).TabIndex]);
                 };
             }
         }
 
         //Do the functional button setup.
-        private void SetUpButton(Button sender, EventArgs e, Type t)
+        private void SetUpButton(EventArgs e, Type t)
         {
             if (t == typeof(Call_View))
             {

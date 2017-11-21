@@ -105,7 +105,7 @@ namespace Rescue_911
                     lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                SD.UpdateSD(ref SD);
                 button1.Enabled = false;
                 button3.Enabled = false;
                 button2.Enabled = false;
@@ -175,7 +175,7 @@ namespace Rescue_911
                 }
                 SD.Patients = a;
 
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                SD.UpdateSD(ref SD);
                 button1.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -245,7 +245,7 @@ namespace Rescue_911
                     lstsubs.Items.Add(lvi);
                 }
                 SD.Patients = a;
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                SD.UpdateSD(ref SD);
                 button1.Enabled = false;
                 button3.Enabled = false;
                 button2.Enabled = false;

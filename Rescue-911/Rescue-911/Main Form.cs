@@ -18,14 +18,14 @@ namespace Rescue_911
         //
 
 
-        public Main_Form()
+        public Main_Form(ref Shared_Data xSD)
         {
             // Setting up the form.
             // To-Do: Add dynamic ID type identification
 
-            SD = new Shared_Data();
+            SD = xSD;
 
-            SD.MainForm = this;
+            SD.MainForms.Add(this);
 
             InitializeComponent();
         }
@@ -226,6 +226,32 @@ namespace Rescue_911
         private void Main_Form_SizeChanged(object sender, EventArgs e)
         {
             Current_View.Location = new System.Drawing.Point((int)(this.Width / 2.0) - (int)(Current_View.Width / 2.0), 15);
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            for(int i = 0; i < SD.MainForms.Count; i++)
+            {
+                
+                if (SD.MainForms[i] == this)
+                {
+                    SD.MainForms.RemoveAt(i);
+
+                    if (SD.MainForms.Count == 0)
+                    {
+                        Application.Exit();
+                        return;
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        this.Dispose(false);
+
+                       // SD.MainForms[0].Focus();
+                        return;
+                    }
+                }
+            }
         }
     }
 }

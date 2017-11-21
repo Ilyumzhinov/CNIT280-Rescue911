@@ -70,7 +70,7 @@ namespace Rescue_911
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            SD.MainForm.View_Switch(Previous_View);
+            ((Main_Form)this.Parent).View_Switch(Previous_View);
 
             this.Dispose();
         }

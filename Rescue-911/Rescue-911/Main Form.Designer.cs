@@ -81,6 +81,7 @@
             this.Controls.Add(this.lbViewArea);
             this.Name = "Main_Form";
             this.Text = "ERIS by Group 18";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

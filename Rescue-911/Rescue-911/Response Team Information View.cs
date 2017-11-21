@@ -35,19 +35,19 @@ namespace Rescue_911
 
             // RE-DO THIS
             int j = 0;
-            for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
-            {
-                if (SD.OpenViews[0, i] != null)
-                    j++;
-            }
+            //for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
+            //{
+            //    if (SD.OpenViews[0, i] != null)
+            //        j++;
+            //}
 
             CWFs = new Emergency_Management_View[j];
 
-            for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
-            {
-                if (SD.OpenViews[0, i] != null)
-                    CWFs[i] = (Emergency_Management_View)SD.OpenViews[0, i];
-            }
+            //for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
+            //{
+            //    if (SD.OpenViews[0, i] != null)
+            //        CWFs[i] = (Emergency_Management_View)SD.OpenViews[0, i];
+            //}
         }
         //
 

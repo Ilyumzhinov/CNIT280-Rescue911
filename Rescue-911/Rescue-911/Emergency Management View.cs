@@ -137,10 +137,10 @@ namespace Rescue_911
 
                     // Create a new Receive Call Form and pass emergency into it
                     // Also, pass team information into it
-                    SD.OpenViews[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Response_Team_Information_View(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
+                   // SD.OpenViews[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Response_Team_Information_View(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
 
                     // Update the Shared Data values regarding the Forms.
-                    ((Main_Form)SD.MainForm).UpdateSD(SD);
+                    SD.UpdateSD(ref SD);
 
                     lbResult.Visible = true;
                 }
@@ -161,7 +161,7 @@ namespace Rescue_911
             try
             {
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                SD.UpdateSD(ref SD);
 
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbYes.Checked = false;
@@ -189,7 +189,7 @@ namespace Rescue_911
             try
             {
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Waiting");
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                //SD.UpdateSD(ref SD);
 
                 lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
                 rbNo.Checked = false;

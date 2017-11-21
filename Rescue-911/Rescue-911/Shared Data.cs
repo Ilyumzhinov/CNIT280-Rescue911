@@ -8,35 +8,54 @@ namespace Rescue_911
 {
     public class Shared_Data
     {
-        public Main_Form MainForm;
-        public Special_View[,] OpenViews;
-        public Response_Team[] ResponseTeams;
+        public List<Main_Form> MainForms;
+        public List<Response_Team> ResponseTeams;
         public List<Emergency> Emergencies = new List<Emergency>();
         public List<Emergency_Call> Calls = new List<Emergency_Call>();
         public List<Patient> Patients = new List<Patient>();
         public List<EMT> EMTs = new List<EMT>();
+
+        public void UpdateSD(ref Shared_Data xSD)
+        {
+            ResponseTeams = xSD.GetResponseTeams();
+            Emergencies = xSD.GetEmergencies();
+            Calls = xSD.GetCalls();
+            Patients = xSD.GetPatients();
+            EMTs = xSD.GetEMTs();
+        }
+        public void SetResponseTeams(List<Response_Team> xRT) { ResponseTeams = xRT; }
+        private List<Response_Team> GetResponseTeams() { return ResponseTeams; }
+        public void SetEmergencies(List<Emergency> xEmergencies) { Emergencies = xEmergencies; }
+        private List<Emergency> GetEmergencies() { return Emergencies; }
+        public void SetCalls(List<Emergency_Call> xCalls) { Calls = xCalls; }
+        private List<Emergency_Call> GetCalls() { return Calls; }
+        public void SetPatients(List<Patient> xPatients) { Patients = xPatients; }
+        private List<Patient> GetPatients() { return Patients; }
+        public void SetEMTs(List<EMT> xEMTs) { EMTs = xEMTs; }
+        private List<EMT> GetEMTs() { return EMTs; }
+
 
         public Shared_Data()
         {
             //
             // 0 dimension: Call Waiting Forms.
             // 1 dimension: Receive Call Form.
-            OpenViews = new Special_View[99, 2];
+            MainForms = new List<Main_Form>();
             //
             Caller[] Callers = LoadCallers();
 
 
             // RT TEST DATA
-            ResponseTeams = new Response_Team[3];
-            ResponseTeams[0] = new Response_Team();
+            ResponseTeams = new List<Response_Team>();
+            ResponseTeams.Add(new Response_Team());
             ResponseTeams[0].SetID(1);
             ResponseTeams[0].SetGrade(1);
             ResponseTeams[0].SetShift("somewhen...");
-            ResponseTeams[1] = new Response_Team();
+            ResponseTeams.Add(new Response_Team());
             ResponseTeams[1].SetID(2);
             ResponseTeams[1].SetGrade(3);
             ResponseTeams[1].SetShift("it happens...");
-            ResponseTeams[2] = new Response_Team();
+            ResponseTeams.Add(new Response_Team());
             ResponseTeams[2].SetID(3);
             ResponseTeams[2].SetGrade(2);
             ResponseTeams[2].SetShift("they work...");

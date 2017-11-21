@@ -34,7 +34,7 @@ namespace Rescue_911
             {
                 SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].AddLinked_Call(Current_Call);
 
-                ((Main_Form)SD.MainForm).UpdateSD(SD);
+                SD.UpdateSD(ref SD);
 
                 lstEmergenciesFetch("Logged", SD.Emergencies);
 

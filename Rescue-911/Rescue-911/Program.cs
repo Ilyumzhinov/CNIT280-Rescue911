@@ -16,7 +16,9 @@ namespace Rescue_911
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Form());
+
+            Shared_Data SD = new Shared_Data();
+            Application.Run(new Main_Form(ref SD));
         }
     }
 }
