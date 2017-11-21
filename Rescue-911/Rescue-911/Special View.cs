@@ -34,6 +34,8 @@ namespace Rescue_911
         //To-display the view.
         public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
         {
+            InitializeComponent();
+
             SD = xSD;
             MiddleAligned = xMiddleAligned;
             Colour = xColour;
@@ -45,10 +47,6 @@ namespace Rescue_911
             {
                 SetDesc(xDesc);
             }
-        }
-        private Special_View()
-        {
-            InitializeComponent();
         }
 
         //To-instantiate
@@ -64,6 +62,12 @@ namespace Rescue_911
             {
                 SetDesc(xDesc);
             }
+        }
+
+        //For the designer
+        private Special_View()
+        {
+            InitializeComponent();
         }
         //
 
