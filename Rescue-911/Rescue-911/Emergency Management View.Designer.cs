@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstEmergencies = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,54 +39,18 @@
             this.rbYes = new System.Windows.Forms.RadioButton();
             this.rbNo = new System.Windows.Forms.RadioButton();
             this.lbDecision = new System.Windows.Forms.Label();
+            this.emergencyList = new Rescue_911.Emergency_List();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstEmergencies
-            // 
-            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader4,
-            this.columnHeader7,
-            this.columnHeader5,
-            this.columnHeader2});
-            this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(12, 193);
-            this.lstEmergencies.MultiSelect = false;
-            this.lstEmergencies.Name = "lstEmergencies";
-            this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(785, 97);
-            this.lstEmergencies.TabIndex = 10;
-            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
-            this.lstEmergencies.View = System.Windows.Forms.View.Details;
-            this.lstEmergencies.Visible = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Emergency ID";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Time Recevied";
-            this.columnHeader4.Width = 130;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Priority";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "State";
-            this.columnHeader5.Width = 72;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Description";
-            this.columnHeader2.Width = 271;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 132);
+            this.button1.Location = new System.Drawing.Point(3, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 36);
             this.button1.TabIndex = 1;
@@ -102,7 +60,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 101);
+            this.textBox1.Location = new System.Drawing.Point(146, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
@@ -110,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 104);
+            this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 7;
@@ -118,7 +76,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(604, 459);
+            this.button3.Location = new System.Drawing.Point(129, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 23);
             this.button3.TabIndex = 12;
@@ -131,12 +89,13 @@
             this.lstTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader6});
+            this.lstTeams.Dock = System.Windows.Forms.DockStyle.Top;
             this.lstTeams.GridLines = true;
-            this.lstTeams.Location = new System.Drawing.Point(12, 325);
+            this.lstTeams.Location = new System.Drawing.Point(3, 233);
             this.lstTeams.MultiSelect = false;
             this.lstTeams.Name = "lstTeams";
             this.lstTeams.ShowItemToolTips = true;
-            this.lstTeams.Size = new System.Drawing.Size(785, 97);
+            this.lstTeams.Size = new System.Drawing.Size(440, 97);
             this.lstTeams.TabIndex = 13;
             this.lstTeams.UseCompatibleStateImageBehavior = false;
             this.lstTeams.View = System.Windows.Forms.View.Details;
@@ -154,7 +113,7 @@
             // 
             this.lbResult.AutoSize = true;
             this.lbResult.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbResult.Location = new System.Drawing.Point(601, 443);
+            this.lbResult.Location = new System.Drawing.Point(126, -3);
             this.lbResult.Name = "lbResult";
             this.lbResult.Size = new System.Drawing.Size(46, 13);
             this.lbResult.TabIndex = 14;
@@ -164,7 +123,7 @@
             // rbYes
             // 
             this.rbYes.AutoSize = true;
-            this.rbYes.Location = new System.Drawing.Point(481, 462);
+            this.rbYes.Location = new System.Drawing.Point(6, 16);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(43, 17);
             this.rbYes.TabIndex = 15;
@@ -176,7 +135,7 @@
             // rbNo
             // 
             this.rbNo.AutoSize = true;
-            this.rbNo.Location = new System.Drawing.Point(539, 462);
+            this.rbNo.Location = new System.Drawing.Point(64, 16);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(39, 17);
             this.rbNo.TabIndex = 16;
@@ -188,52 +147,84 @@
             // lbDecision
             // 
             this.lbDecision.AutoSize = true;
-            this.lbDecision.Location = new System.Drawing.Point(478, 446);
+            this.lbDecision.Location = new System.Drawing.Point(3, 0);
             this.lbDecision.Name = "lbDecision";
             this.lbDecision.Size = new System.Drawing.Size(67, 13);
             this.lbDecision.TabIndex = 31;
             this.lbDecision.Text = "Dispatched?";
             this.lbDecision.Visible = false;
             // 
+            // emergencyList
+            // 
+            this.emergencyList.AutoSize = true;
+            this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.emergencyList.Location = new System.Drawing.Point(3, 93);
+            this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
+            this.emergencyList.Name = "emergencyList";
+            this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.emergencyList.Size = new System.Drawing.Size(440, 134);
+            this.emergencyList.TabIndex = 32;
+            this.emergencyList.Visible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.emergencyList);
+            this.flowLayoutPanel1.Controls.Add(this.lstTeams);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 89);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 461);
+            this.flowLayoutPanel1.TabIndex = 33;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(263, 42);
+            this.panel1.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbDecision);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.lbResult);
+            this.panel2.Controls.Add(this.rbNo);
+            this.panel2.Controls.Add(this.rbYes);
+            this.panel2.Location = new System.Drawing.Point(3, 336);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(242, 100);
+            this.panel2.TabIndex = 34;
+            // 
             // Emergency_Management_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbDecision);
-            this.Controls.Add(this.rbNo);
-            this.Controls.Add(this.lstEmergencies);
-            this.Controls.Add(this.rbYes);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lbResult);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lstTeams);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Emergency_Management_View";
-            this.Size = new System.Drawing.Size(812, 489);
-            this.Controls.SetChildIndex(this.button3, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.lstTeams, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.lbResult, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.rbYes, 0);
-            this.Controls.SetChildIndex(this.lstEmergencies, 0);
-            this.Controls.SetChildIndex(this.rbNo, 0);
-            this.Controls.SetChildIndex(this.lbDecision, 0);
+            this.Size = new System.Drawing.Size(812, 555);
+            this.SizeChanged += new System.EventHandler(this.Emergency_Management_View_SizeChanged);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lstEmergencies;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
@@ -245,5 +236,9 @@
         private System.Windows.Forms.RadioButton rbYes;
         private System.Windows.Forms.RadioButton rbNo;
         private System.Windows.Forms.Label lbDecision;
+        private Emergency_List emergencyList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

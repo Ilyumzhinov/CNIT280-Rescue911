@@ -7,79 +7,41 @@ namespace Rescue_911
 {
     public partial class Emergency_Management_View : Special_View
     {
-        private int emergencySelected;
+        private Emergency mSelectedEmergency;
 
         // CONSTRUCTORS
         //To-display the view.
         public Emergency_Management_View(ref Shared_Data xSD) : base(ref xSD, "Emergency Management", false, Color.IndianRed)
         {
             InitializeComponent();
+
+            // Emergency list set-up.
+            if (SD.Emergencies[0] != null)
+            {
+                Emergency_Management_View_SizeChanged(this, null);
+                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+                emergencyList.SetEmergency_List(ref SD.Emergencies);
+            }
         }
 
         //To-instantiate the view.
         public Emergency_Management_View() : base("Emergency Management", false, Color.IndianRed)
-        {}
+        { }
         //
 
-        private void Call_Waiting_Form_Load(object sender, EventArgs e)
+        private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
-            lstEmergenciesFetch("Logged", SD.Emergencies);
-        }
 
-        private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
-        {
-            lstEmergencies.Items.Clear();
 
-            foreach (Emergency iEmergency in ExistingEmergencies)
-            {
-                int j = 0;
-
-                if (iEmergency.GetLinkedCalls()[0].GetState() != state)
-                    continue;
-
-                foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
-                {
-                    if (EC == null)
-                        break;
-
-                    if (j == 0)
-                    {
-                        ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetPriority().ToString());
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    else
-                    {
-                        ListViewItem lstItem = new ListViewItem();
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetPriority().ToString());
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    j++;
-                }
-            }
-        }
-
-        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
-        {
             try
             {
-                emergencySelected = lstEmergencies.SelectedIndices[0];
+                mSelectedEmergency = (Emergency)sender;
 
-                lstTeams.Items.Clear();
                 // Populating the listBox with the response teams.
                 foreach (Response_Team RT in SD.ResponseTeams)
                 {
-                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 2)
+                    // To-Do: get the actual emergency call selected
+                    if (mSelectedEmergency.GetLinkedCalls()[0].GetPriority() <= 2)
                     {
                         ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
@@ -88,7 +50,7 @@ namespace Rescue_911
                         continue;
                     }
 
-                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 3 && RT.GetGrade() > 1)
+                    if (mSelectedEmergency.GetLinkedCalls()[0].GetPriority() <= 3 && RT.GetGrade() > 1)
                     {
                         ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
@@ -97,7 +59,7 @@ namespace Rescue_911
                         continue;
                     }
 
-                    if (int.Parse(lstEmergencies.SelectedItems[0].SubItems[2].Text) <= 4 && RT.GetGrade() > 2)
+                    if (mSelectedEmergency.GetLinkedCalls()[0].GetPriority() <= 4 && RT.GetGrade() > 2)
                     {
                         ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
@@ -121,7 +83,7 @@ namespace Rescue_911
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lstEmergencies.Visible = true;
+            emergencyList.Visible = true;
         }
 
 
@@ -132,12 +94,8 @@ namespace Rescue_911
             {
                 foreach (Emergency iEmergency in SD.Emergencies)
                 {
-                    if (lstEmergencies.SelectedItems[0].Text != iEmergency.GetEmergency_ID().ToString())
-                        continue;
-
-                    // Create a new Receive Call Form and pass emergency into it
-                    // Also, pass team information into it
-                   // SD.OpenViews[1, (int.Parse(lstTeams.SelectedItems[0].Text) - 1)] = new Response_Team_Information_View(iEmergency, SD.ResponseTeams[int.Parse(lstTeams.SelectedItems[0].Text) - 1], ref SD);
+                   // if (lstEmergencies.SelectedItems[0].Text != iEmergency.GetEmergency_ID().ToString())
+                   //     continue;
 
                     // Update the Shared Data values regarding the Forms.
                     SD.UpdateSD(ref SD);
@@ -151,21 +109,16 @@ namespace Rescue_911
             }
         }
 
-        public ListView GetLstEmergencies()
-        {
-            return lstEmergencies;
-        }
-
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
-                SD.UpdateSD(ref SD);
+                //SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Accepted");
+                //SD.UpdateSD(ref SD);
 
-                lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
-                rbYes.Checked = false;
-                lstEmergenciesFetch("Logged", SD.Emergencies);
+                //lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                //rbYes.Checked = false;
+                //lstEmergenciesFetch("Logged", SD.Emergencies);
 
 
 
@@ -188,13 +141,13 @@ namespace Rescue_911
         {
             try
             {
-                SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Waiting");
-                //SD.UpdateSD(ref SD);
+                //SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].SetState("Waiting");
+                ////SD.UpdateSD(ref SD);
 
-                lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
-                rbNo.Checked = false;
+                //lstEmergencies.Items[emergencySelected].SubItems[2].Text = SD.Emergencies[int.Parse(lstEmergencies.SelectedItems[0].Text)].GetLinkedCalls()[0].GetState();
+                //rbNo.Checked = false;
 
-                lstEmergenciesFetch("Logged", SD.Emergencies);
+                //lstEmergenciesFetch("Logged", SD.Emergencies);
 
 
                 //foreach (Emergency_Management_Form CWF in CWFs)
@@ -212,6 +165,11 @@ namespace Rescue_911
             {
 
             }
+        }
+
+        private void Emergency_Management_View_SizeChanged(object sender, EventArgs e)
+        {
+            emergencyList.Width = this.Width;
         }
     }
 }
