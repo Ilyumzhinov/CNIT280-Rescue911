@@ -8,19 +8,23 @@ namespace Rescue_911
 {
     public class Shared_Data
     {
-        public List<Main_Form> MainForms;
+        // DATA STRUCTURE
+        //System data
+        private Special_List<Main_Form> MainForms;
+        public int FormsCount;
 
-        // Common data.
+        //Common data
         private Special_List<Emergency_Call> Calls;
         private List<Emergency> Emergencies;
         private List<EMT> EMTs;
         private List<Response_Team> ResponseTeams;
         private List<Dispatch> Dispatches;
         private List<Patient> Patients;
+        //
 
         public void UpdateSD(ref Shared_Data xSD)
         {
-            Calls = (Special_List<Emergency_Call>)xSD.GetCalls();
+            Calls = xSD.GetCalls();
             Emergencies = xSD.GetEmergencies();
             EMTs = xSD.GetEMTs();
             ResponseTeams = xSD.GetResponseTeams();
@@ -29,6 +33,11 @@ namespace Rescue_911
         }
 
         // To-Do: Delete sets
+        public void AddMain_Form(Main_Form xForm)
+        {
+            MainForms.AddItem(xForm);
+            FormsCount++;
+        }
         public void SetResponseTeams(List<Response_Team> xRT) { ResponseTeams = xRT; }
         public void SetEmergencies(List<Emergency> xEmergencies) {  Emergencies = xEmergencies;}
         public void AddCall(Emergency_Call xCall)
@@ -46,11 +55,15 @@ namespace Rescue_911
         public List<Response_Team> GetResponseTeams() { return ResponseTeams; }
         public List<Dispatch> GetDispatches() { return Dispatches; }
         public List<Patient> GetPatients() { return Patients; }
-
+        public void RemoveMain_Form(Main_Form xForm)
+        {
+            MainForms.RemoveItem(xForm);
+            FormsCount--;
+        }
 
         public Shared_Data()
         {
-            MainForms = new List<Main_Form>();
+            MainForms = new Special_List<Main_Form>();
             Calls = new Special_List<Emergency_Call>();
             
             Emergencies = new List<Emergency>();

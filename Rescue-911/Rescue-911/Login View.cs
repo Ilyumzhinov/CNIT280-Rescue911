@@ -102,14 +102,6 @@ namespace Rescue_911
             this.Dispose();
         }
 
-        // To-Do: Adjust to a View
-        private void Login_Form_Activated(object sender, EventArgs e)
-        {
-            txtPassword.Clear();
-            lbName.Visible = false;
-            lbPassword.Visible = false;
-        }
-
         private void btnNewMain_Click(object sender, EventArgs e)
         {
             Main_Form M = new Main_Form(ref SD);

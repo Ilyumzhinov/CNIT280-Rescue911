@@ -110,8 +110,8 @@ namespace Rescue_911
         private void txtPhoneNumber_Leave(object sender, EventArgs e)
         {
             // Change dataType to string
-            int number;
-            if (int.TryParse(txtPhoneNumber.Text, out number) && txtPhoneNumber.Text.Length == 10)
+
+            if (txtPhoneNumber.Text.Length == 10)
             {
                 Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
             }

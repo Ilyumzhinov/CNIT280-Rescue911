@@ -23,6 +23,10 @@ namespace Rescue_911
             )
         {
             InitializeComponent();
+
+            lbTime.Text = DateTime.Now.ToString("h:mm:ss MM/dd/yyyy");
+            lbUsers.Text = SD.FormsCount.ToString();
+
         }
         //
     }

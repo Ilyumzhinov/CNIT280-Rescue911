@@ -26,7 +26,7 @@ namespace Rescue_911
 
             SD = xSD;
 
-            SD.MainForms.Add(this);
+            SD.AddMain_Form(this);
 
             InitializeComponent();
         }
@@ -230,26 +230,19 @@ namespace Rescue_911
         //Prevent Application from terminating when only the first Main_Form is closed.
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            for(int i = 0; i < SD.MainForms.Count; i++)
-            {
-                
-                if (SD.MainForms[i] == this)
-                {
-                    SD.MainForms.RemoveAt(i);
+            SD.RemoveMain_Form(this);
 
-                    if (SD.MainForms.Count == 0)
-                    {
-                        Application.Exit();
-                        return;
-                    }
-                    else
-                    {
-                        e.Cancel = true;
-                        this.Dispose(false);
-                        return;
-                    }
-                }
+            if (SD.FormsCount > 0)
+            {
+                e.Cancel = true;
+                this.Dispose(false);
+                return;
             }
+            else
+            {
+                Application.Exit();
+                return;
+            }    
         }
         //
     }

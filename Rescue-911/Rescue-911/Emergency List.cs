@@ -34,7 +34,6 @@ namespace Rescue_911
             // Setting up the values
             Calls = xExistingCalls;
             Calls.ItemAdded += new EventHandler(lstEmergencies_CallUpdateEvent);
-            lstEmergencies_CallUpdateEvent(null, null);
 
             // Setting up the interface
             cmbState.Items.AddRange(new object[] {
@@ -51,58 +50,78 @@ namespace Rescue_911
             lstEmergencies.Columns[1].Width = 80;
             lstEmergencies.Columns[2].Width = 80;
             lstEmergencies.Columns[3].Width = 80;
-            lstEmergencies.Columns[4].Width = lstEmergencies.Width - 80 * 4 - (int)(SystemInformation.VerticalScrollBarWidth* 1.5);
-
-            // Populating the listView.
-            listEmergenciesPopulate(xState, Calls);
+            lstEmergencies.Columns[4].Width = lstEmergencies.Width - 80 * 4 - (int)(SystemInformation.VerticalScrollBarWidth * 1.5);
+            lstEmergencies.Height = lstEmergencies.Font.Height * 25;
         }
 
         private void listEmergenciesPopulate(string state, List<Emergency_Call> ExistingCalls)
         {
             lstEmergencies.Items.Clear();
 
-            List<ListViewItem> lstItem = new List<ListViewItem>();
-            int i = 0;
             foreach (Emergency_Call iEC in ExistingCalls)
             {
-                if (state != "ALL")
-                    if (iEC.GetState() != state)
-                        continue;
-
-                lstItem.Add(new ListViewItem(iEC.GetEmergency().GetEmergency_ID().ToString()));
-
-                lstItem[i].SubItems.Add(iEC.GetEmergency().GetEType());
-                lstItem[i].SubItems.Add(iEC.GetPriority().ToString());
-                lstItem[i].SubItems.Add(iEC.GetState());
-                lstItem[i].SubItems.Add(iEC.GetDescription());
-                lstItem[i].Tag = iEC;
-
-                i++;
+                // Adding the events for initial calls
+                lstEmergencies_CallUpdateEvent(iEC, null);
             }
-
-            // Setting the height
-            if (((lstItem.Count + 2) * (int)(lstEmergencies.Font.Height * 1.5)) < lstEmergencies.Font.Height * 50)
-            {
-                lstEmergencies.Height = (lstItem.Count + 2) * (int)(lstEmergencies.Font.Height * 1.5);
-            }
-            else
-                lstEmergencies.Height = lstEmergencies.Font.Height * 50;
-
-            // Adding the values
-            lstEmergencies.Items.AddRange(lstItem.ToArray());
         }
 
-        private void lstEmergencies_Update(object sender, EventArgs e)
+        private ListViewItem lstItemFetch(Emergency_Call xCall)
         {
-            listEmergenciesPopulate((string)cmbState.SelectedItem, Calls);
+            ListViewItem lstItem = new ListViewItem(xCall.GetEmergency().GetEmergency_ID().ToString());
+
+            lstItem.SubItems.Add(xCall.GetEmergency().GetEType());
+            lstItem.SubItems.Add(xCall.GetPriority().ToString());
+            lstItem.SubItems.Add(xCall.GetState());
+            lstItem.SubItems.Add(xCall.GetDescription());
+            lstItem.Tag = xCall;
+
+            return lstItem;
         }
 
         private void lstEmergencies_CallUpdateEvent(object sender, EventArgs e)
         {
-            foreach (Emergency_Call iEC in Calls)
+            ((Emergency_Call)sender).Call_Updated -= new EventHandler(lstEmergencies_Update);
+            ((Emergency_Call)sender).Call_Updated += new EventHandler(lstEmergencies_Update);
+
+            if (((Emergency_Call)sender).GetState() != (string)cmbState.SelectedItem)
+                return;
+
+            lstEmergencies.Items.Add(lstItemFetch((Emergency_Call)sender));
+        }
+
+        private void lstEmergencies_Update(object sender, EventArgs e)
+        {
+            int index = -1;
+
+            for (int i = 0; i < lstEmergencies.Items.Count; i++)
             {
-                iEC.Call_Updated -= new EventHandler(lstEmergencies_Update);
-                iEC.Call_Updated += new EventHandler(lstEmergencies_Update);
+                if (((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetDateTime() == ((Emergency_Call)sender).GetDateTime() || ((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetEmergency_Caller().GetPhone_Number() == ((Emergency_Call)sender).GetEmergency_Caller().GetPhone_Number())
+                {
+                    index = i;
+
+                    break;
+                }
+            }
+
+            if (((Emergency_Call)sender).GetState() != (string)cmbState.SelectedItem)
+            {
+                if (index != -1)
+                {
+                    lstEmergencies.Items[index].Remove();
+                    return;
+                }
+                else
+                    return;
+            }
+
+            ListViewItem lstItem = lstItemFetch((Emergency_Call)sender);
+            if (index == -1)
+            {
+                lstEmergencies.Items.Add(lstItem);
+            }
+            else
+            {
+                lstEmergencies.Items[index] = lstItem;
             }
         }
 
@@ -116,7 +135,7 @@ namespace Rescue_911
             }
             catch
             {
-
+                selectedIndex = -1;
             }
         }
 
@@ -124,6 +143,7 @@ namespace Rescue_911
         {
             listEmergenciesPopulate((string)cmbState.SelectedItem, Calls);
         }
+
 
         private void Emergency_List_SizeChanged(object sender, EventArgs e)
         {
