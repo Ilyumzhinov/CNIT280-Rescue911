@@ -20,7 +20,7 @@ namespace Rescue_911
         private void Emergency_Form_Load(object sender, EventArgs e)
         {
 
-            E.SetEmergency_ID(SD.Emergencies.Capacity - 1);
+            E.SetEmergency_ID(SD.GetEmergencies().Count - 1);
             E.AddLinked_Call(Current_Call);
             lbel.Text = Current_Call.GetAddress().ToString();
             lbemergencyid1.Text = E.GetEmergency_ID().ToString();
@@ -31,7 +31,7 @@ namespace Rescue_911
         private void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
 
-            SD.Emergencies.Add(E);
+            SD.GetEmergencies().Add(E);
             SD.UpdateSD(ref SD);
         }
     }

@@ -20,7 +20,7 @@ namespace Rescue_911
         public Dispatch_Report_View(ref Shared_Data xSD) : base(ref xSD, "Dispatch Report", false, Color.PaleVioletRed)
         {
             //To-Do: Change this.
-            CurrentDispatch = SD.Emergencies[1];
+            CurrentDispatch = SD.GetEmergencies()[1];
 
             InitializeComponent();
         }

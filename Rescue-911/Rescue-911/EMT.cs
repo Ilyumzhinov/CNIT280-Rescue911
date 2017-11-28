@@ -9,14 +9,15 @@ namespace Rescue_911
     public class EMT : Employee
     {
         public EMT() { }
-        private String ResponseTeamID;
+        private Response_Team RT;
         private TimeSpan TotalShifttime;
         private DateTime shiftLOGINTIME;
         private String shifttime;
         private string status;
 
-        public String getResponseTeamID() { return ResponseTeamID; }
-        public void setResponseTeamID(string XResponseTeamID) { ResponseTeamID = XResponseTeamID; }
+
+
+        public void SetResponseTeam(Response_Team xRT) { RT = xRT; }
         public TimeSpan getTotalShiftTime() { return TotalShifttime; }
 
         public void setShiftLoginTime(DateTime xshiftlogintime) {
@@ -35,9 +36,10 @@ namespace Rescue_911
         }
         public void setstatus(string xstatus) {
             status = xstatus;
-
-
         }
+
+
+        public Response_Team GetResponseTeam() { return RT; }
         public string getstatus() { return status; }
     }
 }

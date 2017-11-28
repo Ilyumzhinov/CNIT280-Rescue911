@@ -26,7 +26,7 @@ namespace Rescue_911
 
         private void Dispatch_Related_Times_Load(object sender, EventArgs e)
         {
-            lstEmergenciesFetch("Accepted", SD.Emergencies);
+            lstEmergenciesFetch("Accepted", SD.GetEmergencies());
         }
 
         private void btnDispatchTime_Click(object sender, EventArgs e)
@@ -61,39 +61,39 @@ namespace Rescue_911
 
         private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
         {
-            lstEmergencies.Items.Clear();
+        //    lstEmergencies.Items.Clear();
 
-            foreach (Emergency iEmergency in ExistingEmergencies)
-            {
-                int j = 0;
+        //    foreach (Emergency iEmergency in ExistingEmergencies)
+        //    {
+        //        int j = 0;
 
-                if (iEmergency.GetLinkedCalls()[0].GetState() != state)
-                    continue;
+        //        if (iEmergency.GetLinkedCalls()[0].GetState() != state)
+        //            continue;
 
-                foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
-                {
-                    if (EC == null)
-                        break;
+        //        foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
+        //        {
+        //            if (EC == null)
+        //                break;
 
-                    if (j == 0)
-                    {
-                        ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
+        //            if (j == 0)
+        //            {
+        //                ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
 
-                        lstItem.SubItems.Add(EC.GetAddress());
+        //                lstItem.SubItems.Add(EC.GetAddress());
 
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    else
-                    {
-                        ListViewItem lstItem = new ListViewItem();
+        //                lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
+        //            }
+        //            else
+        //            {
+        //                ListViewItem lstItem = new ListViewItem();
 
-                        lstItem.SubItems.Add(EC.GetAddress());
+        //                lstItem.SubItems.Add(EC.GetAddress());
 
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    j++;
-                }
-            }
+        //                lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
+        //            }
+        //            j++;
+        //        }
+        //    }
         }
     }
 }

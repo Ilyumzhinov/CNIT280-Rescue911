@@ -33,7 +33,7 @@ namespace Rescue_911
             lbPassword.Visible = false;
             string nameFound = string.Empty;
 
-            foreach (EMT iEMT in SD.EMTs)
+            foreach (EMT iEMT in SD.GetEMTs())
             {
                 if (txtName.Text != iEMT.GetName())
                     continue;
@@ -89,9 +89,9 @@ namespace Rescue_911
             AccessibleViews.Add(typeof(Invoice_View));
             AccessibleViews.Add(typeof(Login_View));
 
-            Person fakePerson = new Person();
-            fakePerson.SetName("Other");
-            fakePerson.SetLast_Name("Person");
+            Employee fakePerson = new Employee();
+            fakePerson.SetName("Fake");
+            fakePerson.SetLast_Name("Employee");
             fakePerson.SetAddress("Cupertino, California");
 
 

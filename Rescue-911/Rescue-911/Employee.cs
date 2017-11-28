@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rescue_911
 {
-    public abstract class Employee : Person
+    public class Employee : Person
     {
         private int Employee_ID;
         private string Password;

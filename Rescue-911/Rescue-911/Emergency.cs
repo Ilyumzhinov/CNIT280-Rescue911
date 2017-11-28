@@ -10,32 +10,31 @@ namespace Rescue_911
         private int Emergency_ID;
         private string eType;
 
-        //Associations
-        private List<Emergency_Call> Linked_Calls;
-        //
-
         //Event Handlers
-        public event EventHandler EmergencyCall_Added;
+        public event EventHandler EmergencyCall_Updated;
         //
 
 
         public Emergency()
-        {
-            Linked_Calls = new List<Emergency_Call>();
-        }
+        { }
 
 
         public void SetEmergency_ID(int xEmergency_ID) { Emergency_ID = xEmergency_ID; }
-        public void SetLinked_Calls(List<Emergency_Call> xCalls) { Linked_Calls = xCalls; }
         public void SetEType(string xeType) { eType = xeType; }
         public void AddLinked_Call(Emergency_Call xCall)
         {
-            Linked_Calls.Add(xCall);
-            EmergencyCall_Added?.Invoke(xCall, null);
+            //Linked_Calls.Add(xCall);
+            //Linked_Calls[Linked_Calls.Count - 1].Call_Updated += new EventHandler(UpdateEmergencyCalls);
+
+            //EmergencyCall_Added?.Invoke(xCall, null);
+        }
+
+        private void UpdateEmergencyCalls(object sender, EventArgs e)
+        {
+            EmergencyCall_Updated?.Invoke((Emergency_Call)sender, null);
         }
 
         public int GetEmergency_ID() { return Emergency_ID; }
         public string GetEType() { return eType; }
-        public List<Emergency_Call> GetLinkedCalls() { return Linked_Calls; }
     }
 }

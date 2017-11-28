@@ -21,6 +21,48 @@ namespace Rescue_911
         public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient", false, Color.Peru)
         {
             InitializeComponent();
+
+            //List<Patient> a = SD.Patients;
+            //            for (int b = 0; b < a.Count(); b++)
+            //            {
+            //                ListViewItem lvi = new ListViewItem(a[b].GetLast_Name() + ", " + a[b].GetName());
+
+            //                lvi.SubItems.Add(a[b].getSubscribtion().GetSubtitle());
+            //                lvi.SubItems.Add(a[b].getSubscribtion().GetSubscriberMembershipNumber());
+            //                lvi.SubItems.Add(a[b].getSubscribtion().Getprovider().getCompanyId());
+            //                lvi.SubItems.Add(a[b].getSubscribtion().Getprovider().getProviderType());
+            //                lvi.SubItems.Add(b.ToString());
+            //                lstsubs.Items.Add(lvi);
+
+            //            }
+
+
+            //            button1.Enabled = false;
+            //            button3.Enabled = false;
+            //            button2.Enabled = false;
+            //            for (int i = 0; i < a.Count; i++)
+            //            {
+            //                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
+            //                {
+            //                    non++;
+            //                }
+            //                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber")
+            //                {
+            //                    indirectsub++;
+
+            //                }
+            //                if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
+            //                {
+            //                    sub++;
+            //                }
+
+            //            }
+            //            label7.Text = sub.ToString();
+            //            label9.Text = non.ToString();
+            //            label8.Text = indirectsub.ToString();
+            //            sub = 0;
+            //            non = 0;
+            //            indirectsub = 0;
         }
 
         //To-instantiate the view.
@@ -28,266 +70,219 @@ namespace Rescue_911
         { }
         //
 
-        private void Linkepatientandsub_Load(object sender, EventArgs e)
-        {
+        //        private void button1_Click(object sender, EventArgs e)
+        //        {
 
-            List<Patient> a = SD.Patients;
-            for (int b = 0; b < a.Count(); b++)
-            {
-                ListViewItem lvi = new ListViewItem(a[b].GetLast_Name() + ", " + a[b].GetName());
+        //            List<Patient> a = SD.Patients;
+        //            int temp = 0;
+        //            if (lstsubs.SelectedItems.Count > 0)
+        //            {
+        //                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+        //            }
+        //            if (temp == -1)
+        //            {
+        //                return;
+        //            }
+        //            else
+        //            {
 
-                lvi.SubItems.Add(a[b].getSubscribtion().GetSubtitle());
-                lvi.SubItems.Add(a[b].getSubscribtion().GetSubscriberMembershipNumber());
-                lvi.SubItems.Add(a[b].getSubscribtion().Getprovider().getCompanyId());
-                lvi.SubItems.Add(a[b].getSubscribtion().Getprovider().getProviderType());
-                lvi.SubItems.Add(b.ToString());
-                lstsubs.Items.Add(lvi);
+        //                a[temp].getSubscribtion().setSubtitle("non subscriber");
+        //                lstsubs.Items.Clear();
+        //                for (int i = 0; i < a.Count(); i++)
+        //                {
+        //                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
 
-            }
-           
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
+        //                    lvi.SubItems.Add(i.ToString());
+        //                    lstsubs.Items.Add(lvi);
+        //                }
+        //                SD.Patients = a;
+        //                SD.UpdateSD(ref SD);
+        //                button1.Enabled = false;
+        //                button3.Enabled = false;
+        //                button2.Enabled = false;
+        //            }
+        //            for (int i = 0; i < a.Count; i++)
+        //            {
+        //                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
+        //                {
+        //                    non++;
+        //                }
+        //                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber" )
+        //                {
+        //                    indirectsub++;
 
-            button1.Enabled = false;
-            button3.Enabled = false;
-            button2.Enabled = false;
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
-                {
-                    non++;
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber")
-                {
-                    indirectsub++;
+        //                }
+        //                if (a[i].getSubscribtion().GetSubtitle() == "subscriber" )
+        //                {
+        //                    sub++;
+        //                }
 
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
-                {
-                    sub++;
-                }
-
-            }
-            label7.Text = sub.ToString();
-            label9.Text = non.ToString();
-            label8.Text = indirectsub.ToString();
-            sub = 0;
-            non = 0;
-            indirectsub = 0;
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            List<Patient> a = SD.Patients;
-            int temp = 0;
-            if (lstsubs.SelectedItems.Count > 0)
-            {
-                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
-            }
-            if (temp == -1)
-            {
-                return;
-            }
-            else
-            {
-
-                a[temp].getSubscribtion().setSubtitle("non subscriber");
-                lstsubs.Items.Clear();
-                for (int i = 0; i < a.Count(); i++)
-                {
-                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
-
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
-                    lvi.SubItems.Add(i.ToString());
-                    lstsubs.Items.Add(lvi);
-                }
-                SD.Patients = a;
-                SD.UpdateSD(ref SD);
-                button1.Enabled = false;
-                button3.Enabled = false;
-                button2.Enabled = false;
-            }
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
-                {
-                    non++;
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber" )
-                {
-                    indirectsub++;
-
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "subscriber" )
-                {
-                    sub++;
-                }
-
-            }
-            label7.Text = sub.ToString();
-            label9.Text = non.ToString();
-            label8.Text = indirectsub.ToString();
-            sub = 0;
-            non = 0;
-            indirectsub = 0;
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            List<Patient> a = SD.Patients;
-            int temp = 0;
-            if (lstsubs.SelectedItems.Count > 0)
-            {
-                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
-            }
-            if (temp == -1)
-            {
-                return;
-            }
-            else
-            {
-                if (txtSub.Text == "" || txtProvider.Text == "")
-                {
-                    MessageBox.Show("Please Input provider and SUB ID");
-                    return;
-                }
-                else
+        //            }
+        //            label7.Text = sub.ToString();
+        //            label9.Text = non.ToString();
+        //            label8.Text = indirectsub.ToString();
+        //            sub = 0;
+        //            non = 0;
+        //            indirectsub = 0;
+        //        }
+        //        private void button3_Click(object sender, EventArgs e)
+        //        {
+        //            List<Patient> a = SD.Patients;
+        //            int temp = 0;
+        //            if (lstsubs.SelectedItems.Count > 0)
+        //            {
+        //                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+        //            }
+        //            if (temp == -1)
+        //            {
+        //                return;
+        //            }
+        //            else
+        //            {
+        //                if (txtSub.Text == "" || txtProvider.Text == "")
+        //                {
+        //                    MessageBox.Show("Please Input provider and SUB ID");
+        //                    return;
+        //                }
+        //                else
 
 
-                    a[temp].getSubscribtion().setSubtitle("Indirec subscriber");
-                a[temp].getSubscribtion().setSubscriberMembershipNumber(txtSub.Text);
-                a[temp].getSubscribtion().Getprovider().setCompanyId(txtProvider.Text);
-                a[temp].getSubscribtion().Getprovider().setProviderType(txtTYPE.Text);
-                lstsubs.Items.Clear();
-                for (int i = 0; i < a.Count(); i++)
-                {
+        //                    a[temp].getSubscribtion().setSubtitle("Indirec subscriber");
+        //                a[temp].getSubscribtion().setSubscriberMembershipNumber(txtSub.Text);
+        //                a[temp].getSubscribtion().Getprovider().setCompanyId(txtProvider.Text);
+        //                a[temp].getSubscribtion().Getprovider().setProviderType(txtTYPE.Text);
+        //                lstsubs.Items.Clear();
+        //                for (int i = 0; i < a.Count(); i++)
+        //                {
 
-                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
+        //                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
 
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
-                    lvi.SubItems.Add(i.ToString());
-                    lstsubs.Items.Add(lvi);
-                }
-                SD.Patients = a;
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
+        //                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
+        //                    lvi.SubItems.Add(i.ToString());
+        //                    lstsubs.Items.Add(lvi);
+        //                }
+        //                SD.Patients = a;
 
-                SD.UpdateSD(ref SD);
-                button1.Enabled = false;
-                button2.Enabled = false;
-                button3.Enabled = false;
-            }
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
-                {
-                    non++;
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber" )
-                {
-                    indirectsub++;
+        //                SD.UpdateSD(ref SD);
+        //                button1.Enabled = false;
+        //                button2.Enabled = false;
+        //                button3.Enabled = false;
+        //            }
+        //            for (int i = 0; i < a.Count; i++)
+        //            {
+        //                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
+        //                {
+        //                    non++;
+        //                }
+        //                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber" )
+        //                {
+        //                    indirectsub++;
 
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
-                {
-                    sub++;
-                }
+        //                }
+        //                if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
+        //                {
+        //                    sub++;
+        //                }
 
-            }
-            label7.Text = sub.ToString();
-            label9.Text = non.ToString();
-            label8.Text = indirectsub.ToString();
-            sub = 0;
-            non = 0;
-            indirectsub = 0;
-        }
+        //            }
+        //            label7.Text = sub.ToString();
+        //            label9.Text = non.ToString();
+        //            label8.Text = indirectsub.ToString();
+        //            sub = 0;
+        //            non = 0;
+        //            indirectsub = 0;
+        //        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        //        private void button2_Click(object sender, EventArgs e)
+        //        {
 
-            List<Patient> a = SD.Patients;
-            int temp = 0;
-            if (lstsubs.SelectedItems.Count > 0)
-            {
-                temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
-            }
-            if (temp == -1)
-            {
-                return;
-            }
-            else
-            {
-                if (txtSub.Text == "")
-                {
-                    MessageBox.Show("Please Input SUB ID");
-                    return;
-                }
-                else
+        //            //List<Patient> a = SD.Patients;
+        //            //int temp = 0;
+        //            //if (lstsubs.SelectedItems.Count > 0)
+        //            //{
+        //            //    temp = lstsubs.Items.IndexOf(lstsubs.SelectedItems[0]);
+        //            //}
+        //            //if (temp == -1)
+        //            //{
+        //            //    return;
+        //            //}
+        //            //else
+        //            //{
+        //            //    if (txtSub.Text == "")
+        //            //    {
+        //            //        MessageBox.Show("Please Input SUB ID");
+        //            //        return;
+        //            //    }
+        //            //    else
 
-                    a[temp].getSubscribtion().setSubtitle("subscriber");
-                a[temp].getSubscribtion().setSubscriberMembershipNumber(txtSub.Text);
-                a[temp].getSubscribtion().Getprovider().setCompanyId("");
-                a[temp].getSubscribtion().Getprovider().setProviderType("");
-                ; lstsubs.Items.Clear();
-                for (int i = 0; i < a.Count(); i++)
-                {
+        //            //        a[temp].getSubscribtion().setSubtitle("subscriber");
+        //            //    a[temp].getSubscribtion().setSubscriberMembershipNumber(txtSub.Text);
+        //            //    a[temp].getSubscribtion().Getprovider().setCompanyId("");
+        //            //    a[temp].getSubscribtion().Getprovider().setProviderType("");
+        //            //    ; lstsubs.Items.Clear();
+        //            //    for (int i = 0; i < a.Count(); i++)
+        //            //    {
 
-                    ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
+        //            //        ListViewItem lvi = new ListViewItem(a[i].GetLast_Name() + ", " + a[i].GetName());
 
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
-                    lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
-                    lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
-                    lvi.SubItems.Add(i.ToString());
-                    lstsubs.Items.Add(lvi);
-                }
-                SD.Patients = a;
-                SD.UpdateSD(ref SD);
-                button1.Enabled = false;
-                button3.Enabled = false;
-                button2.Enabled = false;
-            }
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
-                {
-                    non++;
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber")
-                {
-                    indirectsub++;
+        //            //        lvi.SubItems.Add(a[i].getSubscribtion().GetSubtitle());
+        //            //        lvi.SubItems.Add(a[i].getSubscribtion().GetSubscriberMembershipNumber());
+        //            //        lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getCompanyId());
+        //            //        lvi.SubItems.Add(a[i].getSubscribtion().Getprovider().getProviderType());
+        //            //        lvi.SubItems.Add(i.ToString());
+        //            //        lstsubs.Items.Add(lvi);
+        //            //    }
+        //            //    SD.Patients = a;
+        //            //    SD.UpdateSD(ref SD);
+        //            //    button1.Enabled = false;
+        //            //    button3.Enabled = false;
+        //            //    button2.Enabled = false;
+        //            //}
+        //            //for (int i = 0; i < a.Count; i++)
+        //            //{
+        //            //    if (a[i].getSubscribtion().GetSubtitle() == "non subscriber")
+        //            //    {
+        //            //        non++;
+        //            //    }
+        //            //    if (a[i].getSubscribtion().GetSubtitle() == "Indirec subscriber")
+        //            //    {
+        //            //        indirectsub++;
 
-                }
-                if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
-                {
-                    sub++;
-                }
+        //            //    }
+        //            //    if (a[i].getSubscribtion().GetSubtitle() == "subscriber")
+        //            //    {
+        //            //        sub++;
+        //            //    }
 
-            }
-            label7.Text = sub.ToString();
-            label9.Text = non.ToString();
-            label8.Text = indirectsub.ToString();
-            sub = 0;
-            non = 0;
-            indirectsub = 0;
-        }
+        //            //}
+        //            //label7.Text = sub.ToString();
+        //            //label9.Text = non.ToString();
+        //            //label8.Text = indirectsub.ToString();
+        //            //sub = 0;
+        //            //non = 0;
+        //            //indirectsub = 0;
+        //        }
 
-     
 
-        private void lstsubs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstsubs.SelectedItems.Count > 0)
-            {
 
-                button1.Enabled = true;
-                button3.Enabled = true;
-                button2.Enabled = true;
-            }
-        }
+        //        private void lstsubs_SelectedIndexChanged(object sender, EventArgs e)
+        //        {
+        //            if (lstsubs.SelectedItems.Count > 0)
+        //            {
 
-      
+        //                button1.Enabled = true;
+        //                button3.Enabled = true;
+        //                button2.Enabled = true;
+        //            }
+        //        }
+
+
     }
 }

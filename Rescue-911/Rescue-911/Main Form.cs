@@ -10,10 +10,11 @@ namespace Rescue_911
     public partial class Main_Form : Form
     {
         // DATA STRUCTURE
-        //Primitives
+        //Basic
         private Shared_Data SD;
 
         //Composite Data
+        private Employee Current_User;
         private Special_View Current_View;
         //
 
@@ -66,7 +67,6 @@ namespace Rescue_911
                 sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
 
                 sideBar.IsPopulated = true;
-                
             }
 
             sideBar.Visible = true;
@@ -113,11 +113,7 @@ namespace Rescue_911
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            Call_View CallView = (Call_View)Current_View;
-
-            SetView(typeof(Emergency_Link_View), new List<object> { CallView.GetEmergency_Call() });
-
-            Current_View.SetPrevious_View(CallView);
+            SetTypicalView(typeof(Emergency_Link_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
@@ -128,6 +124,10 @@ namespace Rescue_911
         private void ResponseTeamInfoView_Prepare(object sender, EventArgs e)
         {
             SetTypicalView(typeof(Response_Team_Information_View));
+
+            // I almost broke my head over here.
+            if (Current_User is EMT)
+                ((Response_Team_Information_View)Current_View).SetContext(((EMT)Current_User).GetResponseTeam());
         }
 
         private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
@@ -168,9 +168,22 @@ namespace Rescue_911
 
 
         // FUNCTIONAL METHODS
-        public void SetSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Person xUserType)
+        public void SetSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Employee xUser)
         {
-            sideBar.PopulateSideBar(ref SD, xAcccessibleViews, xUserType);
+            Current_User = xUser;
+
+            sideBar.PopulateSideBar(ref SD, xAcccessibleViews, Current_User);
+        }
+
+        private Special_View SetTypicalView(Type xTypicalView, List<object> xAdditionalParam = null)
+        {
+            Special_View SVtemp = Current_View;
+
+            SetView(xTypicalView, xAdditionalParam);
+
+            Current_View.SetPrevious_View(SVtemp);
+
+            return Current_View;
         }
 
         private Special_View SetView(Type xSpecialView, List<object> xAdditionalParam = null)
@@ -202,17 +215,6 @@ namespace Rescue_911
 
             this.Controls.Add(Current_View);
             Current_View.BringToFront();
-
-            return Current_View;
-        }
-
-        private Special_View SetTypicalView(Type xTypicalView)
-        {
-            Special_View SVtemp = Current_View;
-
-            SetView(xTypicalView);
-
-            Current_View.SetPrevious_View(SVtemp);
 
             return Current_View;
         }

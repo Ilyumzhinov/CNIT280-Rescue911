@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.LBcurrenttime = new System.Windows.Forms.Label();
             this.LBshifttime = new System.Windows.Forms.Label();
-            //this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LBtotalworkedhours = new System.Windows.Forms.Label();
@@ -95,14 +94,9 @@
             this.LBcurrenttime.AutoSize = true;
             this.LBcurrenttime.Location = new System.Drawing.Point(113, 48);
             this.LBcurrenttime.Name = "LBcurrenttime";
-            this.LBcurrenttime.Size = new System.Drawing.Size(0, 13);
+            this.LBcurrenttime.Size = new System.Drawing.Size(26, 13);
             this.LBcurrenttime.TabIndex = 10;
             this.LBcurrenttime.Text = "time";
-            // 
-            // timer1
-            // 
-            //this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // 
             // LBshifttime
             // 
@@ -207,7 +201,7 @@
             this.Controls.Add(this.btnWaitingCall);
             this.Controls.Add(this.button1);
             this.Name = "EMT_Login_Shift_View";
-            this.Size = new System.Drawing.Size(685, 320);
+            this.Size = new System.Drawing.Size(685, 534);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.btnWaitingCall, 0);
             this.Controls.SetChildIndex(this.label1, 0);

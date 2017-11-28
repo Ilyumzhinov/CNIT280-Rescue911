@@ -40,13 +40,13 @@ namespace Rescue_911
 
         // FUNCTIONAL METHODS
         //This method is called from the outside and has the data to be populated.
-        public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Person xUserType)
+        public void PopulateSideBar(ref Shared_Data xSD, List<Type> xAcccessibleViews, Employee xUser)
         {
             SD = xSD;
 
             // To-Do: If an EMT, show a Response Team ID to which they belong.
-            lbUser.Text = xUserType.GetName() + " " + xUserType.GetLast_Name();
-            lbAccessLevel.Text = xUserType.GetType().ToString();
+            lbUser.Text = xUser.GetName() + " " + xUser.GetLast_Name();
+            lbAccessLevel.Text = xUser.GetType().ToString();
 
             layoutPanel.Width = this.Width;
             layoutPanel.BorderStyle = BorderStyle.None;

@@ -109,13 +109,6 @@
             this.cmbState.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbState.ForeColor = System.Drawing.Color.Black;
             this.cmbState.FormattingEnabled = true;
-            this.cmbState.Items.AddRange(new object[] {
-            "ALL",
-            "Not logged",
-            "Logged",
-            "Waiting",
-            "Accepted",
-            "Actioned"});
             this.cmbState.Location = new System.Drawing.Point(179, 1);
             this.cmbState.Margin = new System.Windows.Forms.Padding(0);
             this.cmbState.Name = "cmbState";

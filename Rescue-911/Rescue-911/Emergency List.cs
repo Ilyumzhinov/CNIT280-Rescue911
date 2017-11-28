@@ -14,10 +14,10 @@ namespace Rescue_911
     {
         // DATA STRUCTURE
         //Primitives
-        public int emergencySelected;
+        public int selectedIndex;
 
         //Associations
-        private List<Emergency> Emergencies;
+        private Special_List<Emergency_Call> Calls;
 
         //Event Handlers
         public event EventHandler EmergencySelected;
@@ -28,16 +28,23 @@ namespace Rescue_911
             InitializeComponent();
         }
 
-        public void SetEmergency_List(ref List<Emergency> xExistingEmergencies, string xState = "ALL", bool xStateCanChange = false)
+
+        public void SetEmergency_List(ref Special_List<Emergency_Call> xExistingCalls, string xState = "ALL", bool xStateCanChange = false)
         {
             // Setting up the values
-            Emergencies = xExistingEmergencies;
-            foreach(Emergency iEmergency in xExistingEmergencies)
-            {
-                iEmergency.EmergencyCall_Added += new EventHandler(lstEmergencies_Update);
-            }
+            Calls = xExistingCalls;
+            Calls.ItemAdded += new EventHandler(lstEmergencies_CallUpdateEvent);
+            lstEmergencies_CallUpdateEvent(null, null);
 
             // Setting up the interface
+            cmbState.Items.AddRange(new object[] {
+            "ALL",
+            "Not logged",
+            "Logged",
+            "Waiting",
+            "Accepted",
+            "Actioned",
+            "Declined"});
             cmbState.Enabled = xStateCanChange;
             cmbState.SelectedItem = xState;
             lstEmergencies.Columns[0].Width = 80;
@@ -47,52 +54,30 @@ namespace Rescue_911
             lstEmergencies.Columns[4].Width = lstEmergencies.Width - 80 * 4 - (int)(SystemInformation.VerticalScrollBarWidth* 1.5);
 
             // Populating the listView.
-            listEmergenciesPopulate(xState, Emergencies);
+            listEmergenciesPopulate(xState, Calls);
         }
 
-        private void listEmergenciesPopulate(string state, List<Emergency> ExistingEmergencies)
+        private void listEmergenciesPopulate(string state, List<Emergency_Call> ExistingCalls)
         {
             lstEmergencies.Items.Clear();
+
             List<ListViewItem> lstItem = new List<ListViewItem>();
-
             int i = 0;
-
-            foreach (Emergency iEmergency in ExistingEmergencies)
+            foreach (Emergency_Call iEC in ExistingCalls)
             {
-                int j = 0;
+                if (state != "ALL")
+                    if (iEC.GetState() != state)
+                        continue;
 
-                foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
-                {
-                    if (state != "ALL")
-                        if (EC.GetState() != state)
-                            continue;
+                lstItem.Add(new ListViewItem(iEC.GetEmergency().GetEmergency_ID().ToString()));
 
-                    if (j == 0)
-                    {
-                        lstItem.Add(new ListViewItem(iEmergency.GetEmergency_ID().ToString()));
+                lstItem[i].SubItems.Add(iEC.GetEmergency().GetEType());
+                lstItem[i].SubItems.Add(iEC.GetPriority().ToString());
+                lstItem[i].SubItems.Add(iEC.GetState());
+                lstItem[i].SubItems.Add(iEC.GetDescription());
+                lstItem[i].Tag = iEC;
 
-                        lstItem[i].SubItems.Add(iEmergency.GetEType());
-                        lstItem[i].SubItems.Add(EC.GetPriority().ToString());
-                        lstItem[i].SubItems.Add(EC.GetState());
-                        lstItem[i].SubItems.Add(EC.GetDescription());
-                        lstItem[i].Tag = iEmergency;
-                    }
-                    else
-                    {
-                        lstItem.Add(new ListViewItem(iEmergency.GetEmergency_ID().ToString()));
-
-                        lstItem[i].SubItems.Add(iEmergency.GetEType());
-                        lstItem[i].SubItems.Add(EC.GetPriority().ToString());
-                        lstItem[i].SubItems.Add(EC.GetState());
-                        lstItem[i].SubItems.Add(EC.GetDescription());
-                        lstItem[i].Tag = iEmergency;
-                    }
-
-                    j++;
-                    i++;
-                }
-
-                
+                i++;
             }
 
             // Setting the height
@@ -109,14 +94,23 @@ namespace Rescue_911
 
         private void lstEmergencies_Update(object sender, EventArgs e)
         {
-            listEmergenciesPopulate((string)cmbState.SelectedItem, Emergencies);
+            listEmergenciesPopulate((string)cmbState.SelectedItem, Calls);
+        }
+
+        private void lstEmergencies_CallUpdateEvent(object sender, EventArgs e)
+        {
+            foreach (Emergency_Call iEC in Calls)
+            {
+                iEC.Call_Updated -= new EventHandler(lstEmergencies_Update);
+                iEC.Call_Updated += new EventHandler(lstEmergencies_Update);
+            }
         }
 
         private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                emergencySelected = lstEmergencies.SelectedIndices[0];
+                selectedIndex = lstEmergencies.SelectedIndices[0];
 
                 EmergencySelected?.Invoke(lstEmergencies.SelectedItems[0].Tag, e);
             }
@@ -128,7 +122,7 @@ namespace Rescue_911
 
         private void cmbState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listEmergenciesPopulate((string)cmbState.SelectedItem, Emergencies);
+            listEmergenciesPopulate((string)cmbState.SelectedItem, Calls);
         }
 
         private void Emergency_List_SizeChanged(object sender, EventArgs e)

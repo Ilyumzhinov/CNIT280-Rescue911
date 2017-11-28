@@ -22,7 +22,7 @@ namespace Rescue_911
             //timer1.Enabled = true;
             //timer1.Interval = 1000;
 
-            emts = xSD.EMTs.ToArray();
+            emts = xSD.GetEMTs().ToArray();
 
         }
 
@@ -38,7 +38,7 @@ namespace Rescue_911
 
                 LBshifttime.Text = emts[1].getshifttime();
                 LBtotalworkedhours.Text = emts[1].getTotalShiftTime().ToString().Substring(0, 8);
-                label6.Text = emts[1].getResponseTeamID();
+                label6.Text = emts[1].GetResponseTeam().GetID().ToString();
                 labemtid.Text = emts[1].GetEmployee_ID().ToString();
                 if (emts[1].getstatus() == "STARTED")
                 {

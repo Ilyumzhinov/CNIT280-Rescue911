@@ -24,8 +24,6 @@ namespace Rescue_911
 
             Current_Call.SetState("Not Logged");
 
-            //SD.Calls.Add(Current_Call);
-
             txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
 
             txtPhoneNumber.Focus();
@@ -91,14 +89,13 @@ namespace Rescue_911
             else // All checks are satisfied
             {
                 Current_Call.SetTeams_Required(teams);
-                Current_Call.SetState("Logged");
 
                 Current_Call.SetLandmark(txtLandmark.Text);
 
                 // Update the Shared Data values regarding the Calls.
-                SD.Calls.Add(Current_Call);
+                SD.AddCall(Current_Call);
 
-                ;
+
                 SD.UpdateSD(ref SD);
                 return true;
             }

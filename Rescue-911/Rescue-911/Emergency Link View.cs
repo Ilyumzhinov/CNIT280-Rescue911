@@ -8,7 +8,7 @@ namespace Rescue_911
     public partial class Emergency_Link_View : Special_View
     {
         private Emergency_Call Current_Call;
-        private Emergency mSelectedEmergency;
+        private Emergency_Call mSelectedCall;
 
         public Emergency_Link_View(ref Shared_Data xSD, Emergency_Call xCurrentCall) : base(ref xSD, "Link to Emergency", false, Color.Green, "This cannot be undone")
         {
@@ -22,40 +22,40 @@ namespace Rescue_911
             txtDescription.Text = Current_Call.GetDescription();
 
             // Emergency list set-up.
-            if (SD.Emergencies[0] != null)
+            if (SD.GetEmergencies()[0] != null)
             {
                 emergencyList.Width = this.Width;
                 emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
-                emergencyList.SetEmergency_List(ref SD.Emergencies);
+
+                Special_List<Emergency_Call> tempECs = SD.GetCalls();
+                emergencyList.SetEmergency_List(ref tempECs, "Logged", true);
             }
         }
 
         private void btnLinkEmergency_Click(object sender, EventArgs e)
         {
-            try
+            foreach (Emergency_Call iEC in SD.GetCalls())
             {
-                foreach (Emergency iEmergency in SD.GetEmergencies())
-                {
-                    if (iEmergency.GetEmergency_ID() == mSelectedEmergency.GetEmergency_ID())
-                    {
-                        iEmergency.AddLinked_Call(Current_Call);
-                    }
+                if (iEC == mSelectedCall)
+                { 
+                    Current_Call.SetEmergency(iEC.GetEmergency());
+                    Current_Call.SetState("Logged");
+
+                    break;
                 }
 
-                SD.SetEmergencies(SD.Emergencies);
             }
-            catch { }
         }
 
         private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
             btnLinkEmergency.Visible = true;
 
-            mSelectedEmergency = (Emergency)sender;
+            mSelectedCall = (Emergency_Call)sender;
         }
 
 
-            private void Emergency_Link_View_SizeChanged(object sender, EventArgs e)
+        private void Emergency_Link_View_SizeChanged(object sender, EventArgs e)
         {
             emergencyList.Width = this.Width;
         }

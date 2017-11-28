@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rescue_911
 {
     public partial class Response_Team_Information_View : Special_View
     {
-        private Response_Team Response_Team;
-        private Emergency_Management_View[] CWFs;
-        private Emergency Emergency;
+        private Response_Team Current_RT;
+        private Emergency_Call mSelectedCall;
 
         // CONSTRUCTORS
         //To-display the view.
@@ -16,102 +15,58 @@ namespace Rescue_911
         {
             InitializeComponent();
 
-            // CHANGE
-            Response_Team = xSD.ResponseTeams[0];
-            SD = xSD;
+            // Setting up the View
+            emergencyList.Enabled = false;
+            rbYes.Enabled = false;
+            rbNo.Enabled = false;
+
+            lbRT_ID.Text = "NOT SET";
         }
 
         //To-instantiate the view.
         public Response_Team_Information_View() : base("Response Team Info", false, Color.SandyBrown)
         { }
-
-        //To-display a context-aware view.
-        public Response_Team_Information_View(Emergency xEmergency, Response_Team xRT, ref Shared_Data xSD) : this(ref xSD)
-        {
-            InitializeComponent();
-
-            Emergency = xEmergency;
-            Response_Team = xRT;
-
-            // RE-DO THIS
-            int j = 0;
-            //for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
-            //{
-            //    if (SD.OpenViews[0, i] != null)
-            //        j++;
-            //}
-
-            CWFs = new Emergency_Management_View[j];
-
-            //for (int i = 0; i < SD.OpenViews.GetLength(0); i++)
-            //{
-            //    if (SD.OpenViews[0, i] != null)
-            //        CWFs[i] = (Emergency_Management_View)SD.OpenViews[0, i];
-            //}
-        }
         //
 
-        private void Receive_Call_Form_Load(object sender, EventArgs e)
+        // FUNCTIONAL METHODS
+        public void SetContext(Response_Team xRT)
         {
-            lbRT_ID.Text = Response_Team.GetID().ToString();
+            Current_RT = xRT;
 
-            lstEmergencies_Fetch();
+            lbRT_ID.Text = Current_RT.GetID().ToString();
+
+            // Emergency list set-up.
+            if (SD.GetEmergencies()[0] != null)
+            {
+                Response_Team_Information_View_SizeChanged(this, null);
+                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+
+                Special_List<Emergency_Call> tempECs = (Special_List<Emergency_Call>)SD.GetCalls();
+                emergencyList.SetEmergency_List(ref tempECs, "Waiting", true);
+            }
+        }
+
+
+        private void Emergency_List_Item_Selected(object sender, EventArgs e)
+        {
+            mSelectedCall = (Emergency_Call)sender;
         }
 
         // If a team approves an emergency.
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
-
+            mSelectedCall.SetState("Actioned");
         }
 
         // If a team rejects an emergency.
         private void rbNo_CheckedChanged(object sender, EventArgs e)
         {
-
+            mSelectedCall.SetState("Declined");
         }
 
-        public void lstEmergencies_Fetch()
+        private void Response_Team_Information_View_SizeChanged(object sender, EventArgs e)
         {
-            if (Emergency != null)
-            {
-                int j = 0;
-
-                foreach (Emergency_Call EC in Emergency.GetLinkedCalls())
-                {
-                    if (j == 0)
-                    {
-                        ListViewItem lstItem = new ListViewItem(Emergency.GetEmergency_ID().ToString());
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    else
-                    {
-                        ListViewItem lstItem = new ListViewItem();
-
-                        lstItem.SubItems.Add(EC.GetDateTime().ToString("h:mm:ss MM/dd/yyyy "));
-                        lstItem.SubItems.Add(EC.GetState());
-                        lstItem.SubItems.Add(EC.GetDescription());
-
-                        lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-                    }
-                    j++;
-                }
-                lstEmergencies.Visible = true;
-            }
-        }
-
-        private void Receive_Call_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            e.Cancel = true; // this cancels the close event.
-        }
-        private void lstEmergencies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            emergencyList.Width = this.Width;
         }
     }
 }
