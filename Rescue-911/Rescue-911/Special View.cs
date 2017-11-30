@@ -72,9 +72,9 @@ namespace Rescue_911
 
 
         // FUNCTIONAL METHODS
-        protected void SendStatusUpdate(Special_View sender, string xStatus, string xType)
+        protected void SendStatusUpdate(bool xVisible, string xStatus = "", string xType = "")
         {
-            object[] Sender = { sender.ToString(), xStatus, xType };
+            object[] Sender = { xVisible, this.ToString(), xStatus, xType };
 
             StatusUpdate?.Invoke(Sender, null);
         }

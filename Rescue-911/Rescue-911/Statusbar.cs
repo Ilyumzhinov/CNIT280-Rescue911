@@ -18,8 +18,16 @@ namespace Rescue_911
         }
 
         // GETs & SETs
-        public void SetStatus(string senderName, string xStatus, string xType = "")
+        public void SetStatus(bool xVisible, string xSenderName, string xStatus, string xType = "")
         {
+            if (xVisible == false)
+            {
+                this.Visible = false;
+                return;
+            }
+            else
+                this.Visible = true;
+
             string message = "";
 
             switch (xType)
@@ -36,7 +44,7 @@ namespace Rescue_911
                     break;
             }
 
-            message = senderName + ": " + xStatus;
+            message += xSenderName + ": " + xStatus;
             Status.Text = message;
         }
 

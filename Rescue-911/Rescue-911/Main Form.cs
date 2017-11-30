@@ -66,18 +66,18 @@ namespace Rescue_911
                 sideBar.IsPopulated = true;
             }
 
+            StatusUpdate(( new object[] { true, this.ToString(), "Logged in", ""}), null);
             sideBar.Visible = true;
 
-            StatusUpdate(( new object[] { this.ToString(), "Logged in", ""}), null);
-            statusBar.Visible = true;
-
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
+
+            
         }
 
         //Event for displaying the Login screen.
         private void Login_Prepare(object sender, EventArgs e)
         {
-            statusBar.Visible = false;
+            StatusUpdate(false, null);
 
             Login_View LoginView = (Login_View)SetView(typeof(Login_View));
 
@@ -232,13 +232,19 @@ namespace Rescue_911
         //Can be invoked by the SendStatusUpdate method from any Special View.
         private void StatusUpdate(object sender, EventArgs e)
         {
+            if (sender is bool)
+            { 
+                statusBar.SetStatus(false, null, null);
+                return;
+            }
+
             try //If the data passed is correct
             {
-                statusBar.SetStatus(((string)((object[])sender)[0]), ((string)((object[])sender)[1]), ((string)((object[])sender)[2]));
+                statusBar.SetStatus(((bool)((object[])sender)[0]), ((string)((object[])sender)[1]), ((string)((object[])sender)[2]), ((string)((object[])sender)[3]));
             }
             catch //Error message
             {
-                statusBar.SetStatus(this.ToString(), "Failed to update Status!", "urgent");
+                statusBar.SetStatus(true, this.ToString(), "Failed to update Status!", "urgent");
             }
 
         }

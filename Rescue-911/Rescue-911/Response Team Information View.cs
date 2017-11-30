@@ -51,7 +51,7 @@ namespace Rescue_911
 
                 lbRT_ID.Text = "NOT SET";
 
-                SendStatusUpdate(this, "To get access, you must have EMT access level!", "urgent");
+                SendStatusUpdate(true, "To access, you must have EMT access level!", "urgent");
             }
         }
         

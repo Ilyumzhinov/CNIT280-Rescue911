@@ -104,20 +104,18 @@ namespace Rescue_911
         {
             List<Operator> xOperators = new List<Operator>();
             xOperators.Add(new Operator());
-            xOperators[0].SetEmployee_ID(10);
+            xOperators[0].SetEmployee_ID(1);
             xOperators[0].SetName("Leicester");
             xOperators[0].SetLast_Name("Bosdet");
-            xOperators[0].SetEmail("lbosdet0@gmail.com");
-            xOperators[0].SetPhone_Number("3074071069");
             xOperators[0].SetManager_ID(9);
+            xOperators[0].SetOperator_ID(10);
 
             xOperators.Add(new Operator());
-            xOperators[1].SetEmployee_ID(11);
-            xOperators[1].SetName("Leicester");
-            xOperators[1].SetLast_Name("Bosdet");
-            xOperators[1].SetEmail("lbosdet0@gmail.com");
-            xOperators[1].SetPhone_Number("3074071069");
+            xOperators[1].SetEmployee_ID(2);
+            xOperators[1].SetName("Fredia");
+            xOperators[1].SetLast_Name("Chessill");
             xOperators[1].SetManager_ID(9);
+            xOperators[1].SetOperator_ID(11);
 
             return xOperators;
         }
@@ -127,13 +125,11 @@ namespace Rescue_911
             List<Supervisor> xSupervisors = new List<Supervisor>();
 
             xSupervisors.Add(new Supervisor());
-            xSupervisors[0].SetEmployee_ID(12);
-            xSupervisors[0].SetName("Leicester");
-            xSupervisors[0].SetLast_Name("Bosdet");
-            xSupervisors[0].SetEmail("lbosdet0@gmail.com");
-            xSupervisors[0].SetPhone_Number("3074071069");
+            xSupervisors[0].SetEmployee_ID(3);
+            xSupervisors[0].SetName("Chalmers");
+            xSupervisors[0].SetLast_Name("Gatecliff");
             xSupervisors[0].SetManager_ID(9);
-
+            xSupervisors[0].SetOperator_ID(12);
 
             return xSupervisors;
         }
@@ -168,24 +164,28 @@ namespace Rescue_911
             xEMTs[0].SetEmployee_ID(11);
             xEMTs[0].SetResponseTeam(ResponseTeams[0]);
             xEMTs[0].setShifttime("15:00 PM");
+            xEMTs[0].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[1].SetName("Tyler");
             xEMTs[1].SetEmployee_ID(12);
             xEMTs[1].SetResponseTeam(ResponseTeams[2]);
             xEMTs[1].setShifttime("15:00 PM");
+            xEMTs[1].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[2].SetName("John");
             xEMTs[2].SetEmployee_ID(13);
             xEMTs[2].SetResponseTeam(ResponseTeams[2]);
             xEMTs[2].setShifttime("15:00 PM");
+            xEMTs[2].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[3].SetName("Shawn");
             xEMTs[3].SetEmployee_ID(14);
             xEMTs[3].SetResponseTeam(ResponseTeams[1]);
             xEMTs[3].setShifttime("15:00 PM");
+            xEMTs[3].SetManager_ID(10);
 
             return xEMTs;
         }
