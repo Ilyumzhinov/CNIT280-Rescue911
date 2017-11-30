@@ -53,14 +53,14 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(102, 147);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(140, 20);
+            this.txtPassword.Size = new System.Drawing.Size(143, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(102, 103);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(140, 20);
+            this.txtLogin.Size = new System.Drawing.Size(143, 20);
             this.txtLogin.TabIndex = 1;
             // 
             // label3
@@ -85,14 +85,15 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(142, 200);
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Location = new System.Drawing.Point(145, 200);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLogin.MinimumSize = new System.Drawing.Size(100, 30);
+            this.btnLogin.MinimumSize = new System.Drawing.Size(100, 0);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 30);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "> Log in";
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -130,14 +131,15 @@
             this.btnNewMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewMain.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewMain.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.btnNewMain.Location = new System.Drawing.Point(142, 39);
+            this.btnNewMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewMain.Location = new System.Drawing.Point(18, 200);
             this.btnNewMain.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNewMain.MinimumSize = new System.Drawing.Size(100, 30);
+            this.btnNewMain.MinimumSize = new System.Drawing.Size(100, 0);
             this.btnNewMain.Name = "btnNewMain";
             this.btnNewMain.Size = new System.Drawing.Size(100, 30);
             this.btnNewMain.TabIndex = 8;
-            this.btnNewMain.Text = "+ New Form";
-            this.btnNewMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewMain.Text = "New Form";
+            this.btnNewMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewMain.UseVisualStyleBackColor = false;
             this.btnNewMain.Click += new System.EventHandler(this.btnNewMain_Click);
             // 

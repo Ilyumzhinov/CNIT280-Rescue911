@@ -24,6 +24,11 @@ namespace Rescue_911
             Employees_Data EmloyeesData = new Employees_Data(ref xSD);
 
             EmployeesLogins = EmloyeesData.GetEmployeesLoginsPasswords();
+
+            //Bitmap tempxx = new Bitmap("");//(Bitmap)SystemIcons.Hand.Handle
+            
+            btnLogin.Image = SystemIcons.Warning.ToBitmap();
+            btnNewMain.Image = SystemIcons.WinLogo.ToBitmap();
         }
 
         //To-instantiate the view.
