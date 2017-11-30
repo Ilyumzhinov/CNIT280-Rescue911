@@ -81,7 +81,7 @@ namespace Rescue_911
 
         public override string ToString()
         {
-            return this.Text + " View";
+            return this.Text + " Page";
         }
         //
 
