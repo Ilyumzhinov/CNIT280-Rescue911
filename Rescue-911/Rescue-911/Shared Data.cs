@@ -46,7 +46,9 @@ namespace Rescue_911
         }
         public void SetEMTs(List<EMT> xEMTs) { EMTs = xEMTs; }
         public void SetPatients(List<Patient> xPatients) { Patients = xPatients; }
-        public void AddDispatch(Dispatch xDispatch) { Dispatches.Add(xDispatch); }
+        public void AddDispatch(Dispatch xDispatch) {
+            Dispatches.Add(xDispatch);
+        }
         //
 
         public Special_List<Emergency_Call> GetCalls() { return Calls; }

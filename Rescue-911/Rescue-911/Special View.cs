@@ -25,9 +25,8 @@ namespace Rescue_911
         private Special_View Previous_View;
 
         //Event Handlers
-
+        public event EventHandler StatusUpdate;
         //
-
 
         // CONSTRUCTORS
         //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue
@@ -72,12 +71,19 @@ namespace Rescue_911
         //
 
 
-        private void btnBack_Click(object sender, EventArgs e)
+        // FUNCTIONAL METHODS
+        protected void SendStatusUpdate(Special_View sender, string xStatus, string xType)
         {
-            ((Main_Form)this.Parent).View_Switch(Previous_View);
+            object[] Sender = { sender.ToString(), xStatus, xType };
 
-            this.Dispose();
+            StatusUpdate?.Invoke(Sender, null);
         }
+
+        public override string ToString()
+        {
+            return this.Text + " View";
+        }
+        //
 
 
         // SET AND RECEIVE VALUES
@@ -118,6 +124,13 @@ namespace Rescue_911
         public string GetDesc() { return dDesc; }
 
         public Special_View GetPrevious_View() { return Previous_View; }
-       //
+        //
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ((Main_Form)this.Parent).View_Switch(Previous_View);
+
+            this.Dispose();
+        }
     }
 }

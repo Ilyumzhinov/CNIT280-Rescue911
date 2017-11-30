@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lbViewArea = new System.Windows.Forms.Label();
+            this.statusBar = new Rescue_911.Statusbar();
             this.sideBar = new Rescue_911.Sidebar();
             this.SuspendLayout();
             // 
@@ -54,6 +55,19 @@
             this.lbViewArea.Text = "VIEW AREA";
             this.lbViewArea.Visible = false;
             // 
+            // statusBar
+            // 
+            this.statusBar.AutoSize = true;
+            this.statusBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.statusBar.BackColor = System.Drawing.Color.SlateGray;
+            this.statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.statusBar.ForeColor = System.Drawing.Color.White;
+            this.statusBar.Location = new System.Drawing.Point(150, 535);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Padding = new System.Windows.Forms.Padding(5);
+            this.statusBar.Size = new System.Drawing.Size(734, 27);
+            this.statusBar.TabIndex = 18;
+            // 
             // sideBar
             // 
             this.sideBar.AutoScroll = true;
@@ -76,6 +90,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Controls.Add(this.statusBar);
             this.Controls.Add(this.lbViewArea);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.label1);
@@ -92,6 +107,7 @@
         private System.Windows.Forms.Label label1;
         private Sidebar sideBar;
         private System.Windows.Forms.Label lbViewArea;
+        private Statusbar statusBar;
     }
 }
 

@@ -119,6 +119,7 @@
     <Compile Include="Invoice View.Designer.cs">
       <DependentUpon>Invoice View.cs</DependentUpon>
     </Compile>
+    <Compile Include="IUserDependent.cs" />
     <Compile Include="Link Patient View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +174,12 @@
     </Compile>
     <Compile Include="Special View.Designer.cs">
       <DependentUpon>Special View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statusbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statusbar.Designer.cs">
+      <DependentUpon>Statusbar.cs</DependentUpon>
     </Compile>
     <Compile Include="SUB.cs" />
     <EmbeddedResource Include="Base Station Records View.resx">
@@ -238,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Special View.resx">
       <DependentUpon>Special View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statusbar.resx">
+      <DependentUpon>Statusbar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

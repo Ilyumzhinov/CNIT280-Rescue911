@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Response_Team_Information_View : Special_View
+    public partial class Response_Team_Information_View : Special_View, IUserDependent
     {
         private Response_Team Current_RT;
         private Emergency_Call mSelectedCall;
@@ -14,13 +14,6 @@ namespace Rescue_911
         public Response_Team_Information_View(ref Shared_Data xSD) : base(ref xSD, "Response Team Info", false, Color.SandyBrown)
         {
             InitializeComponent();
-
-            // Setting up the View
-            emergencyList.Enabled = false;
-            rbYes.Enabled = false;
-            rbNo.Enabled = false;
-
-            lbRT_ID.Text = "NOT SET";
         }
 
         //To-instantiate the view.
@@ -29,24 +22,39 @@ namespace Rescue_911
         //
 
         // FUNCTIONAL METHODS
-        public void SetContext(Response_Team xRT)
+        public void SendUser(Person xPerson)
         {
-            Current_RT = xRT;
-
-            lbRT_ID.Text = Current_RT.GetID().ToString();
-
-            // Emergency list set-up.
-            if (SD.GetEmergencies()[0] != null)
+            if (xPerson is EMT)
             {
-                Response_Team_Information_View_SizeChanged(this, null);
-                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+                Current_RT = ((EMT)xPerson).GetResponseTeam();
 
-                Special_List<Emergency_Call> tempECs = (Special_List<Emergency_Call>)SD.GetCalls();
-                emergencyList.SetEmergency_List(ref tempECs, "Waiting", true);
+                lbRT_ID.Text = Current_RT.GetID().ToString();
+
+
+                // Emergency list set-up.
+                if (SD.GetEmergencies()[0] != null)
+                {
+                    Response_Team_Information_View_SizeChanged(this, null);
+                    emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+
+                    Special_List<Emergency_Call> tempECs = (Special_List<Emergency_Call>)SD.GetCalls();
+
+                    emergencyList.SetEmergency_List(ref tempECs, "Waiting", true);
+                }
+            }
+            else
+            {
+                // Setting up the View
+                emergencyList.Enabled = false;
+                rbYes.Enabled = false;
+                rbNo.Enabled = false;
+
+                lbRT_ID.Text = "NOT SET";
+
+                SendStatusUpdate(this, "To get access, you must have EMT access level!", "urgent");
             }
         }
-
-
+        
         private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
             mSelectedCall = (Emergency_Call)sender;

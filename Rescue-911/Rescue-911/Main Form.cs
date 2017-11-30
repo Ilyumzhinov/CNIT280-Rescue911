@@ -7,7 +7,7 @@ using System.Drawing.Drawing2D;
 
 namespace Rescue_911
 {
-    public partial class Main_Form : Form
+    public partial class Main_Form : Form, IUserDependent
     {
         // DATA STRUCTURE
         //Basic
@@ -18,17 +18,14 @@ namespace Rescue_911
         private Special_View Current_View;
         //
 
-
         public Main_Form(ref Shared_Data xSD)
         {
-            // Setting up the form.
-            // To-Do: Add dynamic ID type identification
+            InitializeComponent();
 
+            // Setting up the form.
             SD = xSD;
 
             SD.AddMain_Form(this);
-
-            InitializeComponent();
         }
 
 
@@ -70,12 +67,18 @@ namespace Rescue_911
             }
 
             sideBar.Visible = true;
+
+            StatusUpdate(( new object[] { this.ToString(), "Logged in", ""}), null);
+            statusBar.Visible = true;
+
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
         }
 
         //Event for displaying the Login screen.
         private void Login_Prepare(object sender, EventArgs e)
         {
+            statusBar.Visible = false;
+
             Login_View LoginView = (Login_View)SetView(typeof(Login_View));
 
             LoginView.LoginButton_Click += new EventHandler(MainView_Prepare);
@@ -124,10 +127,6 @@ namespace Rescue_911
         private void ResponseTeamInfoView_Prepare(object sender, EventArgs e)
         {
             SetTypicalView(typeof(Response_Team_Information_View));
-
-            // I almost broke my head over here.
-            if (Current_User is EMT)
-                ((Response_Team_Information_View)Current_View).SetContext(((EMT)Current_User).GetResponseTeam());
         }
 
         private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
@@ -183,6 +182,10 @@ namespace Rescue_911
 
             Current_View.SetPrevious_View(SVtemp);
 
+            // I almost broke my head over here.
+            if (Current_View is IUserDependent)
+                ((IUserDependent)Current_View).SendUser(Current_User);
+
             return Current_View;
         }
 
@@ -199,6 +202,11 @@ namespace Rescue_911
 
             Current_View = (Special_View)(Activator.CreateInstance(xSpecialView, Parameters.ToArray()));
 
+            // Update the status by invoking the Event inside the Special View.
+            Current_View.StatusUpdate -= new EventHandler(StatusUpdate);
+            Current_View.StatusUpdate += new EventHandler(StatusUpdate);
+
+            // Auto-align the view if it is of special type.
             if (Current_View.GetMiddleAligned() == false)
             {
                 this.SizeChanged -= new EventHandler(Main_Form_SizeChanged);
@@ -217,6 +225,27 @@ namespace Rescue_911
             Current_View.BringToFront();
 
             return Current_View;
+        }
+
+
+        //Update the status. 
+        //Can be invoked by the SendStatusUpdate method from any Special View.
+        private void StatusUpdate(object sender, EventArgs e)
+        {
+            try //If the data passed is correct
+            {
+                statusBar.SetStatus(((string)((object[])sender)[0]), ((string)((object[])sender)[1]), ((string)((object[])sender)[2]));
+            }
+            catch //Error message
+            {
+                statusBar.SetStatus(this.ToString(), "Failed to update Status!", "urgent");
+            }
+
+        }
+
+        public override string ToString()
+        {
+            return "Main Page";
         }
         //
 
@@ -243,6 +272,11 @@ namespace Rescue_911
                 Application.Exit();
                 return;
             }    
+        }
+
+        public void SendUser(Person xUser)
+        {
+            Current_User = (Employee)xUser;
         }
         //
     }
