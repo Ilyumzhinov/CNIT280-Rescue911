@@ -16,7 +16,7 @@ namespace Rescue_911
         private string status;
 
 
-
+        // SETs & GETs
         public void SetResponseTeam(Response_Team xRT) { RT = xRT; }
         public TimeSpan getTotalShiftTime() { return TotalShifttime; }
 
@@ -41,5 +41,6 @@ namespace Rescue_911
 
         public Response_Team GetResponseTeam() { return RT; }
         public string getstatus() { return status; }
+        //
     }
 }

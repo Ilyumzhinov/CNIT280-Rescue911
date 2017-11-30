@@ -8,10 +8,15 @@ namespace Rescue_911
 {
     public partial class Call_View : Special_View
     {
+        // DATA STRUCTURE
+        //Composite Data
         private Emergency_Call Current_Call;
         private List<Patient> Suggested_Patients = new List<Patient>();
 
+        //Events
         public event EventHandler LinkEmergencyButton_Click;
+        //
+
 
         // CONSTRUCTORS
         //To-display the view.

@@ -16,10 +16,15 @@ namespace Rescue_911
         //Common data
         private Special_List<Emergency_Call> Calls;
         private List<Emergency> Emergencies;
-        private List<EMT> EMTs;
+        
         private List<Response_Team> ResponseTeams;
         private List<Dispatch> Dispatches;
         private List<Patient> Patients;
+
+        //Employees
+        private List<Operator> Operators;
+        private List<Supervisor> Supervisors;
+        private List<EMT> EMTs;
         //
 
         public void UpdateSD(ref Shared_Data xSD)
@@ -53,6 +58,8 @@ namespace Rescue_911
 
         public Special_List<Emergency_Call> GetCalls() { return Calls; }
         public List<Emergency> GetEmergencies() { return Emergencies; }
+        public List<Operator> GetOperators() { return Operators; }
+        public List<Supervisor> GetSupervisors() { return Supervisors; }
         public List<EMT> GetEMTs() { return EMTs; }
         public List<Response_Team> GetResponseTeams() { return ResponseTeams; }
         public List<Dispatch> GetDispatches() { return Dispatches; }
@@ -81,54 +88,56 @@ namespace Rescue_911
             ResponseTeams = LoadRTs();
             EMTs = LoadEMTs();
 
-            Patients.Add(new Patient());
+            // LOAD OPERATORs AND SUPERVISORs
+            Operators = LoadOperators();
+            Supervisors = LoadSupervisors();
 
-            Patients[0].SetDOB("13 feb");
-            Patients[0].setbloodtype("o");
-            Patients[0].setcomplication("Losed Blood");
-            Patients[0].SetName("Calven");
-            Patients[0].SetLast_Name("Yuvenov");
+            // LOAD PATIENTS
+            Patients = LoadPatients();
 
-            Patients.Add(new Patient());
-            Patients[1].setbloodtype("o");
-            Patients[1].setcomplication("In pain ");
-            Patients[1].SetName("John");
-            Patients[1].SetLast_Name("Smith");
-
-            Patients.Add(new Patient());
-            Patients[2].SetDOB("2 feb");
-            Patients[2].setbloodtype("o");
-            Patients[2].setcomplication("Losed Blood");
-            Patients[2].SetName("kevin");
-            Patients[2].SetLast_Name("zhang");
-
-            Patients.Add(new Patient());
-            Patients[3].SetDOB("13 feb");
-            Patients[3].setbloodtype("o");
-            Patients[3].setcomplication("Losed Blood");
-            Patients[3].SetName("artem");
-            Patients[3].SetLast_Name("sub");
-
-            Patients.Add(new Patient());
-            Patients[4].SetDOB("13 feb");
-            Patients[4].setbloodtype("o");
-            Patients[4].setcomplication("Losed Blood");
-            Patients[4].SetName("jassica");
-            Patients[4].SetLast_Name("kanban");
-
-            Patients.Add(new Patient());
-            Patients[5].SetDOB("13 feb");
-            Patients[5].setbloodtype("o");
-            Patients[5].setcomplication("Losed Blood");
-            Patients[5].SetName("zoe");
-            Patients[5].SetLast_Name("abbe");
-
-
+            // LOAD EMERGENCIES AND CALLs
             Emergencies = LoadEmergencies();
-
             Calls = LoadEC(Callers, Emergencies);
         }
         
+        private List<Operator> LoadOperators()
+        {
+            List<Operator> xOperators = new List<Operator>();
+            xOperators.Add(new Operator());
+            xOperators[0].SetEmployee_ID(10);
+            xOperators[0].SetName("Leicester");
+            xOperators[0].SetLast_Name("Bosdet");
+            xOperators[0].SetEmail("lbosdet0@gmail.com");
+            xOperators[0].SetPhone_Number("3074071069");
+            xOperators[0].SetManager_ID(9);
+
+            xOperators.Add(new Operator());
+            xOperators[1].SetEmployee_ID(11);
+            xOperators[1].SetName("Leicester");
+            xOperators[1].SetLast_Name("Bosdet");
+            xOperators[1].SetEmail("lbosdet0@gmail.com");
+            xOperators[1].SetPhone_Number("3074071069");
+            xOperators[1].SetManager_ID(9);
+
+            return xOperators;
+        }
+
+        private List<Supervisor> LoadSupervisors()
+        {
+            List<Supervisor> xSupervisors = new List<Supervisor>();
+
+            xSupervisors.Add(new Supervisor());
+            xSupervisors[0].SetEmployee_ID(12);
+            xSupervisors[0].SetName("Leicester");
+            xSupervisors[0].SetLast_Name("Bosdet");
+            xSupervisors[0].SetEmail("lbosdet0@gmail.com");
+            xSupervisors[0].SetPhone_Number("3074071069");
+            xSupervisors[0].SetManager_ID(9);
+
+
+            return xSupervisors;
+        }
+
         private List<Response_Team> LoadRTs()
         {
             List<Response_Team> xRTs = new List<Response_Team>();
@@ -156,29 +165,25 @@ namespace Rescue_911
             List<EMT> xEMTs = new List<EMT>();
             xEMTs.Add(new EMT());
             xEMTs[0].SetName("Jane");
-            xEMTs[0].SetPassword("qwerty");
-            xEMTs[0].SetEmployee_ID(0);
+            xEMTs[0].SetEmployee_ID(11);
             xEMTs[0].SetResponseTeam(ResponseTeams[0]);
             xEMTs[0].setShifttime("15:00 PM");
 
             xEMTs.Add(new EMT());
             xEMTs[1].SetName("Tyler");
-            xEMTs[1].SetPassword("123");
-            xEMTs[1].SetEmployee_ID(1);
+            xEMTs[1].SetEmployee_ID(12);
             xEMTs[1].SetResponseTeam(ResponseTeams[2]);
             xEMTs[1].setShifttime("15:00 PM");
 
             xEMTs.Add(new EMT());
             xEMTs[2].SetName("John");
-            xEMTs[2].SetPassword("john");
-            xEMTs[2].SetEmployee_ID(2);
+            xEMTs[2].SetEmployee_ID(13);
             xEMTs[2].SetResponseTeam(ResponseTeams[2]);
             xEMTs[2].setShifttime("15:00 PM");
 
             xEMTs.Add(new EMT());
             xEMTs[3].SetName("Shawn");
-            xEMTs[3].SetPassword("111");
-            xEMTs[3].SetEmployee_ID(3);
+            xEMTs[3].SetEmployee_ID(14);
             xEMTs[3].SetResponseTeam(ResponseTeams[1]);
             xEMTs[3].setShifttime("15:00 PM");
 
@@ -270,6 +275,55 @@ namespace Rescue_911
             ECallers[3].SetPhone_Number("1234567890");
 
             return ECallers;
+        }
+
+        private List<Patient> LoadPatients()
+        {
+            List<Patient> xPatients = new List<Patient>();
+
+            xPatients.Add(new Patient());
+
+            xPatients[0].SetDOB("13 feb");
+            xPatients[0].setbloodtype("o");
+            xPatients[0].setcomplication("Losed Blood");
+            xPatients[0].SetName("Calven");
+            xPatients[0].SetLast_Name("Yuvenov");
+
+            xPatients.Add(new Patient());
+            xPatients[1].setbloodtype("o");
+            xPatients[1].setcomplication("In pain ");
+            xPatients[1].SetName("John");
+            xPatients[1].SetLast_Name("Smith");
+
+            xPatients.Add(new Patient());
+            xPatients[2].SetDOB("2 feb");
+            xPatients[2].setbloodtype("o");
+            xPatients[2].setcomplication("Losed Blood");
+            xPatients[2].SetName("kevin");
+            xPatients[2].SetLast_Name("zhang");
+
+            xPatients.Add(new Patient());
+            xPatients[3].SetDOB("13 feb");
+            xPatients[3].setbloodtype("o");
+            xPatients[3].setcomplication("Losed Blood");
+            xPatients[3].SetName("artem");
+            xPatients[3].SetLast_Name("sub");
+
+            xPatients.Add(new Patient());
+            xPatients[4].SetDOB("13 feb");
+            xPatients[4].setbloodtype("o");
+            xPatients[4].setcomplication("Losed Blood");
+            xPatients[4].SetName("jassica");
+            xPatients[4].SetLast_Name("kanban");
+
+            xPatients.Add(new Patient());
+            xPatients[5].SetDOB("13 feb");
+            xPatients[5].setbloodtype("o");
+            xPatients[5].setcomplication("Losed Blood");
+            xPatients[5].SetName("zoe");
+            xPatients[5].SetLast_Name("abbe");
+
+            return xPatients;
         }
     }
 

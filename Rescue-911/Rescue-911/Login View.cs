@@ -40,8 +40,8 @@ namespace Rescue_911
 
                 nameFound = iEMT.GetName();
 
-                if (txtPassword.Text != iEMT.GetPassword())
-                    continue;
+               // if (txtPassword.Text != iEMT.GetPassword())
+                //    continue;
 
                 // Adding accessible Forms for an EMT
                 List<Type> AccessibleViews = new List<Type>();
