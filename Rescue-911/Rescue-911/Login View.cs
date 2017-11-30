@@ -80,12 +80,6 @@ namespace Rescue_911
         //
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text.Trim() == string.Empty && txtPassword.Text.Trim() == string.Empty)
-            {
-                txtLogin.Focus();
-                return;
-            }
-
             lbName.Visible = false;
             lbPassword.Visible = false;
             int loginFound = -1;
