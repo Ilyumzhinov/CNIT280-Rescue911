@@ -40,29 +40,36 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(85, 91);
+            this.dateTimePicker1.Location = new System.Drawing.Point(180, 84);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(396, 31);
             this.dateTimePicker1.TabIndex = 34;
             // 
             // listbox1
             // 
             this.listbox1.FormattingEnabled = true;
-            this.listbox1.Location = new System.Drawing.Point(24, 360);
+            this.listbox1.ItemHeight = 25;
+            this.listbox1.Location = new System.Drawing.Point(21, 511);
+            this.listbox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listbox1.Name = "listbox1";
-            this.listbox1.Size = new System.Drawing.Size(267, 95);
+            this.listbox1.Size = new System.Drawing.Size(530, 179);
             this.listbox1.TabIndex = 33;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(389, 487);
+            this.btnSend.Location = new System.Drawing.Point(747, 646);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.Size = new System.Drawing.Size(150, 44);
             this.btnSend.TabIndex = 32;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -74,11 +81,12 @@
             this.columnHeader5,
             this.columnHeader4});
             this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(16, 213);
+            this.lstEmergencies.Location = new System.Drawing.Point(21, 229);
+            this.lstEmergencies.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lstEmergencies.MultiSelect = false;
             this.lstEmergencies.Name = "lstEmergencies";
             this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(440, 114);
+            this.lstEmergencies.Size = new System.Drawing.Size(876, 216);
             this.lstEmergencies.TabIndex = 31;
             this.lstEmergencies.UseCompatibleStateImageBehavior = false;
             this.lstEmergencies.View = System.Windows.Forms.View.Details;
@@ -100,9 +108,10 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(389, 172);
+            this.btnGenerate.Location = new System.Drawing.Point(747, 113);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(150, 44);
             this.btnGenerate.TabIndex = 30;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -110,72 +119,79 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 96);
+            this.label2.Location = new System.Drawing.Point(16, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(152, 25);
             this.label2.TabIndex = 29;
             this.label2.Text = "Renewal Date:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 129);
+            this.label1.Location = new System.Drawing.Point(16, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(137, 25);
             this.label1.TabIndex = 28;
             this.label1.Text = "Monthly Fee:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(87, 126);
+            this.textBox2.Location = new System.Drawing.Point(180, 151);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(196, 31);
             this.textBox2.TabIndex = 27;
             this.textBox2.Text = "200";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 62);
+            this.label3.Location = new System.Drawing.Point(16, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(147, 25);
             this.label3.TabIndex = 26;
             this.label3.Text = "Subscriber ID:";
             // 
-            // textBox1
+            // panel1
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.Text = "10005";
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.btnSend);
+            this.panel1.Controls.Add(this.listbox1);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lstEmergencies);
+            this.panel1.Controls.Add(this.btnGenerate);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(20, 181);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(940, 723);
+            this.panel1.TabIndex = 35;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(184, 22);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
+            this.numericUpDown1.TabIndex = 35;
             // 
             // Invoice_View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.listbox1);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.lstEmergencies);
-            this.Controls.Add(this.btnGenerate);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "Invoice_View";
-            this.Size = new System.Drawing.Size(474, 520);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.btnGenerate, 0);
-            this.Controls.SetChildIndex(this.lstEmergencies, 0);
-            this.Controls.SetChildIndex(this.btnSend, 0);
-            this.Controls.SetChildIndex(this.listbox1, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Padding = new System.Windows.Forms.Padding(20, 19, 20, 19);
+            this.Size = new System.Drawing.Size(980, 923);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +211,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

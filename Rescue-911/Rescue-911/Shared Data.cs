@@ -25,6 +25,7 @@ namespace Rescue_911
         private List<Operator> Operators;
         private List<Supervisor> Supervisors;
         private List<EMT> EMTs;
+        private List<Manager> Managers;
         //
 
         public void UpdateSD(ref Shared_Data xSD)
@@ -35,6 +36,7 @@ namespace Rescue_911
             ResponseTeams = xSD.GetResponseTeams();
             Dispatches = xSD.GetDispatches();
             Patients = xSD.GetPatients();
+            Managers = xSD.GetManagers();
         }
 
         // To-Do: Delete sets
@@ -64,6 +66,7 @@ namespace Rescue_911
         public List<Response_Team> GetResponseTeams() { return ResponseTeams; }
         public List<Dispatch> GetDispatches() { return Dispatches; }
         public List<Patient> GetPatients() { return Patients; }
+        public List<Manager> GetManagers() { return Managers; }
         public void RemoveMain_Form(Main_Form xForm)
         {
             MainForms.RemoveItem(xForm);
@@ -80,6 +83,7 @@ namespace Rescue_911
             ResponseTeams = new List<Response_Team>();
             Dispatches = new List<Dispatch>();
             Patients = new List<Patient>();
+            Managers = new List<Manager>();
 
             // LOAD CALLERS
             List<Caller> Callers = LoadCallers();
@@ -88,9 +92,10 @@ namespace Rescue_911
             ResponseTeams = LoadRTs();
             EMTs = LoadEMTs();
 
-            // LOAD OPERATORs AND SUPERVISORs
+            // LOAD OPERATORs, SUPERVISORs AND MANAGERs
             Operators = LoadOperators();
             Supervisors = LoadSupervisors();
+            Managers = LoadManagers();
 
             // LOAD PATIENTS
             Patients = LoadPatients();
@@ -132,6 +137,22 @@ namespace Rescue_911
             xSupervisors[0].SetOperator_ID(12);
 
             return xSupervisors;
+        }
+
+        private List<Manager> LoadManagers()
+        {
+            List<Manager> xManagers = new List<Manager>();
+            xManagers.Add(new Manager());
+            xManagers[0].SetEmployee_ID(9);
+            xManagers[0].SetName("Hughie");
+            xManagers[0].SetLast_Name("Diamant");
+
+            xManagers.Add(new Manager());
+            xManagers[1].SetEmployee_ID(10);
+            xManagers[1].SetName("Vaugh");
+            xManagers[1].SetLast_Name("Stairs");
+
+            return xManagers;
         }
 
         private List<Response_Team> LoadRTs()

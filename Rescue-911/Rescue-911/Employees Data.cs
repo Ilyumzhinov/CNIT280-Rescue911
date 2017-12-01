@@ -11,6 +11,7 @@ namespace Rescue_911
         private Tuple<Employee, int, string>[] Operators;
         private Tuple<Employee, int, string>[] Supervisors;
         private Tuple<Employee, int, string>[] EMTs;
+        private Tuple<Employee, int, string>[] Managers;
         private Tuple<Employee, int, string> FakeEmpoyee;
         //
 
@@ -21,6 +22,7 @@ namespace Rescue_911
             SetupOperators(xSD.GetOperators());
             SetupSupervisors(xSD.GetSupervisors());
             SetupEMTs(xSD.GetEMTs());
+            SetupManagers(xSD.GetManagers());
 
             // TEST SUPER USER: FAKE EMPOYEE
             Employee fakePerson = new Employee();
@@ -43,6 +45,7 @@ namespace Rescue_911
             Employees.AddRange(Operators);
             Employees.AddRange(Supervisors);
             Employees.AddRange(EMTs);
+            Employees.AddRange(Managers);
             Employees.Add(FakeEmpoyee);
 
             return Employees;
@@ -79,6 +82,16 @@ namespace Rescue_911
             EMTs[2] = Tuple.Create((Employee)EMTs_Existing[2], EMTs_Existing[2].GetEmployee_ID(), "john");
             // Shawn
             EMTs[3] = Tuple.Create((Employee)EMTs_Existing[3], EMTs_Existing[3].GetEmployee_ID(), "111");
+        }
+
+        private void SetupManagers(List<Manager> Managers_Existing)
+        {
+            Managers = new Tuple<Employee, int, string>[2];
+
+            // Hughie
+            Managers[0] = Tuple.Create((Employee)Managers_Existing[0], Managers_Existing[0].GetEmployee_ID(), "test");
+            // Vaugh
+            Managers[1] = Tuple.Create((Employee)Managers_Existing[1], Managers_Existing[1].GetEmployee_ID(), "?");
         }
     }
 }

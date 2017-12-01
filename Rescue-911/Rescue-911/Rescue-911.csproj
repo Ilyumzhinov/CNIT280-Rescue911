@@ -151,6 +151,7 @@
     <Compile Include="Main View.Designer.cs">
       <DependentUpon>Main View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="Patient Information View.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +189,12 @@
     </Compile>
     <Compile Include="Statusbar.Designer.cs">
       <DependentUpon>Statusbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Payment View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sub Payment View.Designer.cs">
+      <DependentUpon>Sub Payment View.cs</DependentUpon>
     </Compile>
     <Compile Include="SUB.cs" />
     <Compile Include="Supervisor.cs" />
@@ -257,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statusbar.resx">
       <DependentUpon>Statusbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Payment View.resx">
+      <DependentUpon>Sub Payment View.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

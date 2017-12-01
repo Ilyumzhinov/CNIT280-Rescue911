@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Invoice_View : Special_View
+    public partial class Invoice_View : Special_View, IUserDependent
     {
         // CONSTRUCTORS
         //To-display the view.
@@ -34,9 +34,25 @@ namespace Rescue_911
         //To-instantiate the view.
         public Invoice_View() : base("Invoice", false, Color.DeepPink)
         { }
+        //
 
+        // FUNCTIONAL METHODS
+        public void SendUser(Person xPerson)
+        {
+            if (xPerson is Manager)
+            {
+                // To-Do: Set up the view with the appropriate user data
+            }
+            else
+            {
+                btnGenerate.Enabled = false;
+                btnSend.Enabled = false;
 
-            //
+                lstEmergencies.Enabled = false;
+
+                SendStatusUpdate(true, "To access, you must have Manager access level!", "urgent");
+            }
         }
-
+        //
+    }
 }

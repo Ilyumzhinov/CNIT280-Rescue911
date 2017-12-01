@@ -25,10 +25,8 @@ namespace Rescue_911
 
             EmployeesLogins = EmloyeesData.GetEmployeesLoginsPasswords();
 
-            //Bitmap tempxx = new Bitmap("");//(Bitmap)SystemIcons.Hand.Handle
-            
-            btnLogin.Image = SystemIcons.Warning.ToBitmap();
-            btnNewMain.Image = SystemIcons.WinLogo.ToBitmap();
+            //btnLogin.Image = SystemIcons.Warning.ToBitmap();
+            //btnNewMain.Image = SystemIcons.WinLogo.ToBitmap();
         }
 
         //To-instantiate the view.
@@ -41,38 +39,39 @@ namespace Rescue_911
         {
             List<Type> AccessibleViews = new List<Type>();
 
-            if (xUserType == typeof(Operator))
-            {
+
+            if (xUserType == typeof(Operator) || xUserType == typeof(Supervisor) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Call_View));
+
+            if (xUserType == typeof(Operator) || xUserType == typeof(Supervisor) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Emergency_Management_View));
-            }
-            else if (xUserType == typeof(Supervisor))
-            {
-                AccessibleViews.Add(typeof(Call_View));
-                AccessibleViews.Add(typeof(Emergency_Management_View));
-            }
-            else if (xUserType == typeof(EMT))
-            {
-                // Adding accessible Views for an EMT
+
+            if (xUserType == typeof(EMT) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Response_Team_Information_View));
+
+            if (xUserType == typeof(EMT) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(EMT_Login_Shift_View));
+
+            if (xUserType == typeof(EMT) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Dispatch_Report_View));
-                AccessibleViews.Add(typeof(Patient_Information_View));
-            }
-            else if (xUserType == typeof(Employee))
-            {
-                // To-be-Removed: Adding accessible views for a test fake employee
-                AccessibleViews.Add(typeof(Call_View));
-                AccessibleViews.Add(typeof(Emergency_Management_View));
-                AccessibleViews.Add(typeof(Response_Team_Information_View));
-                AccessibleViews.Add(typeof(EMT_Login_Shift_View));
+
+            if (xUserType == typeof(Manager) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Base_Station_Records_View));
+
+            if (xUserType == typeof(Operator) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Dispatch_Related_Times_View));
-                AccessibleViews.Add(typeof(Dispatch_Report_View));
+
+            if (xUserType == typeof(Manager) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Link_Patient_View));
+
+            if (xUserType == typeof(Manager) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Patient_Information_View));
+
+            if (xUserType == typeof(Manager) || xUserType == typeof(Employee))
                 AccessibleViews.Add(typeof(Invoice_View));
-            }
+
+            if (xUserType == typeof(Manager) || xUserType == typeof(Employee))
+                AccessibleViews.Add(typeof(Sub_Payment_View));
 
             // Login view
             AccessibleViews.Add(typeof(Login_View));

@@ -28,6 +28,8 @@ namespace Rescue_911
         public event EventHandler LinkPatientButton_Click;
         public event EventHandler PatientInformationButton_Click;
         public event EventHandler InvoiceButton_Click;
+        public event EventHandler SubPayment_Click;
+
         public event EventHandler LogoutButton_Click;
         //
 
@@ -153,6 +155,10 @@ namespace Rescue_911
             else if (t == typeof(Invoice_View))
             {
                 InvoiceButton_Click?.Invoke(this, e);
+            }
+            else if (t == typeof(Sub_Payment_View))
+            {
+                SubPayment_Click?.Invoke(this, e);
             }
             else if (t == typeof(Login_View))
             {

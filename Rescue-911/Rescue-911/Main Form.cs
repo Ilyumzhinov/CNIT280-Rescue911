@@ -61,6 +61,8 @@ namespace Rescue_911
                 sideBar.LinkPatientButton_Click += new EventHandler(LinkPatientView_Prepare);
                 sideBar.PatientInformationButton_Click += new EventHandler(PatientInformationView_Prepare);
                 sideBar.InvoiceButton_Click += new EventHandler(InvoiceView_Prepare);
+                sideBar.SubPayment_Click += new EventHandler(SubPaymentView_Prepare);
+
                 sideBar.LogoutButton_Click += new EventHandler(Logout_Prepare);
 
                 sideBar.IsPopulated = true;
@@ -162,6 +164,11 @@ namespace Rescue_911
         private void InvoiceView_Prepare(object sender, EventArgs e)
         {
             SetTypicalView(typeof(Invoice_View));
+        }
+
+        private void SubPaymentView_Prepare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Sub_Payment_View));
         }
         //
 
