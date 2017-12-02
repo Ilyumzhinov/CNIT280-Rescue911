@@ -19,7 +19,7 @@ namespace Rescue_911
         
         private List<Response_Team> ResponseTeams;
         private List<Dispatch> Dispatches;
-        private List<Dispatch_Report> DispatchReports;
+        //private List<Dispatch_Report> DispatchReports;
         private List<Patient> Patients;
 
         //Employees
@@ -58,6 +58,7 @@ namespace Rescue_911
         public void AddDispatch(Dispatch xDispatch) {
             Dispatches.Add(xDispatch);
         }
+       protected List<Dispatch_Report> DispatchReports = new List<Dispatch_Report>();
         public void AddDispatchReport(Dispatch_Report xDR)
         {
             DispatchReports.Add(xDR);

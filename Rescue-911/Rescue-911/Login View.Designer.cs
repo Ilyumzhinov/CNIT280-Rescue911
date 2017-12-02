@@ -36,41 +36,44 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.btnNewMain = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(15, 104);
+            this.label1.Location = new System.Drawing.Point(30, 200);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(160, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "Empoyee ID:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(102, 147);
+            this.txtPassword.Location = new System.Drawing.Point(204, 283);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(143, 20);
+            this.txtPassword.Size = new System.Drawing.Size(282, 31);
             this.txtPassword.TabIndex = 2;
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(102, 103);
+            this.txtLogin.Location = new System.Drawing.Point(204, 198);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(143, 20);
+            this.txtLogin.Size = new System.Drawing.Size(282, 31);
             this.txtLogin.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(15, 148);
+            this.label3.Location = new System.Drawing.Point(30, 285);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 17);
+            this.label3.Size = new System.Drawing.Size(160, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -87,11 +90,11 @@
             this.btnLogin.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(145, 200);
+            this.btnLogin.Location = new System.Drawing.Point(290, 385);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLogin.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnLogin.MinimumSize = new System.Drawing.Size(200, 0);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(100, 30);
+            this.btnLogin.Size = new System.Drawing.Size(200, 48);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Log in";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -102,9 +105,10 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.ForeColor = System.Drawing.Color.Red;
-            this.lbName.Location = new System.Drawing.Point(35, 121);
+            this.lbName.Location = new System.Drawing.Point(70, 233);
+            this.lbName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(52, 13);
+            this.lbName.Size = new System.Drawing.Size(102, 25);
             this.lbName.TabIndex = 6;
             this.lbName.Text = "not found";
             this.lbName.Visible = false;
@@ -113,9 +117,10 @@
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.ForeColor = System.Drawing.Color.Red;
-            this.lbPassword.Location = new System.Drawing.Point(40, 165);
+            this.lbPassword.Location = new System.Drawing.Point(80, 317);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(47, 13);
+            this.lbPassword.Size = new System.Drawing.Size(95, 25);
             this.lbPassword.TabIndex = 7;
             this.lbPassword.Text = "try again";
             this.lbPassword.Visible = false;
@@ -133,32 +138,21 @@
             this.btnNewMain.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewMain.ForeColor = System.Drawing.Color.LightSlateGray;
             this.btnNewMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewMain.Location = new System.Drawing.Point(18, 200);
+            this.btnNewMain.Location = new System.Drawing.Point(36, 385);
             this.btnNewMain.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNewMain.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnNewMain.MinimumSize = new System.Drawing.Size(200, 0);
             this.btnNewMain.Name = "btnNewMain";
-            this.btnNewMain.Size = new System.Drawing.Size(100, 30);
+            this.btnNewMain.Size = new System.Drawing.Size(200, 48);
             this.btnNewMain.TabIndex = 8;
             this.btnNewMain.Text = "New Form";
             this.btnNewMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewMain.UseVisualStyleBackColor = false;
             this.btnNewMain.Click += new System.EventHandler(this.btnNewMain_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(167, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Login_View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNewMain);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbName);
@@ -168,7 +162,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.Name = "Login_View";
-            this.Size = new System.Drawing.Size(250, 250);
+            this.Padding = new System.Windows.Forms.Padding(20, 19, 20, 19);
+            this.Size = new System.Drawing.Size(500, 481);
             this.Controls.SetChildIndex(this.txtLogin, 0);
             this.Controls.SetChildIndex(this.txtPassword, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -177,7 +172,6 @@
             this.Controls.SetChildIndex(this.lbName, 0);
             this.Controls.SetChildIndex(this.lbPassword, 0);
             this.Controls.SetChildIndex(this.btnNewMain, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +187,5 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Button btnNewMain;
-        private System.Windows.Forms.Button button1;
     }
 }

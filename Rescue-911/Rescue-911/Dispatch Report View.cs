@@ -63,6 +63,9 @@ namespace Rescue_911
                 Dispatch_Report DispatchReport = new Dispatch_Report();
 
                 DispatchReport.SetHospital(txtHospital.Text);
+                DispatchReport.SetProcedureDetail(txtProcedureDetails.Text);
+                DispatchReport.SetVitalSign(chkVital.Checked);
+                DispatchReport.SetBill(double.Parse(txtBill.Text));
 
 
                 SD.AddDispatchReport(DispatchReport);

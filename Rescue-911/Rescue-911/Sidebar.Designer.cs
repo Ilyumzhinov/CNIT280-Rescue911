@@ -40,11 +40,11 @@
             this.layoutPanel.AutoSize = true;
             this.layoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.layoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.layoutPanel.Location = new System.Drawing.Point(5, 88);
-            this.layoutPanel.Margin = new System.Windows.Forms.Padding(0, 30, 0, 50);
-            this.layoutPanel.MinimumSize = new System.Drawing.Size(100, 50);
+            this.layoutPanel.Location = new System.Drawing.Point(10, 169);
+            this.layoutPanel.Margin = new System.Windows.Forms.Padding(0, 58, 0, 96);
+            this.layoutPanel.MinimumSize = new System.Drawing.Size(198, 94);
             this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(138, 50);
+            this.layoutPanel.Size = new System.Drawing.Size(274, 94);
             this.layoutPanel.TabIndex = 5;
             // 
             // label1
@@ -53,9 +53,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 42);
+            this.label1.Location = new System.Drawing.Point(10, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(164, 31);
             this.label1.TabIndex = 14;
             this.label1.Text = "Access level:";
             // 
@@ -65,10 +66,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(5, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Location = new System.Drawing.Point(10, 19);
+            this.label2.Margin = new System.Windows.Forms.Padding(10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(164, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Current user:";
             // 
@@ -78,9 +79,10 @@
             this.lbUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbUser.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbUser.Location = new System.Drawing.Point(5, 26);
+            this.lbUser.Location = new System.Drawing.Point(10, 50);
+            this.lbUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(20, 16);
+            this.lbUser.Size = new System.Drawing.Size(36, 31);
             this.lbUser.TabIndex = 2;
             this.lbUser.Text = "> ";
             // 
@@ -90,16 +92,16 @@
             this.lbAccessLevel.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbAccessLevel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAccessLevel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbAccessLevel.Location = new System.Drawing.Point(5, 58);
-            this.lbAccessLevel.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lbAccessLevel.Location = new System.Drawing.Point(10, 112);
+            this.lbAccessLevel.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.lbAccessLevel.Name = "lbAccessLevel";
-            this.lbAccessLevel.Size = new System.Drawing.Size(20, 16);
+            this.lbAccessLevel.Size = new System.Drawing.Size(36, 31);
             this.lbAccessLevel.TabIndex = 15;
             this.lbAccessLevel.Text = "> ";
             // 
             // Sidebar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
@@ -108,10 +110,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.label2);
-            this.MinimumSize = new System.Drawing.Size(150, 0);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(300, 0);
             this.Name = "Sidebar";
-            this.Padding = new System.Windows.Forms.Padding(5, 10, 6, 0);
-            this.Size = new System.Drawing.Size(150, 188);
+            this.Padding = new System.Windows.Forms.Padding(10, 19, 12, 0);
+            this.Size = new System.Drawing.Size(300, 362);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LinePaint);
             this.ResumeLayout(false);
             this.PerformLayout();
