@@ -83,11 +83,6 @@ namespace Rescue_911
             emts[1].setstatus("End");
         }
 
-        private void EMT_login_shift_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             LBcurrenttime.Text = DateTime.Now.ToLongTimeString();

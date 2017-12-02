@@ -208,7 +208,7 @@
             this.Controls.Add(this.button1);
             this.Name = "EMT_Login_Shift_View";
             this.Size = new System.Drawing.Size(685, 534);
-            this.Load += new System.EventHandler(this.EMT_login_shift_Load);
+
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.btnWaitingCall, 0);
             this.Controls.SetChildIndex(this.label1, 0);
