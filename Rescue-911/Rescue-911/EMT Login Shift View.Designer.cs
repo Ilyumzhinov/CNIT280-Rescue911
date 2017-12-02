@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label8 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblogtime = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labemtid = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbrt = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LBcurrenttime = new System.Windows.Forms.Label();
             this.LBshifttime = new System.Windows.Forms.Label();
@@ -42,16 +43,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnWaitingCall = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // label8
+            // lblogtime
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(610, 102);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "NOT READY";
+            this.lblogtime.AutoSize = true;
+            this.lblogtime.Location = new System.Drawing.Point(610, 102);
+            this.lblogtime.Name = "lblogtime";
+            this.lblogtime.Size = new System.Drawing.Size(70, 13);
+            this.lblogtime.TabIndex = 30;
+            this.lblogtime.Text = "NOT READY";
             // 
             // label7
             // 
@@ -71,14 +73,14 @@
             this.labemtid.TabIndex = 28;
             this.labemtid.Text = "label7";
             // 
-            // label6
+            // lbrt
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(610, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "label6";
+            this.lbrt.AutoSize = true;
+            this.lbrt.Location = new System.Drawing.Point(610, 83);
+            this.lbrt.Name = "lbrt";
+            this.lbrt.Size = new System.Drawing.Size(35, 13);
+            this.lbrt.TabIndex = 27;
+            this.lbrt.Text = "label6";
             // 
             // label5
             // 
@@ -92,11 +94,11 @@
             // LBcurrenttime
             // 
             this.LBcurrenttime.AutoSize = true;
-            this.LBcurrenttime.Location = new System.Drawing.Point(113, 48);
+            this.LBcurrenttime.Location = new System.Drawing.Point(112, 62);
             this.LBcurrenttime.Name = "LBcurrenttime";
-            this.LBcurrenttime.Size = new System.Drawing.Size(26, 13);
+            this.LBcurrenttime.Size = new System.Drawing.Size(62, 13);
             this.LBcurrenttime.TabIndex = 10;
-            this.LBcurrenttime.Text = "time";
+            this.LBcurrenttime.Text = "0:00:00 AM";
             // 
             // LBshifttime
             // 
@@ -182,14 +184,18 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // EMT_Login_Shift_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblogtime);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labemtid);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbrt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LBcurrenttime);
             this.Controls.Add(this.LBshifttime);
@@ -202,6 +208,7 @@
             this.Controls.Add(this.button1);
             this.Name = "EMT_Login_Shift_View";
             this.Size = new System.Drawing.Size(685, 534);
+            this.Load += new System.EventHandler(this.EMT_login_shift_Load);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.btnWaitingCall, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -212,10 +219,10 @@
             this.Controls.SetChildIndex(this.LBshifttime, 0);
             this.Controls.SetChildIndex(this.LBcurrenttime, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.lbrt, 0);
             this.Controls.SetChildIndex(this.labemtid, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.lblogtime, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,10 +231,10 @@
         #endregion
 
        // private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblogtime;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labemtid;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbrt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LBcurrenttime;
         private System.Windows.Forms.Label LBshifttime;
@@ -238,5 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnWaitingCall;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
