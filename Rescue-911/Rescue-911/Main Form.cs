@@ -37,7 +37,7 @@ namespace Rescue_911
 
             Current_View = sender;
 
-            Current_View.Show();
+            //Current_View.Show();
         }
 
         //Displaying the Login screen when the app is launched.
@@ -72,8 +72,6 @@ namespace Rescue_911
             sideBar.Visible = true;
 
             Main_View MainView = (Main_View)SetView(typeof(Main_View));
-
-            
         }
 
         //Event for displaying the Login screen.
@@ -118,7 +116,6 @@ namespace Rescue_911
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            
             SetTypicalView(typeof(Emergency_Link_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
             
         }
@@ -234,9 +231,8 @@ namespace Rescue_911
                 Main_Form_SizeChanged(null, null);
             }
 
-            Current_View.Show();
-
             this.Controls.Add(Current_View);
+
             Current_View.BringToFront();
 
             return Current_View;

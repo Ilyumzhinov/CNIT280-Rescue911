@@ -16,20 +16,26 @@ namespace Rescue_911
 
         //private int mIndex = 0;
         //private const int cSize = 50;
-        
+
         //private string[] mDate = new string[cSize];
         //private string[] mRecord = new string[cSize];
 
+        List<Base_Station_Records> BSR;
+
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Base_Station_Records_View(ref Shared_Data xSD) : base(ref xSD, "Base Station Records", false, Color.SteelBlue)
+        //To-setup the view.
+        public Base_Station_Records_View(bool toDisplay, ref List<Base_Station_Records> xBSR) : this(toDisplay)
         {
-            InitializeComponent();
+            BSR = xBSR;
         }
 
-        //To-instantiate the view.
-        public Base_Station_Records_View() : base("Base Station Records", false, Color.SteelBlue)
-        { }
+        //To-display the view.
+        public Base_Station_Records_View(bool toDisplay) : base(toDisplay, "Base Station Records", Color.SteelBlue)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
         //
 
 
@@ -59,7 +65,7 @@ namespace Rescue_911
 
                 BaseStationRecords.SetRecord(txtRecords.Text);
 
-                SD.AddBaseStationRecords(BaseStationRecords);
+                BSR.Add(BaseStationRecords);
             }
 
 

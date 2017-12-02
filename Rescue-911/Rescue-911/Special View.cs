@@ -15,7 +15,6 @@ namespace Rescue_911
     {
         // DATA STRUCTURE
         //Primitives
-        protected Shared_Data SD;
         private bool MiddleAligned;
         private Color Colour;
         private string dTitle;
@@ -30,14 +29,15 @@ namespace Rescue_911
 
         // CONSTRUCTORS
         //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue
-        //To-display the view.
-        public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
+        // NEW To-display the view.
+        public Special_View(bool toDisplay, string xTitle, Color xColour, bool xMiddleAligned = false, string xDesc = "")
         {
-            InitializeComponent();
+            // if toDisplay is false, then do not draw the interface
+            if (toDisplay == true)
+                InitializeComponent();
 
-            SD = xSD;
-            MiddleAligned = xMiddleAligned;
             Colour = xColour;
+            MiddleAligned = xMiddleAligned;
 
             this.BackColor = Color.Transparent;
 
@@ -47,21 +47,42 @@ namespace Rescue_911
                 SetDesc(xDesc);
             }
         }
+
+
+        //To-display the view.
+        //public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
+        //{
+        //    InitializeComponent();
+
+        //    SD = xSD;
+        //    MiddleAligned = xMiddleAligned;
+        //    Colour = xColour;
+
+        //    this.BackColor = Color.Transparent;
+
+        //    SetTitle(xTitle);
+        //    if (xDesc != "")
+        //    {
+        //        SetDesc(xDesc);
+        //    }
+        //}
 
         //To-instantiate
-        public Special_View(string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "")
-        {
-            MiddleAligned = xMiddleAligned;
-            Colour = xColour;
+        //public Special_View(string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "")
+        //{
 
-            this.BackColor = Color.Transparent;
 
-            SetTitle(xTitle);
-            if (xDesc != "")
-            {
-                SetDesc(xDesc);
-            }
-        }
+        //    MiddleAligned = xMiddleAligned;
+        //    Colour = xColour;
+
+        //    this.BackColor = Color.Transparent;
+
+        //    SetTitle(xTitle);
+        //    if (xDesc != "")
+        //    {
+        //        SetDesc(xDesc);
+        //    }
+        //}
 
         //For the designer
         private Special_View()

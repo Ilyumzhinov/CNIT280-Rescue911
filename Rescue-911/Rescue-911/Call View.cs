@@ -10,6 +10,8 @@ namespace Rescue_911
     {
         // DATA STRUCTURE
         //Composite Data
+        private List<Emergency_Call> EmergencyCalls;
+        private List<Patient> Patients;
         private Emergency_Call Current_Call;
         private List<Patient> Suggested_Patients = new List<Patient>();
 
@@ -20,10 +22,18 @@ namespace Rescue_911
 
 
         // CONSTRUCTORS
-        //To-display the view.
-        public Call_View(ref Shared_Data xSD) : base(ref xSD, "Log Call", false, Color.Teal)
+        //To-setup the view.
+        public Call_View(bool toDisplay, ref List<Emergency_Call> xECs, ref List<Patient> xPatients) : this(toDisplay)
         {
-            InitializeComponent();
+            EmergencyCalls = xECs;
+            Patients = xPatients;
+        }
+
+        //To-display the view.
+        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal)
+        {
+            if (toDisplay)
+                InitializeComponent();
 
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
@@ -34,10 +44,6 @@ namespace Rescue_911
 
             txtPhoneNumber.Focus();
         }
-
-        //To-instantiate the view.
-        public Call_View() : base("Log Call", false, Color.Teal)
-        {}
         //
 
 
@@ -104,10 +110,8 @@ namespace Rescue_911
                 Current_Call.SetLandmark(txtLandmark.Text);
 
                 // Update the Shared Data values regarding the Calls.
-                SD.AddCall(Current_Call);
+                EmergencyCalls.Add(Current_Call);
 
-
-                SD.UpdateSD(ref SD);
                 return true;
             }
         }
@@ -157,7 +161,5 @@ namespace Rescue_911
                 txtCallerName.Enabled = false;
             }
         }
-
-        public Emergency_Call GetEmergency_Call() { return Current_Call; }
     }
 }

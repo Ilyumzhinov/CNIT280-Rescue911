@@ -8,15 +8,16 @@ namespace Rescue_911
 {
     public partial class Emergency_Add_View : Special_View
     {
+        private Special_List<Emergency_Call> Calls;
         private Emergency_Call Current_Call;
         private Emergency E = new Emergency();
        
-        public Emergency_Add_View(ref Shared_Data xSD, Emergency_Call xEC) : base(ref xSD, "Add Emergency", false, Color.GreenYellow)
+        public Emergency_Add_View(bool toDisplay, ref Special_List<Emergency_Call> xCalls, Emergency_Call xEC) : this(toDisplay)
         {
-            InitializeComponent();
+            Calls = xCalls;
             Current_Call = xEC;
 
-            E.SetEmergency_ID(SD.GetEmergencies()[SD.GetEmergencies().Count - 1].GetEmergency_ID() + 1);
+           // E.SetEmergency_ID(SD.GetEmergencies()[SD.GetEmergencies().Count - 1].GetEmergency_ID() + 1);
 
             // Change taht
             E.SetEType("broken bones");
@@ -27,14 +28,18 @@ namespace Rescue_911
             lbes.Text = Current_Call.GetState();
         }
 
+        public Emergency_Add_View(bool toDisplay) : base(toDisplay, "Add Emergency", Color.GreenYellow)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
+
      
         public void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
             Current_Call.SetState("Logged");
             lbes.Text = "Logged";
-            SD.AddCall(Current_Call);
-            Call_View callview = new Call_View();
-            callview.Show();
+            Calls.Add(Current_Call);
 
         }
 

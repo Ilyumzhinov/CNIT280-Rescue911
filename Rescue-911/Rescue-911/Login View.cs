@@ -16,23 +16,27 @@ namespace Rescue_911
 
 
         // CONSTRUCTORS
-        //To-display the view.
-        public Login_View(ref Shared_Data xSD) : base(ref xSD, "Welcome", true, Color.RoyalBlue)
+        //To-setup the view.
+        public Login_View(bool toDisplay, ref Shared_Data xSD) : this(toDisplay)
         {
-            InitializeComponent();
-
             Employees_Data EmloyeesData = new Employees_Data(ref xSD);
 
             EmployeesLogins = EmloyeesData.GetEmployeesLoginsPasswords();
+        }
+
+        //To-display the view.
+        public Login_View(bool toDisplay) : base(toDisplay, "Welcome", Color.RoyalBlue, true)
+        {
+            //To-instantiate the view.
+            if (toDisplay == true)
+                InitializeComponent();
+
 
             //btnLogin.Image = SystemIcons.Warning.ToBitmap();
             //btnNewMain.Image = SystemIcons.WinLogo.ToBitmap();
         }
-
-        //To-instantiate the view.
-        public Login_View() : base("Welcome", true, System.Drawing.SystemColors.MenuHighlight)
-        { }
         //
+
 
         // FUNCTIONAL METHODS
         private List<Type> FetchAccessibleViews(Type xUserType)
@@ -98,7 +102,7 @@ namespace Rescue_911
                 if (txtPassword.Text != EmployeesLogins[i].Item3)
                     continue;
 
-                // Adding accessible Forms for an EMT
+                // Adding accessible Forms for a user
                 List<Type> AccessibleViews = FetchAccessibleViews(EmployeesLogins[i].Item1.GetType());
 
                 // Accessing the main form and telling it what to do.

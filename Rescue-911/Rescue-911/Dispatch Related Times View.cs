@@ -12,21 +12,29 @@ namespace Rescue_911
 {
     public partial class Dispatch_Related_Times_View : Special_View
     {
+        // COMPOSITE DATA
+        private List<Emergency> Emergencies;
+
+
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Dispatch_Related_Times_View(ref Shared_Data xSD) : base(ref xSD, "Dispatch Related Times",false, Color.MediumPurple)
+        //To-setup the view.
+        public Dispatch_Related_Times_View(bool toDisplay, ref List<Emergency> xEmergencies) : this(toDisplay)
         {
-            InitializeComponent();
+            Emergencies = xEmergencies;
         }
 
-        //To-instantiate the view.
-        public Dispatch_Related_Times_View() : base("Dispatch Related Times", false, Color.MediumPurple)
-        { }
+        //To-display the view.
+        public Dispatch_Related_Times_View(bool toDisplay) : base(toDisplay, "Dispatch Related Times", Color.MediumPurple)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
         //
 
         private void Dispatch_Related_Times_Load(object sender, EventArgs e)
         {
-            lstEmergenciesFetch("Accepted", SD.GetEmergencies());
+            lstEmergenciesFetch("Accepted", Emergencies);
         }
 
         private void btnDispatchTime_Click(object sender, EventArgs e)
