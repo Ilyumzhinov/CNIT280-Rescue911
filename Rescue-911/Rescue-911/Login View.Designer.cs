@@ -36,6 +36,7 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.btnNewMain = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -143,10 +144,21 @@
             this.btnNewMain.UseVisualStyleBackColor = false;
             this.btnNewMain.Click += new System.EventHandler(this.btnNewMain_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNewMain);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbName);
@@ -165,6 +177,7 @@
             this.Controls.SetChildIndex(this.lbName, 0);
             this.Controls.SetChildIndex(this.lbPassword, 0);
             this.Controls.SetChildIndex(this.btnNewMain, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +193,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Button btnNewMain;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -32,7 +32,6 @@
             this.btnRecord = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRecords = new System.Windows.Forms.TextBox();
-            this.txtRecordDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,9 +48,9 @@
             this.btnRecord.Location = new System.Drawing.Point(335, 363);
             this.btnRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(59, 34);
+            this.btnRecord.Size = new System.Drawing.Size(66, 34);
             this.btnRecord.TabIndex = 11;
-            this.btnRecord.Text = "Submit";
+            this.btnRecord.Text = "Record";
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
@@ -75,15 +74,6 @@
             this.txtRecords.Size = new System.Drawing.Size(671, 192);
             this.txtRecords.TabIndex = 9;
             // 
-            // txtRecordDate
-            // 
-            this.txtRecordDate.Location = new System.Drawing.Point(122, 107);
-            this.txtRecordDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRecordDate.Name = "txtRecordDate";
-            this.txtRecordDate.Size = new System.Drawing.Size(199, 20);
-            this.txtRecordDate.TabIndex = 8;
-            this.txtRecordDate.Visible = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -103,12 +93,10 @@
             this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRecords);
-            this.Controls.Add(this.txtRecordDate);
             this.Controls.Add(this.label2);
             this.Name = "Base_Station_Records_View";
             this.Size = new System.Drawing.Size(696, 404);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.txtRecordDate, 0);
             this.Controls.SetChildIndex(this.txtRecords, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.btnRecord, 0);
@@ -124,7 +112,6 @@
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRecords;
-        private System.Windows.Forms.TextBox txtRecordDate;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -44,11 +44,13 @@ namespace Rescue_911
                 txtHospital.Focus();
                 return;
             }
+
             else if (txtBill.Text.Trim() == string.Empty)
             {
                 txtBill.Focus();
                 return;
             }
+
             else // All checks are satisfied
             {
                 txtHospital.Enabled = false;
@@ -57,6 +59,13 @@ namespace Rescue_911
                 txtBill.Enabled = false;
 
                 btnSubmit.Visible = false;
+
+                Dispatch_Report DispatchReport = new Dispatch_Report();
+
+                DispatchReport.SetHospital(txtHospital.Text);
+
+
+                SD.AddDispatchReport(DispatchReport);
             }
         }
 

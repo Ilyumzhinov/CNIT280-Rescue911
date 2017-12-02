@@ -130,5 +130,11 @@ namespace Rescue_911
             Main_Form M = new Main_Form(ref SD);
             M.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Test_Form tf = new Test_Form();
+            tf.Show();
+        }
     }
 }

@@ -31,69 +31,69 @@ namespace Rescue_911
 
         private void btnDispatchTime_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (lstEmergencies.SelectedItems[0] == null)
-                    return;
+            //try
+            //{
+            //    if (lstEmergencies.SelectedItems[0] == null)
+            //        return;
 
-                lstEmergencies.SelectedItems[0].SubItems.Add(dtPicker.Value.ToString("h:mm:ss MM/dd/yyyy "));
-            }
-            catch
-            {
+            //    lstEmergencies.SelectedItems[0].SubItems.Add(dtPicker.Value.ToString("h:mm:ss MM/dd/yyyy "));
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void btnRecordArrival_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (lstEmergencies.SelectedItems[0] == null)
-                    return;
+            //try
+            //{
+            //    if (lstEmergencies.SelectedItems[0] == null)
+            //        return;
 
-                lstEmergencies.SelectedItems[0].SubItems.Add(dtPicker.Value.ToString("h:mm:ss MM/dd/yyyy "));
-            }
-            catch
-            {
+            //    lstEmergencies.SelectedItems[0].SubItems.Add(dtPicker.Value.ToString("h:mm:ss MM/dd/yyyy "));
+            //}
+            //catch
+            //{
 
-            }
+            //}
         }
 
         private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
         {
-        //    lstEmergencies.Items.Clear();
+                //lstEmergencies.Items.Clear();
 
-        //    foreach (Emergency iEmergency in ExistingEmergencies)
-        //    {
-        //        int j = 0;
+                //foreach (Emergency iEmergency in ExistingEmergencies)
+                //{
+                //    int j = 0;
 
-        //        if (iEmergency.GetLinkedCalls()[0].GetState() != state)
-        //            continue;
+                //    if (iEmergency.GetLinkedCalls()[0].GetState() != state)
+                //        continue;
 
-        //        foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
-        //        {
-        //            if (EC == null)
-        //                break;
+                //    foreach (Emergency_Call EC in iEmergency.GetLinkedCalls())
+                //    {
+                //        if (EC == null)
+                //            break;
 
-        //            if (j == 0)
-        //            {
-        //                ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
+                //        if (j == 0)
+                //        {
+                //            ListViewItem lstItem = new ListViewItem(iEmergency.GetEmergency_ID().ToString());
 
-        //                lstItem.SubItems.Add(EC.GetAddress());
+                //            lstItem.SubItems.Add(EC.GetAddress());
 
-        //                lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-        //            }
-        //            else
-        //            {
-        //                ListViewItem lstItem = new ListViewItem();
+                //            lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
+                //        }
+                //        else
+                //        {
+                //            ListViewItem lstItem = new ListViewItem();
 
-        //                lstItem.SubItems.Add(EC.GetAddress());
+                //            lstItem.SubItems.Add(EC.GetAddress());
 
-        //                lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
-        //            }
-        //            j++;
-        //        }
-        //    }
+                //            lstEmergencies.Items.AddRange(new ListViewItem[1] { lstItem });
+                //        }
+                //        j++;
+                //    }
+                //}
         }
     }
 }

@@ -21,13 +21,6 @@ namespace Rescue_911
 
         public void SetEmergency_ID(int xEmergency_ID) { Emergency_ID = xEmergency_ID; }
         public void SetEType(string xeType) { eType = xeType; }
-        public void AddLinked_Call(Emergency_Call xCall)
-        {
-            //Linked_Calls.Add(xCall);
-            //Linked_Calls[Linked_Calls.Count - 1].Call_Updated += new EventHandler(UpdateEmergencyCalls);
-
-            //EmergencyCall_Added?.Invoke(xCall, null);
-        }
 
         private void UpdateEmergencyCalls(object sender, EventArgs e)
         {

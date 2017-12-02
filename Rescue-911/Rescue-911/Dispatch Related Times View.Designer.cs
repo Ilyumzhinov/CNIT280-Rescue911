@@ -31,18 +31,12 @@
             this.btnRecordArrival = new System.Windows.Forms.Button();
             this.btnDispatchTime = new System.Windows.Forms.Button();
             this.dtPicker = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lstEmergencies = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.emergency_List1 = new Rescue_911.Emergency_List();
             this.SuspendLayout();
             // 
             // btnRecordArrival
             // 
-            this.btnRecordArrival.Location = new System.Drawing.Point(209, 261);
+            this.btnRecordArrival.Location = new System.Drawing.Point(135, 273);
             this.btnRecordArrival.Name = "btnRecordArrival";
             this.btnRecordArrival.Size = new System.Drawing.Size(121, 23);
             this.btnRecordArrival.TabIndex = 24;
@@ -52,7 +46,7 @@
             // 
             // btnDispatchTime
             // 
-            this.btnDispatchTime.Location = new System.Drawing.Point(70, 261);
+            this.btnDispatchTime.Location = new System.Drawing.Point(8, 273);
             this.btnDispatchTime.Name = "btnDispatchTime";
             this.btnDispatchTime.Size = new System.Drawing.Size(121, 23);
             this.btnDispatchTime.TabIndex = 23;
@@ -63,82 +57,38 @@
             // dtPicker
             // 
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtPicker.Location = new System.Drawing.Point(102, 233);
+            this.dtPicker.Location = new System.Drawing.Point(8, 247);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(200, 20);
             this.dtPicker.TabIndex = 22;
             // 
-            // label3
+            // emergency_List1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Operator Name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(102, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 19;
-            // 
-            // lstEmergencies
-            // 
-            this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader5,
-            this.columnHeader4,
-            this.columnHeader6});
-            this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(17, 113);
-            this.lstEmergencies.MultiSelect = false;
-            this.lstEmergencies.Name = "lstEmergencies";
-            this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(501, 114);
-            this.lstEmergencies.TabIndex = 18;
-            this.lstEmergencies.UseCompatibleStateImageBehavior = false;
-            this.lstEmergencies.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Emergency ID";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Location";
-            this.columnHeader5.Width = 97;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Time Dispatched";
-            this.columnHeader4.Width = 130;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Arrival Time";
-            this.columnHeader6.Width = 115;
+            this.emergency_List1.AutoSize = true;
+            this.emergency_List1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.emergency_List1.Location = new System.Drawing.Point(8, 107);
+            this.emergency_List1.MinimumSize = new System.Drawing.Size(440, 0);
+            this.emergency_List1.Name = "emergency_List1";
+            this.emergency_List1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.emergency_List1.Size = new System.Drawing.Size(440, 134);
+            this.emergency_List1.TabIndex = 25;
             // 
             // Dispatch_Related_Times_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.emergency_List1);
             this.Controls.Add(this.btnRecordArrival);
             this.Controls.Add(this.btnDispatchTime);
             this.Controls.Add(this.dtPicker);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lstEmergencies);
             this.Name = "Dispatch_Related_Times_View";
-            this.Size = new System.Drawing.Size(523, 289);
-            this.Controls.SetChildIndex(this.lstEmergencies, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
+            this.Size = new System.Drawing.Size(456, 304);
             this.Controls.SetChildIndex(this.dtPicker, 0);
             this.Controls.SetChildIndex(this.btnDispatchTime, 0);
             this.Controls.SetChildIndex(this.btnRecordArrival, 0);
+            this.Controls.SetChildIndex(this.emergency_List1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,12 +99,6 @@
         private System.Windows.Forms.Button btnRecordArrival;
         private System.Windows.Forms.Button btnDispatchTime;
         private System.Windows.Forms.DateTimePicker dtPicker;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView lstEmergencies;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private Emergency_List emergency_List1;
     }
 }

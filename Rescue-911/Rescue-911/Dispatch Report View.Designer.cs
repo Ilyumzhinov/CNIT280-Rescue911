@@ -49,7 +49,7 @@
             // 
             this.lbEmergencyID.AutoSize = true;
             this.lbEmergencyID.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbEmergencyID.Location = new System.Drawing.Point(96, 75);
+            this.lbEmergencyID.Location = new System.Drawing.Point(90, 117);
             this.lbEmergencyID.Name = "lbEmergencyID";
             this.lbEmergencyID.Size = new System.Drawing.Size(30, 13);
             this.lbEmergencyID.TabIndex = 36;
@@ -59,7 +59,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(13, 75);
+            this.label12.Location = new System.Drawing.Point(7, 117);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 35;
@@ -69,7 +69,7 @@
             // 
             this.lbCallID.AutoSize = true;
             this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(70, 62);
+            this.lbCallID.Location = new System.Drawing.Point(64, 104);
             this.lbCallID.Name = "lbCallID";
             this.lbCallID.Size = new System.Drawing.Size(18, 13);
             this.lbCallID.TabIndex = 34;
@@ -79,7 +79,7 @@
             // 
             this.lb11.AutoSize = true;
             this.lb11.ForeColor = System.Drawing.Color.DimGray;
-            this.lb11.Location = new System.Drawing.Point(14, 62);
+            this.lb11.Location = new System.Drawing.Point(8, 104);
             this.lb11.Name = "lb11";
             this.lb11.Size = new System.Drawing.Size(50, 13);
             this.lb11.TabIndex = 33;
@@ -87,7 +87,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(512, 401);
+            this.btnSubmit.Location = new System.Drawing.Point(304, 281);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 32;
@@ -101,11 +101,12 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.chkVital);
             this.panel2.Controls.Add(this.txtHospital);
+            this.panel2.Controls.Add(this.btnSubmit);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txtProcedureDetails);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(16, 104);
+            this.panel2.Location = new System.Drawing.Point(8, 143);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 320);
             this.panel2.TabIndex = 31;
@@ -201,12 +202,10 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbCallID);
             this.Controls.Add(this.lb11);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.panel2);
             this.Name = "Dispatch_Report_View";
-            this.Size = new System.Drawing.Size(594, 436);
+            this.Size = new System.Drawing.Size(403, 465);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.btnSubmit, 0);
             this.Controls.SetChildIndex(this.lb11, 0);
             this.Controls.SetChildIndex(this.lbCallID, 0);
             this.Controls.SetChildIndex(this.label12, 0);
