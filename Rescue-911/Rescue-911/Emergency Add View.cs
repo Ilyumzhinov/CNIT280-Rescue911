@@ -10,7 +10,7 @@ namespace Rescue_911
     {
         private Emergency_Call Current_Call;
         private Emergency E = new Emergency();
-
+       
         public Emergency_Add_View(ref Shared_Data xSD, Emergency_Call xEC) : base(ref xSD, "Add Emergency", false, Color.GreenYellow)
         {
             InitializeComponent();
@@ -28,10 +28,16 @@ namespace Rescue_911
         }
 
      
-        private void btnCreateEmergency1_Click(object sender, EventArgs e)
+        public void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
             Current_Call.SetState("Logged");
+            lbes.Text = "Logged";
             SD.AddCall(Current_Call);
+            Call_View callview = new Call_View();
+            callview.Show();
+
         }
+
+        
     }
 }

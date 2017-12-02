@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lvemergencydecreption = new System.Windows.Forms.Label();
             this.lbemergencyid = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.lbes = new System.Windows.Forms.Label();
             this.btnCreateEmergency1 = new System.Windows.Forms.Button();
             this.txtemergencyd = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lvemergencydecreption
@@ -45,7 +47,7 @@
             this.lvemergencydecreption.AutoSize = true;
             this.lvemergencydecreption.Location = new System.Drawing.Point(9, 134);
             this.lvemergencydecreption.Name = "lvemergencydecreption";
-            this.lvemergencydecreption.Size = new System.Drawing.Size(144, 16);
+            this.lvemergencydecreption.Size = new System.Drawing.Size(282, 31);
             this.lvemergencydecreption.TabIndex = 8;
             this.lvemergencydecreption.Text = "Emergency Descrption:";
             // 
@@ -55,7 +57,7 @@
             this.lbemergencyid.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemergencyid.Location = new System.Drawing.Point(8, 104);
             this.lbemergencyid.Name = "lbemergencyid";
-            this.lbemergencyid.Size = new System.Drawing.Size(110, 18);
+            this.lbemergencyid.Size = new System.Drawing.Size(224, 35);
             this.lbemergencyid.TabIndex = 11;
             this.lbemergencyid.Text = "Emergency ID:";
             // 
@@ -64,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(176, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 31);
             this.label1.TabIndex = 12;
             // 
             // lbemergencyid1
@@ -73,7 +75,7 @@
             this.lbemergencyid1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbemergencyid1.Location = new System.Drawing.Point(120, 103);
             this.lbemergencyid1.Name = "lbemergencyid1";
-            this.lbemergencyid1.Size = new System.Drawing.Size(54, 19);
+            this.lbemergencyid1.Size = new System.Drawing.Size(110, 37);
             this.lbemergencyid1.TabIndex = 16;
             this.lbemergencyid1.Text = "label2";
             // 
@@ -82,7 +84,7 @@
             this.lbemergencystats.AutoSize = true;
             this.lbemergencystats.Location = new System.Drawing.Point(9, 247);
             this.lbemergencystats.Name = "lbemergencystats";
-            this.lbemergencystats.Size = new System.Drawing.Size(113, 16);
+            this.lbemergencystats.Size = new System.Drawing.Size(217, 31);
             this.lbemergencystats.TabIndex = 9;
             this.lbemergencystats.Text = "Emergency State:";
             // 
@@ -91,7 +93,7 @@
             this.lbemergencylocation.AutoSize = true;
             this.lbemergencylocation.Location = new System.Drawing.Point(9, 230);
             this.lbemergencylocation.Name = "lbemergencylocation";
-            this.lbemergencylocation.Size = new System.Drawing.Size(131, 16);
+            this.lbemergencylocation.Size = new System.Drawing.Size(254, 31);
             this.lbemergencylocation.TabIndex = 7;
             this.lbemergencylocation.Text = "Emergency Location:";
             // 
@@ -100,7 +102,7 @@
             this.lbel.AutoSize = true;
             this.lbel.Location = new System.Drawing.Point(146, 231);
             this.lbel.Name = "lbel";
-            this.lbel.Size = new System.Drawing.Size(42, 16);
+            this.lbel.Size = new System.Drawing.Size(83, 31);
             this.lbel.TabIndex = 18;
             this.lbel.Text = "label4";
             // 
@@ -109,7 +111,7 @@
             this.lbes.AutoSize = true;
             this.lbes.Location = new System.Drawing.Point(146, 247);
             this.lbes.Name = "lbes";
-            this.lbes.Size = new System.Drawing.Size(42, 16);
+            this.lbes.Size = new System.Drawing.Size(83, 31);
             this.lbes.TabIndex = 19;
             this.lbes.Text = "label2";
             // 
@@ -119,7 +121,7 @@
             this.btnCreateEmergency1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateEmergency1.FlatAppearance.BorderSize = 0;
             this.btnCreateEmergency1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateEmergency1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateEmergency1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateEmergency1.ForeColor = System.Drawing.Color.White;
             this.btnCreateEmergency1.Location = new System.Drawing.Point(345, 238);
             this.btnCreateEmergency1.Name = "btnCreateEmergency1";
@@ -138,9 +140,15 @@
             this.txtemergencyd.Size = new System.Drawing.Size(552, 74);
             this.txtemergencyd.TabIndex = 22;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Emergency_Add_View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtemergencyd);
@@ -156,8 +164,8 @@
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Emergency_Add_View";
-            this.Size = new System.Drawing.Size(575, 284);
-      
+            this.Padding = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.Size = new System.Drawing.Size(885, 599);
             this.Controls.SetChildIndex(this.lbemergencylocation, 0);
             this.Controls.SetChildIndex(this.lvemergencydecreption, 0);
             this.Controls.SetChildIndex(this.lbemergencystats, 0);
@@ -184,5 +192,6 @@
         private System.Windows.Forms.Label lbes;
         private System.Windows.Forms.Button btnCreateEmergency1;
         private System.Windows.Forms.TextBox txtemergencyd;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

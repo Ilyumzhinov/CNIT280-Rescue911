@@ -118,11 +118,15 @@ namespace Rescue_911
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
+            
             SetTypicalView(typeof(Emergency_Link_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
+            
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e) {
 
+
             SetTypicalView(typeof(Emergency_Add_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
+
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
