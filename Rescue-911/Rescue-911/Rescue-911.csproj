@@ -38,6 +38,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ERIS - favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.DataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
@@ -283,6 +286,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\medium.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ERIS icon.ico" />
+    <None Include="Resources\ERIS - favicon.ico" />
+    <None Include="Resources\eris_icon_KbSyXB.ico" />
+    <None Include="Resources\ERIS icon.ico" />
+    <None Include="Resources\ERIS icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
