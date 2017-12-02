@@ -20,6 +20,7 @@ namespace Rescue_911
         private List<Response_Team> ResponseTeams;
         private List<Dispatch> Dispatches;
         //private List<Dispatch_Report> DispatchReports;
+        //private List<Base_Station_Records> BaseStationRecords;
         private List<Patient> Patients;
 
         //Employees
@@ -37,6 +38,7 @@ namespace Rescue_911
             ResponseTeams = xSD.GetResponseTeams();
             Dispatches = xSD.GetDispatches();
             DispatchReports = xSD.GetDispatchReports();
+            BaseStationRecords = xSD.GetBaseStationRecords();
             Patients = xSD.GetPatients();
             Managers = xSD.GetManagers();
         }
@@ -63,6 +65,11 @@ namespace Rescue_911
         {
             DispatchReports.Add(xDR);
         }
+        protected List<Base_Station_Records> BaseStationRecords = new List<Base_Station_Records>();
+        public void AddBaseStationRecords(Base_Station_Records xBR)
+        {
+            BaseStationRecords.Add(xBR);
+        }
         //
 
         public Special_List<Emergency_Call> GetCalls() { return Calls; }
@@ -73,6 +80,7 @@ namespace Rescue_911
         public List<Response_Team> GetResponseTeams() { return ResponseTeams; }
         public List<Dispatch> GetDispatches() { return Dispatches; }
         public List<Dispatch_Report> GetDispatchReports() { return DispatchReports; }
+        public List<Base_Station_Records> GetBaseStationRecords() { return BaseStationRecords; }
         public List<Patient> GetPatients() { return Patients; }
         public List<Manager> GetManagers() { return Managers; }
         public void RemoveMain_Form(Main_Form xForm)

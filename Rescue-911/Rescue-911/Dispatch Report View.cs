@@ -35,18 +35,22 @@ namespace Rescue_911
             // Existence checks
             if (txtHospital.Text.Trim() == string.Empty)
             {
+                MessageBox.Show("Enter Hospital", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 txtHospital.Focus();
                 return;
 
             }
             else if (txtProcedureDetails.Text.Trim() == string.Empty)
             {
+                MessageBox.Show("Enter Procedure Details", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHospital.Focus();
                 return;
             }
 
             else if (txtBill.Text.Trim() == string.Empty)
             {
+                MessageBox.Show("Enter Bill Amount", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtBill.Focus();
                 return;
             }
