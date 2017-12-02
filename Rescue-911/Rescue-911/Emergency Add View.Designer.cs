@@ -157,7 +157,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Emergency_Add_View";
             this.Size = new System.Drawing.Size(575, 284);
-            this.Load += new System.EventHandler(this.Emergency_Form_Load);
+      
             this.Controls.SetChildIndex(this.lbemergencylocation, 0);
             this.Controls.SetChildIndex(this.lvemergencydecreption, 0);
             this.Controls.SetChildIndex(this.lbemergencystats, 0);

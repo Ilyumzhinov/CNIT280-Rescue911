@@ -15,6 +15,7 @@ namespace Rescue_911
 
         //Events
         public event EventHandler LinkEmergencyButton_Click;
+        public event EventHandler AddEmergencyButton_Click;
         //
 
 
@@ -51,6 +52,11 @@ namespace Rescue_911
 
         private void btnAddEmer_Click(object sender, EventArgs e)
         {
+
+            if (CheckFields() == false)
+                return;
+
+            AddEmergencyButton_Click?.Invoke(this, e);
             //Emergency_Form Em = new Emergency_Form(ref SD, Current_Call);
             //Em.Show();
         }

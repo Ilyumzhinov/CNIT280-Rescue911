@@ -15,19 +15,15 @@ namespace Rescue_911
         {
             Current_Call = xEC;
             InitializeComponent();
-        }
-
-        private void Emergency_Form_Load(object sender, EventArgs e)
-        {
-
             E.SetEmergency_ID(SD.GetEmergencies().Count - 1);
             E.AddLinked_Call(Current_Call);
             lbel.Text = Current_Call.GetAddress().ToString();
             lbemergencyid1.Text = E.GetEmergency_ID().ToString();
             txtemergencyd.Text = Current_Call.GetDescription();
             lbes.Text = Current_Call.GetState();
-
         }
+
+     
         private void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
 
