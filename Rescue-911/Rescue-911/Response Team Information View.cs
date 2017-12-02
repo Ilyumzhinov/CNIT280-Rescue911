@@ -9,16 +9,21 @@ namespace Rescue_911
         private Response_Team Current_RT;
         private Emergency_Call mSelectedCall;
 
+        private Special_List<Emergency> Emergencies;
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Response_Team_Information_View(ref Shared_Data xSD) : base(ref xSD, "Response Team Info", false, Color.SandyBrown)
+        //To-setup the view.
+        public Response_Team_Information_View(bool toDisplay, ref Special_List<Emergency> xEmergencies) : this(toDisplay)
         {
-            InitializeComponent();
+            Emergencies = xEmergencies;
         }
 
-        //To-instantiate the view.
-        public Response_Team_Information_View() : base("Response Team Info", false, Color.SandyBrown)
-        { }
+        //To-display the view.
+        public Response_Team_Information_View(bool toDisplay) : base(toDisplay, "Response Team Info", Color.SandyBrown)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
         //
 
         // FUNCTIONAL METHODS

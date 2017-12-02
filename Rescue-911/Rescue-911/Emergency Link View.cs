@@ -7,34 +7,46 @@ namespace Rescue_911
 {
     public partial class Emergency_Link_View : Special_View
     {
+        private Special_List<Emergency> Emergencies;
+        private Special_List<Emergency_Call> Calls;
         private Emergency_Call Current_Call;
         private Emergency_Call mSelectedCall;
 
-        public Emergency_Link_View(ref Shared_Data xSD, Emergency_Call xCurrentCall) : base(ref xSD, "Link to Emergency", false, Color.Green, "This cannot be undone")
+        // CONSTRUCTORS
+        //To-setup
+        public Emergency_Link_View(bool toDisplay, ref Special_List<Emergency> xEmergencies, ref Special_List<Emergency_Call> xECs, Emergency_Call xCurrentCall) :  this(toDisplay)
         {
-            // Change it
-            Current_Call = xCurrentCall;
+            Emergencies = xEmergencies;
+            Calls = xECs;
 
-            InitializeComponent();
+            Current_Call = xCurrentCall;
 
             lbCallState.Text = Current_Call.GetState();
             lbAddress.Text = Current_Call.GetAddress();
             txtDescription.Text = Current_Call.GetDescription();
 
             // Emergency list set-up.
-            if (SD.GetEmergencies()[0] != null)
+            if (Emergencies[0] != null)
             {
                 emergencyList.Width = this.Width;
                 emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
 
-                Special_List<Emergency_Call> tempECs = SD.GetCalls();
-                emergencyList.SetEmergency_List(ref tempECs, "Logged", true);
+                emergencyList.SetEmergency_List(ref Calls, "Logged", true);
             }
         }
 
+        //To-display
+        public Emergency_Link_View(bool toDisplay) : base(toDisplay, "Link to Emergency", Color.Green, false)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
+        //
+
+
         private void btnLinkEmergency_Click(object sender, EventArgs e)
         {
-            foreach (Emergency_Call iEC in SD.GetCalls())
+            foreach (Emergency_Call iEC in Calls)
             {
                 if (iEC == mSelectedCall)
                 { 

@@ -10,27 +10,35 @@ namespace Rescue_911
         private Emergency_Call mSelectedCall;
         private Response_Team mSelectedRT;
 
+        private Special_List<Emergency_Call> Calls;
+        private Special_List<Emergency> Emergencies;
+        private Special_List<Response_Team> RTs;
+
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Emergency_Management_View(ref Shared_Data xSD) : base(ref xSD, "Emergency Management", false, Color.IndianRed)
+        //To-setup the view.
+        public Emergency_Management_View(bool toDisplay, ref Special_List<Emergency_Call> xECs, ref Special_List<Emergency> xEmergencies, ref Special_List<Response_Team> xRTs) : this(toDisplay)
         {
-            InitializeComponent();
+            Calls = xECs;
+            Emergencies = xEmergencies;
+            RTs = xRTs;
 
             // Emergency list set-up.
-            if (SD.GetEmergencies()[0] != null)
+            if (Emergencies[0] != null)
             {
                 Emergency_Management_View_SizeChanged(this, null);
                 emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
-
-                Special_List<Emergency_Call> tempECs = SD.GetCalls();
                 
-                emergencyList.SetEmergency_List(ref tempECs, "Logged", true);
+                emergencyList.SetEmergency_List(ref Calls, "Logged", true);
             }
         }
 
-        //To-instantiate the view.
-        public Emergency_Management_View() : base("Emergency Management", false, Color.IndianRed)
-        { }
+        //To-display the view.
+        public Emergency_Management_View(bool toDisplay) : base(toDisplay, "Emergency Management", Color.IndianRed)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
         //
 
         private void Emergency_List_Item_Selected(object sender, EventArgs e)
@@ -40,7 +48,7 @@ namespace Rescue_911
             mSelectedCall = (Emergency_Call)sender;
 
             // Populating the listBox with the response teams.
-            foreach (Response_Team RT in SD.GetResponseTeams())
+            foreach (Response_Team RT in RTs)
             {
                 // To-Do: get the actual emergency call selected
                 if (mSelectedCall.GetPriority() <= 2)
@@ -94,7 +102,7 @@ namespace Rescue_911
             xDispatch.SetEmergency(mSelectedCall.GetEmergency());
             xDispatch.SetResponseTeam(mSelectedRT);
 
-            SD.AddDispatch(xDispatch);
+           // SD.AddDispatch(xDispatch);
 
             mSelectedCall.SetState("Accepted");
             rbYes.Checked = false;

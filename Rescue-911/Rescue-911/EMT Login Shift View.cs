@@ -15,14 +15,14 @@ namespace Rescue_911
         private EMT[] emts;
 
         // CONSTRUCTORS
-        //To-display the view.
-        public EMT_Login_Shift_View(ref Shared_Data xSD) : base(ref xSD, "EMT Shift Login", false, Color.DarkGray)
+        //To-setup the view.
+        public EMT_Login_Shift_View(bool toDisplay, ref Special_List<EMT> xEmts) : this(toDisplay)
         {
-            InitializeComponent();
+            
             timer1.Enabled = true;
             timer1.Interval = 1000;
 
-            emts = xSD.GetEMTs().ToArray();
+            emts = xEmts.ToArray();
 
 
             if (emts[1].getstatus() == "STARTED")
@@ -53,8 +53,11 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public EMT_Login_Shift_View() : base("EMT Shift Login", false, Color.DarkGray)
-        { }
+        public EMT_Login_Shift_View(bool toDisplay) : base(toDisplay, "EMT Shift Login", Color.DarkGray)
+        {
+            if (toDisplay)
+                InitializeComponent();
+        }
         //
 
     
