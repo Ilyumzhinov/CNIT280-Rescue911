@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Collections.Generic;
 
 namespace Rescue_911
@@ -16,11 +13,13 @@ namespace Rescue_911
         //Common data
         private Special_List<Emergency_Call> Calls;
         private Special_List<Emergency> Emergencies;
-        
         private Special_List<Response_Team> ResponseTeams;
         private Special_List<Dispatch> Dispatches;
-        //private Special_List<Dispatch_Report> DispatchReports;
-        //private Special_List<Base_Station_Records> BaseStationRecords;
+        private Special_List<Dispatch_Report> DispatchReports;
+        private Special_List<Base_Station_Records> BaseStationRecords;
+
+        //People
+        private Special_List<Caller> Callers;
         private Special_List<Patient> Patients;
 
         //Employees
@@ -30,8 +29,12 @@ namespace Rescue_911
         private Special_List<Manager> Managers;
         //
 
+
         public void UpdateSD(ref Shared_Data xSD)
         {
+            DispatchReports = new Special_List<Dispatch_Report>();
+            BaseStationRecords = new Special_List<Base_Station_Records>();
+
             Calls = xSD.GetCalls();
             Emergencies = xSD.GetEmergencies();
             EMTs = xSD.GetEMTs();
@@ -49,23 +52,18 @@ namespace Rescue_911
             MainForms.AddItem(xForm);
             FormsCount++;
         }
-        public void SetResponseTeams(Special_List<Response_Team> xRT) { ResponseTeams = xRT; }
-        public void SetEmergencies(Special_List<Emergency> xEmergencies) {  Emergencies = xEmergencies;}
         public void AddCall(Emergency_Call xCall)
         {
             Calls.AddItem(xCall);
         }
-        public void SetEMTs(Special_List<EMT> xEMTs) { EMTs = xEMTs; }
-        public void SetPatients(Special_List<Patient> xPatients) { Patients = xPatients; }
         public void AddDispatch(Dispatch xDispatch) {
             Dispatches.Add(xDispatch);
         }
-       protected Special_List<Dispatch_Report> DispatchReports = new Special_List<Dispatch_Report>();
         public void AddDispatchReport(Dispatch_Report xDR)
         {
             DispatchReports.Add(xDR);
         }
-        protected Special_List<Base_Station_Records> BaseStationRecords = new Special_List<Base_Station_Records>();
+
         public void AddBaseStationRecords(Base_Station_Records xBR)
         {
             BaseStationRecords.Add(xBR);
@@ -81,6 +79,8 @@ namespace Rescue_911
         public Special_List<Dispatch> GetDispatches() { return Dispatches; }
         public Special_List<Dispatch_Report> GetDispatchReports() { return DispatchReports; }
         public Special_List<Base_Station_Records> GetBaseStationRecords() { return BaseStationRecords; }
+
+        public Special_List<Caller> GetCallers() { return Callers; }
         public Special_List<Patient> GetPatients() { return Patients; }
         public Special_List<Manager> GetManagers() { return Managers; }
         public void RemoveMain_Form(Main_Form xForm)
@@ -101,8 +101,11 @@ namespace Rescue_911
             Patients = new Special_List<Patient>();
             Managers = new Special_List<Manager>();
 
+            // LOAD PATIENTS
+            Patients = LoadPatients();
+
             // LOAD CALLERS
-            Special_List<Caller> Callers = LoadCallers();
+            Callers = LoadCallers(ref Patients);
 
             // LOAD RTs AND EMTs
             ResponseTeams = LoadRTs();
@@ -112,9 +115,6 @@ namespace Rescue_911
             Operators = LoadOperators();
             Supervisors = LoadSupervisors();
             Managers = LoadManagers();
-
-            // LOAD PATIENTS
-            Patients = LoadPatients();
 
             // LOAD EMERGENCIES AND CALLs
             Emergencies = LoadEmergencies();
@@ -291,25 +291,39 @@ namespace Rescue_911
             return xECs;
         }
 
-        private Special_List<Caller> LoadCallers()
+        private Special_List<Caller> LoadCallers(ref Special_List<Patient> xPatients)
         {
             // CALLERS TEST DATA
             Special_List<Caller> ECallers = new Special_List<Caller>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 8; i++)
             {
-                ECallers.Add(new Caller());
+                ECallers.AddItem(new Caller());
             }
-
-            ECallers[0].SetPhone_Number("1231231231");
-
-            ECallers[1].SetPhone_Number("1231231231");
 
             ECallers[2].SetName("Jordan");
             ECallers[2].SetPhone_Number("1111111111");
 
             ECallers[3].SetName("Zeeshan");
             ECallers[3].SetPhone_Number("1234567890");
+
+            ECallers[0].SetPhone_Number("1231231231");
+            ECallers[0].SetPatient(xPatients[0]);
+
+            ECallers[1].SetPhone_Number("3213213211");
+            ECallers[1].SetPatient(xPatients[2]);
+
+            ECallers[5].SetPhone_Number("7655864179");
+            ECallers[5].SetPatient(xPatients[1]);
+
+            ECallers[4].SetPhone_Number("7655868686");
+            ECallers[4].SetPatient(xPatients[3]);
+
+            ECallers[6].SetPhone_Number("7655864179");
+            ECallers[6].SetPatient(xPatients[4]);
+
+            ECallers[7].SetPhone_Number("7659079894");
+            ECallers[7].SetPatient(xPatients[5]);
 
             return ECallers;
         }

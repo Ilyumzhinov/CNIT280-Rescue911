@@ -29,7 +29,7 @@ namespace Rescue_911
         }
 
 
-        public void SetEmergency_List(ref Special_List<Emergency_Call> xExistingCalls, string xState = "ALL", bool xStateCanChange = false)
+        public void SetEmergency_List(ref Special_List<Emergency_Call> xExistingCalls, string xState = "Logged", bool xStateCanChange = false)
         {
             // Setting up the values
             Calls = xExistingCalls;
@@ -37,8 +37,6 @@ namespace Rescue_911
 
             // Setting up the interface
             cmbState.Items.AddRange(new object[] {
-            "ALL",
-            "Not logged",
             "Logged",
             "Waiting",
             "Accepted",

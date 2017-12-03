@@ -6,14 +6,13 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Call_View : Special_View
+    public partial class Call_View : Special_View, IUserDependent
     {
         // DATA STRUCTURE
         //Composite Data
         private List<Emergency_Call> EmergencyCalls;
-        private List<Patient> Patients;
+        private List<Caller> Callers;
         private Emergency_Call Current_Call;
-        private List<Patient> Suggested_Patients = new List<Patient>();
 
         //Events
         public event EventHandler LinkEmergencyButton_Click;
@@ -23,10 +22,10 @@ namespace Rescue_911
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Call_View(bool toDisplay, ref List<Emergency_Call> xECs, ref List<Patient> xPatients) : this(toDisplay)
+        public Call_View(bool toDisplay, ref List<Emergency_Call> xECs, ref List<Caller> xCallers) : this(toDisplay)
         {
             EmergencyCalls = xECs;
-            Patients = xPatients;
+            Callers = xCallers;
 
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
@@ -47,6 +46,23 @@ namespace Rescue_911
         //
 
 
+        // FUNCTIONAL METHODS
+        public void SendUser(Person xPerson)
+        {
+            if (xPerson is Operator)
+            { }
+            else
+            {
+                // Setting up the View
+                pnlCallInfo.Enabled = false;
+                pnlEmergency.Enabled = false;
+                pnlCaller.Enabled = false;
+
+                SendStatusUpdate(true, "To access, you must have Operator access level!", "urgent");
+            }
+        }
+        //
+
         // EVENTS
         private void btnLinkEmergency_Click(object sender, EventArgs e)
         {
@@ -63,15 +79,11 @@ namespace Rescue_911
                 return;
 
             AddEmergencyButton_Click?.Invoke(this, e);
-            //Emergency_Form Em = new Emergency_Form(ref SD, Current_Call);
-            //Em.Show();
         }
         //
 
         private bool CheckFields()
         {
-            int teams;
-
             // Existence checks
             if (Current_Call.GetPriority() == 0)
             {
@@ -83,7 +95,7 @@ namespace Rescue_911
                 txtPhoneNumber.Focus();
                 return false;
             }
-            else if (txtCallerName.Text == string.Empty)
+            else if (Current_Call.GetEmergency_Caller().GetName() == null)
             {
                 txtCallerName.Focus();
                 return false;
@@ -98,18 +110,15 @@ namespace Rescue_911
                 txtDescription.Focus();
                 return false;
             }
-            else if (int.TryParse(txtTeamsReq.Text, out teams) == false)
+            else 
             {
-                txtTeamsReq.Focus();
-                return false;
-            }
-            else // All checks are satisfied
-            {
-                Current_Call.SetTeams_Required(teams);
+                // All checks are satisfied
+
+                Current_Call.SetTeams_Required((int)numTeams.Value);
 
                 Current_Call.SetLandmark(txtLandmark.Text);
 
-                // Update the Shared Data values regarding the Calls.
+                //Update the Shared Data values regarding the Calls.
                 EmergencyCalls.Add(Current_Call);
 
                 return true;
@@ -128,7 +137,32 @@ namespace Rescue_911
 
             if (txtPhoneNumber.Text.Length == 10)
             {
-                Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
+                bool found = false;
+                foreach (Caller iCaller in Callers)
+                {
+                    if (iCaller.GetPhone_Number() != txtPhoneNumber.Text)
+                        continue;
+
+                    if (iCaller.GetPatient() == null)
+                    {
+                        txtCallerName.Text = iCaller.GetName();
+                    }
+                    else
+                    {
+                        txtCallerName.Text = (iCaller.GetPatient().GetLast_Name() + " " + iCaller.GetPatient().GetName());
+                    }
+                    txtCallerName.Enabled = false;
+
+                    Current_Call.SetEmergency_Caller(iCaller);
+
+                    found = true;
+                    break;
+                }
+
+                if (found == false)
+                {
+                    Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
+                }
             }
         }
 
@@ -148,18 +182,6 @@ namespace Rescue_911
         {
             if (txtDescription.Text.Trim() != string.Empty)
                 Current_Call.SetDescription(txtDescription.Text);
-        }
-
-        private void lstCallerNames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstCallerNames.SelectedIndex != -1)
-            {
-                Current_Call.GetEmergency_Caller().SetPhone_Number(txtPhoneNumber.Text);
-
-                txtCallerName.Text = Suggested_Patients[lstCallerNames.SelectedIndex].GetName() + ", " + Suggested_Patients[lstCallerNames.SelectedIndex].GetLast_Name();
-
-                txtCallerName.Enabled = false;
-            }
         }
 
         public Emergency_Call GetEmergency_Call()

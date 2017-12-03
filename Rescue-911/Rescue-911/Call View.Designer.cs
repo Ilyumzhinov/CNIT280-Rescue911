@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTeamsReq = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCallPriority = new System.Windows.Forms.ComboBox();
             this.txtCallDateTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCallInfo = new System.Windows.Forms.Panel();
+            this.numTeams = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lstCallerNames = new System.Windows.Forms.ListBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCallerName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlCaller = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -51,32 +49,23 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlEmergency = new System.Windows.Forms.Panel();
             this.btnAddEmer = new System.Windows.Forms.Button();
             this.btnLinkEmergency = new System.Windows.Forms.Button();
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlCallInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTeams)).BeginInit();
+            this.pnlCaller.SuspendLayout();
+            this.pnlEmergency.SuspendLayout();
             this.layoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtTeamsReq
-            // 
-            this.txtTeamsReq.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTeamsReq.Location = new System.Drawing.Point(103, 98);
-            this.txtTeamsReq.MinimumSize = new System.Drawing.Size(120, 20);
-            this.txtTeamsReq.Name = "txtTeamsReq";
-            this.txtTeamsReq.Size = new System.Drawing.Size(251, 22);
-            this.txtTeamsReq.TabIndex = 1;
-            this.txtTeamsReq.Text = "1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(8, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 29;
@@ -86,21 +75,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 101);
-            this.label2.MinimumSize = new System.Drawing.Size(120, 13);
+            this.label2.Location = new System.Drawing.Point(8, 101);
+            this.label2.MinimumSize = new System.Drawing.Size(0, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.Size = new System.Drawing.Size(96, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Team req.";
+            this.label2.Text = "Teams required";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 35);
-            this.label3.MinimumSize = new System.Drawing.Size(120, 13);
+            this.label3.Location = new System.Drawing.Point(8, 35);
+            this.label3.MinimumSize = new System.Drawing.Size(100, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 16);
+            this.label3.Size = new System.Drawing.Size(100, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Date/Time";
             // 
@@ -135,68 +124,68 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 67);
+            this.label4.Location = new System.Drawing.Point(8, 72);
             this.label4.MinimumSize = new System.Drawing.Size(120, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Priority";
             // 
-            // panel1
+            // pnlCallInfo
             // 
-            this.panel1.Controls.Add(this.txtTeamsReq);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cboCallPriority);
-            this.panel1.Controls.Add(this.txtCallDateTime);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 155);
-            this.panel1.TabIndex = 1;
+            this.pnlCallInfo.AutoSize = true;
+            this.pnlCallInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlCallInfo.Controls.Add(this.numTeams);
+            this.pnlCallInfo.Controls.Add(this.label1);
+            this.pnlCallInfo.Controls.Add(this.cboCallPriority);
+            this.pnlCallInfo.Controls.Add(this.txtCallDateTime);
+            this.pnlCallInfo.Controls.Add(this.label3);
+            this.pnlCallInfo.Controls.Add(this.label4);
+            this.pnlCallInfo.Controls.Add(this.label2);
+            this.pnlCallInfo.Location = new System.Drawing.Point(3, 3);
+            this.pnlCallInfo.Name = "pnlCallInfo";
+            this.pnlCallInfo.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlCallInfo.Size = new System.Drawing.Size(362, 129);
+            this.pnlCallInfo.TabIndex = 1;
+            // 
+            // numTeams
+            // 
+            this.numTeams.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numTeams.Location = new System.Drawing.Point(103, 99);
+            this.numTeams.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numTeams.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTeams.Name = "numTeams";
+            this.numTeams.Size = new System.Drawing.Size(251, 22);
+            this.numTeams.TabIndex = 30;
+            this.numTeams.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Location = new System.Drawing.Point(8, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 28;
             this.label5.Text = "CALLER";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(4, 58);
-            this.label6.MinimumSize = new System.Drawing.Size(120, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 16);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Suggested Patient";
-            // 
-            // lstCallerNames
-            // 
-            this.lstCallerNames.ColumnWidth = 120;
-            this.lstCallerNames.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstCallerNames.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lstCallerNames.FormattingEnabled = true;
-            this.lstCallerNames.ItemHeight = 16;
-            this.lstCallerNames.Location = new System.Drawing.Point(104, 54);
-            this.lstCallerNames.MultiColumn = true;
-            this.lstCallerNames.Name = "lstCallerNames";
-            this.lstCallerNames.Size = new System.Drawing.Size(250, 20);
-            this.lstCallerNames.TabIndex = 2;
-            this.lstCallerNames.SelectedIndexChanged += new System.EventHandler(this.lstCallerNames_SelectedIndexChanged);
-            // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(104, 26);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(104, 32);
             this.txtPhoneNumber.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(250, 22);
@@ -207,7 +196,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 89);
+            this.label7.Location = new System.Drawing.Point(8, 72);
             this.label7.MinimumSize = new System.Drawing.Size(120, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 16);
@@ -217,7 +206,7 @@
             // txtCallerName
             // 
             this.txtCallerName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCallerName.Location = new System.Drawing.Point(104, 86);
+            this.txtCallerName.Location = new System.Drawing.Point(104, 69);
             this.txtCallerName.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtCallerName.Name = "txtCallerName";
             this.txtCallerName.Size = new System.Drawing.Size(250, 22);
@@ -228,33 +217,33 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 26);
+            this.label8.Location = new System.Drawing.Point(8, 35);
             this.label8.MinimumSize = new System.Drawing.Size(120, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Phone Number";
             // 
-            // panel2
+            // pnlCaller
             // 
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.lstCallerNames);
-            this.panel2.Controls.Add(this.txtPhoneNumber);
-            this.panel2.Controls.Add(this.txtCallerName);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(376, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 116);
-            this.panel2.TabIndex = 2;
+            this.pnlCaller.AutoSize = true;
+            this.pnlCaller.Controls.Add(this.label5);
+            this.pnlCaller.Controls.Add(this.txtPhoneNumber);
+            this.pnlCaller.Controls.Add(this.txtCallerName);
+            this.pnlCaller.Controls.Add(this.label8);
+            this.pnlCaller.Controls.Add(this.label7);
+            this.pnlCaller.Location = new System.Drawing.Point(371, 3);
+            this.pnlCaller.Name = "pnlCaller";
+            this.pnlCaller.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlCaller.Size = new System.Drawing.Size(362, 99);
+            this.pnlCaller.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(8, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 29;
@@ -264,7 +253,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 32);
+            this.label10.Location = new System.Drawing.Point(8, 37);
             this.label10.MinimumSize = new System.Drawing.Size(120, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 16);
@@ -306,7 +295,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(4, 67);
+            this.label11.Location = new System.Drawing.Point(9, 72);
             this.label11.MinimumSize = new System.Drawing.Size(120, 13);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 16);
@@ -317,28 +306,30 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 101);
+            this.label12.Location = new System.Drawing.Point(9, 106);
             this.label12.MinimumSize = new System.Drawing.Size(120, 13);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(120, 16);
             this.label12.TabIndex = 19;
             this.label12.Text = "Description";
             // 
-            // panel3
+            // pnlEmergency
             // 
-            this.panel3.Controls.Add(this.btnAddEmer);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.btnLinkEmergency);
-            this.panel3.Controls.Add(this.txtDescription);
-            this.panel3.Controls.Add(this.txtLandmark);
-            this.panel3.Controls.Add(this.txtAddress);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(3, 164);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(365, 280);
-            this.panel3.TabIndex = 3;
+            this.pnlEmergency.AutoSize = true;
+            this.pnlEmergency.Controls.Add(this.btnAddEmer);
+            this.pnlEmergency.Controls.Add(this.label9);
+            this.pnlEmergency.Controls.Add(this.btnLinkEmergency);
+            this.pnlEmergency.Controls.Add(this.txtDescription);
+            this.pnlEmergency.Controls.Add(this.txtLandmark);
+            this.pnlEmergency.Controls.Add(this.txtAddress);
+            this.pnlEmergency.Controls.Add(this.label12);
+            this.pnlEmergency.Controls.Add(this.label11);
+            this.pnlEmergency.Controls.Add(this.label10);
+            this.pnlEmergency.Location = new System.Drawing.Point(3, 138);
+            this.pnlEmergency.Name = "pnlEmergency";
+            this.pnlEmergency.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlEmergency.Size = new System.Drawing.Size(362, 284);
+            this.pnlEmergency.TabIndex = 3;
             // 
             // btnAddEmer
             // 
@@ -365,9 +356,9 @@
             this.layoutPanel.AutoScroll = true;
             this.layoutPanel.AutoSize = true;
             this.layoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.layoutPanel.Controls.Add(this.panel1);
-            this.layoutPanel.Controls.Add(this.panel2);
-            this.layoutPanel.Controls.Add(this.panel3);
+            this.layoutPanel.Controls.Add(this.pnlCallInfo);
+            this.layoutPanel.Controls.Add(this.pnlCaller);
+            this.layoutPanel.Controls.Add(this.pnlEmergency);
             this.layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutPanel.Location = new System.Drawing.Point(5, 89);
             this.layoutPanel.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
@@ -384,36 +375,34 @@
             this.Name = "Call_View";
             this.Size = new System.Drawing.Size(779, 843);
             this.Controls.SetChildIndex(this.layoutPanel, 0);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlCallInfo.ResumeLayout(false);
+            this.pnlCallInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTeams)).EndInit();
+            this.pnlCaller.ResumeLayout(false);
+            this.pnlCaller.PerformLayout();
+            this.pnlEmergency.ResumeLayout(false);
+            this.pnlEmergency.PerformLayout();
             this.layoutPanel.ResumeLayout(false);
+            this.layoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTeamsReq;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCallPriority;
         private System.Windows.Forms.TextBox txtCallDateTime;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCallInfo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox lstCallerNames;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCallerName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlCaller;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDescription;
@@ -421,9 +410,10 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlEmergency;
         private System.Windows.Forms.Button btnLinkEmergency;
         private System.Windows.Forms.Button btnAddEmer;
         private System.Windows.Forms.FlowLayoutPanel layoutPanel;
+        private System.Windows.Forms.NumericUpDown numTeams;
     }
 }

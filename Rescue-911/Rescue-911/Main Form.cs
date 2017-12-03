@@ -109,7 +109,7 @@ namespace Rescue_911
 
         private void CallView_Prepare(object sender, EventArgs e)
         {
-            Call_View CallView = (Call_View)SetTypicalView(typeof(Call_View), new List<object> { SD.GetCalls(), SD.GetPatients() });
+            Call_View CallView = (Call_View)SetTypicalView(typeof(Call_View), new List<object> { SD.GetCalls(), SD.GetCallers() });
             CallView.LinkEmergencyButton_Click += new EventHandler(EmergencyLinkView_Prepare);
             CallView.AddEmergencyButton_Click += new EventHandler(AddEmergencyView_PrePare);
         }

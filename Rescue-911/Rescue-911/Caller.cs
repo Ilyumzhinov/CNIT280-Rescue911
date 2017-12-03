@@ -7,24 +7,23 @@ namespace Rescue_911
     {
         private string Phone_Number;
         private string Name;
-        private List<Patient> patients;
-        private int temp = 0;
+        private Patient Linked_Patient;
 
         public Caller()
         {
-            patients = new List<Patient>();
+            Linked_Patient = new Patient();
         }
 
-        public void setPatient(Patient xpatient)
+        public void SetPatient(Patient xPatient)
         {
-            patients.Add(new Patient());
-            patients[temp] = xpatient;
-            temp++;
+            Linked_Patient = xPatient;
         }
         public void SetPhone_Number(string xPhone_Number) { Phone_Number = xPhone_Number; }
         public void SetName(string xName) { Name = xName; }
 
         public string GetPhone_Number() { return Phone_Number; }
         public string GetName() { return Name; }
+
+        public Patient GetPatient() { return Linked_Patient; }
     }
 }

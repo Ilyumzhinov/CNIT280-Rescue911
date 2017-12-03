@@ -68,7 +68,7 @@
             // ID
             // 
             this.ID.Text = "Emergency ID";
-            this.ID.Width = 20;
+            this.ID.Width = 80;
             // 
             // Type
             // 
