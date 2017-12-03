@@ -141,7 +141,7 @@ namespace Rescue_911
 
         private void BaseStationRecordsView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Base_Station_Records_View));
+            SetTypicalView(typeof(Base_Station_Records_View), new List<object> { SD.GetBaseStationRecords() });
         }
 
         private void DispatchRelatedTimesView_Prepare(object sender, EventArgs e)
