@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Add_View : Special_View
+    public partial class Emergency_Add_View : Special_View, IUserDependent
     {
         private Special_List<Emergency_Call> Calls;
         private Emergency_Call Current_Call;
@@ -44,7 +44,17 @@ namespace Rescue_911
             if (toDisplay)
                 InitializeComponent();
         }
+        public void SendUser(Person xUser) {
+            if (xUser is Operator == false)
+            {
+                btnCreateEmergency1.Enabled = false;
+                SendStatusUpdate(true, "To access, you must have Operator access level!", "urgent");
+            }
+            else return;
+           
+        }
 
+    
      
         public void btnCreateEmergency1_Click(object sender, EventArgs e)
         {
