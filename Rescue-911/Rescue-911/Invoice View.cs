@@ -22,9 +22,8 @@ namespace Rescue_911
             if (toDisplay)
             {
                 InitializeComponent();
-            }
-            
-            listbox1.Items.Add("Address: 270 littelton ST apt214");
+
+                listbox1.Items.Add("Address: 270 littelton ST apt214");
 
             ListViewItem lvi = new ListViewItem("10005");
 
@@ -36,6 +35,9 @@ namespace Rescue_911
             lvi2.SubItems.Add("10 - Nov - 2017");
             lstEmergencies.Items.Add(lvi);
             lstEmergencies.Items.Add(lvi2);
+            }
+            
+            
         }
 
        

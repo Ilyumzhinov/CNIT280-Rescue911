@@ -27,13 +27,6 @@ namespace Rescue_911
         {
             EmergencyCalls = xECs;
             Patients = xPatients;
-        }
-
-        //To-display the view.
-        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal)
-        {
-            if (toDisplay)
-                InitializeComponent();
 
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
@@ -43,6 +36,13 @@ namespace Rescue_911
             txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
 
             txtPhoneNumber.Focus();
+        }
+
+        //To-display the view.
+        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal)
+        {
+            if (toDisplay)
+                InitializeComponent();
         }
         //
 
@@ -160,6 +160,11 @@ namespace Rescue_911
 
                 txtCallerName.Enabled = false;
             }
+        }
+
+        public Emergency_Call GetEmergency_Call()
+        {
+            return Current_Call;
         }
     }
 }

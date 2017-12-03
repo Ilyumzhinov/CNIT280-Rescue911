@@ -22,11 +22,13 @@ namespace Rescue_911
             if (toDisplay)
             {
                 InitializeComponent();
+
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM/yy";
             }
             
 
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "MM/yy";
+            
         }
 
 

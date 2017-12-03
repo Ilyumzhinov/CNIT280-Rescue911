@@ -20,7 +20,8 @@ namespace Rescue_911
         //To-setup the view.
         public Login_View(bool toDisplay, ref Shared_Data xSD) : this(toDisplay)
         {
-            Employees_Data EmloyeesData = new Employees_Data(ref xSD);
+            SD = xSD;
+            Employees_Data EmloyeesData = new Employees_Data(ref SD);
 
             EmployeesLogins = EmloyeesData.GetEmployeesLoginsPasswords();
         }

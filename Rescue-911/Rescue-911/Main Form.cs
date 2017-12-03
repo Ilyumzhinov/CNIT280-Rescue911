@@ -71,7 +71,7 @@ namespace Rescue_911
             StatusUpdate(( new object[] { true, this.ToString(), "Logged in", ""}), null);
             sideBar.Visible = true;
 
-            Main_View MainView = (Main_View)SetView(typeof(Main_View));
+            Main_View MainView = (Main_View)SetView(typeof(Main_View), new List<object> { SD.FormsCount });
         }
 
         //Event for displaying the Login screen.
@@ -79,7 +79,7 @@ namespace Rescue_911
         {
             StatusUpdate(false, null);
 
-            Login_View LoginView = (Login_View)SetView(typeof(Login_View));
+            Login_View LoginView = (Login_View)SetView(typeof(Login_View), new List<object> { SD });
 
             LoginView.LoginButton_Click += new EventHandler(MainView_Prepare);
         }
@@ -109,21 +109,19 @@ namespace Rescue_911
 
         private void CallView_Prepare(object sender, EventArgs e)
         {
-            Call_View CallView = (Call_View)SetTypicalView(typeof(Call_View));
+            Call_View CallView = (Call_View)SetTypicalView(typeof(Call_View), new List<object> { SD.GetCalls(), SD.GetPatients() });
             CallView.LinkEmergencyButton_Click += new EventHandler(EmergencyLinkView_Prepare);
             CallView.AddEmergencyButton_Click += new EventHandler(AddEmergencyView_PrePare);
         }
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            //SetTypicalView(typeof(Emergency_Link_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
+            SetTypicalView(typeof(Emergency_Link_View), new List<object> { SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
             
         }
-        private void AddEmergencyView_PrePare(object sender, EventArgs e) {
-
-
-            //SetTypicalView(typeof(Emergency_Add_View), new List<object> { ((Call_View)Current_View).GetEmergency_Call() });
-
+        private void AddEmergencyView_PrePare(object sender, EventArgs e)
+        {
+            SetTypicalView(typeof(Emergency_Add_View), new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
@@ -204,7 +202,8 @@ namespace Rescue_911
         private Special_View SetView(Type xSpecialView, List<object> xAdditionalParam = null)
         {
             List<object> Parameters = new List<object>();
-            Parameters.Add(SD);
+
+            Parameters.Add(true);
 
             // Use this if a view's constructor has more additional parameters (besides Shared_Data).
             if (xAdditionalParam != null)
