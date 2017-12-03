@@ -30,16 +30,6 @@ namespace Rescue_911
 
 
         // SETTING UP THE VIEWS
-        //Updating the Current_View
-        public void View_Switch(Special_View sender)
-        {
-            sideBar.MenuElement_Changed(null,null);
-
-            Current_View = sender;
-
-            //Current_View.Show();
-        }
-
         //Displaying the Login screen when the app is launched.
         private void Main_Form_Load(object sender, EventArgs e)
         {
@@ -68,10 +58,9 @@ namespace Rescue_911
                 sideBar.IsPopulated = true;
             }
 
-            StatusUpdate(( new object[] { true, this.ToString(), "Logged in", ""}), null);
             sideBar.Visible = true;
 
-            Main_View MainView = (Main_View)SetView(typeof(Main_View), new List<object> { SD.FormsCount });
+            SetView(typeof(Main_View), null, new List <object> { SD.FormsCount });
         }
 
         //Event for displaying the Login screen.
@@ -79,7 +68,9 @@ namespace Rescue_911
         {
             StatusUpdate(false, null);
 
-            Login_View LoginView = (Login_View)SetView(typeof(Login_View), new List<object> { SD });
+            SetView(typeof(Login_View), null, new List<object> { SD });
+
+            Login_View LoginView = (Login_View)Current_View;
 
             LoginView.LoginButton_Click += new EventHandler(MainView_Prepare);
         }
@@ -109,69 +100,71 @@ namespace Rescue_911
 
         private void CallView_Prepare(object sender, EventArgs e)
         {
-            Call_View CallView = (Call_View)SetTypicalView(typeof(Call_View), new List<object> { SD.GetCalls(), SD.GetCallers() });
+            SetView(typeof(Call_View), ((Button)sender), new List<object> { SD.GetCalls(), SD.GetCallers() }, Current_View);
+            Call_View CallView = (Call_View)Current_View;
+
             CallView.LinkEmergencyButton_Click += new EventHandler(EmergencyLinkView_Prepare);
             CallView.AddEmergencyButton_Click += new EventHandler(AddEmergencyView_PrePare);
         }
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Emergency_Link_View), new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
+            SetView(typeof(Emergency_Link_View), null, new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
             
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Emergency_Add_View), new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
+            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Emergency_Management_View));
+            SetView(typeof(Emergency_Management_View), ((Button)sender), new List<object> { SD.GetCalls(), SD.GetEmergencies(), SD.GetResponseTeams() }, Current_View);
         }
 
         private void ResponseTeamInfoView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Response_Team_Information_View));
+            SetView(typeof(Response_Team_Information_View), ((Button)sender), null, Current_View);
         }
 
         private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(EMT_Login_Shift_View), new List<object> { SD.GetEMTs(), Current_User });
+            SetView(typeof(EMT_Login_Shift_View), ((Button)sender), new List<object> { SD.GetEMTs(), Current_User }, Current_View);
         }
 
         private void BaseStationRecordsView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Base_Station_Records_View), new List<object> { SD.GetBaseStationRecords() });
+            SetView(typeof(Base_Station_Records_View), ((Button)sender), new List<object> { SD.GetBaseStationRecords() }, Current_View);
         }
 
         private void DispatchRelatedTimesView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Dispatch_Related_Times_View));
+            SetView(typeof(Dispatch_Related_Times_View), ((Button)sender), null, Current_View);
         }
 
         private void DispatchReportView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Dispatch_Report_View), new List<object> { SD.GetDispatchReports() });
+            SetView(typeof(Dispatch_Report_View), ((Button)sender), new List<object> { SD.GetDispatchReports() }, Current_View);
         }
 
         private void LinkPatientView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Link_Patient_View), new List<object> { SD.GetPatients() });
+            SetView(typeof(Link_Patient_View), ((Button)sender), null, Current_View);
         }
 
         private void PatientInformationView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Patient_Information_View));
+            SetView(typeof(Patient_Information_View), ((Button)sender), null, Current_View);
         }
 
         private void InvoiceView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Invoice_View));
+            SetView(typeof(Invoice_View), ((Button)sender), null, Current_View);
         }
 
         private void SubPaymentView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Sub_Payment_View));
+            SetView(typeof(Sub_Payment_View), ((Button)sender), null, Current_View);
         }
         //
 
@@ -184,38 +177,12 @@ namespace Rescue_911
             sideBar.PopulateSideBar(ref SD, xAcccessibleViews, Current_User);
         }
 
-        private Special_View SetTypicalView(Type xTypicalView, List<object> xAdditionalParam = null)
+        //Updating the Current_View
+        public void View_Switch(Special_View sender)
         {
-            Special_View SVtemp = Current_View;
+            sideBar.MenuElement_Changed((new object[] { ((Special_View)sender).GetAssigned_Btn(), ((Special_View)sender).GetColour() }), null);
 
-            SetView(xTypicalView, xAdditionalParam);
-
-            Current_View.SetPrevious_View(SVtemp);
-
-            // I almost broke my head over here.
-            if (Current_View is IUserDependent)
-                ((IUserDependent)Current_View).SendUser(Current_User);
-
-            return Current_View;
-        }
-
-        private Special_View SetView(Type xSpecialView, List<object> xAdditionalParam = null)
-        {
-            List<object> Parameters = new List<object>();
-
-            Parameters.Add(true);
-
-            // Use this if a view's constructor has more additional parameters (besides Shared_Data).
-            if (xAdditionalParam != null)
-            {
-                Parameters.AddRange(xAdditionalParam);
-            }
-
-            Current_View = (Special_View)(Activator.CreateInstance(xSpecialView, Parameters.ToArray()));
-
-            // Update the status by invoking the Event inside the Special View.
-            Current_View.StatusUpdate -= new EventHandler(StatusUpdate);
-            Current_View.StatusUpdate += new EventHandler(StatusUpdate);
+            Current_View = sender;
 
             // Auto-align the view if it is of special type.
             if (Current_View.GetMiddleAligned() == false)
@@ -225,16 +192,47 @@ namespace Rescue_911
             }
             else
             {
+                this.SizeChanged -= new EventHandler(Main_Form_SizeChanged);
                 this.SizeChanged += new EventHandler(Main_Form_SizeChanged);
 
-                Main_Form_SizeChanged(null, null);
+                Main_Form_SizeChanged(Current_View, null);
             }
 
             this.Controls.Add(Current_View);
-
             Current_View.BringToFront();
 
-            return Current_View;
+
+            StatusUpdate(Current_View.GetStatus(), null);
+        }
+
+        private void SetView(Type xSpecialView, Button xBtn, List<object> xAdditionalParam = null, Special_View CView = null)
+        {
+            List<object> Parameters = new List<object>();
+
+            // Use this if a view's constructor has more additional parameters (besides toDisplay).
+            Parameters.Add(true);
+            if (xAdditionalParam != null)
+            {
+                Parameters.AddRange(xAdditionalParam);
+            }
+
+            Special_View ViewTemp = (Special_View)(Activator.CreateInstance(xSpecialView, Parameters.ToArray()));
+
+            // Update the status by invoking the Event inside the Special View.
+            ViewTemp.StatusUpdate -= new EventHandler(StatusUpdate);
+            ViewTemp.StatusUpdate += new EventHandler(StatusUpdate);
+
+            if (CView != null)
+                ViewTemp.SetPrevious_View(CView);
+
+            if (xBtn != null)
+                ViewTemp.SetAssigned_Btn(ref xBtn);
+
+            // I almost broke my head over here.
+            if (ViewTemp is IUserDependent)
+                ((IUserDependent)ViewTemp).SendUser(Current_User);
+
+            View_Switch(ViewTemp);
         }
 
 

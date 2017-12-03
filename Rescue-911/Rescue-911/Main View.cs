@@ -25,6 +25,8 @@ namespace Rescue_911
             lbTime.Text = DateTime.Now.ToString("h:mm:ss MM/dd/yyyy");
             lbUsers.Text = FormsCount.ToString();
 
+            SendStatusUpdate(true, "Logged in");
+
             // TEST DATABASE CONNECTION
             // OleDbConnection cn = new OleDbConnection("DATA SOURCE=oracle.ecn.purdue.edu:1521/master.ecn.purdue.edu;PASSWORD=group1814;USER ID=RESCUE911DB");
             //cn.Open();
@@ -47,7 +49,7 @@ namespace Rescue_911
     //To-display the view.
     public Main_View(bool toDisplay) : base(
             toDisplay,
-            "Main Page",
+            "Main",
             Color.Black,
             false,
             DateTime.Today.DayOfWeek.ToString() + ", " + DateTime.Today.ToString("MMMM d")

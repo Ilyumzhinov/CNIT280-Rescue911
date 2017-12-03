@@ -96,69 +96,66 @@ namespace Rescue_911
 
                 // Doing the funcitonal button setup
                 //Uniform way of creating the click event
+                Buttons[i].Click -= (sender, e) => { };
                 Buttons[i].Click += (sender, e) =>
                 {
                     Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { true }));
 
-                    MenuElement_Changed(sender, e);
-
-                    ((Button)sender).BackColor = viewInstance.GetColour();
-                    ((Button)sender).Enabled = false;
-                    ((Button)sender).ForeColor = Color.White;
+                    MenuElement_Changed(new object[] { sender, viewInstance.GetColour() }, e);
 
                     viewInstance.Show();
 
-                    SetUpButton(e, xAcccessibleViews[((Button)sender).TabIndex]);
+                    SetUpButton(e, xAcccessibleViews[((Button)sender).TabIndex], ((Button)sender));
                 };
             }
         }
 
         //Do the functional button setup.
-        private void SetUpButton(EventArgs e, Type t)
+        private void SetUpButton(EventArgs e, Type t, Button btn)
         {
             if (t == typeof(Call_View))
             {
-                CallButton_Click?.Invoke(this, e);
+                CallButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Emergency_Management_View))
             {
-                EmergencyManagement_Click?.Invoke(this, e);
+                EmergencyManagement_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Response_Team_Information_View))
             {
-                ResponseTeamInfoButton_Click?.Invoke(this, e);
+                ResponseTeamInfoButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(EMT_Login_Shift_View))
             {
-                EMTLoginShiftButton_Click?.Invoke(this, e);
+                EMTLoginShiftButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Base_Station_Records_View))
             {
-                BaseStationRecordsButton_Click?.Invoke(this, e);
+                BaseStationRecordsButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Dispatch_Related_Times_View))
             {
-                DispatchRelatedTimesButton_Click?.Invoke(this, e);
+                DispatchRelatedTimesButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Dispatch_Report_View))
             {
-                DispatchReportButton_Click?.Invoke(this, e);
+                DispatchReportButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Link_Patient_View))
             {
-                LinkPatientButton_Click?.Invoke(this, e);
+                LinkPatientButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Patient_Information_View))
             {
-                PatientInformationButton_Click?.Invoke(this, e);
+                PatientInformationButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Invoice_View))
             {
-                InvoiceButton_Click?.Invoke(this, e);
+                InvoiceButton_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Sub_Payment_View))
             {
-                SubPayment_Click?.Invoke(this, e);
+                SubPayment_Click?.Invoke(btn, e);
             }
             else if (t == typeof(Login_View))
             {
@@ -166,30 +163,44 @@ namespace Rescue_911
 
                 layoutPanel.Controls.Clear();
 
-                LogoutButton_Click?.Invoke(this, e);
+                LogoutButton_Click?.Invoke(btn, e);
             }
         }
         //
 
 
         // EVENTS
-        public void MenuElement_Changed(object sender, EventArgs e)
+        public void MenuElement_Changed(object[] sender, EventArgs e)
         {
-            // The first time a button gets selected.
-            if (mSelectedButton == null)
+            if ((Button)sender[0] == null)
             {
-                mSelectedButton = (Button)sender;
+                if (mSelectedButton != null && mSelectedButton.Enabled == false)
+                {
+                    mSelectedButton.Enabled = true;
+                    mSelectedButton.ForeColor = mSelectedButton.BackColor;
+                    mSelectedButton.BackColor = Color.Transparent;
+                }
+
+                return;
             }
 
-            // Activate the previously selected button.
-            if (mSelectedButton != (Button)sender)
+            if (mSelectedButton != null && mSelectedButton.Enabled == false)
             {
-                mSelectedButton.Enabled = true;
-                mSelectedButton.ForeColor = mSelectedButton.BackColor;
-                mSelectedButton.BackColor = Color.Transparent;
-
-                mSelectedButton = (Button)sender;
+                if (((Button)sender[0]) != mSelectedButton)
+                {
+                    mSelectedButton.Enabled = true;
+                    mSelectedButton.ForeColor = mSelectedButton.BackColor;
+                    mSelectedButton.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    return;
+                }
             }
+
+            mSelectedButton = (Button)(sender[0]);
+            mSelectedButton.BackColor = (Color)(sender[1]);
+            mSelectedButton.Enabled = false;
         }
         //
 

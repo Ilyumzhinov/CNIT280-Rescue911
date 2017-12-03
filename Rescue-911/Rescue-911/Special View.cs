@@ -19,9 +19,11 @@ namespace Rescue_911
         private Color Colour;
         private string dTitle;
         private string dDesc;
+        private object Status = false;
 
         //Relationships
         private Special_View Previous_View;
+        private Button Assigned_Btn;
 
         //Event Handlers
         public event EventHandler StatusUpdate;
@@ -48,42 +50,6 @@ namespace Rescue_911
             }
         }
 
-
-        //To-display the view.
-        //public Special_View(ref Shared_Data xSD, string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "") : this()
-        //{
-        //    InitializeComponent();
-
-        //    SD = xSD;
-        //    MiddleAligned = xMiddleAligned;
-        //    Colour = xColour;
-
-        //    this.BackColor = Color.Transparent;
-
-        //    SetTitle(xTitle);
-        //    if (xDesc != "")
-        //    {
-        //        SetDesc(xDesc);
-        //    }
-        //}
-
-        //To-instantiate
-        //public Special_View(string xTitle, bool xMiddleAligned, Color xColour, string xDesc = "")
-        //{
-
-
-        //    MiddleAligned = xMiddleAligned;
-        //    Colour = xColour;
-
-        //    this.BackColor = Color.Transparent;
-
-        //    SetTitle(xTitle);
-        //    if (xDesc != "")
-        //    {
-        //        SetDesc(xDesc);
-        //    }
-        //}
-
         //For the designer
         private Special_View()
         {
@@ -95,10 +61,12 @@ namespace Rescue_911
         // FUNCTIONAL METHODS
         protected void SendStatusUpdate(bool xVisible, string xStatus = "", string xType = "")
         {
-            object[] Sender = { xVisible, this.ToString(), xStatus, xType };
+            Status = new object[] { xVisible, this.ToString(), xStatus, xType };
 
-            StatusUpdate?.Invoke(Sender, null);
+            StatusUpdate?.Invoke(Status, null);
         }
+
+        public object GetStatus() { return Status; }
 
         public override string ToString()
         {
@@ -135,6 +103,8 @@ namespace Rescue_911
             lbDesc.Text = xDesc;
             lbDesc.Visible = true;
         }
+        public void SetAssigned_Btn(ref Button xBtn) { Assigned_Btn = xBtn; }
+        
 
         public bool GetMiddleAligned() { return MiddleAligned; }
 
@@ -145,6 +115,7 @@ namespace Rescue_911
         public string GetDesc() { return dDesc; }
 
         public Special_View GetPrevious_View() { return Previous_View; }
+        public Button GetAssigned_Btn() { return Assigned_Btn; }
         //
 
         private void btnBack_Click(object sender, EventArgs e)
