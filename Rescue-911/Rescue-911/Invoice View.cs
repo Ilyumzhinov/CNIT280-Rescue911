@@ -69,7 +69,7 @@ namespace Rescue_911
                 txtMonthlyFee.Focus();
                 return;
             }
-            
+
 
             else // All checks are satisfied
             {

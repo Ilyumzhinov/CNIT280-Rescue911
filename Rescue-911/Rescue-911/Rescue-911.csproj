@@ -203,6 +203,7 @@
       <DependentUpon>Sub Payment View.cs</DependentUpon>
     </Compile>
     <Compile Include="SUB.cs" />
+    <Compile Include="SubscriberPayment.cs" />
     <Compile Include="Supervisor.cs" />
     <EmbeddedResource Include="Base Station Records View.resx">
       <DependentUpon>Base Station Records View.cs</DependentUpon>
