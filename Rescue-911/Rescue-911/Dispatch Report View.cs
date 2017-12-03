@@ -13,14 +13,12 @@ namespace Rescue_911
     public partial class Dispatch_Report_View : Special_View
     {
         //To-Do: change it to dispatch object
-        private Emergency CurrentDispatch;
         private Special_List<Dispatch_Report> DispatchReports;
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Dispatch_Report_View(bool toDisplay, ref Emergency xEmergency, ref Special_List<Dispatch_Report> xDRs) : this(toDisplay)
+        public Dispatch_Report_View(bool toDisplay, ref Special_List<Dispatch_Report> xDRs) : this(toDisplay)
         {
-            CurrentDispatch = xEmergency;
             DispatchReports = xDRs;
         }
 
@@ -77,14 +75,9 @@ namespace Rescue_911
 
 
                 DispatchReports.AddItem(DispatchReport);
+
+                SendStatusUpdate(true, "Report Saved!", "success");
             }
-        }
-
-        private void Dispatch_Report_Load(object sender, EventArgs e)
-        {
-            // To-Do: make it dynamic
-
-            lbEmergencyID.Text = CurrentDispatch.GetEmergency_ID().ToString();
         }
     }
 }

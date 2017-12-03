@@ -37,7 +37,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 62);
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 89);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 12;
@@ -45,7 +45,7 @@
             // btnRecord
             // 
             this.btnRecord.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecord.Location = new System.Drawing.Point(335, 363);
+            this.btnRecord.Location = new System.Drawing.Point(250, 335);
             this.btnRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Size = new System.Drawing.Size(66, 34);
@@ -58,7 +58,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 147);
+            this.label3.Location = new System.Drawing.Point(2, 121);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 16);
@@ -67,18 +67,18 @@
             // 
             // txtRecords
             // 
-            this.txtRecords.Location = new System.Drawing.Point(16, 164);
+            this.txtRecords.Location = new System.Drawing.Point(5, 139);
             this.txtRecords.Margin = new System.Windows.Forms.Padding(2);
             this.txtRecords.Multiline = true;
             this.txtRecords.Name = "txtRecords";
-            this.txtRecords.Size = new System.Drawing.Size(671, 192);
+            this.txtRecords.Size = new System.Drawing.Size(607, 192);
             this.txtRecords.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 62);
+            this.label2.Location = new System.Drawing.Point(2, 93);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
@@ -95,7 +95,7 @@
             this.Controls.Add(this.txtRecords);
             this.Controls.Add(this.label2);
             this.Name = "Base_Station_Records_View";
-            this.Size = new System.Drawing.Size(696, 404);
+            this.Size = new System.Drawing.Size(624, 404);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtRecords, 0);
             this.Controls.SetChildIndex(this.label3, 0);

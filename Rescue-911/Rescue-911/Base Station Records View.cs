@@ -25,7 +25,7 @@ namespace Rescue_911
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Base_Station_Records_View(bool toDisplay, ref List<Base_Station_Records> xBSR) : this(toDisplay)
+        public Base_Station_Records_View(bool toDisplay, ref Special_List<Base_Station_Records> xBSR) : this(toDisplay)
         {
             BSR = xBSR;
         }
@@ -68,7 +68,7 @@ namespace Rescue_911
                 BSR.Add(BaseStationRecords);
             }
 
-
+            SendStatusUpdate(true, "Record Saved!", "success");
             //date = dateTimePicker1.Text;
             //record = txtRecords.Text;
             //mDate[mIndex] = date;

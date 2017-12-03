@@ -131,6 +131,7 @@
     <Compile Include="Invoice View.Designer.cs">
       <DependentUpon>Invoice View.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceReceipt.cs" />
     <Compile Include="IUserDependent.cs" />
     <Compile Include="Link Patient View.cs">
       <SubType>UserControl</SubType>
