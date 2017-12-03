@@ -13,10 +13,17 @@ namespace Rescue_911
     public partial class Invoice_View : Special_View, IUserDependent
     {
         // CONSTRUCTORS
+        //To-setup the view
+
+            
         //To-display the view.
-        public Invoice_View(ref Shared_Data xSD) : base(ref xSD, "Invoice", false, Color.DeepPink)
+        public Invoice_View(bool toDisplay) : base(toDisplay, "Invoice", Color.DeepPink, false)
         {
-            InitializeComponent();
+            if (toDisplay)
+            {
+                InitializeComponent();
+            }
+            
             listbox1.Items.Add("Address: 270 littelton ST apt214");
 
             ListViewItem lvi = new ListViewItem("10005");
@@ -31,10 +38,7 @@ namespace Rescue_911
             lstEmergencies.Items.Add(lvi2);
         }
 
-        //To-instantiate the view.
-        public Invoice_View() : base("Invoice", false, Color.DeepPink)
-        { }
-        //
+       
 
         // FUNCTIONAL METHODS
         public void SendUser(Person xPerson)

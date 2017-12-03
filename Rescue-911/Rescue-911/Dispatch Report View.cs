@@ -14,20 +14,24 @@ namespace Rescue_911
     {
         //To-Do: change it to dispatch object
         private Emergency CurrentDispatch;
+        private Special_List<Dispatch_Report> DispatchReports;
 
         // CONSTRUCTORS
-        //To-display the view.
-        public Dispatch_Report_View(ref Shared_Data xSD) : base(ref xSD, "Dispatch Report", false, Color.PaleVioletRed)
+        //To-setup the view.
+        public Dispatch_Report_View(bool toDisplay, ref Emergency xEmergency, ref Special_List<Dispatch_Report> xDRs) : this(toDisplay)
         {
-            //To-Do: Change this.
-            CurrentDispatch = SD.GetEmergencies()[1];
-
-            InitializeComponent();
+            CurrentDispatch = xEmergency;
+            DispatchReports = xDRs;
         }
 
-        //To-instantiate the view.
-        public Dispatch_Report_View() : base("Dispatch Report", false, Color.PaleVioletRed)
-        { }
+        //To-display the view.
+        public Dispatch_Report_View(bool toDisplay) : base(toDisplay, "Dispatch Report", Color.PaleVioletRed, false)
+        {
+            if (toDisplay)
+            {
+                InitializeComponent();
+            }
+        }
         //
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -72,7 +76,7 @@ namespace Rescue_911
                 DispatchReport.SetBill(double.Parse(txtBill.Text));
 
 
-                SD.AddDispatchReport(DispatchReport);
+                DispatchReports.AddItem(DispatchReport);
             }
         }
 

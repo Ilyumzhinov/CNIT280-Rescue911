@@ -25,16 +25,24 @@ namespace Rescue_911
         string complic = "Had triple heart bypass surgery";
         int mIndex = 0;
 
+        private Special_List<Patient> Patients;
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Patient_Information_View(ref Shared_Data xSD) : base(ref xSD, "Patient Information", false, Color.Orchid)
+        //To-setup the view
+
+        public Patient_Information_View(bool toDispaly, ref Special_List<Patient> xPIs) : this(toDispaly)
         {
-            InitializeComponent();
+            Patients = xPIs;
+
+        }
+        //To-display the view.
+        public Patient_Information_View(bool toDisplay) : base(toDisplay, "Patient Information", Color.Orchid, false)
+        {
+            if (toDisplay)
+                InitializeComponent();
         }
 
-        //To-instantiate the view.
-        public Patient_Information_View() : base("Patient Information", false, Color.Orchid)
-        { }
+        
         //
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -16,11 +16,23 @@ namespace Rescue_911
         int sub = 0;
         int indirectsub = 0;
 
+        private Special_List<Link_Patient_View> LinkPatients;
+
         // CONSTRUCTORS
-        //To-display the view.
-        public Link_Patient_View(ref Shared_Data xSD) : base(ref xSD, "Link Patient", false, Color.Peru)
+        //To-setup the view.
+
+            public Link_Patient_View(bool toDisplay, ref Special_List<Link_Patient_View> xLPs) : this(toDisplay)
         {
-            InitializeComponent();
+            LinkPatients = xLPs;
+        }
+        //To-display the view.
+        public Link_Patient_View(bool toDisplay) : base(toDisplay, "Link Patient", Color.Peru)
+        {
+            if (toDisplay)
+            {
+                InitializeComponent();
+            }
+            
 
             //List<Patient> a = SD.Patients;
             //            for (int b = 0; b < a.Count(); b++)
@@ -65,9 +77,7 @@ namespace Rescue_911
             //            indirectsub = 0;
         }
 
-        //To-instantiate the view.
-        public Link_Patient_View() : base("Link Patient", false, Color.Peru)
-        { }
+
         //
 
         //        private void button1_Click(object sender, EventArgs e)
