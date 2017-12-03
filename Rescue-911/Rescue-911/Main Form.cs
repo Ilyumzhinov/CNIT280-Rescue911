@@ -156,7 +156,7 @@ namespace Rescue_911
 
         private void LinkPatientView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Link_Patient_View));
+            SetTypicalView(typeof(Link_Patient_View), new List<object> { SD.GetPatients() });
         }
 
         private void PatientInformationView_Prepare(object sender, EventArgs e)

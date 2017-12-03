@@ -8,7 +8,7 @@ namespace Rescue_911
         private int Grade;
         private string Shift;
         private List<EMT> EMTs;
-    
+        
         public void SetID(int xID) { ID = xID; }
         public void SetGrade(int xGrade) { Grade = xGrade; }
         public void SetShift(string xShift) { Shift = xShift; }

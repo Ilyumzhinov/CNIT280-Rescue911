@@ -14,7 +14,7 @@ namespace Rescue_911
     {
         private EMT[] emts;
         private EMT CurrentEMT;
-        Person Current_User;
+        
        
         // CONSTRUCTORS
         //To-setup the view.
