@@ -37,11 +37,11 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Demi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(5, 32);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(77, 37);
+            this.lbTitle.Size = new System.Drawing.Size(82, 37);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Title";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,7 +93,7 @@
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Special_View";
-            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(300, 300);
             this.ResumeLayout(false);
             this.PerformLayout();

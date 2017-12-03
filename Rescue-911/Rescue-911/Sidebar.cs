@@ -66,7 +66,7 @@ namespace Rescue_911
             for (int i = 0; i < xAcccessibleViews.Count; i++)
             {
                 //Creating an instance of a view to get its attributes.
-                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
+                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { false }));
 
                 Buttons.Add(new Button());
                 Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 35);
@@ -98,7 +98,7 @@ namespace Rescue_911
                 //Uniform way of creating the click event
                 Buttons[i].Click += (sender, e) =>
                 {
-                    Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { SD }));
+                    Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { true }));
 
                     MenuElement_Changed(sender, e);
 

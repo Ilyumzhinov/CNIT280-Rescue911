@@ -10,6 +10,7 @@ namespace Rescue_911
         // DATA STRUCTURE
         // Composite data
         private List<Tuple<Employee, int, string>> EmployeesLogins;
+        private Shared_Data SD;
         //Events
         public event EventHandler LoginButton_Click;
         //

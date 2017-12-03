@@ -10,11 +10,14 @@ namespace Rescue_911
         private Emergency_Call mSelectedCall;
 
         private Special_List<Emergency> Emergencies;
+        private Special_List<Emergency_Call> Calls;
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Response_Team_Information_View(bool toDisplay, ref Special_List<Emergency> xEmergencies) : this(toDisplay)
+        public Response_Team_Information_View(bool toDisplay, ref Special_List<Emergency_Call> xCalls, ref Special_List<Emergency> xEmergencies) : this(toDisplay)
         {
+            Calls = xCalls;
+
             Emergencies = xEmergencies;
         }
 
@@ -37,14 +40,12 @@ namespace Rescue_911
 
 
                 // Emergency list set-up.
-                if (SD.GetEmergencies()[0] != null)
+                if (Emergencies[0] != null)
                 {
                     Response_Team_Information_View_SizeChanged(this, null);
                     emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
 
-                    Special_List<Emergency_Call> tempECs = (Special_List<Emergency_Call>)SD.GetCalls();
-
-                    emergencyList.SetEmergency_List(ref tempECs, "Waiting", true);
+                    emergencyList.SetEmergency_List(ref Calls, "Waiting", true);
                 }
             }
             else
