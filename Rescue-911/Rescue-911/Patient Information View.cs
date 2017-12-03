@@ -30,7 +30,7 @@ namespace Rescue_911
         // CONSTRUCTORS
         //To-setup the view
 
-        public Patient_Information_View(bool toDispaly, ref Special_List<Patient> xPIs) : this(toDispaly)
+        public Patient_Information_View(bool toDisplay, ref Special_List<Patient> xPIs) : this(toDisplay)
         {
             Patients = xPIs;
 
