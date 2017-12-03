@@ -53,6 +53,8 @@ namespace Rescue_911
                     Current_Call.SetEmergency(iEC.GetEmergency());
                     Current_Call.SetState("Logged");
 
+                    SendStatusUpdate(true, "Emergency Call was linked successfully", "success");
+
                     break;
                 }
 

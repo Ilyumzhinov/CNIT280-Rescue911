@@ -5,14 +5,18 @@ using System.Collections.Generic;
 
 namespace Rescue_911
 {
-    public partial class Emergency_Management_View : Special_View
+    public partial class Emergency_Management_View : Special_View//, IUserDependent
     {
+        // DATA STRUCTURE
+        //Composite Data
         private Emergency_Call mSelectedCall;
         private Response_Team mSelectedRT;
 
+        //Associations
         private Special_List<Emergency_Call> Calls;
         private Special_List<Emergency> Emergencies;
         private Special_List<Response_Team> RTs;
+        //
 
 
         // CONSTRUCTORS

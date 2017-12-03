@@ -136,7 +136,5 @@ namespace Rescue_911
             Main_Form M = new Main_Form(ref SD);
             M.Show();
         }
-
-       
     }
 }

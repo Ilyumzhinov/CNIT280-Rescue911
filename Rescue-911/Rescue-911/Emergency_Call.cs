@@ -17,6 +17,7 @@ namespace Rescue_911
 
         //Associations
         private Caller Emergency_Caller;
+        private int Linked_OperatorID;
         private Emergency EmergencyLinked;
         //
 
@@ -76,6 +77,10 @@ namespace Rescue_911
             EmergencyLinked = xEmergency;
             Call_Updated?.Invoke(this, null);
         }
+        public void SetLink_Operator_ID(int xID)
+        {
+            Linked_OperatorID = xID;
+        }
 
 
         public Caller GetEmergency_Caller() { return Emergency_Caller; }
@@ -87,5 +92,6 @@ namespace Rescue_911
         public int GetPriority() { return Priority; }
         public string GetState() { return State; }
         public int GetTeams_Required() { return Teams_Required; }
+        public int GetLinked_Operator_ID() { return Linked_OperatorID; }
     }
 }

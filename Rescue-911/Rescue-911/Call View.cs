@@ -9,9 +9,11 @@ namespace Rescue_911
     public partial class Call_View : Special_View, IUserDependent
     {
         // DATA STRUCTURE
+        //Primitives
+        private int Current_Operator_ID;
         //Composite Data
-        private List<Emergency_Call> EmergencyCalls;
-        private List<Caller> Callers;
+        private Special_List<Emergency_Call> EmergencyCalls;
+        private Special_List<Caller> Callers;
         private Emergency_Call Current_Call;
 
         //Events
@@ -22,7 +24,7 @@ namespace Rescue_911
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Call_View(bool toDisplay, ref List<Emergency_Call> xECs, ref List<Caller> xCallers) : this(toDisplay)
+        public Call_View(bool toDisplay, ref Special_List<Emergency_Call> xECs, ref Special_List<Caller> xCallers) : this(toDisplay)
         {
             EmergencyCalls = xECs;
             Callers = xCallers;
@@ -50,7 +52,9 @@ namespace Rescue_911
         public void SendUser(Person xPerson)
         {
             if (xPerson is Operator)
-            { }
+            {
+                Current_Operator_ID = ((Operator)xPerson).GetOperator_ID();
+            }
             else
             {
                 // Setting up the View
@@ -118,8 +122,10 @@ namespace Rescue_911
 
                 Current_Call.SetLandmark(txtLandmark.Text);
 
+                Current_Call.SetLink_Operator_ID(Current_Operator_ID);
+
                 //Update the Shared Data values regarding the Calls.
-                EmergencyCalls.Add(Current_Call);
+                EmergencyCalls.AddItem(Current_Call);
 
                 return true;
             }
@@ -138,6 +144,8 @@ namespace Rescue_911
             if (txtPhoneNumber.Text.Length == 10)
             {
                 bool found = false;
+                txtCallerName.Enabled = true;
+
                 foreach (Caller iCaller in Callers)
                 {
                     if (iCaller.GetPhone_Number() != txtPhoneNumber.Text)
