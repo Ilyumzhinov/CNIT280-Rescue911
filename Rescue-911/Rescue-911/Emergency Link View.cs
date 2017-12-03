@@ -13,7 +13,7 @@ namespace Rescue_911
         private Emergency_Call mSelectedCall;
 
         // CONSTRUCTORS
-        //To-setup
+        //To-setup the view.
         public Emergency_Link_View(bool toDisplay, ref Special_List<Emergency> xEmergencies, ref Special_List<Emergency_Call> xECs, Emergency_Call xCurrentCall) :  this(toDisplay)
         {
             Emergencies = xEmergencies;
@@ -35,7 +35,7 @@ namespace Rescue_911
             }
         }
 
-        //To-display
+        //To-display the view.
         public Emergency_Link_View(bool toDisplay) : base(toDisplay, "Link to Emergency", Color.Green, false)
         {
             if (toDisplay)

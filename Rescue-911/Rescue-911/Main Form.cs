@@ -116,7 +116,7 @@ namespace Rescue_911
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Emergency_Link_View), new List<object> { SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
+            SetTypicalView(typeof(Emergency_Link_View), new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() });
             
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace Rescue_911
 
         private void DispatchReportView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(Dispatch_Report_View));
+            SetTypicalView(typeof(Dispatch_Report_View), new List<object> { SD.GetDispatchReports() });
         }
 
         private void LinkPatientView_Prepare(object sender, EventArgs e)

@@ -15,19 +15,19 @@ namespace Rescue_911
 
         //Common data
         private Special_List<Emergency_Call> Calls;
-        private List<Emergency> Emergencies;
+        private Special_List<Emergency> Emergencies;
         
-        private List<Response_Team> ResponseTeams;
-        private List<Dispatch> Dispatches;
-        //private List<Dispatch_Report> DispatchReports;
-        //private List<Base_Station_Records> BaseStationRecords;
-        private List<Patient> Patients;
+        private Special_List<Response_Team> ResponseTeams;
+        private Special_List<Dispatch> Dispatches;
+        //private Special_List<Dispatch_Report> DispatchReports;
+        //private Special_List<Base_Station_Records> BaseStationRecords;
+        private Special_List<Patient> Patients;
 
         //Employees
-        private List<Operator> Operators;
-        private List<Supervisor> Supervisors;
-        private List<EMT> EMTs;
-        private List<Manager> Managers;
+        private Special_List<Operator> Operators;
+        private Special_List<Supervisor> Supervisors;
+        private Special_List<EMT> EMTs;
+        private Special_List<Manager> Managers;
         //
 
         public void UpdateSD(ref Shared_Data xSD)
@@ -49,23 +49,23 @@ namespace Rescue_911
             MainForms.AddItem(xForm);
             FormsCount++;
         }
-        public void SetResponseTeams(List<Response_Team> xRT) { ResponseTeams = xRT; }
-        public void SetEmergencies(List<Emergency> xEmergencies) {  Emergencies = xEmergencies;}
+        public void SetResponseTeams(Special_List<Response_Team> xRT) { ResponseTeams = xRT; }
+        public void SetEmergencies(Special_List<Emergency> xEmergencies) {  Emergencies = xEmergencies;}
         public void AddCall(Emergency_Call xCall)
         {
             Calls.AddItem(xCall);
         }
-        public void SetEMTs(List<EMT> xEMTs) { EMTs = xEMTs; }
-        public void SetPatients(List<Patient> xPatients) { Patients = xPatients; }
+        public void SetEMTs(Special_List<EMT> xEMTs) { EMTs = xEMTs; }
+        public void SetPatients(Special_List<Patient> xPatients) { Patients = xPatients; }
         public void AddDispatch(Dispatch xDispatch) {
             Dispatches.Add(xDispatch);
         }
-       protected List<Dispatch_Report> DispatchReports = new List<Dispatch_Report>();
+       protected Special_List<Dispatch_Report> DispatchReports = new Special_List<Dispatch_Report>();
         public void AddDispatchReport(Dispatch_Report xDR)
         {
             DispatchReports.Add(xDR);
         }
-        protected List<Base_Station_Records> BaseStationRecords = new List<Base_Station_Records>();
+        protected Special_List<Base_Station_Records> BaseStationRecords = new Special_List<Base_Station_Records>();
         public void AddBaseStationRecords(Base_Station_Records xBR)
         {
             BaseStationRecords.Add(xBR);
@@ -73,16 +73,16 @@ namespace Rescue_911
         //
 
         public Special_List<Emergency_Call> GetCalls() { return Calls; }
-        public List<Emergency> GetEmergencies() { return Emergencies; }
-        public List<Operator> GetOperators() { return Operators; }
-        public List<Supervisor> GetSupervisors() { return Supervisors; }
-        public List<EMT> GetEMTs() { return EMTs; }
-        public List<Response_Team> GetResponseTeams() { return ResponseTeams; }
-        public List<Dispatch> GetDispatches() { return Dispatches; }
-        public List<Dispatch_Report> GetDispatchReports() { return DispatchReports; }
-        public List<Base_Station_Records> GetBaseStationRecords() { return BaseStationRecords; }
-        public List<Patient> GetPatients() { return Patients; }
-        public List<Manager> GetManagers() { return Managers; }
+        public Special_List<Emergency> GetEmergencies() { return Emergencies; }
+        public Special_List<Operator> GetOperators() { return Operators; }
+        public Special_List<Supervisor> GetSupervisors() { return Supervisors; }
+        public Special_List<EMT> GetEMTs() { return EMTs; }
+        public Special_List<Response_Team> GetResponseTeams() { return ResponseTeams; }
+        public Special_List<Dispatch> GetDispatches() { return Dispatches; }
+        public Special_List<Dispatch_Report> GetDispatchReports() { return DispatchReports; }
+        public Special_List<Base_Station_Records> GetBaseStationRecords() { return BaseStationRecords; }
+        public Special_List<Patient> GetPatients() { return Patients; }
+        public Special_List<Manager> GetManagers() { return Managers; }
         public void RemoveMain_Form(Main_Form xForm)
         {
             MainForms.RemoveItem(xForm);
@@ -94,15 +94,15 @@ namespace Rescue_911
             MainForms = new Special_List<Main_Form>();
             Calls = new Special_List<Emergency_Call>();
             
-            Emergencies = new List<Emergency>();
-            EMTs = new List<EMT>();
-            ResponseTeams = new List<Response_Team>();
-            Dispatches = new List<Dispatch>();
-            Patients = new List<Patient>();
-            Managers = new List<Manager>();
+            Emergencies = new Special_List<Emergency>();
+            EMTs = new Special_List<EMT>();
+            ResponseTeams = new Special_List<Response_Team>();
+            Dispatches = new Special_List<Dispatch>();
+            Patients = new Special_List<Patient>();
+            Managers = new Special_List<Manager>();
 
             // LOAD CALLERS
-            List<Caller> Callers = LoadCallers();
+            Special_List<Caller> Callers = LoadCallers();
 
             // LOAD RTs AND EMTs
             ResponseTeams = LoadRTs();
@@ -121,9 +121,9 @@ namespace Rescue_911
             Calls = LoadEC(Callers, Emergencies);
         }
         
-        private List<Operator> LoadOperators()
+        private Special_List<Operator> LoadOperators()
         {
-            List<Operator> xOperators = new List<Operator>();
+            Special_List<Operator> xOperators = new Special_List<Operator>();
             xOperators.Add(new Operator());
             xOperators[0].SetEmployee_ID(1);
             xOperators[0].SetName("Leicester");
@@ -141,9 +141,9 @@ namespace Rescue_911
             return xOperators;
         }
 
-        private List<Supervisor> LoadSupervisors()
+        private Special_List<Supervisor> LoadSupervisors()
         {
-            List<Supervisor> xSupervisors = new List<Supervisor>();
+            Special_List<Supervisor> xSupervisors = new Special_List<Supervisor>();
 
             xSupervisors.Add(new Supervisor());
             xSupervisors[0].SetEmployee_ID(3);
@@ -155,9 +155,9 @@ namespace Rescue_911
             return xSupervisors;
         }
 
-        private List<Manager> LoadManagers()
+        private Special_List<Manager> LoadManagers()
         {
-            List<Manager> xManagers = new List<Manager>();
+            Special_List<Manager> xManagers = new Special_List<Manager>();
             xManagers.Add(new Manager());
             xManagers[0].SetEmployee_ID(9);
             xManagers[0].SetName("Hughie");
@@ -171,9 +171,9 @@ namespace Rescue_911
             return xManagers;
         }
 
-        private List<Response_Team> LoadRTs()
+        private Special_List<Response_Team> LoadRTs()
         {
-            List<Response_Team> xRTs = new List<Response_Team>();
+            Special_List<Response_Team> xRTs = new Special_List<Response_Team>();
 
             xRTs.Add(new Response_Team());
             xRTs[0].SetID(1);
@@ -193,9 +193,9 @@ namespace Rescue_911
             return xRTs;
         }
 
-        private List<EMT> LoadEMTs()
+        private Special_List<EMT> LoadEMTs()
         {
-            List<EMT> xEMTs = new List<EMT>();
+            Special_List<EMT> xEMTs = new Special_List<EMT>();
             xEMTs.Add(new EMT());
             xEMTs[0].SetName("Jane");
             xEMTs[0].SetEmployee_ID(11);
@@ -227,9 +227,9 @@ namespace Rescue_911
             return xEMTs;
         }
        
-        private List<Emergency> LoadEmergencies()
+        private Special_List<Emergency> LoadEmergencies()
         {
-            List<Emergency> xEmergencies = new List<Emergency>();
+            Special_List<Emergency> xEmergencies = new Special_List<Emergency>();
 
             for (int i = 0; i < 3; i++)
             {
@@ -249,7 +249,7 @@ namespace Rescue_911
         }
 
 
-        private Special_List<Emergency_Call> LoadEC(List<Caller> xCallers, List<Emergency> xEmergencies)
+        private Special_List<Emergency_Call> LoadEC(Special_List<Caller> xCallers, Special_List<Emergency> xEmergencies)
         {
             // EMERGENCY CALLS TEST DATA
             Special_List<Emergency_Call> xECs = new Special_List<Emergency_Call>();
@@ -291,10 +291,10 @@ namespace Rescue_911
             return xECs;
         }
 
-        private List<Caller> LoadCallers()
+        private Special_List<Caller> LoadCallers()
         {
             // CALLERS TEST DATA
-            List<Caller> ECallers = new List<Caller>();
+            Special_List<Caller> ECallers = new Special_List<Caller>();
 
             for (int i = 0; i < 4; i++)
             {
@@ -314,9 +314,9 @@ namespace Rescue_911
             return ECallers;
         }
 
-        private List<Patient> LoadPatients()
+        private Special_List<Patient> LoadPatients()
         {
-            List<Patient> xPatients = new List<Patient>();
+            Special_List<Patient> xPatients = new Special_List<Patient>();
 
             xPatients.Add(new Patient());
 
