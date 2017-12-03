@@ -13,18 +13,22 @@ namespace Rescue_911
     public partial class Sub_Payment_View : Special_View, IUserDependent
     {
         // CONSTRUCTORS
+        //To setup the view
+
+        
         //To-display
-        public Sub_Payment_View(ref Shared_Data xSD) : base(ref xSD, "Sub Payment", false, Color.PowderBlue)
+        public Sub_Payment_View(bool toDisplay) : base(toDisplay, "Sub Payment", Color.PowderBlue, false)
         {
-            InitializeComponent();
+            if (toDisplay)
+            {
+                InitializeComponent();
+            }
+            
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MM/yy";
         }
 
-        //To-instantiate
-        public Sub_Payment_View() : base("Sub Payment", false, Color.PowderBlue) { }
-        //
 
 
         // FUNCTIONAL METHODS

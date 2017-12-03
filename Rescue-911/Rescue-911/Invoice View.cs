@@ -14,7 +14,7 @@ namespace Rescue_911
     {
         // CONSTRUCTORS
         //To-setup the view
-
+       
             
         //To-display the view.
         public Invoice_View(bool toDisplay) : base(toDisplay, "Invoice", Color.DeepPink, false)
