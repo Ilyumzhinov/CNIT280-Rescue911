@@ -136,7 +136,7 @@ namespace Rescue_911
 
         private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
         {
-            SetTypicalView(typeof(EMT_Login_Shift_View));
+            SetTypicalView(typeof(EMT_Login_Shift_View), new List<object> { SD.GetEMTs(), Current_User });
         }
 
         private void BaseStationRecordsView_Prepare(object sender, EventArgs e)
