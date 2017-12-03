@@ -10,33 +10,33 @@ namespace Rescue_911
     {
         private Special_List<Emergency_Call> Calls;
         private Emergency_Call Current_Call;
-        private Special_List<Emergency> Emergency;
-        private Emergency E = new Emergency();
+        private Emergency Emer = new Emergency();
         private int temp = 0;
-        public Emergency_Add_View(bool toDisplay,ref Special_List<Emergency> xEmer, ref Special_List<Emergency_Call> xCalls, Emergency_Call xEC) : this(toDisplay)
+        
+        public Emergency_Add_View(bool toDisplay,ref Special_List<Emergency_Call> xCalls,ref Emergency_Call xEC) : this(toDisplay)
         {
             Calls = xCalls;
             Current_Call = xEC;
-            Emergency = xEmer;
+        
             
             for (int a = 0; a < xCalls.Count; a++) {
-                if (xCalls[a].GetEmergency().GetEmergency_ID() > temp) {
+                if (xCalls[a].GetEmergency().GetEmergency_ID() >= temp) {
 
                     temp = xCalls[a].GetEmergency().GetEmergency_ID();
                 }
                 
-
             }
-           
-            E.SetEmergency_ID(temp + 1);
-            Current_Call.SetEmergency(E);
+            Emer.SetEType("broken bones");
+            Emer.SetEmergency_ID(temp + 1);
+            Current_Call.SetEmergency(Emer);
             // Change taht
-            E.SetEType("broken bones");
+            
            
             lbel.Text = Current_Call.GetAddress().ToString();
             lbemergencyid1.Text = (temp + 1).ToString();
             txtemergencyd.Text = Current_Call.GetDescription();
             lbes.Text = Current_Call.GetState();
+           
         }
         
         public Emergency_Add_View(bool toDisplay) : base(toDisplay, "Add Emergency", Color.GreenYellow)
@@ -44,6 +44,7 @@ namespace Rescue_911
             if (toDisplay)
                 InitializeComponent();
         }
+
         public void SendUser(Person xUser) {
             if (xUser is Operator == false)
             {
@@ -60,7 +61,10 @@ namespace Rescue_911
         {
            
             lbes.Text = "Logged";
-            Calls.Add(Current_Call);
+            Current_Call.SetState("Logged");
+         
+           
+            
 
         }
 

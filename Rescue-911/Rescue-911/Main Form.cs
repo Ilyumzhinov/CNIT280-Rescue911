@@ -66,6 +66,7 @@ namespace Rescue_911
         //Event for displaying the Login screen.
         private void Login_Prepare(object sender, EventArgs e)
         {
+
             StatusUpdate(false, null);
 
             SetView(typeof(Login_View), null, new List<object> { SD });
@@ -114,7 +115,7 @@ namespace Rescue_911
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e)
         {
-            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
+            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetCalls(),  ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
@@ -191,7 +192,7 @@ namespace Rescue_911
                 Current_View.Dock = DockStyle.Fill;
             }
             else
-            {
+        {
                 this.SizeChanged -= new EventHandler(Main_Form_SizeChanged);
                 this.SizeChanged += new EventHandler(Main_Form_SizeChanged);
 

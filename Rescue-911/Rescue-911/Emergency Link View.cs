@@ -18,7 +18,6 @@ namespace Rescue_911
         {
             Emergencies = xEmergencies;
             Calls = xECs;
-
             Current_Call = xCurrentCall;
 
             lbCallState.Text = Current_Call.GetState();
