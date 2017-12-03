@@ -200,28 +200,28 @@ namespace Rescue_911
             xEMTs[0].SetName("Jane");
             xEMTs[0].SetEmployee_ID(11);
             xEMTs[0].SetResponseTeam(ResponseTeams[0]);
-            xEMTs[0].setShifttime("15:00 PM");
+            xEMTs[0].setShifttime("22:00");
             xEMTs[0].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[1].SetName("Tyler");
             xEMTs[1].SetEmployee_ID(12);
             xEMTs[1].SetResponseTeam(ResponseTeams[2]);
-            xEMTs[1].setShifttime("15:00 PM");
+            xEMTs[1].setShifttime("15:00");
             xEMTs[1].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[2].SetName("John");
             xEMTs[2].SetEmployee_ID(13);
             xEMTs[2].SetResponseTeam(ResponseTeams[2]);
-            xEMTs[2].setShifttime("15:00 PM");
+            xEMTs[2].setShifttime("15:00");
             xEMTs[2].SetManager_ID(9);
 
             xEMTs.Add(new EMT());
             xEMTs[3].SetName("Shawn");
             xEMTs[3].SetEmployee_ID(14);
             xEMTs[3].SetResponseTeam(ResponseTeams[1]);
-            xEMTs[3].setShifttime("15:00 PM");
+            xEMTs[3].setShifttime("15:00");
             xEMTs[3].SetManager_ID(10);
 
             return xEMTs;
