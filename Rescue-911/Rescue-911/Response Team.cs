@@ -9,7 +9,7 @@ namespace Rescue_911
         private string Shift;
         private List<EMT> EMTs;
         private bool[] Status = new bool[5];
-        private string TeamStatus;
+        private string TeamStatus = "Non-Avalible";
         private BaseStation BaseStation;
 
         public void SetBaseStation(BaseStation xBaseStation) { BaseStation = xBaseStation; }
@@ -22,7 +22,7 @@ namespace Rescue_911
                     temp++;
                 }
             }
-            if (temp >= 3||TeamStatus != "Dispatched") {
+            if (temp >= 3&&TeamStatus != "Dispatched") {
               TeamStatus = "Avalible";
             }else if (temp < 3)
             {

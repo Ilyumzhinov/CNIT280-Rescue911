@@ -38,7 +38,7 @@ namespace Rescue_911
                 lblogtime.Text = CurrentEMT.getstatus();
                 button1.Enabled = false;
                 btnWaitingCall.Enabled = true;
-            } else if (DateTime.Now.Hour.ToString() ==  CurrentEMT.getshifttime().Substring(0,2)){
+            } else if ("15" ==  CurrentEMT.getshifttime().Substring(0,2)){
                 LBshifttime.Text = CurrentEMT.getshifttime();
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
                 lbrt.Text = CurrentEMT.GetResponseTeam().GetID().ToString();
@@ -47,7 +47,7 @@ namespace Rescue_911
                 button1.Enabled = true;
                 btnWaitingCall.Enabled = false;
             }
-            else if(DateTime.Now.Hour.ToString() != CurrentEMT.getshifttime().Substring(0, 2)) {
+            else if("15" != CurrentEMT.getshifttime().Substring(0, 2)) {
                 LBshifttime.Text = CurrentEMT.getshifttime();
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
                 lbrt.Text = CurrentEMT.GetResponseTeam().GetID().ToString();
@@ -55,8 +55,8 @@ namespace Rescue_911
                 lblogtime.Text = "NOT READY";
                 btnWaitingCall.Enabled = false;
                 button1.Enabled = false;
-            } 
-            
+            }
+            //DateTime.Now.Hour.ToString()
         }
 
         //To-display the view.

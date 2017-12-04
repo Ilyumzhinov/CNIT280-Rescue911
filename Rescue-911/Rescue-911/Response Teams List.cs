@@ -33,7 +33,10 @@ namespace Rescue_911
         {
             // Setting up the values
             RTs = xExistingRTs;
-            RTs.ItemAdded += new EventHandler(lstRTs_RTUpdateEvent);
+            try
+            {
+                RTs.ItemAdded += new EventHandler(lstRTs_RTUpdateEvent);
+           
 
             // Getting Base Stations
             List<BaseStation> BS = new List<BaseStation>();
@@ -68,6 +71,9 @@ namespace Rescue_911
             lstRTs.Columns[2].Width = 100;
             lstRTs.Columns[3].Width = 100;
             lstRTs.Height = lstRTs.Font.Height * 25;
+            }
+            catch { MessageBox.Show("No Team Avalible Currently"); }
+
         }
 
         private void listRTsPopulate(int xBS, List<Response_Team> ExistingTeams)

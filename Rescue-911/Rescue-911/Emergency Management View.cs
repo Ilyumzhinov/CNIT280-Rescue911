@@ -25,7 +25,15 @@ namespace Rescue_911
         {
             Calls = xECs;
             Emergencies = xEmergencies;
-            RTs = xRTs;
+            RTs = new Special_List<Response_Team>();
+
+            foreach (Response_Team RT in xRTs)
+            {
+                if (RT.GetTeamstatus() == "Avalible") {
+                    RTs.Add(RT);
+                }
+            }
+                
         }
 
         //To-display the view.
