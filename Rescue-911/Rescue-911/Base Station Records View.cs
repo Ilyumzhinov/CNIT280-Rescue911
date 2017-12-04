@@ -13,14 +13,7 @@ namespace Rescue_911
 {
     public partial class Base_Station_Records_View : Special_View
     {
-
-        //private int mIndex = 0;
-        //private const int cSize = 50;
-
-        //private string[] mDate = new string[cSize];
-        //private string[] mRecord = new string[cSize];
-
-        List<Base_Station_Records> BSR;
+        Special_List<Base_Station_Records> BSR;
 
 
         // CONSTRUCTORS
@@ -28,6 +21,14 @@ namespace Rescue_911
         public Base_Station_Records_View(bool toDisplay, ref Special_List<Base_Station_Records> xBSR) : this(toDisplay)
         {
             BSR = xBSR;
+
+            BSR.ItemAdded -= new EventHandler(lstHistory_AddRecord);
+            BSR.ItemAdded += new EventHandler(lstHistory_AddRecord);
+
+            foreach (Base_Station_Records iBSR in BSR)
+            {
+                lstHistory.Items.Add(iBSR);
+            }
         }
 
         //To-display the view.
@@ -41,7 +42,19 @@ namespace Rescue_911
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
-            
+            if (lstHistory.SelectedIndex != -1)
+            {
+                dateTimePicker1.Value = DateTime.Now;
+                txtRecords.Text = string.Empty;
+
+                dateTimePicker1.Enabled = true;
+                txtRecords.Enabled = true;
+
+                lstHistory.SelectedIndex = -1;
+            }
+
+
+
             if (txtRecords.Text == "")
             {
                 MessageBox.Show("Enter records.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,28 +70,36 @@ namespace Rescue_911
 
             else //All checks are satisfied
             {
-                txtRecords.Enabled = false;
-                btnRecord.Visible = false;
                 dateTimePicker1.Enabled = false;
+                txtRecords.Enabled = false;
 
-                Base_Station_Records BaseStationRecords = new Base_Station_Records();
+                Base_Station_Records BaseStationRecord = new Base_Station_Records();
 
-                BaseStationRecords.SetRecord(txtRecords.Text);
+                BaseStationRecord.SetRecord(txtRecords.Text);
+                BaseStationRecord.SetDate(dateTimePicker1.Value);
 
-                BSR.Add(BaseStationRecords);
+                BSR.AddItem(BaseStationRecord);
+
+                lstHistory.SelectedIndex = lstHistory.Items.IndexOf(BaseStationRecord);
+
+                SendStatusUpdate(true, "Record Saved!", "success");
             }
-
-            SendStatusUpdate(true, "Record Saved!", "success");
-            //date = dateTimePicker1.Text;
-            //record = txtRecords.Text;
-            //mDate[mIndex] = date;
-            //mRecord[mIndex] = record;
-            //MessageBox.Show("Record Saved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //dateTimePicker1.Text = "";
-            //txtRecords.Text = "";
-            //mIndex++;
         }
 
+        private void lstHistory_AddRecord(object sender, EventArgs e)
+        {
+            lstHistory.Items.Add((Base_Station_Records)sender);
+        }
 
+        private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1)
+                return;
+
+            dateTimePicker1.Value = ((Base_Station_Records)lstHistory.SelectedItem).GetDate();
+            txtRecords.Text = ((Base_Station_Records)lstHistory.SelectedItem).GetRecord();
+            dateTimePicker1.Enabled = false;
+            txtRecords.Enabled = false;
+        }
     }
 }

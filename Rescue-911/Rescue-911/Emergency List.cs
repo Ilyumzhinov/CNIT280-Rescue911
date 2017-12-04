@@ -70,7 +70,7 @@ namespace Rescue_911
 
             lstItem.SubItems.Add(xCall.GetEmergency().GetEType());
             lstItem.SubItems.Add(xCall.GetTeams_Required().ToString());
-            lstItem.SubItems.Add(xCall.GetPriority().ToString());
+            lstItem.SubItems.Add(xCall.GetPriorityString());
             lstItem.SubItems.Add(xCall.GetState());
             lstItem.SubItems.Add(xCall.GetDescription());
             lstItem.Tag = xCall;

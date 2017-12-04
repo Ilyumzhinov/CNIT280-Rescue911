@@ -11,17 +11,11 @@ namespace Rescue_911
         private string Record;
         private DateTime Date;
 
-        public Base_Station_Records(string xRecord, DateTime xDate)
-        {
-            Record = xRecord;
-            Date = xDate;
-        }
-
         public Base_Station_Records()
         {
         }
 
-        public String GetRecord()
+        public string GetRecord()
         {
             return Record;
         }
@@ -37,6 +31,11 @@ namespace Rescue_911
         public void SetRecord(string xRecord)
         {
             this.Record = xRecord;
+        }
+
+        public override string ToString()
+        {
+            return this.Date.ToString("MM / dd / yyyy");
         }
     }
 }

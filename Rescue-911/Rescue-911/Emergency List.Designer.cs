@@ -39,7 +39,9 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstEmergencies
@@ -55,7 +57,7 @@
             this.lstEmergencies.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstEmergencies.FullRowSelect = true;
             this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(0, 40);
+            this.lstEmergencies.Location = new System.Drawing.Point(0, 36);
             this.lstEmergencies.Margin = new System.Windows.Forms.Padding(0);
             this.lstEmergencies.MinimumSize = new System.Drawing.Size(300, 100);
             this.lstEmergencies.MultiSelect = false;
@@ -99,52 +101,70 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.Gray;
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(127, 30);
+            this.lbTitle.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lbTitle.Size = new System.Drawing.Size(107, 24);
             this.lbTitle.TabIndex = 12;
             this.lbTitle.Text = "Emergencies";
             // 
             // cmbState
             // 
+            this.cmbState.Dock = System.Windows.Forms.DockStyle.Left;
             this.cmbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbState.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbState.ForeColor = System.Drawing.Color.Black;
             this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(214, 2);
-            this.cmbState.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbState.Location = new System.Drawing.Point(68, 0);
+            this.cmbState.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(121, 26);
-            this.cmbState.TabIndex = 13;
+            this.cmbState.Size = new System.Drawing.Size(121, 23);
+            this.cmbState.TabIndex = 2;
             this.cmbState.SelectedIndexChanged += new System.EventHandler(this.cmbState_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(137, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.MinimumSize = new System.Drawing.Size(67, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
-            this.label1.TabIndex = 14;
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label1.Size = new System.Drawing.Size(68, 26);
+            this.label1.TabIndex = 1;
             this.label1.Text = "with state";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lbTitle);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cmbState);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 10);
+            this.panel1.MinimumSize = new System.Drawing.Size(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 30);
+            this.panel1.Size = new System.Drawing.Size(440, 26);
             this.panel1.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.cmbState);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(107, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.MinimumSize = new System.Drawing.Size(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 26);
+            this.panel2.TabIndex = 15;
             // 
             // Emergency_List
             // 
@@ -155,10 +175,11 @@
             this.MinimumSize = new System.Drawing.Size(440, 0);
             this.Name = "Emergency_List";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(440, 140);
+            this.Size = new System.Drawing.Size(440, 136);
             this.SizeChanged += new System.EventHandler(this.Emergency_List_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +198,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColumnHeader TeamsRequired;
+        private System.Windows.Forms.Panel panel2;
     }
 }

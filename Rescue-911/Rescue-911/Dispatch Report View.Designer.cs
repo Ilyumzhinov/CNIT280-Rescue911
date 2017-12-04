@@ -97,6 +97,8 @@
             // 
             // panel2
             // 
+            this.panel2.AutoSize = true;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.txtBill);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.chkVital);
@@ -108,7 +110,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Location = new System.Drawing.Point(8, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 320);
+            this.panel2.Size = new System.Drawing.Size(382, 307);
             this.panel2.TabIndex = 31;
             // 
             // txtBill
@@ -198,13 +200,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.lbEmergencyID);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbCallID);
             this.Controls.Add(this.lb11);
             this.Controls.Add(this.panel2);
             this.Name = "Dispatch_Report_View";
-            this.Size = new System.Drawing.Size(403, 465);
+            this.Size = new System.Drawing.Size(398, 458);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.lb11, 0);
             this.Controls.SetChildIndex(this.lbCallID, 0);

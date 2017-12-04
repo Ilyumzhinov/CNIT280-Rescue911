@@ -90,6 +90,21 @@ namespace Rescue_911
         public string GetLandmark() { return Landmark; }
         public string GetDescription() { return Description; }
         public int GetPriority() { return Priority; }
+        public string GetPriorityString()
+        {
+            string temp = "";
+
+            if (Priority == 1)
+                temp = "Minor incident";
+            else if (Priority == 2)
+                temp = "Stable case";
+            else if (Priority == 3)
+                temp = "Serious case";
+            else if (Priority == 4)
+                temp = "Critical trauma";
+
+            return Priority.ToString() + ": " + temp;
+        }
         public string GetState() { return State; }
         public int GetTeams_Required() { return Teams_Required; }
         public int GetLinked_Operator_ID() { return Linked_OperatorID; }
