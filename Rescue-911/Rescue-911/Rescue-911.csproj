@@ -69,6 +69,7 @@
       <DependentUpon>Base Station Records View.cs</DependentUpon>
     </Compile>
     <Compile Include="Base Station Records.cs" />
+    <Compile Include="BaseStation.cs" />
     <Compile Include="Call View.cs">
       <SubType>UserControl</SubType>
     </Compile>
