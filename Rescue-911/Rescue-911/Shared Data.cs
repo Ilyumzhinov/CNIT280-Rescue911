@@ -245,17 +245,17 @@ namespace Rescue_911
                 }
              
 
-                if (a <= 15)
+                if (a < 15)
                 {
                     xEMTs[a].setShifttime("15:00");
                     xEMTs[a].SetManager_ID(9);
                 }
-                else if (a > 15 && a <= 30)
+                else if (a > 15 && a < 30)
                 {
                     xEMTs[a].setShifttime("23:00");
                     xEMTs[a].SetManager_ID(10);
                 }
-                else if (a > 30)
+                else if (a >= 30)
                 {
                     xEMTs[a].setShifttime("07:00");
                     xEMTs[a].SetManager_ID(11);

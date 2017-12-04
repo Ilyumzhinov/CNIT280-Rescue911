@@ -29,14 +29,13 @@ namespace Rescue_911
         }
 
 
-        public void SetResponseTeams_List(ref Special_List<Response_Team> xExistingRTs, int xBS = 1)
+        public void SetResponseTeams_List(ref Special_List<Response_Team> xExistingRTs, int xBS = -1)
         {
             // Setting up the values
             RTs = xExistingRTs;
-            try
-            {
-                RTs.ItemAdded += new EventHandler(lstRTs_RTUpdateEvent);
-           
+
+            RTs.ItemAdded += new EventHandler(lstRTs_RTUpdateEvent);
+
 
             // Getting Base Stations
             List<BaseStation> BS = new List<BaseStation>();
@@ -55,15 +54,15 @@ namespace Rescue_911
             // Setting up the interface
             if (BS.Count == 0)
             {
-                cmbBStation.Items.Add("failed to load");
-                cmbBStation.SelectedItem = "failed to load";
-                cmbBStation.Enabled = false;
+                cmbStation.Items.Add("failed to load");
+                cmbStation.SelectedItem = "failed to load";
+                cmbStation.Enabled = false;
             }
             else
             {
-                cmbBStation.Items.AddRange(BS.ToArray());
-                
-                cmbBStation.SelectedIndex = xBS;
+                cmbStation.Items.AddRange(BS.ToArray());
+                xBS = -1;
+                cmbStation.SelectedIndex = xBS;
             }
 
             lstRTs.Columns[0].Width = 100;
@@ -71,9 +70,6 @@ namespace Rescue_911
             lstRTs.Columns[2].Width = 100;
             lstRTs.Columns[3].Width = 100;
             lstRTs.Height = lstRTs.Font.Height * 25;
-            }
-            catch { MessageBox.Show("No Team Avalible Currently"); }
-
         }
 
         private void listRTsPopulate(int xBS, List<Response_Team> ExistingTeams)
@@ -101,50 +97,63 @@ namespace Rescue_911
 
         private void lstRTs_RTUpdateEvent(object sender, EventArgs e)
         {
-           // ((Emergency_Call)sender).Call_Updated -= new EventHandler(lstEmergencies_Update);
-           // ((Emergency_Call)sender).Call_Updated += new EventHandler(lstEmergencies_Update);
+           ((Response_Team)sender).Team_Updated -= new EventHandler(lstTeam_Update);
+           ((Response_Team)sender).Team_Updated += new EventHandler(lstTeam_Update);
 
-            if (((Response_Team)sender).GetBaseStation().GetBS_ID() != ((BaseStation)cmbBStation.SelectedItem).GetBS_ID())
+            if (((Response_Team)sender).GetBaseStation().GetBS_ID() != ((BaseStation)cmbStation.SelectedItem).GetBS_ID())
                 return;
 
             lstRTs.Items.Add(lstItemFetch((Response_Team)sender));
         }
 
-        //private void lstEmergencies_Update(object sender, EventArgs e)
-        //{
-        //    int index = -1;
+        private void lstTeam_Update(object sender, EventArgs e)
+        {
+            int index = -1;
 
-        //    for (int i = 0; i < lstRTs.Items.Count; i++)
-        //    {
-        //        if (((Emergency_Call)(lstRTs.Items[i].Tag)).GetDateTime() == ((Emergency_Call)sender).GetDateTime() || ((Emergency_Call)(lstRTs.Items[i].Tag)).GetEmergency_Caller().GetPhone_Number() == ((Emergency_Call)sender).GetEmergency_Caller().GetPhone_Number())
-        //        {
-        //            index = i;
+            for (int i = 0; i < lstRTs.Items.Count; i++)
+            {
+                if (((Response_Team)(lstRTs.Items[i].Tag)).GetID() == ((Response_Team)sender).GetID())
+                {
+                    index = i;
 
-        //            break;
-        //        }
-        //    }
+                    break;
+                }
+            }
 
-        //    if (((Emergency_Call)sender).GetState() != (string)cmbBStation.SelectedItem)
-        //    {
-        //        if (index != -1)
-        //        {
-        //            lstRTs.Items[index].Remove();
-        //            return;
-        //        }
-        //        else
-        //            return;
-        //    }
+            if (((Response_Team)sender).GetBaseStation().GetBS_ID() != ((BaseStation)cmbStation.SelectedItem).GetBS_ID())
+            {
+                if (index != -1)
+                {
+                    lstRTs.Items[index].Remove();
+                    return;
+                }
+                else
+                    return;
+            }
 
-        //    ListViewItem lstItem = lstItemFetch((Emergency_Call)sender);
-        //    if (index == -1)
-        //    {
-        //        lstRTs.Items.Add(lstItem);
-        //    }
-        //    else
-        //    {
-        //        lstRTs.Items[index] = lstItem;
-        //    }
-        //}
+            if (((Response_Team)sender).GetTeamstatus() != "Available")
+            {
+                if (index != -1)
+                {
+                    lstRTs.Items[index].Remove();
+                    return;
+                }
+                else
+                    return;
+            }
+
+            ListViewItem lstItem = lstItemFetch((Response_Team)sender);
+            if (index == -1)
+            {
+                lstRTs.Items.Add(lstItem);
+            }
+            else
+            {
+                lstRTs.Items[index] = lstItem;
+            }
+
+
+        }
 
         private void lstRTs_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -160,18 +169,17 @@ namespace Rescue_911
             }
         }
 
-        private void cmbState_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbBStation.SelectedItem.ToString() == "failed to load")
-                return;
-
-            listRTsPopulate(((BaseStation)cmbBStation.SelectedItem).GetBS_ID(), RTs);
-        }
-
-
         private void Emergency_List_SizeChanged(object sender, EventArgs e)
         {
             //lstRTs.Columns[4].Width = lstRTs.Width - 100 * 4 - SystemInformation.VerticalScrollBarWidth;
+        }
+
+        private void cmbStation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbStation.SelectedItem.ToString() == "failed to load")
+                return;
+
+            listRTsPopulate(((BaseStation)cmbStation.SelectedItem).GetBS_ID(), RTs);
         }
     }
 }

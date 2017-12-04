@@ -45,23 +45,21 @@
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(143, 82);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDescription.MinimumSize = new System.Drawing.Size(160, 25);
+            this.txtDescription.Location = new System.Drawing.Point(107, 67);
+            this.txtDescription.MinimumSize = new System.Drawing.Size(120, 20);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(608, 25);
+            this.txtDescription.Size = new System.Drawing.Size(456, 20);
             this.txtDescription.TabIndex = 42;
             // 
             // lbCallState
             // 
             this.lbCallState.AutoSize = true;
             this.lbCallState.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCallState.Location = new System.Drawing.Point(139, 118);
-            this.lbCallState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCallState.Location = new System.Drawing.Point(104, 96);
             this.lbCallState.Name = "lbCallState";
-            this.lbCallState.Size = new System.Drawing.Size(39, 17);
+            this.lbCallState.Size = new System.Drawing.Size(30, 13);
             this.lbCallState.TabIndex = 40;
             this.lbCallState.Text = "state";
             // 
@@ -69,10 +67,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(7, 118);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(5, 96);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 17);
+            this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 39;
             this.label12.Text = "Call State:";
             // 
@@ -84,12 +81,12 @@
             this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLinkEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnLinkEmergency.Location = new System.Drawing.Point(579, 410);
-            this.btnLinkEmergency.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
-            this.btnLinkEmergency.MaximumSize = new System.Drawing.Size(200, 43);
-            this.btnLinkEmergency.MinimumSize = new System.Drawing.Size(200, 43);
+            this.btnLinkEmergency.Location = new System.Drawing.Point(434, 318);
+            this.btnLinkEmergency.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnLinkEmergency.MaximumSize = new System.Drawing.Size(150, 35);
+            this.btnLinkEmergency.MinimumSize = new System.Drawing.Size(150, 35);
             this.btnLinkEmergency.Name = "btnLinkEmergency";
-            this.btnLinkEmergency.Size = new System.Drawing.Size(200, 43);
+            this.btnLinkEmergency.Size = new System.Drawing.Size(150, 35);
             this.btnLinkEmergency.TabIndex = 36;
             this.btnLinkEmergency.Text = "Link to emergency";
             this.btnLinkEmergency.UseVisualStyleBackColor = false;
@@ -99,10 +96,9 @@
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(139, 59);
-            this.lbAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbAddress.Location = new System.Drawing.Point(104, 48);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(59, 17);
+            this.lbAddress.Size = new System.Drawing.Size(44, 13);
             this.lbAddress.TabIndex = 35;
             this.lbAddress.Text = "address";
             // 
@@ -110,10 +106,9 @@
             // 
             this.lvemergencydecreption.AutoSize = true;
             this.lvemergencydecreption.ForeColor = System.Drawing.Color.DimGray;
-            this.lvemergencydecreption.Location = new System.Drawing.Point(7, 89);
-            this.lvemergencydecreption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lvemergencydecreption.Location = new System.Drawing.Point(5, 72);
             this.lvemergencydecreption.Name = "lvemergencydecreption";
-            this.lvemergencydecreption.Size = new System.Drawing.Size(107, 17);
+            this.lvemergencydecreption.Size = new System.Drawing.Size(81, 13);
             this.lvemergencydecreption.TabIndex = 34;
             this.lvemergencydecreption.Text = "Call Descrption:";
             // 
@@ -121,10 +116,9 @@
             // 
             this.lbemergencylocation.AutoSize = true;
             this.lbemergencylocation.ForeColor = System.Drawing.Color.DimGray;
-            this.lbemergencylocation.Location = new System.Drawing.Point(7, 59);
-            this.lbemergencylocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbemergencylocation.Location = new System.Drawing.Point(5, 48);
             this.lbemergencylocation.Name = "lbemergencylocation";
-            this.lbemergencylocation.Size = new System.Drawing.Size(91, 17);
+            this.lbemergencylocation.Size = new System.Drawing.Size(68, 13);
             this.lbemergencylocation.TabIndex = 33;
             this.lbemergencylocation.Text = "Call Address:";
             // 
@@ -138,11 +132,10 @@
             this.panel1.Controls.Add(this.lvemergencydecreption);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 107);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(4, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.panel1.Size = new System.Drawing.Size(774, 139);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.panel1.Size = new System.Drawing.Size(580, 113);
             this.panel1.TabIndex = 44;
             // 
             // label1
@@ -150,10 +143,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(5, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 30);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 43;
             this.label1.Text = "Logged Call";
             // 
@@ -162,25 +154,24 @@
             this.emergencyList.AutoSize = true;
             this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyList.Location = new System.Drawing.Point(5, 246);
-            this.emergencyList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.emergencyList.MinimumSize = new System.Drawing.Size(587, 0);
+            this.emergencyList.Location = new System.Drawing.Point(4, 201);
+            this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergencyList.Name = "emergencyList";
-            this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.emergencyList.Size = new System.Drawing.Size(774, 164);
+            this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.emergencyList.Size = new System.Drawing.Size(580, 117);
             this.emergencyList.TabIndex = 45;
             // 
             // Emergency_Link_View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnLinkEmergency);
             this.Controls.Add(this.emergencyList);
             this.Controls.Add(this.panel1);
             this.Name = "Emergency_Link_View";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(784, 459);
+            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Size = new System.Drawing.Size(588, 373);
             this.SizeChanged += new System.EventHandler(this.Emergency_Link_View_SizeChanged);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.emergencyList, 0);

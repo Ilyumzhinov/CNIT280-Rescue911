@@ -93,9 +93,10 @@ namespace Rescue_911
         {
             int index = -1;
 
+            // Find the changed item in the list by checking the PK of the updated item.
             for (int i = 0; i < lstEmergencies.Items.Count; i++)
             {
-                if (((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetDateTime() == ((Emergency_Call)sender).GetDateTime() || ((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetEmergency_Caller().GetPhone_Number() == ((Emergency_Call)sender).GetEmergency_Caller().GetPhone_Number())
+                if (((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetDateTime() == ((Emergency_Call)sender).GetDateTime() && ((Emergency_Call)(lstEmergencies.Items[i].Tag)).GetEmergency_Caller().GetPhone_Number() == ((Emergency_Call)sender).GetEmergency_Caller().GetPhone_Number())
                 {
                     index = i;
 
@@ -103,10 +104,13 @@ namespace Rescue_911
                 }
             }
 
+            // Check the state of the updated item with the current condition of the list
             if (((Emergency_Call)sender).GetState() != (string)cmbState.SelectedItem)
             {
+                // Was it found in the list?
                 if (index != -1)
                 {
+                    // Remove it
                     lstEmergencies.Items[index].Remove();
                     return;
                 }
@@ -114,13 +118,18 @@ namespace Rescue_911
                     return;
             }
 
+            // We know that it corresponds to the condition of the list
             ListViewItem lstItem = lstItemFetch((Emergency_Call)sender);
+
+            // Was it found?
             if (index == -1)
             {
+                // if no, add it
                 lstEmergencies.Items.Add(lstItem);
             }
             else
             {
+                // if yes, replace it
                 lstEmergencies.Items[index] = lstItem;
             }
         }

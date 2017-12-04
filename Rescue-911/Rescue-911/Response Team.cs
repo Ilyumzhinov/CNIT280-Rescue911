@@ -9,8 +9,10 @@ namespace Rescue_911
         private string Shift;
         private List<EMT> EMTs;
         private bool[] Status = new bool[5];
-        private string TeamStatus = "Non-Avalible";
+        private string TeamStatus = "Non-Available";
         private BaseStation BaseStation;
+
+        public event EventHandler Team_Updated;
 
         public void SetBaseStation(BaseStation xBaseStation) { BaseStation = xBaseStation; }
         public BaseStation GetBaseStation() { return BaseStation; }
@@ -23,15 +25,16 @@ namespace Rescue_911
                 }
             }
             if (temp >= 3&&TeamStatus != "Dispatched") {
-              TeamStatus = "Avalible";
+              TeamStatus = "Available";
             }else if (temp < 3)
             {
-                TeamStatus = "Non-Avalible";
+                TeamStatus = "Non-Available";
             }
-            
+            Team_Updated?.Invoke(this, null);
         }
         public void SetStatusByDispatch(string xstatus) {
             TeamStatus = xstatus;
+              Team_Updated?.Invoke(this, null);
         }
         public string GetTeamstatus() { return TeamStatus; }
     
