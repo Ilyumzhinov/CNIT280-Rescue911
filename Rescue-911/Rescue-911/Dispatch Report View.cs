@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Rescue_911
 {
-    public partial class Dispatch_Report_View : Special_View
+    public partial class Dispatch_Report_View : Special_View, IUserDependent
     {
         //To-Do: change it to dispatch object
         private Special_List<Dispatch_Report> DispatchReports;
@@ -30,10 +30,24 @@ namespace Rescue_911
                 InitializeComponent();
             }
         }
-        //
+        // FUNCTIONAL METHODS
+        public void SendUser(Person xPerson)
+        {
+            if (xPerson is EMT)
+            {
+
+            }
+            else
+            {
+                btnSubmit.Enabled = false;
+                SendStatusUpdate(true, "To access, you must have EMT access level!", "urgent");
+            }
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            double Bill;
+
             // Existence checks
             if (txtHospital.Text.Trim() == string.Empty)
             {
@@ -53,6 +67,15 @@ namespace Rescue_911
             else if (txtBill.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Enter Bill Amount", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtBill.Focus();
+                return;
+            }
+
+            //Type Check
+            if (double.TryParse(txtBill.Text, out Bill) == false)
+            {
+                MessageBox.Show("Enter a number for Fee.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 txtBill.Focus();
                 return;
             }

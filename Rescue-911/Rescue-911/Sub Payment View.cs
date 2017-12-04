@@ -46,7 +46,7 @@ namespace Rescue_911
             else
             {
                 btnPay.Enabled = false;
-                SendStatusUpdate(true, "To access, you must have Manager acess level!", "urgent");
+                SendStatusUpdate(true, "To access, you must have Manager access level!", "urgent");
             }
         }
 

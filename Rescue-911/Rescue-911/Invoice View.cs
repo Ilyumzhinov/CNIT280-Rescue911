@@ -62,6 +62,7 @@ namespace Rescue_911
                 return;
             }
 
+            //Type Check
             if (double.TryParse(txtMonthlyFee.Text, out monthlyfee) == false)
             {
                 MessageBox.Show("Enter a number for Fee.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);

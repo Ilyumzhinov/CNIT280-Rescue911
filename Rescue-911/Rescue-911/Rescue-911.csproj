@@ -177,6 +177,7 @@
     <Compile Include="Response Team Information View.Designer.cs">
       <DependentUpon>Response Team Information View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Response Team Status.cs" />
     <Compile Include="Response Team.cs" />
     <Compile Include="Response Teams List.cs">
       <SubType>UserControl</SubType>
