@@ -8,7 +8,6 @@ namespace Rescue_911
     {
         private Response_Team Current_RT;
         private Emergency_Call mSelectedCall;
-
         private Special_List<Emergency> Emergencies;
         private Special_List<Emergency_Call> Calls;
 

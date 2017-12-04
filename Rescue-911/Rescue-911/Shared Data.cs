@@ -196,34 +196,49 @@ namespace Rescue_911
         private Special_List<EMT> LoadEMTs()
         {
             Special_List<EMT> xEMTs = new Special_List<EMT>();
-            xEMTs.Add(new EMT());
-            xEMTs[0].SetName("Jane");
-            xEMTs[0].SetEmployee_ID(11);
-            xEMTs[0].SetResponseTeam(ResponseTeams[0]);
-            xEMTs[0].setShifttime("22:00");
-            xEMTs[0].SetManager_ID(9);
+            int temp = 0;
+            int temp2 = 1;
+            for (int a = 0; a < 50; a++)
+            {
 
-            xEMTs.Add(new EMT());
-            xEMTs[1].SetName("Tyler");
-            xEMTs[1].SetEmployee_ID(12);
-            xEMTs[1].SetResponseTeam(ResponseTeams[2]);
-            xEMTs[1].setShifttime("15:00");
-            xEMTs[1].SetManager_ID(9);
+                xEMTs.Add(new EMT());
+                xEMTs[a].SetName("EMT" + a);
+                xEMTs[a].SetEmployee_ID(11 + a);
+                
+                if (temp < 5)
+                {
+                    if (temp == 0)
+                    {
+                        xEMTs[temp2].SetResponseTeam(ResponseTeams[temp2]);
+                        temp++;
+                        temp2++;
+                    }
+                    xEMTs[temp].SetTeamnumber(temp);
+                    temp++;
+                }else
+                {
+                    temp = 0;
+                    xEMTs[temp].SetTeamnumber(temp);
+                }
 
-            xEMTs.Add(new EMT());
-            xEMTs[2].SetName("John");
-            xEMTs[2].SetEmployee_ID(13);
-            xEMTs[2].SetResponseTeam(ResponseTeams[2]);
-            xEMTs[2].setShifttime("15:00");
-            xEMTs[2].SetManager_ID(9);
-
-            xEMTs.Add(new EMT());
-            xEMTs[3].SetName("Shawn");
-            xEMTs[3].SetEmployee_ID(14);
-            xEMTs[3].SetResponseTeam(ResponseTeams[1]);
-            xEMTs[3].setShifttime("15:00");
-            xEMTs[3].SetManager_ID(10);
-
+                if (a <= 15)
+                {
+                    xEMTs[a].setShifttime("15:00");
+                    xEMTs[a].SetManager_ID(9);
+                }
+                else if (a > 15 && a <= 30)
+                {
+                    xEMTs[a].setShifttime("23:00");
+                    xEMTs[a].SetManager_ID(10);
+                }
+                else if (a > 30 && a <= 45)
+                {
+                    xEMTs[a].setShifttime("07:00");
+                    xEMTs[a].SetManager_ID(11);
+                }
+                
+            }
+           
             return xEMTs;
         }
        

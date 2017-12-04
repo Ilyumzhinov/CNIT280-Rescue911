@@ -84,6 +84,7 @@ namespace Rescue_911
         private void button1_Click(object sender, EventArgs e)
         {
             CurrentEMT.setShiftLoginTime(DateTime.Now);
+            CurrentEMT.GetResponseTeam().SetStatusByEmt(true, CurrentEMT.GetTeamNumber());
             lblogtime.Text = "STARTED";
             CurrentEMT.setstatus("STARTED");
             
@@ -102,6 +103,7 @@ namespace Rescue_911
             LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
             lblogtime.Text = "End";
             CurrentEMT.setstatus("End");
+            CurrentEMT.GetResponseTeam().SetStatusByEmt(false, CurrentEMT.GetTeamNumber());
             button1.Enabled = true;
             btnWaitingCall.Enabled = false;
         }

@@ -62,9 +62,9 @@ namespace Rescue_911
            
             lbes.Text = "Logged";
             Current_Call.SetState("Logged");
-         
-           
-            
+            SendStatusUpdate(true, "Emergency Add Success", "urgent");
+
+
 
         }
 
