@@ -40,6 +40,7 @@
             this.btnCreateEmergency1 = new System.Windows.Forms.Button();
             this.txtemergencyd = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lvemergencydecreption
@@ -146,6 +147,26 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // cmbType
+            // 
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "vehicle collision",
+            "heart attack",
+            "stroke",
+            "shooting",
+            "stabbing",
+            "drowning",
+            "allergic reaction",
+            "choking",
+            "broken bone",
+            "child birth",
+            "other"});
+            this.cmbType.Location = new System.Drawing.Point(206, 97);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 24);
+            this.cmbType.TabIndex = 23;
+            // 
             // Emergency_Add_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -153,6 +174,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.txtemergencyd);
             this.Controls.Add(this.btnCreateEmergency1);
             this.Controls.Add(this.lbes);
@@ -177,6 +199,7 @@
             this.Controls.SetChildIndex(this.lbes, 0);
             this.Controls.SetChildIndex(this.btnCreateEmergency1, 0);
             this.Controls.SetChildIndex(this.txtemergencyd, 0);
+            this.Controls.SetChildIndex(this.cmbType, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +217,6 @@
         private System.Windows.Forms.Button btnCreateEmergency1;
         private System.Windows.Forms.TextBox txtemergencyd;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }

@@ -115,7 +115,7 @@ namespace Rescue_911
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e)
         {
-            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetCalls(),  ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
+            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetCalls(),  ((Call_View)Current_View).GetEmergency_Call(), SD.GetCallers() }, Current_View);
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
