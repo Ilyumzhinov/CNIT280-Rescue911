@@ -33,9 +33,6 @@ namespace Rescue_911
 
         public void UpdateSD(ref Shared_Data xSD)
         {
-            DispatchReports = new Special_List<Dispatch_Report>();
-            BaseStationRecords = new Special_List<Base_Station_Records>();
-
             Calls = xSD.GetCalls();
             Emergencies = xSD.GetEmergencies();
             EMTs = xSD.GetEMTs();
@@ -95,7 +92,10 @@ namespace Rescue_911
         {
             MainForms = new Special_List<Main_Form>();
             Calls = new Special_List<Emergency_Call>();
-            
+            DispatchReports = new Special_List<Dispatch_Report>();
+            BaseStationRecords = new Special_List<Base_Station_Records>();
+
+
             Emergencies = new Special_List<Emergency>();
             EMTs = new Special_List<EMT>();
             ResponseTeams = new Special_List<Response_Team>();
@@ -119,8 +119,9 @@ namespace Rescue_911
             // LOAD EMERGENCIES AND CALLs
             Emergencies = LoadEmergencies();
             Calls = LoadEC(Callers, Emergencies);
-            BaseStations = LoadBSs();            
-            
+            BaseStations = LoadBSs();
+
+
             // LOAD RTs AND EMTs
             ResponseTeams = LoadRTs(BaseStations);
             EMTs = LoadEMTs();
@@ -211,12 +212,11 @@ namespace Rescue_911
                 xRTs[a].SetID(10+a);
                 if (a <=3) { xRTs[a].SetGrade(1); }
                 else if (a > 3 && a <= 6) { xRTs[a].SetGrade(2); }
-                else if (a < 6 && a < 15) { xRTs[a].SetGrade(3); }
+                else if (a > 6 && a < 15) { xRTs[a].SetGrade(3); }
                 xRTs[a].SetShift("they work...");
 
                 xRTs[a].SetBaseStation(xBSs[rnd.Next(3)]);
             }
-
             return xRTs;
         }
 
@@ -231,25 +231,19 @@ namespace Rescue_911
                 xEMTs.Add(new EMT());
                 xEMTs[a].SetName("EMT" + a);
                 xEMTs[a].SetEmployee_ID(11 + a);
-                
-                if (temp < 5)
-                {
-                    if (temp == 0)
+                if (temp > 4) { temp = 0;temp2++; }
+
+                if (temp == 0)
                     {
-                        xEMTs[a].SetResponseTeam(ResponseTeams[temp2]);
-                        xEMTs[a].SetTeamnumber(temp);
-                        temp++;
-                        temp2++;
-                    }else
-                    {
-                        xEMTs[a].SetTeamnumber(temp);
-                        temp++;
-                    }
-                }else
-                {
-                    temp = 0;
+                    xEMTs[a].SetResponseTeam(ResponseTeams[temp2]);
                     xEMTs[a].SetTeamnumber(temp);
+                    temp++;
+                    }else{
+                     xEMTs[a].SetResponseTeam(ResponseTeams[temp2]);
+                     xEMTs[a].SetTeamnumber(temp);
+                     temp++;
                 }
+             
 
                 if (a <= 15)
                 {

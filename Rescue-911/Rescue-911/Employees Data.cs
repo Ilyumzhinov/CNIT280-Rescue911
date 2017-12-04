@@ -72,7 +72,7 @@ namespace Rescue_911
 
         private void SetupEMTs(List<EMT> EMTs_Existing)
         {
-            EMTs = new Tuple<Employee, int, string>[4];
+            EMTs = new Tuple<Employee, int, string>[50];
 
             // Jane
             EMTs[0] = Tuple.Create((Employee)EMTs_Existing[0], EMTs_Existing[0].GetEmployee_ID(), "qwerty");
@@ -82,6 +82,11 @@ namespace Rescue_911
             EMTs[2] = Tuple.Create((Employee)EMTs_Existing[2], EMTs_Existing[2].GetEmployee_ID(), "john");
             // Shawn
             EMTs[3] = Tuple.Create((Employee)EMTs_Existing[3], EMTs_Existing[3].GetEmployee_ID(), "111");
+
+            for (int a = 4; a < 50; a++) {
+                EMTs[a] = Tuple.Create((Employee)EMTs_Existing[a], EMTs_Existing[a].GetEmployee_ID(), "a");
+                
+            }
         }
 
         private void SetupManagers(List<Manager> Managers_Existing)
