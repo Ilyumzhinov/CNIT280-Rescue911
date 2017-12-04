@@ -48,7 +48,8 @@ namespace Rescue_911
             lstEmergencies.Columns[1].Width = 80;
             lstEmergencies.Columns[2].Width = 80;
             lstEmergencies.Columns[3].Width = 80;
-            lstEmergencies.Columns[4].Width = lstEmergencies.Width - 80 * 4 - (int)(SystemInformation.VerticalScrollBarWidth * 1.5);
+            lstEmergencies.Columns[4].Width = 80;
+            lstEmergencies.Columns[5].Width = lstEmergencies.Width - 80 * 5 - (int)(SystemInformation.VerticalScrollBarWidth * 1.5);
             lstEmergencies.Height = lstEmergencies.Font.Height * 25;
         }
 
@@ -68,6 +69,7 @@ namespace Rescue_911
             ListViewItem lstItem = new ListViewItem(xCall.GetEmergency().GetEmergency_ID().ToString());
 
             lstItem.SubItems.Add(xCall.GetEmergency().GetEType());
+            lstItem.SubItems.Add(xCall.GetTeams_Required().ToString());
             lstItem.SubItems.Add(xCall.GetPriority().ToString());
             lstItem.SubItems.Add(xCall.GetState());
             lstItem.SubItems.Add(xCall.GetDescription());
@@ -145,7 +147,7 @@ namespace Rescue_911
 
         private void Emergency_List_SizeChanged(object sender, EventArgs e)
         {
-            lstEmergencies.Columns[4].Width = lstEmergencies.Width - 80 * 4 - SystemInformation.VerticalScrollBarWidth;
+            lstEmergencies.Columns[5].Width = lstEmergencies.Width - 80 * 5 - SystemInformation.VerticalScrollBarWidth;
         }
     }
 }

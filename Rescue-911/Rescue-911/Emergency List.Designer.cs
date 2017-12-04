@@ -38,6 +38,7 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TeamsRequired = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.lstEmergencies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Type,
+            this.TeamsRequired,
             this.Priority,
             this.State,
             this.Description});
@@ -53,7 +55,7 @@
             this.lstEmergencies.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstEmergencies.FullRowSelect = true;
             this.lstEmergencies.GridLines = true;
-            this.lstEmergencies.Location = new System.Drawing.Point(0, 34);
+            this.lstEmergencies.Location = new System.Drawing.Point(0, 40);
             this.lstEmergencies.Margin = new System.Windows.Forms.Padding(0);
             this.lstEmergencies.MinimumSize = new System.Drawing.Size(300, 100);
             this.lstEmergencies.MultiSelect = false;
@@ -99,7 +101,7 @@
             this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(97, 24);
+            this.lbTitle.Size = new System.Drawing.Size(127, 30);
             this.lbTitle.TabIndex = 12;
             this.lbTitle.Text = "Emergencies";
             // 
@@ -109,10 +111,10 @@
             this.cmbState.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbState.ForeColor = System.Drawing.Color.Black;
             this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(179, 1);
+            this.cmbState.Location = new System.Drawing.Point(214, 2);
             this.cmbState.Margin = new System.Windows.Forms.Padding(0);
             this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(121, 23);
+            this.cmbState.Size = new System.Drawing.Size(121, 26);
             this.cmbState.TabIndex = 13;
             this.cmbState.SelectedIndexChanged += new System.EventHandler(this.cmbState_SelectedIndexChanged);
             // 
@@ -121,10 +123,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(116, 6);
+            this.label1.Location = new System.Drawing.Point(137, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "with state";
             // 
@@ -137,8 +139,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 24);
+            this.panel1.Size = new System.Drawing.Size(440, 30);
             this.panel1.TabIndex = 15;
+            // 
+            // TeamsRequired
+            // 
+            this.TeamsRequired.Text = "Teams Req.";
             // 
             // Emergency_List
             // 
@@ -149,7 +155,7 @@
             this.MinimumSize = new System.Drawing.Size(440, 0);
             this.Name = "Emergency_List";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(440, 134);
+            this.Size = new System.Drawing.Size(440, 140);
             this.SizeChanged += new System.EventHandler(this.Emergency_List_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -170,5 +176,6 @@
         private System.Windows.Forms.ComboBox cmbState;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ColumnHeader TeamsRequired;
     }
 }
