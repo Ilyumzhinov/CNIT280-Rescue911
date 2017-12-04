@@ -31,6 +31,7 @@
             this.lstEmergencies = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TeamsRequired = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Priority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,7 +39,6 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TeamsRequired = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,10 @@
             // 
             this.Type.Text = "Type";
             this.Type.Width = 80;
+            // 
+            // TeamsRequired
+            // 
+            this.TeamsRequired.Text = "Teams Req.";
             // 
             // Priority
             // 
@@ -141,10 +145,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 30);
             this.panel1.TabIndex = 15;
-            // 
-            // TeamsRequired
-            // 
-            this.TeamsRequired.Text = "Teams Req.";
             // 
             // Emergency_List
             // 

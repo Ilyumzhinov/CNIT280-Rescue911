@@ -53,18 +53,19 @@ namespace Rescue_911
                 if (xPerson is Supervisor)
                 {
                     emergencyList.SetEmergency_List(ref Calls, "Waiting", true);
+                    RTList.Visible = false;
                 }
                 else if (xPerson is Operator)
                 {
                     emergencyList.SetEmergency_List(ref Calls, "Logged", true);
+                    RTList.SetResponseTeams_List(ref RTs, 1);
                 }
-              
             }
             else
             {
                 // Setting up the View
                 emergencyList.Enabled = false;
-                lstTeams.Enabled = false;
+                RTList.Enabled = false;
                 panel2.Enabled = false;
 
                 SendStatusUpdate(true, "To access, you must have Operator or Supervisor access level!", "urgent");
@@ -75,7 +76,7 @@ namespace Rescue_911
 
         private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
-            lstTeams.Items.Clear();
+           // lstTeams.Items.Clear();
 
             mSelectedCall = (Emergency_Call)sender;
 
@@ -90,7 +91,7 @@ namespace Rescue_911
                     lstItem.SubItems.Add(RT.GetGrade().ToString());
                     lstItem.Tag = RT;
 
-                    lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                   // lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
                     continue;
                 }
 
@@ -101,7 +102,7 @@ namespace Rescue_911
                     lstItem.SubItems.Add(RT.GetGrade().ToString());
                     lstItem.Tag = RT;
 
-                    lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                  //  lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
                     continue;
                 }
 
@@ -112,7 +113,7 @@ namespace Rescue_911
                     lstItem.SubItems.Add(RT.GetGrade().ToString());
                     lstItem.Tag = RT;
 
-                    lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                   // lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
                     continue;
                 }
             }
@@ -154,6 +155,11 @@ namespace Rescue_911
         private void lstTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
             mSelectedRT = (Response_Team)((ListView)sender).Tag;
+        }
+
+        private void lbDecision_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

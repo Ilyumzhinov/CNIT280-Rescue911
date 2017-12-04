@@ -46,6 +46,9 @@ namespace Rescue_911
             this.BS_Location = xBS_Location;
         }
 
-
+        public override string ToString()
+        {
+            return this.BS_ID + ": " + BS_Name;
+        }
     }
 }

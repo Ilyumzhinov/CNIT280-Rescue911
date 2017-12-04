@@ -16,6 +16,7 @@ namespace Rescue_911
         private Special_List<Response_Team> ResponseTeams;
         private Special_List<Dispatch> Dispatches;
         private Special_List<Dispatch_Report> DispatchReports;
+        private Special_List<BaseStation> BaseStations;
         private Special_List<Base_Station_Records> BaseStationRecords;
 
         //People
@@ -78,6 +79,7 @@ namespace Rescue_911
         public Special_List<Response_Team> GetResponseTeams() { return ResponseTeams; }
         public Special_List<Dispatch> GetDispatches() { return Dispatches; }
         public Special_List<Dispatch_Report> GetDispatchReports() { return DispatchReports; }
+        public Special_List<BaseStation> GetBase_Stations() { return BaseStations; }
         public Special_List<Base_Station_Records> GetBaseStationRecords() { return BaseStationRecords; }
 
         public Special_List<Caller> GetCallers() { return Callers; }
@@ -107,9 +109,7 @@ namespace Rescue_911
             // LOAD CALLERS
             Callers = LoadCallers(ref Patients);
 
-            // LOAD RTs AND EMTs
-            ResponseTeams = LoadRTs();
-            EMTs = LoadEMTs();
+
 
             // LOAD OPERATORs, SUPERVISORs AND MANAGERs
             Operators = LoadOperators();
@@ -119,6 +119,11 @@ namespace Rescue_911
             // LOAD EMERGENCIES AND CALLs
             Emergencies = LoadEmergencies();
             Calls = LoadEC(Callers, Emergencies);
+            BaseStations = LoadBSs();            
+            
+            // LOAD RTs AND EMTs
+            ResponseTeams = LoadRTs(BaseStations);
+            EMTs = LoadEMTs();
         }
         
         private Special_List<Operator> LoadOperators()
@@ -171,20 +176,45 @@ namespace Rescue_911
             return xManagers;
         }
 
-        private Special_List<Response_Team> LoadRTs()
+        private Special_List<BaseStation> LoadBSs()
+        {
+            Special_List<BaseStation> xBSs = new Special_List<BaseStation>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                xBSs.Add(new BaseStation());
+            }
+
+            xBSs[0].SetBS_ID(1);
+            xBSs[0].SetBS_Name("Michaela");
+            xBSs[0].SetBS_Location("259 Lighthouse Bay Center");
+
+            xBSs[1].SetBS_ID(2);
+            xBSs[1].SetBS_Name("Wenda");
+            xBSs[1].SetBS_Location("18 Stephen Court");
+
+            xBSs[2].SetBS_ID(3);
+            xBSs[2].SetBS_Name("Corenda");
+            xBSs[2].SetBS_Location("28528 Chive Drive");
+
+            return xBSs;
+        }
+
+        private Special_List<Response_Team> LoadRTs(Special_List<BaseStation> xBSs)
         {
             Special_List<Response_Team> xRTs = new Special_List<Response_Team>();
 
-          
+            Random rnd = new Random();
 
             for (int a = 0; a < 15; a++) {
                 xRTs.Add(new Response_Team());
-                xRTs[a].SetID(a);
+                xRTs[a].SetID(10+a);
                 if (a <=3) { xRTs[a].SetGrade(1); }
                 else if (a > 3 && a <= 6) { xRTs[a].SetGrade(2); }
                 else if (a < 6 && a < 15) { xRTs[a].SetGrade(3); }
                 xRTs[a].SetShift("they work...");
 
+                xRTs[a].SetBaseStation(xBSs[rnd.Next(3)]);
             }
 
             return xRTs;

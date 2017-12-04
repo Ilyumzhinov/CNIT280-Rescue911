@@ -178,7 +178,12 @@
       <DependentUpon>Response Team Information View.cs</DependentUpon>
     </Compile>
     <Compile Include="Response Team.cs" />
-    <Compile Include="ResponseTeamStatus.cs" />
+    <Compile Include="Response Teams List.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Response Teams List.Designer.cs">
+      <DependentUpon>Response Teams List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shared Data.cs" />
     <Compile Include="Sidebar.cs">
       <SubType>UserControl</SubType>
@@ -264,6 +269,9 @@
     </Compile>
     <EmbeddedResource Include="Response Team Information View.resx">
       <DependentUpon>Response Team Information View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Response Teams List.resx">
+      <DependentUpon>Response Teams List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
