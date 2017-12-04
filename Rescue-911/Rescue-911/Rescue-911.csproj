@@ -178,6 +178,7 @@
       <DependentUpon>Response Team Information View.cs</DependentUpon>
     </Compile>
     <Compile Include="Response Team.cs" />
+    <Compile Include="ResponseTeamStatus.cs" />
     <Compile Include="Shared Data.cs" />
     <Compile Include="Sidebar.cs">
       <SubType>UserControl</SubType>
