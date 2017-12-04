@@ -175,20 +175,17 @@ namespace Rescue_911
         {
             Special_List<Response_Team> xRTs = new Special_List<Response_Team>();
 
-            xRTs.Add(new Response_Team());
-            xRTs[0].SetID(1);
-            xRTs[0].SetGrade(1);
-            xRTs[0].SetShift("somewhen...");
+          
 
-            xRTs.Add(new Response_Team());
-            xRTs[1].SetID(2);
-            xRTs[1].SetGrade(3);
-            xRTs[1].SetShift("it happens...");
+            for (int a = 0; a < 15; a++) {
+                xRTs.Add(new Response_Team());
+                xRTs[a].SetID(a);
+                if (a < 3) { xRTs[a].SetGrade(1); }
+                else if (a < 6) { xRTs[a].SetGrade(2); }
+                else if (a < 3) { xRTs[10].SetGrade(3); }
+                xRTs[a].SetShift("they work...");
 
-            xRTs.Add(new Response_Team());
-            xRTs[2].SetID(3);
-            xRTs[2].SetGrade(2);
-            xRTs[2].SetShift("they work...");
+            }
 
             return xRTs;
         }
@@ -209,16 +206,16 @@ namespace Rescue_911
                 {
                     if (temp == 0)
                     {
-                        xEMTs[temp2].SetResponseTeam(ResponseTeams[temp2]);
+                        xEMTs[a].SetResponseTeam(ResponseTeams[temp2]);
                         temp++;
                         temp2++;
                     }
-                    xEMTs[temp].SetTeamnumber(temp);
+                    xEMTs[a].SetTeamnumber(temp);
                     temp++;
                 }else
                 {
                     temp = 0;
-                    xEMTs[temp].SetTeamnumber(temp);
+                    xEMTs[a].SetTeamnumber(temp);
                 }
 
                 if (a <= 15)
@@ -231,7 +228,7 @@ namespace Rescue_911
                     xEMTs[a].setShifttime("23:00");
                     xEMTs[a].SetManager_ID(10);
                 }
-                else if (a > 30 && a <= 45)
+                else if (a > 30)
                 {
                     xEMTs[a].setShifttime("07:00");
                     xEMTs[a].SetManager_ID(11);
