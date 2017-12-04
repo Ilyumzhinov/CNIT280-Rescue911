@@ -180,9 +180,9 @@ namespace Rescue_911
             for (int a = 0; a < 15; a++) {
                 xRTs.Add(new Response_Team());
                 xRTs[a].SetID(a);
-                if (a < 3) { xRTs[a].SetGrade(1); }
-                else if (a < 6) { xRTs[a].SetGrade(2); }
-                else if (a < 3) { xRTs[10].SetGrade(3); }
+                if (a <=3) { xRTs[a].SetGrade(1); }
+                else if (a > 3 && a <= 6) { xRTs[a].SetGrade(2); }
+                else if (a < 6 && a < 15) { xRTs[a].SetGrade(3); }
                 xRTs[a].SetShift("they work...");
 
             }
@@ -194,7 +194,7 @@ namespace Rescue_911
         {
             Special_List<EMT> xEMTs = new Special_List<EMT>();
             int temp = 0;
-            int temp2 = 1;
+            int temp2 = 0;
             for (int a = 0; a < 50; a++)
             {
 
@@ -207,11 +207,14 @@ namespace Rescue_911
                     if (temp == 0)
                     {
                         xEMTs[a].SetResponseTeam(ResponseTeams[temp2]);
+                        xEMTs[a].SetTeamnumber(temp);
                         temp++;
                         temp2++;
+                    }else
+                    {
+                        xEMTs[a].SetTeamnumber(temp);
+                        temp++;
                     }
-                    xEMTs[a].SetTeamnumber(temp);
-                    temp++;
                 }else
                 {
                     temp = 0;
