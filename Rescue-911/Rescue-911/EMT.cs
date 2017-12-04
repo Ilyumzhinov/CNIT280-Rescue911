@@ -14,9 +14,13 @@ namespace Rescue_911
         private DateTime shiftLOGINTIME;
         private String shifttime;
         private string status;
-
+        private int Teamnumber;
 
         // SETs & GETs
+
+        public void SetTeamnumber(int xTeamnumber) { Teamnumber = xTeamnumber; }
+        public int GetTeamNumber() { return Teamnumber; }
+
         public void SetResponseTeam(Response_Team xRT) { RT = xRT; }
         public TimeSpan getTotalShiftTime() { return TotalShifttime; }
 
