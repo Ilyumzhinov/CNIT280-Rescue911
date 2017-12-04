@@ -52,7 +52,8 @@ namespace Rescue_911
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            int CVC;
+            Int64 CVC;
+            Int64 CardNumber;
            
 
             // Existence checks
@@ -72,14 +73,41 @@ namespace Rescue_911
                 return;
             }
 
+            //Length Check
+
+           if (txtCreditCardNumber.Text.Length < 16 || txtCreditCardNumber.Text.Length > 16)
+            {
+                MessageBox.Show("Credit Card Number length should be 16 characters.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCreditCardNumber.Focus();
+                return;
+            }
+
+            if (txtCVC.Text.Length < 3 || txtCVC.Text.Length > 3)
+            {
+                MessageBox.Show("CVC code length should be 3 characters.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCreditCardNumber.Focus();
+                return;
+            }
+
+
+
             //Type check
-            if (int.TryParse(txtCVC.Text, out CVC) == false)
+            if (Int64.TryParse(txtCVC.Text, out CVC) == false)
             {
                 MessageBox.Show("Enter real numbers for CVC field.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 txtCVC.Focus();
                 return;
             }
+
+            if (Int64.TryParse(txtCreditCardNumber.Text, out CardNumber) == false)
+            {
+                MessageBox.Show("Enter real numbers for Credit Card Number.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtCreditCardNumber.Focus();
+                return;
+            }
+
          
             else // All checks are satisfied
             {
