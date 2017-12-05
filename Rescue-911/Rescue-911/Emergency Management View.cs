@@ -16,17 +16,18 @@ namespace Rescue_911
         private Special_List<Emergency_Call> Calls;
         private Special_List<Emergency> Emergencies;
         private Special_List<Response_Team> RTs;
+        Special_List<Dispatch> Dispatch;
         //
 
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Emergency_Management_View(bool toDisplay, ref Special_List<Emergency_Call> xECs, ref Special_List<Emergency> xEmergencies, ref Special_List<Response_Team> xRTs) : this(toDisplay)
+        public Emergency_Management_View(bool toDisplay, ref Special_List<Emergency_Call> xECs, ref Special_List<Emergency> xEmergencies, ref Special_List<Response_Team> xRTs,ref Special_List<Dispatch> xDispatch ) : this(toDisplay)
         {
             Calls = xECs;
             Emergencies = xEmergencies;
             RTs = xRTs;
-            
+            Dispatch = xDispatch;
         }
 
         //To-display the view.
@@ -140,22 +141,22 @@ namespace Rescue_911
 
             btnSend.Visible = true;
             //lbDecision.Text
-           // rbYes.Visible = true;
-            //rbNo.Visible = true;
+            rbYes.Visible = true;
+            rbNo.Visible = true;
         }
 
         private void btnCreateDispatch_Click(object sender, EventArgs e)
         {
-            
+            Dispatch xDispatch = new Dispatch();
+            xDispatch.SetEmergency(mSelectedCall.GetEmergency());
+            xDispatch.SetResponseTeam(mSelectedRT);
+            xDispatch.SetStatus("Send");
+            Dispatch.Add(xDispatch);
         }
 
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
-
-            Dispatch xDispatch = new Dispatch();
-            xDispatch.SetEmergency(mSelectedCall.GetEmergency());
-            xDispatch.SetResponseTeam(mSelectedRT);
-
+            
             // SD.AddDispatch(xDispatch);
            
             mSelectedCall.SetState("Accepted");

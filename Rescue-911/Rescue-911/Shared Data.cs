@@ -9,7 +9,7 @@ namespace Rescue_911
         //System data
         private Special_List<Main_Form> MainForms;
         public int FormsCount;
-
+        
         //Common data
         private Special_List<Emergency_Call> Calls;
         private Special_List<Emergency> Emergencies;

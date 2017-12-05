@@ -10,14 +10,16 @@ namespace Rescue_911
         private Emergency_Call mSelectedCall;
         private Special_List<Emergency> Emergencies;
         private Special_List<Emergency_Call> Calls;
+        private Special_List<Dispatch> Dispatches;
+       
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Response_Team_Information_View(bool toDisplay, ref Special_List<Emergency_Call> xCalls, ref Special_List<Emergency> xEmergencies) : this(toDisplay)
+        public Response_Team_Information_View(bool toDisplay, ref Special_List<Emergency_Call> xCalls, ref Special_List<Emergency> xEmergencies, Special_List<Dispatch> xDispatches) : this(toDisplay)
         {
             Calls = xCalls;
-
             Emergencies = xEmergencies;
+            Dispatches = xDispatches;
         }
 
         //To-display the view.
@@ -37,7 +39,16 @@ namespace Rescue_911
 
                 lbRT_ID.Text = Current_RT.GetID().ToString();
 
+                for (int a = 0; a < Dispatches.Count; a++) {
 
+
+                    if (Dispatches[a].getStatus() == "ready" && Dispatches[a].GetResponseTeam().GetID()== Current_RT.GetID()) {
+                        rbYes.Enabled = true;
+                        rbNo.Enabled = true;
+
+                    }
+                }
+               
                 // Emergency list set-up.
                 if (Emergencies[0] != null)
                 {

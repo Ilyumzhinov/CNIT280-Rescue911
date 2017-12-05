@@ -120,12 +120,12 @@ namespace Rescue_911
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Emergency_Management_View), ((Button)sender), new List<object> { SD.GetCalls(), SD.GetEmergencies(), SD.GetResponseTeams() }, Current_View);
+            SetView(typeof(Emergency_Management_View), ((Button)sender), new List<object> { SD.GetCalls(), SD.GetEmergencies(), SD.GetResponseTeams() ,SD.GetDispatches()}, Current_View);
         }
 
         private void ResponseTeamInfoView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Response_Team_Information_View), ((Button)sender), new List<object> { SD.GetCalls(),SD.GetEmergencies()}, Current_View);
+            SetView(typeof(Response_Team_Information_View), ((Button)sender), new List<object> { SD.GetCalls(),SD.GetEmergencies(),SD.GetDispatches() }, Current_View);
         }
 
         private void EMTLoginShiftView_Prepare(object sender, EventArgs e)
