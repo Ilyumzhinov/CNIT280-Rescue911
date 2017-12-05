@@ -28,18 +28,33 @@ namespace Rescue_911
             timer1.Enabled = true;
             timer1.Interval = 1000;
             emts = xEmts.ToArray();
-           
+            int a = int.Parse(CurrentEMT.getshifttime().Split(':')[0]);
+            string time;
+            if (a - 12 < 0)
+            {
+                a = Math.Abs(a);
+                time = a.ToString() + ":00 AM";
+            }
+            else
+            {
+                a = a - 12;
+                time = a.ToString() + ":00 PM";
+            }
+
+
+            LBshifttime.Text = time;
+
             if (CurrentEMT.getstatus() == "STARTED")
             {
-                LBshifttime.Text = CurrentEMT.getshifttime();
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
                 lbrt.Text = CurrentEMT.GetResponseTeam().GetID().ToString();
                 labemtid.Text = CurrentEMT.GetEmployee_ID().ToString();
                 lblogtime.Text = CurrentEMT.getstatus();
                 button1.Enabled = false;
                 btnWaitingCall.Enabled = true;
-            } else if (DateTime.Now.Hour.ToString() ==  CurrentEMT.getshifttime().Substring(0,2)){
-                LBshifttime.Text = CurrentEMT.getshifttime();
+            } else if (int.Parse(DateTime.Now.Hour.ToString())-int.Parse(CurrentEMT.getshifttime().Split(':')[0]) > 0 && int.Parse(DateTime.Now.Hour.ToString()) - int.Parse(CurrentEMT.getshifttime().Split(':')[0]) < 8)
+            {
+               
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
                 lbrt.Text = CurrentEMT.GetResponseTeam().GetID().ToString();
                 labemtid.Text = CurrentEMT.GetEmployee_ID().ToString();
@@ -47,8 +62,8 @@ namespace Rescue_911
                 button1.Enabled = true;
                 btnWaitingCall.Enabled = false;
             }
-            else if(DateTime.Now.Hour.ToString() != CurrentEMT.getshifttime().Substring(0, 2)) {
-                LBshifttime.Text = CurrentEMT.getshifttime();
+            else {
+                string b = (DateTime.Now.Hour.ToString());
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);
                 lbrt.Text = CurrentEMT.GetResponseTeam().GetID().ToString();
                 labemtid.Text = CurrentEMT.GetEmployee_ID().ToString();

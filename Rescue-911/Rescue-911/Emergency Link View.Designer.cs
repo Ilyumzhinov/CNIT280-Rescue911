@@ -81,7 +81,7 @@
             this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLinkEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnLinkEmergency.Location = new System.Drawing.Point(434, 318);
+            this.btnLinkEmergency.Location = new System.Drawing.Point(434, 337);
             this.btnLinkEmergency.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnLinkEmergency.MaximumSize = new System.Drawing.Size(150, 35);
             this.btnLinkEmergency.MinimumSize = new System.Drawing.Size(150, 35);
@@ -158,7 +158,7 @@
             this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergencyList.Name = "emergencyList";
             this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergencyList.Size = new System.Drawing.Size(580, 117);
+            this.emergencyList.Size = new System.Drawing.Size(580, 136);
             this.emergencyList.TabIndex = 45;
             // 
             // Emergency_Link_View
@@ -170,7 +170,7 @@
             this.Controls.Add(this.emergencyList);
             this.Controls.Add(this.panel1);
             this.Name = "Emergency_Link_View";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.Size = new System.Drawing.Size(588, 373);
             this.SizeChanged += new System.EventHandler(this.Emergency_Link_View_SizeChanged);
             this.Controls.SetChildIndex(this.panel1, 0);

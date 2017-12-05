@@ -56,7 +56,7 @@ namespace Rescue_911
             {
                 cmbStation.Items.Add("failed to load");
                 cmbStation.SelectedItem = "failed to load";
-                cmbStation.Enabled = false;
+                cmbStation.Enabled = true;
             }
             else
             {
@@ -131,16 +131,8 @@ namespace Rescue_911
                     return;
             }
 
-            if (((Response_Team)sender).GetTeamstatus() != "Available")
-            {
-                if (index != -1)
-                {
-                    lstRTs.Items[index].Remove();
-                    return;
-                }
-                else
-                    return;
-            }
+          
+            
 
             ListViewItem lstItem = lstItemFetch((Response_Team)sender);
             if (index == -1)
@@ -152,7 +144,7 @@ namespace Rescue_911
                 lstRTs.Items[index] = lstItem;
             }
 
-
+            
         }
 
         private void lstRTs_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,6 +159,7 @@ namespace Rescue_911
             {
                 selectedIndex = -1;
             }
+
         }
 
         private void Emergency_List_SizeChanged(object sender, EventArgs e)

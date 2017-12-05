@@ -250,14 +250,14 @@ namespace Rescue_911
                     xEMTs[a].setShifttime("15:00");
                     xEMTs[a].SetManager_ID(9);
                 }
-                else if (a > 15 && a < 30)
+                else if (a >= 15 && a < 30)
                 {
                     xEMTs[a].setShifttime("23:00");
                     xEMTs[a].SetManager_ID(10);
                 }
                 else if (a >= 30)
                 {
-                    xEMTs[a].setShifttime("07:00");
+                    xEMTs[a].setShifttime("7:00");
                     xEMTs[a].SetManager_ID(11);
                 }
                 

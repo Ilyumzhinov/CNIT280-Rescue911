@@ -25,16 +25,8 @@ namespace Rescue_911
         {
             Calls = xECs;
             Emergencies = xEmergencies;
-            RTs = new Special_List<Response_Team>();
-            //RTs = xRTs;
-            foreach (Response_Team RT in xRTs)
-            {
-                if (RT.GetTeamstatus() == "Available")
-                {
-                    RTs.Add(RT);
-                }
-            }
-
+            RTs = xRTs;
+            
         }
 
         //To-display the view.
@@ -58,7 +50,8 @@ namespace Rescue_911
 
                 Emergency_Management_View_SizeChanged(this, null);
                 emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
-                
+                RTList.RTSelected += new EventHandler(lstTeams_SelectedIndexChanged);
+
                 if (xPerson is Supervisor)
                 {
                     emergencyList.SetEmergency_List(ref Calls, "Waiting", true);
@@ -88,42 +81,60 @@ namespace Rescue_911
            // lstTeams.Items.Clear();
 
             mSelectedCall = (Emergency_Call)sender;
-
+            
             // Populating the listBox with the response teams.
             foreach (Response_Team RT in RTs)
             {
+                if (RT.GetTeamstatus() == "Available-ready") {
+
+                    RT.SetStatusByDispatch("Available");
+                }
                 // To-Do: get the actual emergency call selected
                 if (mSelectedCall.GetPriority() <= 2)
                 {
-                    ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+                    if (RT.GetTeamstatus() == "Available")
+                    {
+                        RT.SetStatusByDispatch("Available-ready");
+                    }
+                   // ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
-                    lstItem.SubItems.Add(RT.GetGrade().ToString());
-                    lstItem.Tag = RT;
+                   // lstItem.SubItems.Add(RT.GetGrade().ToString());
+                   // lstItem.Tag = RT;
 
-                   // lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
-                    continue;
+                   //// lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                   // continue;
                 }
 
                 if (mSelectedCall.GetPriority() <= 3 && RT.GetGrade() > 1)
                 {
-                    ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
-                    lstItem.SubItems.Add(RT.GetGrade().ToString());
-                    lstItem.Tag = RT;
+                    if (RT.GetTeamstatus() == "Available")
+                    {
+                        RT.SetStatusByDispatch("Available-ready");
+                    }
+                    //  ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
-                  //  lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
-                    continue;
+                    //  lstItem.SubItems.Add(RT.GetGrade().ToString());
+                    //  lstItem.Tag = RT;
+
+                    ////  lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                    //  continue;
                 }
 
                 if (mSelectedCall.GetPriority() <= 4 && RT.GetGrade() > 2)
                 {
-                    ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
+                    if (RT.GetTeamstatus() == "Available")
+                    {
+                        RT.SetStatusByDispatch("Available-ready");
+                    }
 
-                    lstItem.SubItems.Add(RT.GetGrade().ToString());
-                    lstItem.Tag = RT;
+                    // ListViewItem lstItem = new ListViewItem(RT.GetID().ToString());
 
-                   // lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
-                    continue;
+                    // lstItem.SubItems.Add(RT.GetGrade().ToString());
+                    // lstItem.Tag = RT;
+
+                    //// lstTeams.Items.AddRange(new ListViewItem[1] { lstItem });
+                    // continue;
                 }
             }
 
@@ -140,13 +151,15 @@ namespace Rescue_911
 
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
+
             Dispatch xDispatch = new Dispatch();
             xDispatch.SetEmergency(mSelectedCall.GetEmergency());
             xDispatch.SetResponseTeam(mSelectedRT);
 
-           // SD.AddDispatch(xDispatch);
-
+            // SD.AddDispatch(xDispatch);
+           
             mSelectedCall.SetState("Accepted");
+            mSelectedRT.SetStatusByDispatch("Dispatched");
             rbYes.Checked = false;
         }
 
@@ -163,12 +176,14 @@ namespace Rescue_911
 
         private void lstTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
-            mSelectedRT = (Response_Team)((ListView)sender).Tag;
-        }
+            rbYes.Enabled = false;
+            rbNo.Enabled = false;
+            mSelectedRT = (Response_Team)sender;
+            if (mSelectedRT != null && mSelectedRT.GetTeamstatus() == "Available-ready") {
+                rbYes.Enabled = true;
+                rbNo.Enabled = true;
 
-        private void lbDecision_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
