@@ -12,27 +12,25 @@ namespace Rescue_911
 {
     public partial class Patient_Information_View : Special_View
     {
-        int mSize = 150;
-        int[] age = new int[150];
-        string[] name = new string[150];
-        string[] date = new string[150];
-        string[] bloodtype = new string[150];
-        string[] complications = new string[150];
-        string patientname = "Jane Smith";
-        string patientblood = "O";
-        int patientage = 22;
-        string birthdate = "November 3rd, 1995";
-        string complic = "Had triple heart bypass surgery";
-        int mIndex = 0;
+       
+        private Special_List<PatientInformation> Patients;
 
-        private Special_List<Patient> Patients;
+       
 
         // CONSTRUCTORS
         //To-setup the view
 
-        public Patient_Information_View(bool toDisplay, ref Special_List<Patient> xPIs) : this(toDisplay)
+        public Patient_Information_View(bool toDisplay, ref Special_List<PatientInformation> xPIs) : this(toDisplay)
         {
             Patients = xPIs;
+
+            Patients.ItemAdded -= new EventHandler(lstHistory_AddRecord);
+            Patients.ItemAdded += new EventHandler(lstHistory_AddRecord);
+
+            foreach (PatientInformation iPatients in Patients)
+            {
+                lstHistory.Items.Add(iPatients);
+            }
 
         }
         //To-display the view.
@@ -42,33 +40,109 @@ namespace Rescue_911
                 InitializeComponent();
         }
 
-        
-        //
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        // FUNCTIONAL METHODS
+        public void SendUser(Person xPerson)
         {
-            age[0] = patientage;
-            date[0] = birthdate;
-            name[0] = patientname;
-            bloodtype[0] = patientblood;
-            complications[0] = complic;
-
-            int ctr;
-            for (ctr = 0; ctr < mSize; ctr++)
+            if (xPerson is Manager)
             {
-                if (name[mIndex] == txtName.Text)
-                {
-                    int agetemp;
-                    agetemp = age[mIndex];
-                    txtAge.Text = agetemp.ToString();
-                    txtBloodType.Text = bloodtype[mIndex];
-                    txtBirthdate.Text = date[mIndex];
-                    txtComplications.Text = complications[mIndex];
-                    MessageBox.Show("Patient found!");
-                    return;
-                }
+                // To-Do: Set up the view with the appropriate user data
             }
-            MessageBox.Show("Patient not found!");
+            else
+            {
+                btnAddRecord.Enabled = false;
+
+
+                txtComplications.Enabled = false;
+
+                SendStatusUpdate(true, "To access, you must have Manager access level!", "urgent");
+            }
+        }
+        private void btnAddRecord_Click(object sender, EventArgs e)
+        {
+            int Age;
+
+
+            if (lstHistory.SelectedIndex != -1)
+            {
+                DTPBirthDate.Value = DateTime.Now;
+                txtComplications.Text = string.Empty;
+
+                DTPBirthDate.Enabled = true;
+                txtComplications.Enabled = true;
+
+                lstHistory.SelectedIndex = -1;
+            }
+
+            // Existence checks
+            if (txtName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Name", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtName.Focus();
+                return;
+            }
+
+            if (txtBloodType.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Blood Type", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtBloodType.Focus();
+                return;
+            }
+
+            if (txtAge.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Age", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtAge.Focus();
+                return;
+            }
+
+            //Type Check
+            if (int.TryParse(txtAge.Text, out Age) == false)
+            {
+                MessageBox.Show("Enter a real number for Patient Age.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtAge.Focus();
+                return;
+            }
+
+            else // All checks are satisfied
+            {
+                DTPBirthDate.Enabled = false;
+                txtComplications.Enabled = false;
+
+                PatientInformation PatientHealthInformation = new PatientInformation();
+
+                PatientHealthInformation.SetPatientName(txtName.Text);
+                PatientHealthInformation.Setage(int.Parse(txtAge.Text));
+                PatientHealthInformation.SetBirthdate(DTPBirthDate.Value);
+                PatientHealthInformation.SetBloodType(txtBloodType.Text);
+                PatientHealthInformation.Setcomplication(txtComplications.Text);
+
+                Patients.AddItem(PatientHealthInformation);
+
+                lstHistory.SelectedIndex = lstHistory.Items.IndexOf(PatientHealthInformation);
+                SendStatusUpdate(true, "Patient Record Added!", "success");
+
+
+            }
+        }
+
+        private void lstHistory_AddRecord(object sender, EventArgs e)
+        {
+            lstHistory.Items.Add((PatientInformation)sender);
+        }
+
+        private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstHistory.SelectedIndex == -1)
+                return;
+
+            DTPBirthDate.Value = ((PatientInformation)lstHistory.SelectedItem).GetBirthDate();
+            txtComplications.Text = ((PatientInformation)lstHistory.SelectedItem).Getcomplication();
+            DTPBirthDate.Enabled = false;
+            txtComplications.Enabled = false;
         }
     }
 }
