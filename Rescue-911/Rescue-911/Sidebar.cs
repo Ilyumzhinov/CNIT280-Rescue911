@@ -99,11 +99,9 @@ namespace Rescue_911
                 Buttons[i].Click -= (sender, e) => { };
                 Buttons[i].Click += (sender, e) =>
                 {
-                    Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { true }));
+                    Special_View viewInstance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[((Button)sender).TabIndex], new object[] { false }));
 
                     MenuElement_Changed(new object[] { sender, viewInstance.GetColour() }, e);
-
-                    viewInstance.Show();
 
                     SetUpButton(e, xAcccessibleViews[((Button)sender).TabIndex], ((Button)sender));
                 };

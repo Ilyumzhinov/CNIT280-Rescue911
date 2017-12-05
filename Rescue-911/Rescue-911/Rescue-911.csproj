@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="Base Station Records.cs" />
     <Compile Include="BaseStation.cs" />
+    <Compile Include="Call Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Call Control.Designer.cs">
+      <DependentUpon>Call Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="Call View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +192,12 @@
     <Compile Include="Response Teams List.Designer.cs">
       <DependentUpon>Response Teams List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Segmented Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Segmented Control.Designer.cs">
+      <DependentUpon>Segmented Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shared Data.cs" />
     <Compile Include="Sidebar.cs">
       <SubType>UserControl</SubType>
@@ -215,6 +228,9 @@
     <Compile Include="Supervisor.cs" />
     <EmbeddedResource Include="Base Station Records View.resx">
       <DependentUpon>Base Station Records View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Call Control.resx">
+      <DependentUpon>Call Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Call View.resx">
       <DependentUpon>Call View.cs</DependentUpon>
@@ -273,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Response Teams List.resx">
       <DependentUpon>Response Teams List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Segmented Control.resx">
+      <DependentUpon>Segmented Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
