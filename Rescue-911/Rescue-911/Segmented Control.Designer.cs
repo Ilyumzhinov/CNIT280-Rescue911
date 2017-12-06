@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Team_Project
+namespace Rescue_911
 {
     partial class Segmented_Control
     {

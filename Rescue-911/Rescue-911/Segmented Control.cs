@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team_Project
+namespace Rescue_911
 {
     public partial class Segmented_Control : UserControl
     {
         // DATA STRUCTURE
         //Composite Data
-        private List<Button> SegmentsBtns;
+        private Special_List<Button> SegmentsBtns;
         private int mSelectedSegment = -1;
 
         //Public Data
@@ -32,6 +32,21 @@ namespace Team_Project
                 SetSegments(segmentsValue);
             }
         }
+        private string availableSegments = "";
+        [Description("Set access to segments. Use 't' for granting the access to a view or 'f' to block it. Use / to separate elements"), Category("Data")]
+        public string AvailableSegments
+        {
+            get
+            {
+                return availableSegments;
+            }
+            set
+            {
+                availableSegments = value;
+                this.SetAvailableSegments(AvailableSegments);
+                Segmented_Control_SizeChanged(null,null);
+            }
+        }
 
         //Events
         public event EventHandler SegmentBtn_Click;
@@ -43,7 +58,7 @@ namespace Team_Project
         {
             InitializeComponent();
 
-            SegmentsBtns = new List<Button>();
+            SegmentsBtns = new Special_List<Button>();
         }
 
 
@@ -54,33 +69,28 @@ namespace Team_Project
 
             string[] labelsFetched = Labels.Split('/');
 
-            List<Button> SegmentsBtnsTemp = SegmentsBtns;
             Controls.Clear();
-            SegmentsBtnsTemp.Clear();
-
+            SegmentsBtns.Clear();
 
             for (int i = 0; i < labelsFetched.Length; i++)
             {
-                SegmentsBtnsTemp.Add(new Button());
-                SegmentsBtnsTemp[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                SegmentsBtnsTemp[i].Font = new System.Drawing.Font("Segoe UI", 8F);
-                SegmentsBtnsTemp[i].UseVisualStyleBackColor = false;
-                SegmentsBtnsTemp[i].BackColor = System.Drawing.Color.Transparent;
-                SegmentsBtnsTemp[i].FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-                SegmentsBtnsTemp[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-                SegmentsBtnsTemp[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-                SegmentsBtnsTemp[i].ForeColor = System.Drawing.Color.DodgerBlue;
-                SegmentsBtnsTemp[i].Name = "btnSegment" + i;
-                SegmentsBtnsTemp[i].Text = labelsFetched[i];
-                SegmentsBtnsTemp[i].Size = new System.Drawing.Size(((int)((double)this.Width / labelsFetched.Length) + 1 * i), this.Height);
+                SegmentsBtns.AddItem(new Button());
+                SegmentsBtns[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                SegmentsBtns[i].Font = new System.Drawing.Font("Franklin Gothic Book",8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                SegmentsBtns[i].UseVisualStyleBackColor = false;
+                SegmentsBtns[i].BackColor = System.Drawing.Color.Transparent;
+                SegmentsBtns[i].FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+                SegmentsBtns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
+                SegmentsBtns[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
+                SegmentsBtns[i].ForeColor = System.Drawing.Color.DodgerBlue;
+                SegmentsBtns[i].Name = "btnSegment" + i;
+                SegmentsBtns[i].Text = labelsFetched[i];
+                SegmentsBtns[i].Size = new System.Drawing.Size(((int)((double)this.Width / labelsFetched.Length) + 1 * i), this.Height);
 
-                if (i == 0)
-                    SegmentsBtnsTemp[i].Left = (int)((double)this.Width / labelsFetched.Length) * i;
-                else
-                    SegmentsBtnsTemp[i].Left = (int)((double)this.Width / labelsFetched.Length) * i - 1 * i;
+                SegmentsBtns[i].Left = (int)((double)this.Width / labelsFetched.Length) * i;
 
-                SegmentsBtnsTemp[i].Click -= (sender, e) => { };
-                SegmentsBtnsTemp[i].Click += (sender, e) => {
+                SegmentsBtns[i].Click -= (sender, e) => { };
+                SegmentsBtns[i].Click += (sender, e) => {
                     SegmentBtn_Click?.Invoke(sender, e);
                     SetActiveSegment(((Button)sender).Name);
                 };      
@@ -121,7 +131,7 @@ namespace Team_Project
             {
                 SegmentsBtns.Remove(null);
             }
-
+            Segmented_Control_SizeChanged(null,null);
             Controls.AddRange(SegmentsBtns.ToArray());
         }
 
@@ -163,7 +173,16 @@ namespace Team_Project
         {
             for (int i = 0; i < SegmentsBtns.Count; i++)
             {
-                SegmentsBtns[i].Size = new System.Drawing.Size((this.Width / SegmentsBtns.Count + 1 * i), this.Height);
+                SegmentsBtns[i].Width = (int)((double)this.Width / SegmentsBtns.Count - 1 * SegmentsBtns.Count);
+
+                if (i > 0)
+                {
+                    SegmentsBtns[i].Left = SegmentsBtns[i - 1].Right - 1;
+                }
+                else
+                {
+                    SegmentsBtns[i].Left = 0;
+                }
             }
         }
         //

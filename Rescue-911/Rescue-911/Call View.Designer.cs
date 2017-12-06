@@ -38,10 +38,10 @@
             this.call_Control1.AvailableSegments = "t/f/t";
             this.call_Control1.BackColor = System.Drawing.Color.Transparent;
             this.call_Control1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.call_Control1.Location = new System.Drawing.Point(5, 89);
+            this.call_Control1.Location = new System.Drawing.Point(5, 105);
             this.call_Control1.Name = "call_Control1";
             this.call_Control1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.call_Control1.Size = new System.Drawing.Size(769, 749);
+            this.call_Control1.Size = new System.Drawing.Size(769, 733);
             this.call_Control1.TabIndex = 4;
             // 
             // Call_View

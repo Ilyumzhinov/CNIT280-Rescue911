@@ -20,9 +20,8 @@ namespace Rescue_911
             Calls = xECs;
             Current_Call = xCurrentCall;
 
-            lbCallState.Text = Current_Call.GetState();
-            lbAddress.Text = Current_Call.GetAddress();
-            txtDescription.Text = Current_Call.GetDescription();
+            // Call Control set-up.
+            callControlOverview.Setup_Control(Current_Call, "Overview", 0);
 
             // Emergency list set-up.
             if (Emergencies[0] != null)

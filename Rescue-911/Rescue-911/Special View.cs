@@ -100,8 +100,12 @@ namespace Rescue_911
         public void SetDesc(string xDesc)
         {
             dDesc = xDesc;
-            lbDesc.Text = xDesc;
-            lbDesc.Visible = true;
+
+            if (lbDesc != null)
+            {
+                lbDesc.Text = xDesc;
+                lbDesc.Visible = true;
+            }
         }
         public void SetAssigned_Btn(ref Button xBtn) { Assigned_Btn = xBtn; }
         

@@ -32,7 +32,7 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal)
+        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal, false, "When all information is filled in, either add or link the Call to an Emergency.")
         {
             if (toDisplay)
                 InitializeComponent();
@@ -51,9 +51,7 @@ namespace Rescue_911
             else
             {
                 // Setting up the View
-                //pnlCallInfo.Enabled = false;
-                //pnlEmergency.Enabled = false;
-                //pnlCaller.Enabled = false;
+                call_Control1.EnableControls(false);
 
                 SendStatusUpdate(true, "To access, you must have Operator access level!", "urgent");
             }

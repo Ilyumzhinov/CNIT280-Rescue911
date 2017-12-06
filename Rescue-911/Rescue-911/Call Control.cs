@@ -37,9 +37,9 @@ namespace Rescue_911
             set
             {
                 availableSegments = value;
-                segmented_Control1.SetAvailableSegments(AvailableSegments);
-                segmented_Control1.SegmentBtn_Click -= new EventHandler(Change_Segment);
-                segmented_Control1.SegmentBtn_Click += new EventHandler(Change_Segment);
+                segmentMain.SetAvailableSegments(AvailableSegments);
+                segmentMain.SegmentBtn_Click -= new EventHandler(Change_Segment);
+                segmentMain.SegmentBtn_Click += new EventHandler(Change_Segment);
             }
         }
         //
@@ -49,32 +49,55 @@ namespace Rescue_911
         public Call_Control()
         {
             InitializeComponent();
+
+            // Setting local View segment Control
+            segmentView.SetAvailableSegments("t/t");
+            segmentView.SegmentBtn_Click -= new EventHandler(Change_ViewSegment);
+            segmentView.SegmentBtn_Click += new EventHandler(Change_ViewSegment);
         }
         //
 
-        
+
         // SETs & GETs
         public void Setup_Control(ref Special_List<Emergency_Call> xECs, ref Special_List<Caller> xCallers, int initialSegment)
         {
+            // Setting up global data
             EmergencyCalls = xECs;
             Callers = xCallers;
 
+            // Setting up local data
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
-
             Current_Call.SetState("Not Logged");
 
-            txtCallDateTime.Text = Current_Call.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
-
-            txtPhoneNumber.Focus();
-
-            // To set default segment
+            // Setting the default segment
             Button btnTemp = new Button();
             btnTemp.Name = "btnSegment" + initialSegment;
+            btnTemp.Text = "Add";
             Change_Segment(btnTemp, null);
         }
 
+        public void Setup_Control(Emergency_Call xCall, string intialViewLabel, int intialViewSegmentIndex)
+        {
+            Current_Call = xCall;
+
+            // Setting the default segment
+            Button btnTemp = new Button();
+            btnTemp.Name = "btnSegment" + 2;
+            btnTemp.Text = "View";
+            Change_Segment(btnTemp, null);
+
+            // Setting the view segment
+            btnTemp.Name = "btnSegment" + intialViewSegmentIndex;
+            btnTemp.Text = intialViewLabel;
+            Change_ViewSegment(btnTemp, null);
+        }
+
         public void SetOperator_ID(int xOperator_ID) { Current_Operator_ID = xOperator_ID; }
+        public Emergency_Call GetCall()
+        {
+            return Current_Call;
+        }
         //
 
 
@@ -127,26 +150,153 @@ namespace Rescue_911
         // Algorithm for showing and hiding different elements based on the selected segment
         private void Change_Segment(object sender, EventArgs e)
         {
-            segmented_Control1.SetActiveSegment(((Button)sender).Name);
+            segmentMain.SetActiveSegment(((Button)sender).Name);
 
             if (((Button)sender).Text == "Add")
             {
-                panelAdd.Visible = true;
-                // panelView.Visible = false;
-                // panelAdd.Visible = true;
+                SetSegment_Add(ref Current_Call);
             }
             else if (((Button)sender).Text == "Edit")
             {
-                // panelEdit.Visible = false;
-                //  panelView.Visible = false;
-                panelAdd.Visible = false;
+                SetSegment_Edit(ref Current_Call);
             }
             else if (((Button)sender).Text == "View")
             {
-                panelAdd.Visible = false;
-                //  panelEdit.Visible = false;
-                //  panelView.Visible = true;
+                SetSegment_View(Current_Call);
             }
+        }
+
+        private void SetSegment_Add(ref Emergency_Call xCall)
+        {
+            EnableControls(true);
+            pnlEmergencyBtns.Enabled = true;
+            pnlEmergencyBtns.Visible = true;
+
+            PopulateFields(xCall);
+
+            txtPhoneNumber.Focus();
+
+            panelAdd.Visible = true;
+        }
+
+        private void SetSegment_Edit(ref Emergency_Call xCall)
+        {
+            SetSegment_Add(ref xCall);
+            pnlEmergencyBtns.Enabled = false;
+            pnlEmergencyBtns.Visible = false;
+
+            pnlUpdateBtn.Enabled = true;
+            pnlUpdateBtn.Visible = true;
+        }
+
+        private void SetSegment_View(Emergency_Call xCall)
+        {
+            EnableControls(false);
+
+            PopulateFields(xCall);
+
+            pnlParameters.Enabled = true;
+            pnlParameters.Visible = true;
+
+            // Setting the default segment
+            Button btnTemp = new Button();
+            btnTemp.Name = "btnSegment" + 0;
+            btnTemp.Text = "Overview";
+            Change_ViewSegment(btnTemp, null);
+
+            panelAdd.Visible = true;
+        }
+
+        // Controls changes between Overview/Detail segmentes of the View segment
+        private void Change_ViewSegment(object sender, EventArgs e)
+        {
+            segmentView.SetActiveSegment(((Button)sender).Name);
+
+            if (((Button)sender).Text == "Overview")
+            {
+                pnlCaller.Visible = false;
+                pnlCaller.Enabled = false;
+
+                pnlOtherData.Visible = false;
+                pnlOtherData.Enabled = false;
+            }
+            else if (((Button)sender).Text == "Detail")
+            {
+                pnlCaller.Visible = true;
+                pnlCaller.Enabled = true;
+
+                pnlOtherData.Visible = true;
+                pnlOtherData.Enabled = true;
+            }
+        }
+
+        private void PopulateFields(Emergency_Call xCall)
+        {
+            txtCallDateTime.Text = xCall.GetDateTime().ToString("h:mm:ss MM/dd/yyyy");
+            if (xCall.GetPriority() != 0)
+                cboCallPriority.SelectedIndex = xCall.GetPriority() - 1;
+            numTeams.Value = xCall.GetTeams_Required();
+
+            txtAddress.Text = xCall.GetAddress();
+            txtLandmark.Text = xCall.GetLandmark();
+            txtDescription.Text = xCall.GetDescription();
+
+            txtPhoneNumber.Text = xCall.GetEmergency_Caller().GetPhone_Number();
+            txtCallerName.Text = xCall.GetEmergency_Caller().GetName();
+        }
+
+        public void EnableControls(bool xEnable)
+        {
+            if (xEnable == false)
+            {
+                txtCallDateTime.BorderStyle = BorderStyle.None;
+                cboCallPriority.DropDownStyle = ComboBoxStyle.Simple;
+                numTeams.BorderStyle = BorderStyle.None;
+
+                txtPhoneNumber.BorderStyle = BorderStyle.None;
+                txtCallerName.BorderStyle = BorderStyle.None;
+
+                txtAddress.BorderStyle = BorderStyle.None;
+                txtLandmark.BorderStyle = BorderStyle.None;
+                txtDescription.BorderStyle = BorderStyle.None;
+            }
+            else
+            {
+                txtCallDateTime.BorderStyle = BorderStyle.Fixed3D;
+                cboCallPriority.DropDownStyle = ComboBoxStyle.DropDownList;
+                numTeams.BorderStyle = BorderStyle.Fixed3D;
+
+                txtPhoneNumber.BorderStyle = BorderStyle.Fixed3D;
+                txtCallerName.BorderStyle = BorderStyle.Fixed3D;
+
+                txtAddress.BorderStyle = BorderStyle.Fixed3D;
+                txtLandmark.BorderStyle = BorderStyle.Fixed3D;
+                txtDescription.BorderStyle = BorderStyle.Fixed3D;
+            }
+
+            cboCallPriority.Enabled = xEnable;
+            numTeams.ReadOnly = !xEnable;
+
+            txtAddress.ReadOnly = !xEnable;
+            txtLandmark.ReadOnly = !xEnable;
+            txtDescription.ReadOnly = !xEnable;
+
+            txtPhoneNumber.ReadOnly = !xEnable;
+            txtCallerName.ReadOnly = !xEnable;
+
+
+            pnlParameters.Visible = false;
+            pnlParameters.Enabled = false;
+            pnlEmergencyBtns.Visible = false;
+            pnlEmergencyBtns.Enabled = false;
+            pnlUpdateBtn.Visible = false;
+            pnlUpdateBtn.Enabled = false;
+
+            pnlCaller.Visible = true;
+            pnlCaller.Enabled = true;
+
+            pnlOtherData.Visible = true;
+            pnlOtherData.Enabled = true;
         }
         //
 
@@ -224,18 +374,14 @@ namespace Rescue_911
         private void txtAddress_Leave(object sender, EventArgs e)
         {
             if (txtAddress.Text.Trim() != string.Empty)
-            Current_Call.SetAddress(txtAddress.Text);
+                Current_Call.SetAddress(txtAddress.Text);
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
             if (txtDescription.Text.Trim() != string.Empty)
-              Current_Call.SetDescription(txtDescription.Text);
+                Current_Call.SetDescription(txtDescription.Text);
         }
-
-        public Emergency_Call GetCall()
-        {
-            return Current_Call;
-        }
+        //
     }
 }
