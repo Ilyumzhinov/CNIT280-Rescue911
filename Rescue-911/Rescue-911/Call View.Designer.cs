@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.call_Control1 = new Rescue_911.Call_Control();
+            this.callControl = new Rescue_911.Call_Control();
             this.SuspendLayout();
             // 
-            // call_Control1
+            // callControl
             // 
-            this.call_Control1.AutoSize = true;
-            this.call_Control1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.call_Control1.AvailableSegments = "t/f/t";
-            this.call_Control1.BackColor = System.Drawing.Color.Transparent;
-            this.call_Control1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.call_Control1.Location = new System.Drawing.Point(5, 105);
-            this.call_Control1.Name = "call_Control1";
-            this.call_Control1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.call_Control1.Size = new System.Drawing.Size(769, 733);
-            this.call_Control1.TabIndex = 4;
+            this.callControl.AutoSize = true;
+            this.callControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.callControl.AvailableSegments = "t/f/t";
+            this.callControl.BackColor = System.Drawing.Color.Transparent;
+            this.callControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.callControl.Location = new System.Drawing.Point(5, 105);
+            this.callControl.Name = "callControl";
+            this.callControl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.callControl.Size = new System.Drawing.Size(769, 733);
+            this.callControl.TabIndex = 4;
             // 
             // Call_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.call_Control1);
+            this.Controls.Add(this.callControl);
             this.Name = "Call_View";
             this.Size = new System.Drawing.Size(779, 843);
-            this.Controls.SetChildIndex(this.call_Control1, 0);
+            this.Controls.SetChildIndex(this.callControl, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,6 +59,6 @@
 
         #endregion
 
-        private Call_Control call_Control1;
+        private Call_Control callControl;
     }
 }

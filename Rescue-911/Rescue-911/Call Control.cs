@@ -293,10 +293,10 @@ namespace Rescue_911
             pnlUpdateBtn.Enabled = false;
 
             pnlCaller.Visible = true;
-            pnlCaller.Enabled = true;
+            pnlCaller.Enabled = xEnable;
 
             pnlOtherData.Visible = true;
-            pnlOtherData.Enabled = true;
+            pnlOtherData.Enabled = xEnable;
         }
         //
 
