@@ -33,7 +33,10 @@
             // 
             // call_Control1
             // 
+            this.call_Control1.AutoSize = true;
+            this.call_Control1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.call_Control1.AvailableSegments = "t/f/t";
+            this.call_Control1.BackColor = System.Drawing.Color.Transparent;
             this.call_Control1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.call_Control1.Location = new System.Drawing.Point(5, 89);
             this.call_Control1.Name = "call_Control1";

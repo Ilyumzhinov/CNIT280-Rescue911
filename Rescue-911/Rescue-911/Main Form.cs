@@ -104,18 +104,18 @@ namespace Rescue_911
             SetView(typeof(Call_View), ((Button)sender), new List<object> { SD.GetCalls(), SD.GetCallers() }, Current_View);
             Call_View CallView = (Call_View)Current_View;
 
-            CallView.LinkEmergencyButton_Click += new EventHandler(EmergencyLinkView_Prepare);
-            CallView.AddEmergencyButton_Click += new EventHandler(AddEmergencyView_PrePare);
+            CallView.LinkEmergency += new EventHandler(EmergencyLinkView_Prepare);
+            CallView.AddEmergency += new EventHandler(AddEmergencyView_PrePare);
         }
 
         private void EmergencyLinkView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Emergency_Link_View), null, new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_View)Current_View).GetEmergency_Call() }, Current_View);
+            SetView(typeof(Emergency_Link_View), null, new List<object> { SD.GetEmergencies(), SD.GetCalls(), ((Call_Control)sender).GetCall() }, Current_View);
             
         }
         private void AddEmergencyView_PrePare(object sender, EventArgs e)
         {
-            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetCalls(),  ((Call_View)Current_View).GetEmergency_Call(), SD.GetCallers() }, Current_View);
+            SetView(typeof(Emergency_Add_View), null, new List<object> { SD.GetCalls(),  ((Call_Control)sender).GetCall(), SD.GetCallers() }, Current_View);
         }
 
         private void EmergencyManagementView_Prepare(object sender, EventArgs e)

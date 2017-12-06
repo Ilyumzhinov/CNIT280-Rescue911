@@ -14,8 +14,8 @@ namespace Team_Project
     {
         // DATA STRUCTURE
         //Composite Data
-        private List<Button> SegmentsBtns = new List<Button>();
-        private Button mSelectedButton;
+        private List<Button> SegmentsBtns;
+        private int mSelectedSegment = -1;
 
         //Public Data
         private string segmentsValue = string.Empty;
@@ -42,6 +42,8 @@ namespace Team_Project
         public Segmented_Control()
         {
             InitializeComponent();
+
+            SegmentsBtns = new List<Button>();
         }
 
 
@@ -52,40 +54,37 @@ namespace Team_Project
 
             string[] labelsFetched = Labels.Split('/');
 
-            SegmentsBtns.Clear();
+            List<Button> SegmentsBtnsTemp = SegmentsBtns;
             Controls.Clear();
+            SegmentsBtnsTemp.Clear();
+
 
             for (int i = 0; i < labelsFetched.Length; i++)
             {
-                SegmentsBtns.Add(new Button());
-                SegmentsBtns[i].Cursor = System.Windows.Forms.Cursors.Hand;
-                SegmentsBtns[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                SegmentsBtns[i].Font = new System.Drawing.Font("Segoe UI", 8F);
-                SegmentsBtns[i].TabIndex = i;
-                SegmentsBtns[i].UseVisualStyleBackColor = false;
-                SegmentsBtns[i].BackColor = System.Drawing.Color.White;
-                SegmentsBtns[i].FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-                SegmentsBtns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-                SegmentsBtns[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-                SegmentsBtns[i].ForeColor = System.Drawing.Color.DodgerBlue;
-                SegmentsBtns[i].Name = "btnSegment" + i;
-                SegmentsBtns[i].Text = labelsFetched[i];
-                SegmentsBtns[i].Size = new System.Drawing.Size((this.Width / labelsFetched.Length + 1 * i), this.Height);
+                SegmentsBtnsTemp.Add(new Button());
+                SegmentsBtnsTemp[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                SegmentsBtnsTemp[i].Font = new System.Drawing.Font("Segoe UI", 8F);
+                SegmentsBtnsTemp[i].UseVisualStyleBackColor = false;
+                SegmentsBtnsTemp[i].BackColor = System.Drawing.Color.Transparent;
+                SegmentsBtnsTemp[i].FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+                SegmentsBtnsTemp[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
+                SegmentsBtnsTemp[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
+                SegmentsBtnsTemp[i].ForeColor = System.Drawing.Color.DodgerBlue;
+                SegmentsBtnsTemp[i].Name = "btnSegment" + i;
+                SegmentsBtnsTemp[i].Text = labelsFetched[i];
+                SegmentsBtnsTemp[i].Size = new System.Drawing.Size(((int)((double)this.Width / labelsFetched.Length) + 1 * i), this.Height);
 
                 if (i == 0)
-                    SegmentsBtns[i].Left = (this.Width / labelsFetched.Length) * i;
+                    SegmentsBtnsTemp[i].Left = (int)((double)this.Width / labelsFetched.Length) * i;
                 else
-                    SegmentsBtns[i].Left = (this.Width / labelsFetched.Length) * i - 1 * i;
+                    SegmentsBtnsTemp[i].Left = (int)((double)this.Width / labelsFetched.Length) * i - 1 * i;
 
-                SegmentsBtns[i].Click -= (sender, e) => { };
-                SegmentsBtns[i].Click += (sender, e) => {
+                SegmentsBtnsTemp[i].Click -= (sender, e) => { };
+                SegmentsBtnsTemp[i].Click += (sender, e) => {
                     SegmentBtn_Click?.Invoke(sender, e);
-                    SetActiveSegment((Button)sender);
-                };
-                
+                    SetActiveSegment(((Button)sender).Name);
+                };      
             }
-
-            Controls.AddRange(SegmentsBtns.ToArray());
         }
 
         public void SetAvailableSegments(string segmentsString)
@@ -96,6 +95,7 @@ namespace Team_Project
             string[] segmentsStringFetched = segmentsString.Split('/');
 
             SetSegments(segmentsValue);
+            
 
             if (segmentsStringFetched.Length > SegmentsBtns.Count || segmentsStringFetched.Length < SegmentsBtns.Count)
                 return;
@@ -121,28 +121,41 @@ namespace Team_Project
             {
                 SegmentsBtns.Remove(null);
             }
+
+            Controls.AddRange(SegmentsBtns.ToArray());
         }
 
-        public void SetActiveSegment(Button sender)
+        public void SetActiveSegment(string senderName)
         {
-            if (mSelectedButton != null)
+            Button sender = new Button();
+
+            for (int j = 0; j < SegmentsBtns.Count; j++)
             {
-                mSelectedButton.BackColor = System.Drawing.Color.White;
-                mSelectedButton.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-                mSelectedButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-                mSelectedButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-                mSelectedButton.ForeColor = System.Drawing.Color.DodgerBlue;
-                mSelectedButton.Enabled = true;
+                if (SegmentsBtns[j].Name == senderName)
+                {
+                    sender = SegmentsBtns[j];
+
+                    if (mSelectedSegment != -1)
+                    {
+                        SegmentsBtns[mSelectedSegment].BackColor = System.Drawing.Color.Transparent;
+                        SegmentsBtns[mSelectedSegment].FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+                        SegmentsBtns[mSelectedSegment].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
+                        SegmentsBtns[mSelectedSegment].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
+                        SegmentsBtns[mSelectedSegment].ForeColor = System.Drawing.Color.DodgerBlue;
+                        SegmentsBtns[mSelectedSegment].Enabled = true;
+                    }
+
+                    sender.BackColor = System.Drawing.Color.DodgerBlue;
+                    sender.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+                    sender.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+                    sender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+                    sender.ForeColor = System.Drawing.Color.White;
+                    sender.Enabled = false;
+
+                    mSelectedSegment = j;
+                    break;
+                }
             }
-
-            sender.BackColor = System.Drawing.Color.DodgerBlue;
-            sender.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            sender.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            sender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            sender.ForeColor = System.Drawing.Color.White;
-            sender.Enabled = false;
-
-            mSelectedButton = sender;
         }
 
         // EVENTS HANDLERS
