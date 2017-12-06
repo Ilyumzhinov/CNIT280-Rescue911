@@ -69,6 +69,7 @@ namespace Rescue_911
             Current_Call = new Emergency_Call();
             Current_Call.SetDateTime(DateTime.Now);
             Current_Call.SetState("Not Logged");
+            Current_Call.SetTeams_Required(1);
 
             // Setting the default segment
             Button btnTemp = new Button();
@@ -133,7 +134,6 @@ namespace Rescue_911
             else
             {
                 // All checks are satisfied
-
                 Current_Call.SetTeams_Required((int)numTeams.Value);
 
                 Current_Call.SetLandmark(txtLandmark.Text);
@@ -381,6 +381,16 @@ namespace Rescue_911
         {
             if (txtDescription.Text.Trim() != string.Empty)
                 Current_Call.SetDescription(txtDescription.Text);
+        }
+
+        private void numTeams_Leave(object sender, EventArgs e)
+        {
+            Current_Call.SetTeams_Required((int)numTeams.Value);
+        }
+
+        private void txtLandmark_Leave(object sender, EventArgs e)
+        {
+            Current_Call.SetLandmark(txtLandmark.Text);
         }
         //
     }

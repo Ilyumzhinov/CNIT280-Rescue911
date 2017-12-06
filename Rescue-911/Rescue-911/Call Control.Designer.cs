@@ -68,9 +68,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbpnlOtherData = new System.Windows.Forms.Label();
             this.pnlParameters = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.segmentView = new Rescue_911.Segmented_Control();
             this.segmentMain = new Rescue_911.Segmented_Control();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -201,6 +201,7 @@
             0,
             0,
             0});
+            this.numTeams.Leave += new System.EventHandler(this.numTeams_Leave);
             // 
             // label2
             // 
@@ -590,6 +591,7 @@
             this.txtLandmark.Name = "txtLandmark";
             this.txtLandmark.Size = new System.Drawing.Size(175, 22);
             this.txtLandmark.TabIndex = 3;
+            this.txtLandmark.Leave += new System.EventHandler(this.txtLandmark_Leave);
             // 
             // label7
             // 
@@ -675,6 +677,20 @@
             this.pnlParameters.Size = new System.Drawing.Size(580, 33);
             this.pnlParameters.TabIndex = 14;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(10, 5);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "parameters:";
+            // 
             // segmentView
             // 
             this.segmentView.AutoSize = true;
@@ -706,20 +722,6 @@
             this.segmentMain.Segments = "Add/Edit/View";
             this.segmentMain.Size = new System.Drawing.Size(150, 23);
             this.segmentMain.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(10, 5);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label9.Size = new System.Drawing.Size(77, 17);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "parameters:";
             // 
             // Call_Control
             // 
