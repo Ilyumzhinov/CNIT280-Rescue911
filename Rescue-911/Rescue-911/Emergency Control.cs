@@ -122,6 +122,8 @@ namespace Rescue_911
         // Algorithm for showing and hiding different elements based on the selected segment
         private void Change_Segment(object sender, EventArgs e)
         {
+            this.SizeChanged -= new EventHandler(this_SizeChanged);
+
             if (((Button)sender).Text == "Add")
             {
                 SetSegment_Add(ref Current_Emergency);
@@ -140,6 +142,8 @@ namespace Rescue_911
             else if (((Button)sender).Text == "List")
             {
                 SetSegment_List(ref EmergencyCalls);
+
+                this.SizeChanged += new EventHandler(this_SizeChanged);
             }
 
             segmentMain.SetActiveSegment(((Button)sender).Name);
@@ -148,30 +152,29 @@ namespace Rescue_911
         private void SetSegment_Add(ref Emergency xEmergency)
         {
             EnabledControls(true);
-            //pnlEmergencyBtns.Enabled = true;
-            //pnlEmergencyBtns.Visible = true;
-
             PopulateFields(xEmergency);
 
-            cboEmergencyType.Focus();
+            pnlSpecs.Visible = true;
+            pnlAddEmergencyBtn.Visible = true;
 
-            panelAdd.Visible = true;
+            pnlRelatedData.Visible = true;
+            cboEmergencyType.Focus();
         }
 
         private void SetSegment_View(ref Emergency_Call xCall)
         {
             EnabledControls(false);
-            panelList.Visible = false;
-            panelAdd.Visible = true;
+
             PopulateFields(xCall.GetEmergency());
             callControlView.Setup_Control(xCall, "Overview", 0);
+
+            pnlSpecs.Visible = true;
+            pnlRelatedData.Visible = true;
         }
 
         private void SetSegment_List(ref Special_List<Emergency_Call> xEmergencies)
         {
             EnabledControls(false);
-
-            panelAdd.Visible = false;
             panelList.Visible = true;
             panelList.Enabled = true;
 
@@ -188,6 +191,11 @@ namespace Rescue_911
 
         public void EnabledControls(bool xEnable = false)
         {
+            pnlParameters.Visible = false;
+            pnlSpecs.Visible = false;
+            pnlRelatedData.Visible = false;
+            panelList.Visible = false;
+
             if (xEnable == false)
             {
                 cboEmergencyType.DropDownStyle = ComboBoxStyle.Simple;
@@ -199,22 +207,14 @@ namespace Rescue_911
 
             cboEmergencyType.Enabled = xEnable;
 
-            pnlParameters.Visible = false;
-            pnlParameters.Enabled = false;
-           // pnlUpdateBtn.Visible = false;
-           // pnlUpdateBtn.Enabled = false;
 
-            panelList.Visible = false;
-            panelList.Enabled = false;
-
-            panelAdd.Visible = xEnable;
-            panelAdd.Enabled = xEnable;
         }
         //
 
         //List segment Functions
         private void listEmergenciesPopulate(string state, List<Emergency_Call> ExistingCalls)
         {
+
             lstEmergencies.Items.Clear();
 
             foreach (Emergency_Call iEC in ExistingCalls)
@@ -316,7 +316,7 @@ namespace Rescue_911
             listEmergenciesPopulate((string)cmbState.SelectedItem, EmergencyCalls);
         }
 
-        private void pnlList_SizeChanged(object sender, EventArgs e)
+        private void this_SizeChanged(object sender, EventArgs e)
         {
             lstEmergencies.Columns[5].Width = lstEmergencies.Width - 80 * 5 - SystemInformation.VerticalScrollBarWidth;
         }

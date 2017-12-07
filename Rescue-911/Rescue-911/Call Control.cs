@@ -244,6 +244,15 @@ namespace Rescue_911
 
         public void EnableControls(bool xEnable)
         {
+            pnlParameters.Visible = false;
+            pnlEmergencyBtns.Visible = false;
+            pnlUpdateBtn.Visible = false;
+
+            pnlCallInfo.Visible = false;
+            pnlCaller.Visible = false;
+            pnlOtherData.Visible = false;
+
+
             if (xEnable == false)
             {
                 txtCallDateTime.BorderStyle = BorderStyle.FixedSingle;
@@ -281,13 +290,7 @@ namespace Rescue_911
             txtPhoneNumber.ReadOnly = !xEnable;
             txtCallerName.ReadOnly = !xEnable;
 
-            pnlParameters.Visible = false;
-            pnlEmergencyBtns.Visible = false;
-            pnlUpdateBtn.Visible = false;
-
-            pnlCallInfo.Visible = false;
-            pnlCaller.Visible = false;
-            pnlOtherData.Visible = false;
+           
         }
         //
 

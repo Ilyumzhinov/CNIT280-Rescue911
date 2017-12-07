@@ -95,7 +95,6 @@ namespace Rescue_911
                 SegmentsBtns[i].Click -= (sender, e) => { };
                 SegmentsBtns[i].Click += (sender, e) => {
                     SegmentBtn_Click?.Invoke(sender, e);
-                    //SetActiveSegment(((Button)sender).Name);
                 };      
             }
         }

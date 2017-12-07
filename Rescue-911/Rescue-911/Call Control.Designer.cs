@@ -102,7 +102,7 @@
             this.panel1.MinimumSize = new System.Drawing.Size(0, 33);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel1.Size = new System.Drawing.Size(580, 33);
+            this.panel1.Size = new System.Drawing.Size(870, 33);
             this.panel1.TabIndex = 16;
             // 
             // segmentMain
@@ -145,9 +145,8 @@
             this.panelSegments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSegments.Location = new System.Drawing.Point(0, 76);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.panelSegments.MaximumSize = new System.Drawing.Size(0, 2000);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(580, 447);
+            this.panelSegments.Size = new System.Drawing.Size(870, 298);
             this.panelSegments.TabIndex = 17;
             // 
             // panelAdd
@@ -161,10 +160,9 @@
             this.panelAdd.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdd.Location = new System.Drawing.Point(0, 0);
             this.panelAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.panelAdd.MaximumSize = new System.Drawing.Size(800, 2000);
             this.panelAdd.MinimumSize = new System.Drawing.Size(290, 2);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(580, 447);
+            this.panelAdd.Size = new System.Drawing.Size(870, 298);
             this.panelAdd.TabIndex = 0;
             // 
             // pnlCallInfo
@@ -469,7 +467,7 @@
             this.pnlOtherData.Controls.Add(this.panel8);
             this.pnlOtherData.Controls.Add(this.panel7);
             this.pnlOtherData.Controls.Add(this.lbpnlOtherData);
-            this.pnlOtherData.Location = new System.Drawing.Point(0, 149);
+            this.pnlOtherData.Location = new System.Drawing.Point(580, 0);
             this.pnlOtherData.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.pnlOtherData.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlOtherData.Name = "pnlOtherData";
@@ -691,7 +689,7 @@
             this.pnlParameters.Location = new System.Drawing.Point(0, 43);
             this.pnlParameters.Name = "pnlParameters";
             this.pnlParameters.Padding = new System.Windows.Forms.Padding(10, 5, 0, 10);
-            this.pnlParameters.Size = new System.Drawing.Size(580, 33);
+            this.pnlParameters.Size = new System.Drawing.Size(870, 33);
             this.pnlParameters.TabIndex = 14;
             // 
             // segmentView
@@ -736,7 +734,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Call_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(580, 523);
+            this.Size = new System.Drawing.Size(870, 374);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);
