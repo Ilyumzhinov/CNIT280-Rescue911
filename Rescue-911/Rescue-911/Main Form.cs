@@ -155,7 +155,7 @@ namespace Rescue_911
 
         private void PatientInformationView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Patient_Information_View), ((Button)sender), null, Current_View);
+            SetView(typeof(Patient_Information_View), ((Button)sender), new List<object> { SD.GetPatients()} , Current_View);
         }
 
         private void InvoiceView_Prepare(object sender, EventArgs e)

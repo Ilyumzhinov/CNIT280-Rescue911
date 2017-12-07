@@ -52,7 +52,7 @@ namespace Rescue_911
                 lblogtime.Text = CurrentEMT.getstatus();
                 button1.Enabled = false;
                 btnWaitingCall.Enabled = true;
-            } else if (int.Parse(DateTime.Now.Hour.ToString())-int.Parse(CurrentEMT.getshifttime().Split(':')[0]) > 0 && int.Parse(DateTime.Now.Hour.ToString()) - int.Parse(CurrentEMT.getshifttime().Split(':')[0]) < 8)
+            } else if (int.Parse(DateTime.Now.Hour.ToString())-int.Parse(CurrentEMT.getshifttime().Split(':')[0]) >= 0 && int.Parse(DateTime.Now.Hour.ToString()) - int.Parse(CurrentEMT.getshifttime().Split(':')[0]) < 8)
             {
                
                 LBtotalworkedhours.Text = CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8);

@@ -13,15 +13,15 @@ namespace Rescue_911
     public partial class Dispatch_Related_Times_View : Special_View
     {
         // COMPOSITE DATA
-        private List<Emergency> Emergencies;
+        private Special_List<Dispatch> Dispatchs;
 
 
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Dispatch_Related_Times_View(bool toDisplay, ref List<Emergency> xEmergencies) : this(toDisplay)
+        public Dispatch_Related_Times_View(bool toDisplay, ref Special_List<Dispatch> xDispatchs) : this(toDisplay)
         {
-            Emergencies = xEmergencies;
+            Dispatchs = xDispatchs;
         }
 
         //To-display the view.
@@ -33,7 +33,7 @@ namespace Rescue_911
 
         private void Dispatch_Related_Times_Load(object sender, EventArgs e)
         {
-            lstEmergenciesFetch("Accepted", Emergencies);
+            lstEmergenciesFetch("Accepted", Dispatchs);
         }
 
         private void btnDispatchTime_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace Rescue_911
             //}
         }
 
-        private void lstEmergenciesFetch(string state, List<Emergency> ExistingEmergencies)
+        private void lstEmergenciesFetch(string state, List<Dispatch> Dispatchs)
         {
                 //lstEmergencies.Items.Clear();
 

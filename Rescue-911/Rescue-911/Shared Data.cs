@@ -378,41 +378,42 @@ namespace Rescue_911
             xPatients[0].setcomplication("Losed Blood");
             xPatients[0].SetName("Calven");
             xPatients[0].SetLast_Name("Yuvenov");
+            xPatients[0].setPatientID("1");
 
             xPatients.Add(new Patient());
             xPatients[1].setbloodtype("o");
             xPatients[1].setcomplication("In pain ");
             xPatients[1].SetName("John");
             xPatients[1].SetLast_Name("Smith");
-
+            xPatients[1].setPatientID("2");
             xPatients.Add(new Patient());
             xPatients[2].SetDOB("2 feb");
             xPatients[2].setbloodtype("o");
             xPatients[2].setcomplication("Losed Blood");
             xPatients[2].SetName("kevin");
             xPatients[2].SetLast_Name("zhang");
-
+            xPatients[2].setPatientID("3");
             xPatients.Add(new Patient());
             xPatients[3].SetDOB("13 feb");
             xPatients[3].setbloodtype("o");
             xPatients[3].setcomplication("Losed Blood");
             xPatients[3].SetName("artem");
             xPatients[3].SetLast_Name("sub");
-
+            xPatients[3].setPatientID("4");
             xPatients.Add(new Patient());
             xPatients[4].SetDOB("13 feb");
             xPatients[4].setbloodtype("o");
             xPatients[4].setcomplication("Losed Blood");
             xPatients[4].SetName("jassica");
             xPatients[4].SetLast_Name("kanban");
-
+            xPatients[4].setPatientID("5");
             xPatients.Add(new Patient());
             xPatients[5].SetDOB("13 feb");
             xPatients[5].setbloodtype("o");
             xPatients[5].setcomplication("Losed Blood");
             xPatients[5].SetName("zoe");
             xPatients[5].SetLast_Name("abbe");
-
+            xPatients[5].setPatientID("6");
             return xPatients;
         }
     }

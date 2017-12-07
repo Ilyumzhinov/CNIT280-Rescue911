@@ -13,30 +13,29 @@ namespace Rescue_911
     public partial class Patient_Information_View : Special_View
     {
        
-        private Special_List<PatientInformation> Patients;
+        private Special_List<Patient> Patients;
 
-       
+
 
         // CONSTRUCTORS
         //To-setup the view
-
-        public Patient_Information_View(bool toDisplay, ref Special_List<PatientInformation> xPIs) : this(toDisplay)
+        int tem = 0;
+        public Patient_Information_View(bool toDisplay, ref Special_List<Patient> xPIs) : this(toDisplay)
         {
             Patients = xPIs;
-
             Patients.ItemAdded -= new EventHandler(lstHistory_AddRecord);
             Patients.ItemAdded += new EventHandler(lstHistory_AddRecord);
-
-            foreach (PatientInformation iPatients in Patients)
+            foreach (Patient iPatients in Patients)
             {
-                lstHistory.Items.Add(iPatients);
+                lstHistory.Items.Add(iPatients.GetName().ToString());
             }
+            tem = Patients.Count+1;
+            txtPatientID.Text = tem.ToString();
 
         }
         //To-display the view.
         public Patient_Information_View(bool toDisplay) : base(toDisplay)
         {
-         
                 InitializeComponent();
         }
 
@@ -50,24 +49,19 @@ namespace Rescue_911
             else
             {
                 btnAddRecord.Enabled = false;
-
-
                 txtComplications.Enabled = false;
-
                 SendStatusUpdate(true, "To access, you must have Manager access level!", "urgent");
             }
         }
         private void btnAddRecord_Click(object sender, EventArgs e)
         {
-            int Age;
-
-
+    
             if (lstHistory.SelectedIndex != -1)
             {
-                DTPBirthDate.Value = DateTime.Now;
+               // DTPBirthDate.Value = DateTime.Now;
                 txtComplications.Text = string.Empty;
 
-                DTPBirthDate.Enabled = true;
+               // DTPBirthDate.Enabled = true;
                 txtComplications.Enabled = true;
 
                 lstHistory.SelectedIndex = -1;
@@ -81,6 +75,28 @@ namespace Rescue_911
                 txtName.Focus();
                 return;
             }
+            if (txtGender.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Gender", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtGender.Focus();
+                return;
+            }
+            if (txtAddress.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Address", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtAddress.Focus();
+                return;
+            }
+
+            if (txtlastname.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter Patient Last Name", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtlastname.Focus();
+                return;
+            }
 
             if (txtBloodType.Text.Trim() == string.Empty)
             {
@@ -90,59 +106,115 @@ namespace Rescue_911
                 return;
             }
 
-            if (txtAge.Text.Trim() == string.Empty)
+            if (txtDOB.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Enter Patient Age", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtAge.Focus();
+                txtDOB.Focus();
                 return;
             }
 
             //Type Check
-            if (int.TryParse(txtAge.Text, out Age) == false)
-            {
-                MessageBox.Show("Enter a real number for Patient Age.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                txtAge.Focus();
-                return;
-            }
+           
 
             else // All checks are satisfied
             {
-                DTPBirthDate.Enabled = false;
+               // DTPBirthDate.Enabled = false;
                 txtComplications.Enabled = false;
 
-                PatientInformation PatientHealthInformation = new PatientInformation();
+                Patient pat = new Patient();
 
-                PatientHealthInformation.SetPatientName(txtName.Text);
-                PatientHealthInformation.Setage(int.Parse(txtAge.Text));
-                PatientHealthInformation.SetBirthdate(DTPBirthDate.Value);
-                PatientHealthInformation.SetBloodType(txtBloodType.Text);
-                PatientHealthInformation.Setcomplication(txtComplications.Text);
-
-                Patients.AddItem(PatientHealthInformation);
-
-                lstHistory.SelectedIndex = lstHistory.Items.IndexOf(PatientHealthInformation);
+                pat.SetLast_Name(txtlastname.Text);
+                pat.SetName(txtName.Text);
+                pat.SetDOB(txtDOB.Text);
+                pat.setbloodtype(txtBloodType.Text);
+                pat.setcomplication(txtComplications.Text);
+                pat.setInsuranceID(txtInsuranceID.Text);
+                pat.setPatientID(txtPatientID.Text);
+                pat.setGender(txtGender.Text);
+                pat.SetAddress(txtAddress.Text);
+                bool bol = false;
+                for (int a = 0; a < Patients.Count; a++) {
+                 if (Patients[a].GetName() == pat.GetName() && Patients[a].GetLast_Name() == pat.GetLast_Name())
+                    {
+                        Patients[a]=pat;
+                  
+                        bol = true;
+                        break;
+                    }
+                }
+                if (bol == false) {
+                    Patients.AddItem(pat);
+                    tem++;
+                }
+                clear();
+                lstHistory.Items.Clear();
+                foreach (Patient iPatients in Patients)
+                {
+                    lstHistory.Items.Add(iPatients.GetName().ToString());
+                }
+                lstHistory.SelectedIndex = lstHistory.Items.IndexOf(pat);
                 SendStatusUpdate(true, "Patient Record Added!", "success");
-
-
+                txtPatientID.Text = tem.ToString();
             }
         }
 
         private void lstHistory_AddRecord(object sender, EventArgs e)
         {
-            lstHistory.Items.Add((PatientInformation)sender);
+            Patient a = (Patient)sender;
+            lstHistory.Items.Add(a);
         }
 
         private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstHistory.SelectedIndex == -1)
                 return;
+            Patient temp = Patients[lstHistory.SelectedIndex];
+           // DTPBirthDate.Value = ((PatientInformation)lstHistory.SelectedItem).GetBirthDate();
+             txtComplications .Text = temp.getComplication();
+            txtName.Text = temp.GetName();
+            txtDOB.Text = temp.GetDOB();
+            txtlastname.Text = temp.GetLast_Name();
+            txtBloodType.Text = temp.getbloodtype();
+            txtAddress.Text = temp.GetAddress();
+            txtInsuranceID.Text = temp.getInsuranceID();
+            txtPatientID.Text = temp.getPatientID();
+            txtGender.Text = temp.getGender();
 
-            DTPBirthDate.Value = ((PatientInformation)lstHistory.SelectedItem).GetBirthDate();
-            txtComplications.Text = ((PatientInformation)lstHistory.SelectedItem).Getcomplication();
-            DTPBirthDate.Enabled = false;
-            txtComplications.Enabled = false;
+
+
+
+         //   DTPBirthDate.Enabled = false;
+            txtBloodType.Enabled = false;
+            txtlastname.Enabled = false;
+            txtName.Enabled = false;
+            btnnew.Enabled = true;
+          
+           
+          
+           
+        }
+        public void clear() {
+            txtName.Text = "";
+            txtDOB.Text = "";
+            txtlastname.Text = "";
+            txtBloodType.Text = "";
+            txtAddress.Text = "";
+            txtInsuranceID.Text = "";
+            txtPatientID.Text = "";
+            txtGender.Text = "";
+
+
+
+        }
+        private void btnnew_Click(object sender, EventArgs e)
+        {
+            txtName.Enabled = true;
+            txtBloodType.Enabled = true;
+            txtlastname.Enabled = true;
+            clear();
+            btnnew.Enabled = false;
+            txtPatientID.Text = tem.ToString();
         }
     }
 }

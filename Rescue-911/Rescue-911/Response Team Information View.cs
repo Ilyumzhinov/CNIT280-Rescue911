@@ -41,7 +41,7 @@ namespace Rescue_911
                 for (int a = 0; a < Dispatches.Count; a++) {
 
 
-                    if (Dispatches[a].getStatus() == "ready" && Dispatches[a].GetResponseTeam().GetID()== Current_RT.GetID()) {
+                    if (Dispatches[a].getStatus() == "Accepted" && Dispatches[a].GetResponseTeam().GetID()== Current_RT.GetID()) {
                         rbYes.Enabled = true;
                         rbNo.Enabled = true;
 
