@@ -70,7 +70,7 @@
             this.emergency_List1.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergency_List1.Name = "emergency_List1";
             this.emergency_List1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergency_List1.Size = new System.Drawing.Size(440, 134);
+            this.emergency_List1.Size = new System.Drawing.Size(440, 136);
             this.emergency_List1.TabIndex = 25;
             // 
             // Dispatch_Related_Times_View
@@ -85,6 +85,9 @@
             this.Controls.Add(this.dtPicker);
             this.Name = "Dispatch_Related_Times_View";
             this.Size = new System.Drawing.Size(456, 304);
+            this.ViewColour = System.Drawing.Color.MediumPurple;
+            this.ViewDescription = "";
+            this.ViewTitle = "Dispatch Related Times";
             this.Controls.SetChildIndex(this.dtPicker, 0);
             this.Controls.SetChildIndex(this.btnDispatchTime, 0);
             this.Controls.SetChildIndex(this.btnRecordArrival, 0);

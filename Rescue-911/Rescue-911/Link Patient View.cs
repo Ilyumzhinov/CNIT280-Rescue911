@@ -67,7 +67,7 @@ namespace Rescue_911
 
         }
         //To-display the view.
-        public Link_Patient_View(bool toDisplay) : base(toDisplay, "Link Patient", Color.Peru)
+        public Link_Patient_View(bool toDisplay) : base(toDisplay)
         {
             if (toDisplay)
                 InitializeComponent();

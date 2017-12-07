@@ -285,6 +285,9 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Link_Patient_View";
             this.Size = new System.Drawing.Size(578, 412);
+            this.ViewColour = System.Drawing.Color.Peru;
+            this.ViewDescription = "";
+            this.ViewTitle = "Link Patient";
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.label4, 0);

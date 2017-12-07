@@ -62,10 +62,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.numSubID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 87);
+            this.panel1.Location = new System.Drawing.Point(2, 98);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 201);
+            this.panel1.Size = new System.Drawing.Size(310, 190);
             this.panel1.TabIndex = 5;
             // 
             // btnPay
@@ -164,6 +164,9 @@
             this.Name = "Sub_Payment_View";
             this.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Size = new System.Drawing.Size(314, 291);
+            this.ViewColour = System.Drawing.Color.PowderBlue;
+            this.ViewDescription = "";
+            this.ViewTitle = "Sub Payment";
             this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numSubID)).EndInit();
             this.panel1.ResumeLayout(false);

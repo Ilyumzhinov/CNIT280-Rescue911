@@ -137,10 +137,10 @@
             this.panel1.Controls.Add(this.btnGenerate);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(10, 94);
+            this.panel1.Location = new System.Drawing.Point(10, 105);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 376);
+            this.panel1.Size = new System.Drawing.Size(470, 365);
             this.panel1.TabIndex = 35;
             // 
             // NUDSubID
@@ -159,6 +159,9 @@
             this.Name = "Invoice_View";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(490, 480);
+            this.ViewColour = System.Drawing.Color.DeepPink;
+            this.ViewDescription = "";
+            this.ViewTitle = "Invoice";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

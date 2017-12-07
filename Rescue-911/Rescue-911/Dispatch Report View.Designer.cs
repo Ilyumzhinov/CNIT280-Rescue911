@@ -209,6 +209,9 @@
             this.Controls.Add(this.panel2);
             this.Name = "Dispatch_Report_View";
             this.Size = new System.Drawing.Size(398, 458);
+            this.ViewColour = System.Drawing.Color.PaleVioletRed;
+            this.ViewDescription = "";
+            this.ViewTitle = "Dispatch Report";
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.lb11, 0);
             this.Controls.SetChildIndex(this.lbCallID, 0);
