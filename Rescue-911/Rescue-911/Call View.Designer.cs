@@ -52,6 +52,8 @@
             this.Controls.Add(this.callControl);
             this.Name = "Call_View";
             this.Size = new System.Drawing.Size(779, 843);
+            this.ViewColour = System.Drawing.Color.Teal;
+            this.ViewDescription = "When all information is filled in, either add or link the Call to an Emergency";
             this.ViewTitle = "Call Management";
             this.Controls.SetChildIndex(this.callControl, 0);
             this.ResumeLayout(false);
