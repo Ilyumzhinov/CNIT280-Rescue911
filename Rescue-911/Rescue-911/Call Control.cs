@@ -151,8 +151,6 @@ namespace Rescue_911
         // Algorithm for showing and hiding different elements based on the selected segment
         private void Change_Segment(object sender, EventArgs e)
         {
-            segmentMain.SetActiveSegment(((Button)sender).Name);
-
             if (((Button)sender).Text == "Add")
             {
                 SetSegment_Add(ref Current_Call);
@@ -165,6 +163,8 @@ namespace Rescue_911
             {
                 SetSegment_View(Current_Call);
             }
+
+            segmentMain.SetActiveSegment(((Button)sender).Name);
         }
 
         private void SetSegment_Add(ref Emergency_Call xCall)

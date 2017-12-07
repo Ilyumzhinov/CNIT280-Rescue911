@@ -49,24 +49,24 @@ namespace Rescue_911
                     return;
 
                 Emergency_Management_View_SizeChanged(this, null);
-                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+                emergencyControl.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
                 RTList.RTSelected += new EventHandler(lstTeams_SelectedIndexChanged);
 
                 if (xPerson is Supervisor)
                 {
-                    emergencyList.SetEmergency_List(ref Calls, "Waiting", true);
+                    emergencyControl.Setup_Control(ref Calls, "Waiting", true);
                     RTList.Visible = false;
                 }
                 else if (xPerson is Operator)
                 {
-                    emergencyList.SetEmergency_List(ref Calls, "Logged", true);
+                    emergencyControl.Setup_Control(ref Calls, "Logged", true);
                     RTList.SetResponseTeams_List(ref RTs, 1);
                 }
             }
             else
             {
                 // Setting up the View
-                emergencyList.Enabled = false;
+                emergencyControl.EnabledControls(false);
                 RTList.Enabled = false;
                 panel2.Enabled = false;
 
@@ -171,7 +171,7 @@ namespace Rescue_911
 
         private void Emergency_Management_View_SizeChanged(object sender, EventArgs e)
         {
-            emergencyList.Width = this.Width;
+            //emer.Width = this.Width;
         }
 
         private void lstTeams_SelectedIndexChanged(object sender, EventArgs e)

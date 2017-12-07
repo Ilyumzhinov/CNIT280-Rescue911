@@ -87,7 +87,7 @@
             this.panel1.MinimumSize = new System.Drawing.Size(0, 33);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel1.Size = new System.Drawing.Size(1010, 33);
+            this.panel1.Size = new System.Drawing.Size(1120, 33);
             this.panel1.TabIndex = 16;
             // 
             // segmentMain
@@ -133,7 +133,7 @@
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.MaximumSize = new System.Drawing.Size(0, 2000);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(1010, 564);
+            this.panelSegments.Size = new System.Drawing.Size(1120, 564);
             this.panelSegments.TabIndex = 17;
             // 
             // panelAdd
@@ -181,6 +181,7 @@
             this.pnlUpdateBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.pnlUpdateBtn.Size = new System.Drawing.Size(280, 39);
             this.pnlUpdateBtn.TabIndex = 30;
+            this.pnlUpdateBtn.Visible = false;
             // 
             // btnUpdate
             // 
@@ -203,6 +204,7 @@
             this.pnlAddEmergencyBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.pnlAddEmergencyBtn.Size = new System.Drawing.Size(280, 39);
             this.pnlAddEmergencyBtn.TabIndex = 4;
+            this.pnlAddEmergencyBtn.Visible = false;
             // 
             // btnAddEmer
             // 
@@ -370,12 +372,13 @@
             this.panelList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelList.Controls.Add(this.lstEmergencies);
             this.panelList.Controls.Add(this.lbpnlEmergencyList);
+            this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelList.Location = new System.Drawing.Point(620, 0);
             this.panelList.Margin = new System.Windows.Forms.Padding(0);
-            this.panelList.MinimumSize = new System.Drawing.Size(390, 0);
+            this.panelList.MinimumSize = new System.Drawing.Size(500, 0);
             this.panelList.Name = "panelList";
             this.panelList.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelList.Size = new System.Drawing.Size(390, 136);
+            this.panelList.Size = new System.Drawing.Size(500, 564);
             this.panelList.TabIndex = 3;
             this.panelList.SizeChanged += new System.EventHandler(this.pnlList_SizeChanged);
             // 
@@ -398,10 +401,11 @@
             this.lstEmergencies.MultiSelect = false;
             this.lstEmergencies.Name = "lstEmergencies";
             this.lstEmergencies.ShowItemToolTips = true;
-            this.lstEmergencies.Size = new System.Drawing.Size(390, 100);
+            this.lstEmergencies.Size = new System.Drawing.Size(500, 100);
             this.lstEmergencies.TabIndex = 12;
             this.lstEmergencies.UseCompatibleStateImageBehavior = false;
             this.lstEmergencies.View = System.Windows.Forms.View.Details;
+            this.lstEmergencies.SelectedIndexChanged += new System.EventHandler(this.lstEmergencies_SelectedIndexChanged);
             // 
             // ID
             // 
@@ -454,7 +458,7 @@
             this.pnlParameters.Location = new System.Drawing.Point(0, 43);
             this.pnlParameters.Name = "pnlParameters";
             this.pnlParameters.Padding = new System.Windows.Forms.Padding(10, 5, 0, 10);
-            this.pnlParameters.Size = new System.Drawing.Size(1010, 33);
+            this.pnlParameters.Size = new System.Drawing.Size(1120, 33);
             this.pnlParameters.TabIndex = 14;
             // 
             // pnlList_Params
@@ -523,9 +527,10 @@
             this.Controls.Add(this.panelSegments);
             this.Controls.Add(this.pnlParameters);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Emergency_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(1010, 640);
+            this.Size = new System.Drawing.Size(1120, 640);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);

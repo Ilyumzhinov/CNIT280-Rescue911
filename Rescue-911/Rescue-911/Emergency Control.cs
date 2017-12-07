@@ -18,7 +18,6 @@ namespace Rescue_911
 
         //Composite Data
         private Special_List<Emergency_Call> EmergencyCalls;
-        private Special_List<Emergency> Emergencies;
         private Emergency_Call Current_Call;
         private Emergency Current_Emergency = new Emergency();
 
@@ -109,6 +108,12 @@ namespace Rescue_911
             lstEmergencies.Columns[4].Width = 80;
             lstEmergencies.Columns[5].Width = lstEmergencies.Width - 80 * 5 - (int)(SystemInformation.VerticalScrollBarWidth * 1.5);
             lstEmergencies.Height = lstEmergencies.Font.Height * 25;
+
+            // Setting the view segment
+            Button btnTemp = new Button();
+            btnTemp.Name = "btnSegment" + 3;
+            btnTemp.Text = "List";
+            Change_Segment(btnTemp, null);
         }
         //
 
@@ -117,8 +122,6 @@ namespace Rescue_911
         // Algorithm for showing and hiding different elements based on the selected segment
         private void Change_Segment(object sender, EventArgs e)
         {
-            segmentMain.SetActiveSegment(((Button)sender).Name);
-
             if (((Button)sender).Text == "Add")
             {
                 SetSegment_Add(ref Current_Emergency);
@@ -129,12 +132,17 @@ namespace Rescue_911
             }
             else if (((Button)sender).Text == "View")
             {
-              //  SetSegment_View(Current_Call);
+                if (Current_Call == null)
+                    return;
+
+                SetSegment_View(ref Current_Call);
             }
             else if (((Button)sender).Text == "List")
             {
-
+                SetSegment_List(ref EmergencyCalls);
             }
+
+            segmentMain.SetActiveSegment(((Button)sender).Name);
         }
 
         private void SetSegment_Add(ref Emergency xEmergency)
@@ -148,6 +156,26 @@ namespace Rescue_911
             cboEmergencyType.Focus();
 
             panelAdd.Visible = true;
+        }
+
+        private void SetSegment_View(ref Emergency_Call xCall)
+        {
+            EnabledControls(false);
+            panelList.Visible = false;
+            panelAdd.Visible = true;
+            PopulateFields(xCall.GetEmergency());
+            callControlView.Setup_Control(xCall, "Overview", 0);
+        }
+
+        private void SetSegment_List(ref Special_List<Emergency_Call> xEmergencies)
+        {
+            EnabledControls(false);
+
+            panelAdd.Visible = false;
+            panelList.Visible = true;
+            panelList.Enabled = true;
+
+            listEmergenciesPopulate(cboEmergencyType.SelectedText, xEmergencies);
         }
 
         private void PopulateFields(Emergency xEmergency)
@@ -271,12 +299,15 @@ namespace Rescue_911
             try
             {
                 selectedIndex = lstEmergencies.SelectedIndices[0];
+                Current_Call = (Emergency_Call)lstEmergencies.SelectedItems[0].Tag;
 
                 EmergencySelected?.Invoke(lstEmergencies.SelectedItems[0].Tag, e);
             }
             catch
             {
                 selectedIndex = -1;
+
+                Current_Call = null;
             }
         }
 
