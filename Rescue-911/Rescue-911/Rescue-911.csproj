@@ -217,6 +217,12 @@
     <Compile Include="Special View.Designer.cs">
       <DependentUpon>Special View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Special_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Special_Panel.Designer.cs">
+      <DependentUpon>Special_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Statusbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Special View.resx">
       <DependentUpon>Special View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Special_Panel.resx">
+      <DependentUpon>Special_Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statusbar.resx">
       <DependentUpon>Statusbar.cs</DependentUpon>

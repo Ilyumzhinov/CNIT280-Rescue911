@@ -60,7 +60,7 @@ namespace Rescue_911
 
             sideBar.Visible = true;
 
-            SetView(typeof(Main_View), null, new List <object> { SD.FormsCount });
+            SetView(typeof(Main_View), null, new List <object> { SD.FormsCount, SD.GetPatients(), SD.GetCalls(), SD.GetResponseTeams()});
         }
 
         //Event for displaying the Login screen.
