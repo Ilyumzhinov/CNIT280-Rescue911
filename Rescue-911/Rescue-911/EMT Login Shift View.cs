@@ -77,8 +77,7 @@ namespace Rescue_911
         //To-display the view.
         public EMT_Login_Shift_View(bool toDisplay) : base(toDisplay, false)
         {
-            if (toDisplay)
-                InitializeComponent();
+            InitializeComponent();
         }
         //
 

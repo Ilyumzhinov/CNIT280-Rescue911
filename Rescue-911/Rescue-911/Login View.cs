@@ -30,8 +30,7 @@ namespace Rescue_911
         public Login_View(bool toDisplay) : base(toDisplay, true)
         {
             //To-instantiate the view.
-            if (toDisplay == true)
-                InitializeComponent();
+            InitializeComponent();
 
 
             //btnLogin.Image = SystemIcons.Warning.ToBitmap();

@@ -46,11 +46,10 @@ namespace Rescue_911
 
         }
 
-    //To-display the view.
-    public Main_View(bool toDisplay) : base( toDisplay, false )
+        //To-display the view.
+        public Main_View(bool toDisplay) : base(toDisplay, false)
         {
-            if (toDisplay)
-                InitializeComponent();
+            InitializeComponent();
 
             SetDesc(DateTime.Today.DayOfWeek.ToString() + ", " + DateTime.Today.ToString("MMMM d"));
         }

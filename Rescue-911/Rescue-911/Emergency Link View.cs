@@ -36,7 +36,6 @@ namespace Rescue_911
         //To-display the view.
         public Emergency_Link_View(bool toDisplay) : base(toDisplay, false)
         {
-            if (toDisplay)
                 InitializeComponent();
         }
         //

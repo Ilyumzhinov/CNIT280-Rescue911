@@ -21,7 +21,6 @@ namespace Rescue_911
 
         public Emergency_Add_View(bool toDisplay) : base(toDisplay, false)
         {
-            if (toDisplay)
                 InitializeComponent();
         }
 
