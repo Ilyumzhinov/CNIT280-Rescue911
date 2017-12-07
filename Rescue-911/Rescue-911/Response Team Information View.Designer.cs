@@ -109,11 +109,11 @@
             this.emergencyList.AutoSize = true;
             this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyList.Location = new System.Drawing.Point(5, 111);
+            this.emergencyList.Location = new System.Drawing.Point(5, 122);
             this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergencyList.Name = "emergencyList";
             this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergencyList.Size = new System.Drawing.Size(577, 134);
+            this.emergencyList.Size = new System.Drawing.Size(577, 136);
             this.emergencyList.TabIndex = 41;
             // 
             // panel1
@@ -121,7 +121,7 @@
             this.panel1.Controls.Add(this.lb11);
             this.panel1.Controls.Add(this.lbRT_ID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 89);
+            this.panel1.Location = new System.Drawing.Point(5, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 22);
             this.panel1.TabIndex = 42;
@@ -135,9 +135,9 @@
             this.panel2.Controls.Add(this.lbDecision);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(475, 245);
+            this.panel2.Location = new System.Drawing.Point(475, 258);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 106);
+            this.panel2.Size = new System.Drawing.Size(107, 93);
             this.panel2.TabIndex = 43;
             // 
             // Response_Team_Information_View
@@ -149,6 +149,9 @@
             this.Controls.Add(this.panel1);
             this.Name = "Response_Team_Information_View";
             this.Size = new System.Drawing.Size(587, 356);
+            this.ViewColour = System.Drawing.Color.SandyBrown;
+            this.ViewDescription = "Approve Emergencies";
+            this.ViewTitle = "Response Team Info";
             this.SizeChanged += new System.EventHandler(this.Response_Team_Information_View_SizeChanged);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.emergencyList, 0);

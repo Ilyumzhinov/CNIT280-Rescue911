@@ -19,7 +19,7 @@ namespace Rescue_911
         // CONSTRUCTORS
         //To-setup the view.
         public Base_Station_Records_View(bool toDisplay, ref Special_List<Base_Station_Records> xBSR) : this(toDisplay)
-        {
+        { 
             BSR = xBSR;
 
             BSR.ItemAdded -= new EventHandler(lstHistory_AddRecord);
@@ -31,10 +31,8 @@ namespace Rescue_911
             }
         }
 
-        //To-display the view.
-        public Base_Station_Records_View(bool toDisplay) : base(toDisplay, "Base Station Records", Color.SteelBlue)
+        public Base_Station_Records_View(bool toDisplay) : base(toDisplay, false)
         {
-            if (toDisplay)
                 InitializeComponent();
         }
         //

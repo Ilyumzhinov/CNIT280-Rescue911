@@ -96,7 +96,7 @@
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.RTList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(7, 226);
+            this.panel2.Location = new System.Drawing.Point(7, 237);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(436, 134);
@@ -121,7 +121,7 @@
             this.emergencyList.AutoSize = true;
             this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyList.Location = new System.Drawing.Point(7, 90);
+            this.emergencyList.Location = new System.Drawing.Point(7, 101);
             this.emergencyList.Margin = new System.Windows.Forms.Padding(5);
             this.emergencyList.MinimumSize = new System.Drawing.Size(400, 0);
             this.emergencyList.Name = "emergencyList";
@@ -138,7 +138,7 @@
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.rbNo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(7, 360);
+            this.panel1.Location = new System.Drawing.Point(7, 371);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.MinimumSize = new System.Drawing.Size(330, 0);
             this.panel1.Name = "panel1";
@@ -157,7 +157,10 @@
             this.MinimumSize = new System.Drawing.Size(450, 0);
             this.Name = "Emergency_Management_View";
             this.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.Size = new System.Drawing.Size(450, 407);
+            this.Size = new System.Drawing.Size(450, 418);
+            this.ViewColour = System.Drawing.Color.IndianRed;
+            this.ViewDescription = "Select Emergency and a RT to create dispatch";
+            this.ViewTitle = "Emergency Management";
             this.SizeChanged += new System.EventHandler(this.Emergency_Management_View_SizeChanged);
             this.Controls.SetChildIndex(this.emergencyList, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

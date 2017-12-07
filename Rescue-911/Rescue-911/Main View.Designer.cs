@@ -103,7 +103,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(358, 459);
             this.ViewColour = System.Drawing.Color.DarkGray;
-            this.ViewDescription = "description";
+            this.ViewDescription = "";
             this.ViewTitle = "Main View";
             this.Controls.SetChildIndex(this.lbDevelopers, 0);
             this.Controls.SetChildIndex(this.label1, 0);

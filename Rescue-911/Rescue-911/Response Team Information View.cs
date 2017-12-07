@@ -23,7 +23,7 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public Response_Team_Information_View(bool toDisplay) : base(toDisplay, "Response Team Info", Color.SandyBrown)
+        public Response_Team_Information_View(bool toDisplay) : base(toDisplay, false)
         {
             if (toDisplay)
                 InitializeComponent();

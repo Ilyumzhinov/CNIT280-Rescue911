@@ -41,7 +41,7 @@
             this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLinkEmergency.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
-            this.btnLinkEmergency.Location = new System.Drawing.Point(196, 763);
+            this.btnLinkEmergency.Location = new System.Drawing.Point(196, 758);
             this.btnLinkEmergency.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnLinkEmergency.MaximumSize = new System.Drawing.Size(150, 35);
             this.btnLinkEmergency.MinimumSize = new System.Drawing.Size(150, 35);
@@ -58,7 +58,7 @@
             this.emergencyList.AutoSize = true;
             this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyList.Location = new System.Drawing.Point(4, 627);
+            this.emergencyList.Location = new System.Drawing.Point(4, 622);
             this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergencyList.Name = "emergencyList";
             this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -72,7 +72,8 @@
             this.callControlOverview.AvailableSegments = "f/f/t";
             this.callControlOverview.BackColor = System.Drawing.SystemColors.Window;
             this.callControlOverview.Dock = System.Windows.Forms.DockStyle.Top;
-            this.callControlOverview.Location = new System.Drawing.Point(4, 104);
+            this.callControlOverview.Location = new System.Drawing.Point(4, 99);
+            this.callControlOverview.Margin = new System.Windows.Forms.Padding(0);
             this.callControlOverview.Name = "callControlOverview";
             this.callControlOverview.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.callControlOverview.Size = new System.Drawing.Size(342, 523);
@@ -91,7 +92,10 @@
             this.MinimumSize = new System.Drawing.Size(350, 0);
             this.Name = "Emergency_Link_View";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Size = new System.Drawing.Size(350, 767);
+            this.Size = new System.Drawing.Size(350, 762);
+            this.ViewColour = System.Drawing.Color.Green;
+            this.ViewDescription = "Select the emergency";
+            this.ViewTitle = "Link to Emergency";
             this.SizeChanged += new System.EventHandler(this.Emergency_Link_View_SizeChanged);
             this.Controls.SetChildIndex(this.callControlOverview, 0);
             this.Controls.SetChildIndex(this.emergencyList, 0);

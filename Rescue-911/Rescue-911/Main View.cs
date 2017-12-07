@@ -47,16 +47,12 @@ namespace Rescue_911
         }
 
     //To-display the view.
-    public Main_View(bool toDisplay) : base(
-            toDisplay,
-            "Main",
-            Color.Black,
-            false,
-            DateTime.Today.DayOfWeek.ToString() + ", " + DateTime.Today.ToString("MMMM d")
-            )
+    public Main_View(bool toDisplay) : base( toDisplay, false )
         {
             if (toDisplay)
                 InitializeComponent();
+
+            SetDesc(DateTime.Today.DayOfWeek.ToString() + ", " + DateTime.Today.ToString("MMMM d"));
         }
     }
 }

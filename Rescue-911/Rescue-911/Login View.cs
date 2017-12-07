@@ -27,7 +27,7 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public Login_View(bool toDisplay) : base(toDisplay, "Welcome", Color.RoyalBlue, true)
+        public Login_View(bool toDisplay) : base(toDisplay, true)
         {
             //To-instantiate the view.
             if (toDisplay == true)

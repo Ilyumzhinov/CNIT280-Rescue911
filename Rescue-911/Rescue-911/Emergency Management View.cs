@@ -31,7 +31,7 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public Emergency_Management_View(bool toDisplay) : base(toDisplay, "Emergency Management", Color.IndianRed)
+        public Emergency_Management_View(bool toDisplay) : base(toDisplay, false)
         {
             if (toDisplay)
                 InitializeComponent();

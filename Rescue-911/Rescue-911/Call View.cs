@@ -32,10 +32,12 @@ namespace Rescue_911
         }
 
         //To-display the view.
-        public Call_View(bool toDisplay) : base(toDisplay, "Log Call", Color.Teal, false, "When all information is filled in, either add or link the Call to an Emergency.")
+        public Call_View(bool toDisplay) : base(toDisplay)
         {
             if (toDisplay)
                 InitializeComponent();
+
+            //Color.Teal, false, "When all information is filled in, either add or link the Call to an Emergency."
         }
         //
 

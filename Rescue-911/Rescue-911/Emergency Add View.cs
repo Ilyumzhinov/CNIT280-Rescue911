@@ -19,7 +19,7 @@ namespace Rescue_911
             emergencyControl.Setup_Control(ref xCalls, ref xEC);
         }
 
-        public Emergency_Add_View(bool toDisplay) : base(toDisplay, "Add Emergency", Color.GreenYellow)
+        public Emergency_Add_View(bool toDisplay) : base(toDisplay, false)
         {
             if (toDisplay)
                 InitializeComponent();

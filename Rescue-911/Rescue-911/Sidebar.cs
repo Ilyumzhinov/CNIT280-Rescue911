@@ -66,8 +66,15 @@ namespace Rescue_911
             for (int i = 0; i < xAcccessibleViews.Count; i++)
             {
                 //Creating an instance of a view to get its attributes.
-                instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { false }));
+                try {
 
+                    instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { false }));
+
+                }
+                catch
+                {
+                    instance = (Special_View)(Activator.CreateInstance(xAcccessibleViews[i], new object[] { }));
+                }
                 Buttons.Add(new Button());
                 Buttons[i].Size = new System.Drawing.Size(layoutPanel.Width, 35);
                 Buttons[i].Cursor = System.Windows.Forms.Cursors.Hand;

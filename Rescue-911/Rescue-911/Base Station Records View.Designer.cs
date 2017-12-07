@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.btnRecord);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(5, 89);
+            this.panel1.Location = new System.Drawing.Point(5, 100);
             this.panel1.MaximumSize = new System.Drawing.Size(625, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(625, 248);
@@ -109,7 +109,7 @@
             this.lstHistory.BackColor = System.Drawing.Color.White;
             this.lstHistory.Dock = System.Windows.Forms.DockStyle.Right;
             this.lstHistory.FormattingEnabled = true;
-            this.lstHistory.Location = new System.Drawing.Point(630, 89);
+            this.lstHistory.Location = new System.Drawing.Point(630, 100);
             this.lstHistory.Margin = new System.Windows.Forms.Padding(15);
             this.lstHistory.Name = "lstHistory";
             this.lstHistory.Size = new System.Drawing.Size(120, 248);
@@ -125,7 +125,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstHistory);
             this.Name = "Base_Station_Records_View";
-            this.Size = new System.Drawing.Size(755, 342);
+            this.Size = new System.Drawing.Size(755, 353);
+            this.ViewColour = System.Drawing.Color.SteelBlue;
+            this.ViewDescription = "Manage the BS records";
+            this.ViewTitle = "Base Station Records";
             this.Controls.SetChildIndex(this.lstHistory, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);

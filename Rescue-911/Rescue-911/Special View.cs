@@ -80,6 +80,8 @@ namespace Rescue_911
             if (toDisplay == true)
                 InitializeComponent();
 
+            MiddleAligned = xMiddleAligned;
+
             this.BackColor = Color.Transparent;
         }
 
