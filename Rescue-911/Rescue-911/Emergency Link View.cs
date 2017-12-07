@@ -26,10 +26,9 @@ namespace Rescue_911
             // Emergency list set-up.
             if (Emergencies[0] != null)
             {
-                emergencyList.Width = this.Width;
-                emergencyList.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
+                emergencyControl.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
 
-                emergencyList.SetEmergency_List(ref Calls, "Logged", true);
+                emergencyControl.Setup_Control(ref Calls, "Logged", true);
             }
         }
 
@@ -63,12 +62,6 @@ namespace Rescue_911
             btnLinkEmergency.Visible = true;
 
             mSelectedCall = (Emergency_Call)sender;
-        }
-
-
-        private void Emergency_Link_View_SizeChanged(object sender, EventArgs e)
-        {
-            emergencyList.Width = this.Width;
         }
     }
 }

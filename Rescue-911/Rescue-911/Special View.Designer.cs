@@ -40,7 +40,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(0, 27);
+            this.lbTitle.Location = new System.Drawing.Point(0, 30);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(82, 37);
@@ -57,12 +57,12 @@
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnBack.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Margin = new System.Windows.Forms.Padding(0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(290, 27);
+            this.btnBack.Size = new System.Drawing.Size(290, 30);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "< PREVIOUS VIEW";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,7 +76,7 @@
             this.lbDesc.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDesc.ForeColor = System.Drawing.Color.Gray;
-            this.lbDesc.Location = new System.Drawing.Point(0, 64);
+            this.lbDesc.Location = new System.Drawing.Point(0, 67);
             this.lbDesc.Margin = new System.Windows.Forms.Padding(0);
             this.lbDesc.Name = "lbDesc";
             this.lbDesc.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -97,7 +97,7 @@
             this.pnlHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.pnlHeader.Size = new System.Drawing.Size(290, 95);
+            this.pnlHeader.Size = new System.Drawing.Size(290, 98);
             this.pnlHeader.TabIndex = 4;
             // 
             // Special_View
