@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.segmentMain = new Rescue_911.Segmented_Control();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelSegments = new System.Windows.Forms.FlowLayoutPanel();
             this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
@@ -68,9 +69,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbpnlOtherData = new System.Windows.Forms.Label();
             this.pnlParameters = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.segmentView = new Rescue_911.Segmented_Control();
-            this.segmentMain = new Rescue_911.Segmented_Control();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -104,6 +104,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.panel1.Size = new System.Drawing.Size(580, 33);
             this.panel1.TabIndex = 16;
+            // 
+            // segmentMain
+            // 
+            this.segmentMain.AutoSize = true;
+            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.segmentMain.AvailableSegments = "t/t/t";
+            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.segmentMain.Location = new System.Drawing.Point(52, 0);
+            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
+            this.segmentMain.MaximumSize = new System.Drawing.Size(0, 23);
+            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 23);
+            this.segmentMain.Name = "segmentMain";
+            this.segmentMain.Segments = "Add/Edit/View";
+            this.segmentMain.Size = new System.Drawing.Size(75, 23);
+            this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
             // 
@@ -146,7 +162,7 @@
             this.panelAdd.Location = new System.Drawing.Point(0, 0);
             this.panelAdd.Margin = new System.Windows.Forms.Padding(0);
             this.panelAdd.MaximumSize = new System.Drawing.Size(800, 2000);
-            this.panelAdd.MinimumSize = new System.Drawing.Size(290, 0);
+            this.panelAdd.MinimumSize = new System.Drawing.Size(290, 2);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(580, 447);
             this.panelAdd.TabIndex = 0;
@@ -678,20 +694,6 @@
             this.pnlParameters.Size = new System.Drawing.Size(580, 33);
             this.pnlParameters.TabIndex = 14;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(10, 5);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label9.Size = new System.Drawing.Size(77, 17);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "parameters:";
-            // 
             // segmentView
             // 
             this.segmentView.AutoSize = true;
@@ -707,21 +709,19 @@
             this.segmentView.Size = new System.Drawing.Size(75, 23);
             this.segmentView.TabIndex = 0;
             // 
-            // segmentMain
+            // label9
             // 
-            this.segmentMain.AutoSize = true;
-            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.segmentMain.AvailableSegments = "t/t/t";
-            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.segmentMain.Location = new System.Drawing.Point(52, 0);
-            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MaximumSize = new System.Drawing.Size(0, 23);
-            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 23);
-            this.segmentMain.Name = "segmentMain";
-            this.segmentMain.Segments = "Add/Edit/View";
-            this.segmentMain.Size = new System.Drawing.Size(75, 23);
-            this.segmentMain.TabIndex = 13;
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(10, 5);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "parameters:";
             // 
             // Call_Control
             // 
@@ -733,6 +733,7 @@
             this.Controls.Add(this.panelSegments);
             this.Controls.Add(this.pnlParameters);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Call_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.Size = new System.Drawing.Size(580, 523);

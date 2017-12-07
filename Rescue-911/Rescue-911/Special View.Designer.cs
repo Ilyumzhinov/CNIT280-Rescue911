@@ -41,7 +41,7 @@
             this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbTitle.Font = new System.Drawing.Font("Franklin Gothic Heavy", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(0, 27);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(0, 5, 5, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(82, 37);
             this.lbTitle.TabIndex = 1;
@@ -74,26 +74,30 @@
             // 
             this.lbDesc.AutoSize = true;
             this.lbDesc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDesc.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDesc.ForeColor = System.Drawing.Color.Gray;
             this.lbDesc.Location = new System.Drawing.Point(0, 64);
-            this.lbDesc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 15);
+            this.lbDesc.Margin = new System.Windows.Forms.Padding(0);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(83, 20);
+            this.lbDesc.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lbDesc.Size = new System.Drawing.Size(91, 21);
             this.lbDesc.TabIndex = 3;
             this.lbDesc.Text = "Description";
             this.lbDesc.Visible = false;
             // 
             // pnlHeader
             // 
+            this.pnlHeader.AutoSize = true;
+            this.pnlHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlHeader.Controls.Add(this.lbDesc);
             this.pnlHeader.Controls.Add(this.lbTitle);
             this.pnlHeader.Controls.Add(this.btnBack);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(5, 5);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(290, 100);
+            this.pnlHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.pnlHeader.Size = new System.Drawing.Size(290, 95);
             this.pnlHeader.TabIndex = 4;
             // 
             // Special_View
@@ -110,6 +114,7 @@
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

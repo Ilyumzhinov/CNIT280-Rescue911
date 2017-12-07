@@ -176,8 +176,6 @@ namespace Rescue_911
         {
             for (int i = 0; i < SegmentsBtns.Count; i++)
             {
-                //SegmentsBtns[i].Width = (int)((double)this.Width / SegmentsBtns.Count - 1 * SegmentsBtns.Count);
-
                 if (i > 0)
                 {
                     SegmentsBtns[i].Left = SegmentsBtns[i - 1].Right - 1;

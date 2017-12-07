@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rescue_911
@@ -174,34 +170,30 @@ namespace Rescue_911
         private void SetSegment_Add(ref Emergency_Call xCall)
         {
             EnableControls(true);
-            pnlEmergencyBtns.Enabled = true;
-            pnlEmergencyBtns.Visible = true;
-
+            
             PopulateFields(xCall);
 
             txtPhoneNumber.Focus();
 
             panelAdd.Visible = true;
+            pnlCallInfo.Visible = true;
+            pnlCaller.Visible = true;
+            pnlOtherData.Visible = true;
+
+            pnlEmergencyBtns.Visible = true;
         }
 
         private void SetSegment_Edit(ref Emergency_Call xCall)
         {
             SetSegment_Add(ref xCall);
-            pnlEmergencyBtns.Enabled = false;
-            pnlEmergencyBtns.Visible = false;
 
-            pnlUpdateBtn.Enabled = true;
+            pnlEmergencyBtns.Visible = false;
             pnlUpdateBtn.Visible = true;
         }
 
         private void SetSegment_View(Emergency_Call xCall)
         {
-            EnableControls(false);
-
             PopulateFields(xCall);
-
-            pnlParameters.Enabled = true;
-            pnlParameters.Visible = true;
 
             // Setting the default segment
             Button btnTemp = new Button();
@@ -215,23 +207,23 @@ namespace Rescue_911
         // Controls changes between Overview/Detail segmentes of the View segment
         private void Change_ViewSegment(object sender, EventArgs e)
         {
+            EnableControls(false);
+
+            pnlParameters.Enabled = true;
+            pnlParameters.Visible = true;
+
             segmentView.SetActiveSegment(((Button)sender).Name);
 
             if (((Button)sender).Text == "Overview")
             {
-                pnlCaller.Visible = false;
-                pnlCaller.Enabled = false;
+                pnlCallInfo.Visible = true;
 
-                pnlOtherData.Visible = false;
-                pnlOtherData.Enabled = false;
             }
             else if (((Button)sender).Text == "Detail")
             {
+                pnlCallInfo.Visible = true;
                 pnlCaller.Visible = true;
-                pnlCaller.Enabled = true;
-
                 pnlOtherData.Visible = true;
-                pnlOtherData.Enabled = true;
             }
         }
 
@@ -254,16 +246,16 @@ namespace Rescue_911
         {
             if (xEnable == false)
             {
-                txtCallDateTime.BorderStyle = BorderStyle.None;
+                txtCallDateTime.BorderStyle = BorderStyle.FixedSingle;
                 cboCallPriority.DropDownStyle = ComboBoxStyle.Simple;
-                numTeams.BorderStyle = BorderStyle.None;
+                numTeams.BorderStyle = BorderStyle.FixedSingle;
 
-                txtPhoneNumber.BorderStyle = BorderStyle.None;
-                txtCallerName.BorderStyle = BorderStyle.None;
+                txtPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
+                txtCallerName.BorderStyle = BorderStyle.FixedSingle;
 
-                txtAddress.BorderStyle = BorderStyle.None;
-                txtLandmark.BorderStyle = BorderStyle.None;
-                txtDescription.BorderStyle = BorderStyle.None;
+                txtAddress.BorderStyle = BorderStyle.FixedSingle;
+                txtLandmark.BorderStyle = BorderStyle.FixedSingle;
+                txtDescription.BorderStyle = BorderStyle.FixedSingle;
             }
             else
             {
@@ -289,19 +281,13 @@ namespace Rescue_911
             txtPhoneNumber.ReadOnly = !xEnable;
             txtCallerName.ReadOnly = !xEnable;
 
-
             pnlParameters.Visible = false;
-            pnlParameters.Enabled = false;
             pnlEmergencyBtns.Visible = false;
-            pnlEmergencyBtns.Enabled = false;
             pnlUpdateBtn.Visible = false;
-            pnlUpdateBtn.Enabled = false;
 
-            pnlCaller.Visible = true;
-            pnlCaller.Enabled = xEnable;
-
-            pnlOtherData.Visible = true;
-            pnlOtherData.Enabled = xEnable;
+            pnlCallInfo.Visible = false;
+            pnlCaller.Visible = false;
+            pnlOtherData.Visible = false;
         }
         //
 

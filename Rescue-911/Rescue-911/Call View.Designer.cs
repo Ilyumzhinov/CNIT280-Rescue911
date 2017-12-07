@@ -35,13 +35,14 @@
             // 
             this.callControl.AutoSize = true;
             this.callControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.callControl.AvailableSegments = "t/f/t";
+            this.callControl.AvailableSegments = "t/t/t";
             this.callControl.BackColor = System.Drawing.Color.Transparent;
             this.callControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.callControl.Location = new System.Drawing.Point(5, 105);
+            this.callControl.Location = new System.Drawing.Point(5, 100);
+            this.callControl.Margin = new System.Windows.Forms.Padding(0);
             this.callControl.Name = "callControl";
             this.callControl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.callControl.Size = new System.Drawing.Size(769, 733);
+            this.callControl.Size = new System.Drawing.Size(769, 738);
             this.callControl.TabIndex = 4;
             // 
             // Call_View
@@ -51,6 +52,7 @@
             this.Controls.Add(this.callControl);
             this.Name = "Call_View";
             this.Size = new System.Drawing.Size(779, 843);
+            this.ViewTitle = "Call Management";
             this.Controls.SetChildIndex(this.callControl, 0);
             this.ResumeLayout(false);
             this.PerformLayout();

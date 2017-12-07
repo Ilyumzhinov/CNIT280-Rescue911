@@ -16,9 +16,9 @@ namespace Rescue_911
         // DATA STRUCTURE
         //Primitives
         private bool MiddleAligned;
-        private Color Colour;
-        private string dTitle;
-        private string dDesc;
+        private Color mColour = Color.MidnightBlue;
+        private string mTitle = "Title";
+        private string mDesc = "Description";
         private object Status = false;
 
         //Relationships
@@ -27,27 +27,60 @@ namespace Rescue_911
 
         //Event Handlers
         public event EventHandler StatusUpdate;
+
+        //Public Data
+        [Description("Set the Title for the View which will be displayed across the program."), Category("Data")]
+        public string ViewTitle
+        {
+            get
+            {
+                return mTitle;
+            }
+            set
+            {
+                mTitle = value;
+
+                SetTitle(ViewTitle);
+            }
+        }
+        [Description("Set the Description for the View which will be displayed across the program."), Category("Data")]
+        public string ViewDescription
+        {
+            get
+            {
+                return mDesc;
+            }
+            set
+            {
+                mDesc = value;
+
+                SetDesc(ViewDescription);
+            }
+        }
+        [Description("Set the Colour for the View which will be displayed across the program."), Category("Data")]
+        public Color ViewColour
+        {
+            get
+            {
+                return mColour;
+            }
+            set
+            {
+                mColour = value;
+            }
+        }
         //
 
         // CONSTRUCTORS
         //Reference: https://stackoverflow.com/questions/1216940/net-inherited-winforms-form-vs-designer-issue
         // NEW To-display the view.
-        public Special_View(bool toDisplay, string xTitle, Color xColour, bool xMiddleAligned = false, string xDesc = "")
+        public Special_View(bool toDisplay, bool xMiddleAligned = false)
         {
             // if toDisplay is false, then do not draw the interface
             if (toDisplay == true)
                 InitializeComponent();
 
-            Colour = xColour;
-            MiddleAligned = xMiddleAligned;
-
             this.BackColor = Color.Transparent;
-
-            SetTitle(xTitle);
-            if (xDesc != "")
-            {
-                SetDesc(xDesc);
-            }
         }
 
         //For the designer
@@ -70,7 +103,7 @@ namespace Rescue_911
 
         public override string ToString()
         {
-            return this.Text + " Page";
+            return ViewTitle + " View";
         }
         //
 
@@ -80,6 +113,7 @@ namespace Rescue_911
         {
             Previous_View = xPrevious_View;
 
+            btnBack.ForeColor = Previous_View.GetColour();
             btnBack.Text = "< " + Previous_View.GetTitle().ToUpper();
 
             btnBack.Visible = true;
@@ -87,11 +121,8 @@ namespace Rescue_911
 
         public void SetTitle(string xTitle)
         {
-            dTitle = xTitle;
-
             if (lbTitle != null)
             {
-                this.Text = xTitle;
                 this.lbTitle.Text = xTitle;
                 this.lbTitle.Visible = true;
             }
@@ -99,8 +130,6 @@ namespace Rescue_911
 
         public void SetDesc(string xDesc)
         {
-            dDesc = xDesc;
-
             if (lbDesc != null)
             {
                 lbDesc.Text = xDesc;
@@ -112,11 +141,11 @@ namespace Rescue_911
 
         public bool GetMiddleAligned() { return MiddleAligned; }
 
-        public Color GetColour() { return Colour; }
+        public Color GetColour() { return ViewColour; }
 
-        public string GetTitle() { return dTitle; }
+        public string GetTitle() { return ViewTitle; }
 
-        public string GetDesc() { return dDesc; }
+        public string GetDesc() { return ViewDescription; }
 
         public Special_View GetPrevious_View() { return Previous_View; }
         public Button GetAssigned_Btn() { return Assigned_Btn; }
