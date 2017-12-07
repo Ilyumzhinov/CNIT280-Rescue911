@@ -56,8 +56,7 @@ namespace Rescue_911
 
                     emergencyList.SetEmergency_List(ref Calls, "Waiting", true);
                 }
-            }
-            else
+            } else
             {
                 // Setting up the View
                 emergencyList.Enabled = false;
@@ -79,12 +78,26 @@ namespace Rescue_911
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             mSelectedCall.SetState("Actioned");
+            for (int a = 0; a < Dispatches.Count; a ++) {
+
+                if (Dispatches[a].GetEmergency() == mSelectedCall.GetEmergency())
+                    Dispatches[a].SetStatus("Actioned");
+
+            }
+            
         }
 
         // If a team rejects an emergency.
         private void rbNo_CheckedChanged(object sender, EventArgs e)
         {
             mSelectedCall.SetState("Declined");
+            for (int a = 0; a < Dispatches.Count; a ++)
+            {
+
+                if (Dispatches[a].GetEmergency() == mSelectedCall.GetEmergency())
+                    Dispatches[a].SetStatus("Declined");
+
+            }
         }
 
         private void Response_Team_Information_View_SizeChanged(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace Rescue_911
         private Special_List<Emergency_Call> Calls;
         private Special_List<Emergency> Emergencies;
         private Special_List<Response_Team> RTs;
-        Special_List<Dispatch> Dispatch;
+        Special_List<Dispatch> dispatch;
         //
 
 
@@ -27,7 +27,7 @@ namespace Rescue_911
             Calls = xECs;
             Emergencies = xEmergencies;
             RTs = xRTs;
-            Dispatch = xDispatch;
+            dispatch = xDispatch;
         }
 
         //To-display the view.
@@ -150,7 +150,7 @@ namespace Rescue_911
             xDispatch.SetEmergency(mSelectedCall.GetEmergency());
             xDispatch.SetResponseTeam(mSelectedRT);
             xDispatch.SetStatus("Send");
-            Dispatch.Add(xDispatch);
+            dispatch.Add(xDispatch);
         }
 
         private void rbYes_CheckedChanged(object sender, EventArgs e)
@@ -160,6 +160,11 @@ namespace Rescue_911
            
             mSelectedCall.SetState("Accepted");
             mSelectedRT.SetStatusByDispatch("Dispatched");
+            Dispatch dis = new Dispatch();
+            dis.SetEmergency(mSelectedCall.GetEmergency());
+            dis.SetResponseTeam(mSelectedRT);
+            dis.SetStatus("Accepted");
+            dispatch.AddItem(dis);
             rbYes.Checked = false;
         }
 

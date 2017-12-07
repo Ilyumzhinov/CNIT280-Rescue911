@@ -70,7 +70,6 @@
             this.rbNo.TabStop = true;
             this.rbNo.Text = "No";
             this.rbNo.UseVisualStyleBackColor = true;
-            this.rbNo.Visible = false;
             // 
             // rbYes
             // 
@@ -82,7 +81,6 @@
             this.rbYes.TabStop = true;
             this.rbYes.Text = "Yes";
             this.rbYes.UseVisualStyleBackColor = true;
-            this.rbYes.Visible = false;
             // 
             // lbRT_ID
             // 
@@ -109,7 +107,7 @@
             this.emergencyList.AutoSize = true;
             this.emergencyList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyList.Location = new System.Drawing.Point(5, 122);
+            this.emergencyList.Location = new System.Drawing.Point(5, 125);
             this.emergencyList.MinimumSize = new System.Drawing.Size(440, 0);
             this.emergencyList.Name = "emergencyList";
             this.emergencyList.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -121,7 +119,7 @@
             this.panel1.Controls.Add(this.lb11);
             this.panel1.Controls.Add(this.lbRT_ID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 100);
+            this.panel1.Location = new System.Drawing.Point(5, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 22);
             this.panel1.TabIndex = 42;
@@ -135,9 +133,9 @@
             this.panel2.Controls.Add(this.lbDecision);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(475, 258);
+            this.panel2.Location = new System.Drawing.Point(475, 261);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 93);
+            this.panel2.Size = new System.Drawing.Size(107, 90);
             this.panel2.TabIndex = 43;
             // 
             // Response_Team_Information_View
