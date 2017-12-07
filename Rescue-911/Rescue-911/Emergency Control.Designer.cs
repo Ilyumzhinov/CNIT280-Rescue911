@@ -97,11 +97,10 @@
             this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.segmentMain.Location = new System.Drawing.Point(95, 0);
             this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MaximumSize = new System.Drawing.Size(0, 23);
-            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 23);
+            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View/List";
-            this.segmentMain.Size = new System.Drawing.Size(75, 23);
+            this.segmentMain.Size = new System.Drawing.Size(75, 33);
             this.segmentMain.TabIndex = 13;
             // 
             // lbTitle

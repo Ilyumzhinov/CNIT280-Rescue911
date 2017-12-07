@@ -14,8 +14,8 @@ namespace Rescue_911
     {
         // DATA STRUCTURE
         //Primitives
-        private Color ColourHighlight = Color.DarkRed;
-        private Color ColourSecondary = Color.IndianRed;
+        private Color ColourHighlight = Color.LightCoral;
+        private Color ColourSecondary = Color.MistyRose;
 
         //Composite Data
         private Special_List<Button> SegmentsBtns;
@@ -83,12 +83,12 @@ namespace Rescue_911
             {
                 SegmentsBtns.AddItem(new Button());
                 SegmentsBtns[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                SegmentsBtns[i].Font = new System.Drawing.Font("Franklin Gothic Book",8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                SegmentsBtns[i].Font = new System.Drawing.Font("Franklin Gothic Medium", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 SegmentsBtns[i].UseVisualStyleBackColor = false;
                 SegmentsBtns[i].BackColor = System.Drawing.Color.Transparent;
                 SegmentsBtns[i].FlatAppearance.BorderColor = Color.White;
-                SegmentsBtns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-                SegmentsBtns[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
+                SegmentsBtns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+                SegmentsBtns[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
                 SegmentsBtns[i].ForeColor = ColourHighlight;
                 SegmentsBtns[i].Name = "btnSegment" + i;
                 SegmentsBtns[i].Text = labelsFetched[i];
@@ -155,16 +155,12 @@ namespace Rescue_911
                     {
                         SegmentsBtns[mSelectedSegment].BackColor = System.Drawing.Color.Transparent;
                         SegmentsBtns[mSelectedSegment].FlatAppearance.BorderColor = Color.White;
-                        SegmentsBtns[mSelectedSegment].FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-                        SegmentsBtns[mSelectedSegment].FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue;
-                        SegmentsBtns[mSelectedSegment].ForeColor = ColourSecondary;
+                        SegmentsBtns[mSelectedSegment].ForeColor = ColourHighlight;
                         SegmentsBtns[mSelectedSegment].Enabled = true;
                     }
 
-                  //  sender.BackColor = ColourHighlight;
+                    sender.BackColor = Color.Gainsboro;
                     sender.FlatAppearance.BorderColor = Color.White;
-                    sender.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-                    sender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
                     sender.ForeColor = System.Drawing.Color.White;
                     sender.Enabled = false;
 

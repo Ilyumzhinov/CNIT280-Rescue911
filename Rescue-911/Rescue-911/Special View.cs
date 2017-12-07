@@ -116,6 +116,9 @@ namespace Rescue_911
             Previous_View = xPrevious_View;
 
             btnBack.ForeColor = Previous_View.GetColour();
+            btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+
             btnBack.Text = "< " + Previous_View.GetTitle().ToUpper();
 
             btnBack.Visible = true;

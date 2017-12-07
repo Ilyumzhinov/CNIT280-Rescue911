@@ -55,9 +55,9 @@ namespace Rescue_911
             this.Controls.Add(this.lbPreview);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimumSize = new System.Drawing.Size(75, 23);
+            this.MinimumSize = new System.Drawing.Size(75, 28);
             this.Name = "Segmented_Control";
-            this.Size = new System.Drawing.Size(90, 23);
+            this.Size = new System.Drawing.Size(90, 28);
             this.SizeChanged += new System.EventHandler(this.Segmented_Control_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
