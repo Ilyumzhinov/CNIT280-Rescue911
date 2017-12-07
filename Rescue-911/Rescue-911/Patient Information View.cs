@@ -36,7 +36,7 @@ namespace Rescue_911
         //To-display the view.
         public Patient_Information_View(bool toDisplay) : base(toDisplay)
         {
-            if (toDisplay)
+         
                 InitializeComponent();
         }
 

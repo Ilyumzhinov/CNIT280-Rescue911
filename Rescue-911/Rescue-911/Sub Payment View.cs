@@ -25,7 +25,7 @@ namespace Rescue_911
         //To-display
         public Sub_Payment_View(bool toDisplay) : base(toDisplay)
         {
-            if (toDisplay)
+       
             {
                 InitializeComponent();
 

@@ -27,7 +27,6 @@ namespace Rescue_911
         //To-display the view.
         public Dispatch_Related_Times_View(bool toDisplay) : base(toDisplay)
         {
-            if (toDisplay)
                 InitializeComponent();
         }
         //

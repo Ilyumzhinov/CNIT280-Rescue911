@@ -25,7 +25,7 @@ namespace Rescue_911
         //To-display the view.
         public Dispatch_Report_View(bool toDisplay) : base(toDisplay)
         {
-            if (toDisplay)
+          
             {
                 InitializeComponent();
             }
