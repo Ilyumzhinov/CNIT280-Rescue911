@@ -153,6 +153,7 @@ namespace Rescue_911
             dispatch.Add(xDispatch);
         }
 
+        Dispatch dis = new Dispatch();
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -160,7 +161,7 @@ namespace Rescue_911
            
             mSelectedCall.SetState("Accepted");
             mSelectedRT.SetStatusByDispatch("Dispatched");
-            Dispatch dis = new Dispatch();
+            
             dis.SetEmergency(mSelectedCall.GetEmergency());
             dis.SetResponseTeam(mSelectedRT);
             dis.SetStatus("Accepted");

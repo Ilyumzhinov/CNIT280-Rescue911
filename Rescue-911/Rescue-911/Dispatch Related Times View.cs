@@ -22,6 +22,10 @@ namespace Rescue_911
         public Dispatch_Related_Times_View(bool toDisplay, ref Special_List<Dispatch> xDispatchs) : this(toDisplay)
         {
             Dispatchs = xDispatchs;
+
+
+
+
         }
 
         //To-display the view.
