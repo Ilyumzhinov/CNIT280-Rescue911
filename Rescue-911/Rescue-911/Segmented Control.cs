@@ -18,6 +18,9 @@ namespace Rescue_911
         private int mSelectedSegment = -1;
 
         //Public Data
+        [Description("Set the width of a single segment"), Category("Data")]
+        public int SegmentWidth = 75;
+
         private string segmentsValue = string.Empty;
         [Description("Set available segments. Use / to separate segements"), Category("Data")]
         public string Segments
@@ -85,7 +88,7 @@ namespace Rescue_911
                 SegmentsBtns[i].ForeColor = System.Drawing.Color.DodgerBlue;
                 SegmentsBtns[i].Name = "btnSegment" + i;
                 SegmentsBtns[i].Text = labelsFetched[i];
-                SegmentsBtns[i].Size = new System.Drawing.Size(((int)((double)this.Width / labelsFetched.Length) + 1 * i), this.Height);
+                SegmentsBtns[i].Size = new Size(SegmentWidth,this.Height);
 
                 SegmentsBtns[i].Left = (int)((double)this.Width / labelsFetched.Length) * i;
 
@@ -173,7 +176,7 @@ namespace Rescue_911
         {
             for (int i = 0; i < SegmentsBtns.Count; i++)
             {
-                SegmentsBtns[i].Width = (int)((double)this.Width / SegmentsBtns.Count - 1 * SegmentsBtns.Count);
+                //SegmentsBtns[i].Width = (int)((double)this.Width / SegmentsBtns.Count - 1 * SegmentsBtns.Count);
 
                 if (i > 0)
                 {

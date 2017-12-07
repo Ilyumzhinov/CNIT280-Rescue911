@@ -146,6 +146,7 @@
             this.panelAdd.Location = new System.Drawing.Point(0, 0);
             this.panelAdd.Margin = new System.Windows.Forms.Padding(0);
             this.panelAdd.MaximumSize = new System.Drawing.Size(800, 2000);
+            this.panelAdd.MinimumSize = new System.Drawing.Size(290, 0);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(580, 447);
             this.panelAdd.TabIndex = 0;
@@ -700,11 +701,10 @@
             this.segmentView.Dock = System.Windows.Forms.DockStyle.Left;
             this.segmentView.Location = new System.Drawing.Point(87, 5);
             this.segmentView.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentView.MaximumSize = new System.Drawing.Size(140, 0);
-            this.segmentView.MinimumSize = new System.Drawing.Size(140, 23);
+            this.segmentView.MinimumSize = new System.Drawing.Size(75, 23);
             this.segmentView.Name = "segmentView";
             this.segmentView.Segments = "Overview/Detail";
-            this.segmentView.Size = new System.Drawing.Size(140, 23);
+            this.segmentView.Size = new System.Drawing.Size(75, 23);
             this.segmentView.TabIndex = 0;
             // 
             // segmentMain
@@ -716,11 +716,11 @@
             this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.segmentMain.Location = new System.Drawing.Point(52, 0);
             this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MaximumSize = new System.Drawing.Size(150, 23);
-            this.segmentMain.MinimumSize = new System.Drawing.Size(150, 23);
+            this.segmentMain.MaximumSize = new System.Drawing.Size(0, 23);
+            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 23);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View";
-            this.segmentMain.Size = new System.Drawing.Size(150, 23);
+            this.segmentMain.Size = new System.Drawing.Size(75, 23);
             this.segmentMain.TabIndex = 13;
             // 
             // Call_Control

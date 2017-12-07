@@ -59,6 +59,7 @@ namespace Rescue_911
 
 
         // SETs & GETs
+        // To set up any of the Views
         public void Setup_Control(ref Special_List<Emergency_Call> xECs, ref Special_List<Caller> xCallers, int initialSegment)
         {
             // Setting up global data
@@ -70,14 +71,17 @@ namespace Rescue_911
             Current_Call.SetDateTime(DateTime.Now);
             Current_Call.SetState("Not Logged");
             Current_Call.SetTeams_Required(1);
+            //
 
             // Setting the default segment
             Button btnTemp = new Button();
             btnTemp.Name = "btnSegment" + initialSegment;
+            //To-Do: change this
             btnTemp.Text = "Add";
             Change_Segment(btnTemp, null);
         }
 
+        //To set up View segment only
         public void Setup_Control(Emergency_Call xCall, string intialViewLabel, int intialViewSegmentIndex)
         {
             Current_Call = xCall;
@@ -87,6 +91,7 @@ namespace Rescue_911
             btnTemp.Name = "btnSegment" + 2;
             btnTemp.Text = "View";
             Change_Segment(btnTemp, null);
+            //
 
             // Setting the view segment
             btnTemp.Name = "btnSegment" + intialViewSegmentIndex;

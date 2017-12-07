@@ -103,6 +103,12 @@
     <Compile Include="Emergency Add View.Designer.cs">
       <DependentUpon>Emergency Add View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergency Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emergency Control.Designer.cs">
+      <DependentUpon>Emergency Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergency Link View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Add View.resx">
       <DependentUpon>Emergency Add View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency Control.resx">
+      <DependentUpon>Emergency Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emergency Link View.resx">
       <DependentUpon>Emergency Link View.cs</DependentUpon>
