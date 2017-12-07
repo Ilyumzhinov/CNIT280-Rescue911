@@ -140,12 +140,12 @@ namespace Rescue_911
 
         private void DispatchRelatedTimesView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Dispatch_Related_Times_View), ((Button)sender), null, Current_View);
+            SetView(typeof(Dispatch_Related_Times_View), ((Button)sender), new List<object> { SD.GetDispatches(), SD.GetCalls() }, Current_View);
         }
 
         private void DispatchReportView_Prepare(object sender, EventArgs e)
         {
-            SetView(typeof(Dispatch_Report_View), ((Button)sender), new List<object> { SD.GetDispatchReports() }, Current_View);
+            SetView(typeof(Dispatch_Report_View), ((Button)sender), new List<object> { SD.GetDispatchReports(),SD.GetDispatches() }, Current_View);
         }
 
         private void LinkPatientView_Prepare(object sender, EventArgs e)

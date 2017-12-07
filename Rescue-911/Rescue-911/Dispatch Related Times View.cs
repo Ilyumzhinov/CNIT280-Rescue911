@@ -14,20 +14,32 @@ namespace Rescue_911
     {
         // COMPOSITE DATA
         private Special_List<Dispatch> Dispatchs;
-
-
+        private Emergency_Call mSelectedCall;
+        private Special_List<Emergency> Emgergency = new Special_List<Emergency>();
 
         // CONSTRUCTORS
         //To-setup the view.
-        public Dispatch_Related_Times_View(bool toDisplay, ref Special_List<Dispatch> xDispatchs) : this(toDisplay)
+        public Dispatch_Related_Times_View(bool toDisplay, ref Special_List<Dispatch> xDispatchs, ref Special_List<Emergency_Call> xcalls) : this(toDisplay)
         {
+         
             Dispatchs = xDispatchs;
+            foreach (Dispatch idispatch in Dispatchs)
+            {
+                Emgergency.AddItem(idispatch.GetEmergency());
+            }
+            if (Emgergency != null) {
+                if (Dispatchs.Count !=0)
+                {
+                    emergencyControl.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
 
-
-
-
+                    emergencyControl.Setup_Control(ref xcalls, "Actioned", false);
+                }
+            }
         }
-
+        private void Emergency_List_Item_Selected(object sender, EventArgs e)
+        {
+            mSelectedCall = (Emergency_Call)sender;
+        }
         //To-display the view.
         public Dispatch_Related_Times_View(bool toDisplay) : base(toDisplay)
         {

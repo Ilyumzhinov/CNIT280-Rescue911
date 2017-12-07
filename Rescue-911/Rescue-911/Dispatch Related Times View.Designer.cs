@@ -31,12 +31,14 @@
             this.btnRecordArrival = new System.Windows.Forms.Button();
             this.btnDispatchTime = new System.Windows.Forms.Button();
             this.dtPicker = new System.Windows.Forms.DateTimePicker();
-            this.emergency_List1 = new Rescue_911.Emergency_List();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.emergencyControl = new Rescue_911.Emergency_Control();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRecordArrival
             // 
-            this.btnRecordArrival.Location = new System.Drawing.Point(135, 273);
+            this.btnRecordArrival.Location = new System.Drawing.Point(134, 34);
             this.btnRecordArrival.Name = "btnRecordArrival";
             this.btnRecordArrival.Size = new System.Drawing.Size(121, 23);
             this.btnRecordArrival.TabIndex = 24;
@@ -46,7 +48,7 @@
             // 
             // btnDispatchTime
             // 
-            this.btnDispatchTime.Location = new System.Drawing.Point(8, 273);
+            this.btnDispatchTime.Location = new System.Drawing.Point(7, 34);
             this.btnDispatchTime.Name = "btnDispatchTime";
             this.btnDispatchTime.Size = new System.Drawing.Size(121, 23);
             this.btnDispatchTime.TabIndex = 23;
@@ -57,21 +59,37 @@
             // dtPicker
             // 
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtPicker.Location = new System.Drawing.Point(8, 247);
+            this.dtPicker.Location = new System.Drawing.Point(7, 8);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(200, 20);
             this.dtPicker.TabIndex = 22;
             // 
-            // emergency_List1
+            // panel1
             // 
-            this.emergency_List1.AutoSize = true;
-            this.emergency_List1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.emergency_List1.Location = new System.Drawing.Point(8, 107);
-            this.emergency_List1.MinimumSize = new System.Drawing.Size(440, 0);
-            this.emergency_List1.Name = "emergency_List1";
-            this.emergency_List1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergency_List1.Size = new System.Drawing.Size(440, 136);
-            this.emergency_List1.TabIndex = 25;
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.dtPicker);
+            this.panel1.Controls.Add(this.btnRecordArrival);
+            this.panel1.Controls.Add(this.btnDispatchTime);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(5, 594);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(440, 60);
+            this.panel1.TabIndex = 25;
+            // 
+            // emergencyControl
+            // 
+            this.emergencyControl.AutoSize = true;
+            this.emergencyControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.emergencyControl.AvailableSegments = "f/f/f/t";
+            this.emergencyControl.BackColor = System.Drawing.SystemColors.Window;
+            this.emergencyControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.emergencyControl.Location = new System.Drawing.Point(5, 103);
+            this.emergencyControl.Margin = new System.Windows.Forms.Padding(0);
+            this.emergencyControl.Name = "emergencyControl";
+            this.emergencyControl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.emergencyControl.Size = new System.Drawing.Size(440, 491);
+            this.emergencyControl.TabIndex = 26;
             // 
             // Dispatch_Related_Times_View
             // 
@@ -79,19 +97,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.emergency_List1);
-            this.Controls.Add(this.btnRecordArrival);
-            this.Controls.Add(this.btnDispatchTime);
-            this.Controls.Add(this.dtPicker);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.emergencyControl);
+            this.MinimumSize = new System.Drawing.Size(450, 0);
             this.Name = "Dispatch_Related_Times_View";
-            this.Size = new System.Drawing.Size(456, 304);
+            this.Size = new System.Drawing.Size(450, 659);
             this.ViewColour = System.Drawing.Color.MediumPurple;
             this.ViewDescription = "";
             this.ViewTitle = "Dispatch Related Times";
-            this.Controls.SetChildIndex(this.dtPicker, 0);
-            this.Controls.SetChildIndex(this.btnDispatchTime, 0);
-            this.Controls.SetChildIndex(this.btnRecordArrival, 0);
-            this.Controls.SetChildIndex(this.emergency_List1, 0);
+            this.Controls.SetChildIndex(this.emergencyControl, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +118,7 @@
         private System.Windows.Forms.Button btnRecordArrival;
         private System.Windows.Forms.Button btnDispatchTime;
         private System.Windows.Forms.DateTimePicker dtPicker;
-        private Emergency_List emergency_List1;
+        private System.Windows.Forms.Panel panel1;
+        private Emergency_Control emergencyControl;
     }
 }

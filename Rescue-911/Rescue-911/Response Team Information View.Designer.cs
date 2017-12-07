@@ -70,6 +70,7 @@
             this.rbNo.TabStop = true;
             this.rbNo.Text = "No";
             this.rbNo.UseVisualStyleBackColor = true;
+            this.rbNo.Click += new System.EventHandler(this.rbNo_CheckedChanged);
             // 
             // rbYes
             // 
@@ -81,6 +82,7 @@
             this.rbYes.TabStop = true;
             this.rbYes.Text = "Yes";
             this.rbYes.UseVisualStyleBackColor = true;
+            this.rbYes.Click += new System.EventHandler(this.rbYes_CheckedChanged);
             // 
             // lbRT_ID
             // 

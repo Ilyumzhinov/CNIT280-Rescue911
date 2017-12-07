@@ -30,7 +30,7 @@
         {
             this.lbEmergencyID = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lbCallID = new System.Windows.Forms.Label();
+            this.lbrtid = new System.Windows.Forms.Label();
             this.lb11 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,41 +49,41 @@
             // 
             this.lbEmergencyID.AutoSize = true;
             this.lbEmergencyID.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbEmergencyID.Location = new System.Drawing.Point(90, 117);
+            this.lbEmergencyID.Location = new System.Drawing.Point(90, 127);
             this.lbEmergencyID.Name = "lbEmergencyID";
-            this.lbEmergencyID.Size = new System.Drawing.Size(30, 13);
+            this.lbEmergencyID.Size = new System.Drawing.Size(18, 13);
             this.lbEmergencyID.TabIndex = 36;
-            this.lbEmergencyID.Text = "state";
+            this.lbEmergencyID.Text = "ID";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(7, 117);
+            this.label12.Location = new System.Drawing.Point(7, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 35;
             this.label12.Text = "Emergency ID:";
             // 
-            // lbCallID
+            // lbrtid
             // 
-            this.lbCallID.AutoSize = true;
-            this.lbCallID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbCallID.Location = new System.Drawing.Point(64, 104);
-            this.lbCallID.Name = "lbCallID";
-            this.lbCallID.Size = new System.Drawing.Size(18, 13);
-            this.lbCallID.TabIndex = 34;
-            this.lbCallID.Text = "ID";
+            this.lbrtid.AutoSize = true;
+            this.lbrtid.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbrtid.Location = new System.Drawing.Point(113, 108);
+            this.lbrtid.Name = "lbrtid";
+            this.lbrtid.Size = new System.Drawing.Size(18, 13);
+            this.lbrtid.TabIndex = 34;
+            this.lbrtid.Text = "ID";
             // 
             // lb11
             // 
             this.lb11.AutoSize = true;
             this.lb11.ForeColor = System.Drawing.Color.DimGray;
-            this.lb11.Location = new System.Drawing.Point(8, 104);
+            this.lb11.Location = new System.Drawing.Point(5, 108);
             this.lb11.Name = "lb11";
-            this.lb11.Size = new System.Drawing.Size(50, 13);
+            this.lb11.Size = new System.Drawing.Size(102, 13);
             this.lb11.TabIndex = 33;
-            this.lb11.Text = "Caller ID:";
+            this.lb11.Text = "Response Team ID:";
             // 
             // btnSubmit
             // 
@@ -204,7 +204,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.lbEmergencyID);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.lbCallID);
+            this.Controls.Add(this.lbrtid);
             this.Controls.Add(this.lb11);
             this.Controls.Add(this.panel2);
             this.Name = "Dispatch_Report_View";
@@ -214,7 +214,7 @@
             this.ViewTitle = "Dispatch Report";
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.lb11, 0);
-            this.Controls.SetChildIndex(this.lbCallID, 0);
+            this.Controls.SetChildIndex(this.lbrtid, 0);
             this.Controls.SetChildIndex(this.label12, 0);
             this.Controls.SetChildIndex(this.lbEmergencyID, 0);
             this.panel2.ResumeLayout(false);
@@ -228,7 +228,7 @@
 
         private System.Windows.Forms.Label lbEmergencyID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lbCallID;
+        private System.Windows.Forms.Label lbrtid;
         private System.Windows.Forms.Label lb11;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Panel panel2;

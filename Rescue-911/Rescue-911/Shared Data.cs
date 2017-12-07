@@ -302,12 +302,14 @@ namespace Rescue_911
             xECs[0].SetDateTime(DateTime.Parse("10/24/2017 7:10:24 AM", System.Globalization.CultureInfo.InvariantCulture));
             xECs[0].SetAddress("102 N Chauncey Ave, West-Lafayette");
             xECs[0].SetPriority(3);
+            xECs[0].SetTeams_Required(1);
             xECs[0].SetDescription("The man got hit by a big snow flake.");
             xECs[0].SetState("Logged");
             xECs[0].SetEmergency(xEmergencies[0]);
 
             xECs[1].SetDateTime(DateTime.Parse("10/23/2017 10:14:59 AM", System.Globalization.CultureInfo.InvariantCulture));
             xECs[1].SetPriority(2);
+            xECs[1].SetTeams_Required(1);
             xECs[1].SetAddress("1198 Third Street, West-Lafayette");
             xECs[1].SetDescription("The man got attacked by a huge spider on his balcony.");
             xECs[1].SetState("Logged");
@@ -315,6 +317,7 @@ namespace Rescue_911
 
             xECs[2].SetDateTime(DateTime.Parse("10/23/2017 11:48:23 AM", System.Globalization.CultureInfo.InvariantCulture));
             xECs[2].SetPriority(1);
+            xECs[2].SetTeams_Required(2);
             xECs[2].SetAddress("600 E. Grand Avenue, Navy Pier, Chicago");
             xECs[2].SetDescription("An incident regarding a banana slip.");
             xECs[2].SetState("Logged");
@@ -322,6 +325,7 @@ namespace Rescue_911
 
             xECs[3].SetDateTime(DateTime.Parse("10/23/2017 5:11:00 AM", System.Globalization.CultureInfo.InvariantCulture));
             xECs[3].SetPriority(3);
+            xECs[3].SetTeams_Required(1);
             xECs[3].SetAddress("1600 Amphitheatre Parkway, Mountain View");
             xECs[3].SetDescription("The man was run over by a cyclist. Cyclyst needs help.");
             xECs[3].SetState("Logged");

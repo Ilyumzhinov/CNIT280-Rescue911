@@ -175,9 +175,11 @@ namespace Rescue_911
         private void SetSegment_List(ref Special_List<Emergency_Call> xEmergencies)
         {
             EnabledControls(false);
-            panelList.Visible = true;
             panelList.Enabled = true;
+            pnlParameters.Enabled = true;
 
+            pnlParameters.Visible = true;
+            panelList.Visible = true;
             listEmergenciesPopulate(cboEmergencyType.SelectedText, xEmergencies);
         }
 

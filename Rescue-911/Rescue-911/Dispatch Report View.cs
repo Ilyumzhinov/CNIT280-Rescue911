@@ -14,28 +14,53 @@ namespace Rescue_911
     {
         //To-Do: change it to dispatch object
         private Special_List<Dispatch_Report> DispatchReports;
-
+        private Special_List<Dispatch> DRs;
+        EMT emt;
         // CONSTRUCTORS
         //To-setup the view.
-        public Dispatch_Report_View(bool toDisplay, ref Special_List<Dispatch_Report> xDRs) : this(toDisplay)
+        public Dispatch_Report_View(bool toDisplay, ref Special_List<Dispatch_Report> xDRs, ref Special_List<Dispatch> xRs) : this(toDisplay)
         {
+            DRs = xRs;
             DispatchReports = xDRs;
+           
+
+
+
         }
 
         //To-display the view.
         public Dispatch_Report_View(bool toDisplay) : base(toDisplay)
         {
           
-            {
+           
                 InitializeComponent();
-            }
+            
         }
         // FUNCTIONAL METHODS
         public void SendUser(Person xPerson)
         {
             if (xPerson is EMT)
             {
+                if (DRs != null)
+                {
+                    emt = (EMT)xPerson;
+                    lbrtid.Text = emt.GetResponseTeam().GetID().ToString();
+                    if (DRs != null)
+                    {
+                        for (int a = 0; a < DRs.Count; a++)
+                        {
+                            if (lbrtid.Text == DRs[a].GetResponseTeam().GetID().ToString())
+                            {
 
+                                lbEmergencyID.Text = DRs[a].GetEmergency().GetEmergency_ID().ToString();
+
+                            }
+                        }
+
+                    }
+
+
+                }
             }
             else
             {

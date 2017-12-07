@@ -12,7 +12,16 @@ namespace Rescue_911
         private string ProcedureDetail;
         private bool VitalSign;
         private double Bill;
-
+        private string Emergency_ID;
+        private int rtID;
+        public void SetrtID(int rtID)
+        {
+            this.rtID = rtID;
+        }
+        public void SetEmergency_ID(string Emergency_ID)
+        {
+            this.Emergency_ID = Emergency_ID;
+        }
         public Dispatch_Report()
         {           
         }
@@ -24,6 +33,14 @@ namespace Rescue_911
         public string GetProcedureDetail()
         {
             return ProcedureDetail;
+        }
+        public string GetEmergency_ID()
+        {
+            return Emergency_ID;
+        }
+        public int GetrtID()
+        {
+            return rtID;
         }
 
         public bool GetVitalSign()
