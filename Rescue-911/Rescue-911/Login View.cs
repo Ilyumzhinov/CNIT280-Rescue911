@@ -89,8 +89,6 @@ namespace Rescue_911
         //
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            lbName.Visible = false;
-            lbPassword.Visible = false;
             int loginFound = -1;
 
             for (int i = 0; i < EmployeesLogins.Count; i++)
@@ -120,13 +118,11 @@ namespace Rescue_911
             {
                 SendStatusUpdate(false);
                 txtLogin.Focus();
-                lbName.Visible = true;
             }
             else
             {
                 SendStatusUpdate(true, "User found with name " + EmployeesLogins[loginFound].Item1.GetName() + " " + EmployeesLogins[loginFound].Item1.GetLast_Name(), "success");
                 txtPassword.Focus();
-                lbPassword.Visible = true;
             }
         }
 

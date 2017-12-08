@@ -61,11 +61,31 @@ namespace Rescue_911.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg {
+            get {
+                object obj = ResourceManager.GetObject("bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_grey {
+            get {
+                object obj = ResourceManager.GetObject("bg_grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon ERIS___favicon {
+        internal static System.Drawing.Icon ERIS_icon {
             get {
-                object obj = ResourceManager.GetObject("ERIS___favicon", resourceCulture);
+                object obj = ResourceManager.GetObject("ERIS_icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,9 +93,9 @@ namespace Rescue_911.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ERIS_icon {
+        internal static System.Drawing.Bitmap ERIS_png_icon {
             get {
-                object obj = ResourceManager.GetObject("ERIS_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("ERIS_png_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

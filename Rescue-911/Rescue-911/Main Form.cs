@@ -39,6 +39,8 @@ namespace Rescue_911
         //Displaying the Main screen when the Login screen is closed.
         private void MainView_Prepare(object sender, EventArgs e)
         {
+            this.BackgroundImage = null;
+
             if (sideBar.IsPopulated == false)
             {
                 sideBar.CallButton_Click += new EventHandler(CallView_Prepare);
@@ -66,6 +68,7 @@ namespace Rescue_911
         //Event for displaying the Login screen.
         private void Login_Prepare(object sender, EventArgs e)
         {
+            this.BackgroundImage = global::Rescue_911.Properties.Resources.bg_grey;
 
             StatusUpdate(false, null);
 
