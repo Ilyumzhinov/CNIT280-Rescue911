@@ -6,6 +6,8 @@ namespace Rescue_911
     {
         private Response_Team RT;
         private Emergency Emergency;
+        private string dispatchtime = "";
+        private string dispatcharrivetime = "";
         private string Status;
         public void SetStatus(string xStatus) { Status = xStatus; }
         public string getStatus() { return Status; }
@@ -14,5 +16,26 @@ namespace Rescue_911
 
         public Response_Team GetResponseTeam() { return RT; }
         public Emergency GetEmergency() { return Emergency; }
+
+
+        public void setdispatchtime(string temp) {
+            dispatchtime = temp;
+
+        }
+        public void setdispatcharrivetime(string temp)
+        {
+            dispatcharrivetime = temp;
+
+        }
+        public string getdispatch() {
+
+            return dispatchtime;
+        }
+        public string getdispatcharrivetime()
+        {
+
+            return dispatcharrivetime;
+        }
+
     }
 }

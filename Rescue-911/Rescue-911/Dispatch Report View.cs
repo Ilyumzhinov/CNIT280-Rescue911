@@ -15,6 +15,9 @@ namespace Rescue_911
         //To-Do: change it to dispatch object
         private Special_List<Dispatch_Report> DispatchReports;
         private Special_List<Dispatch> DRs;
+        private Dispatch dis;
+        private Dispatch_Report dispatchreport =new Dispatch_Report();
+        private 
         EMT emt;
         // CONSTRUCTORS
         //To-setup the view.
@@ -51,7 +54,7 @@ namespace Rescue_911
                         {
                             if (lbrtid.Text == DRs[a].GetResponseTeam().GetID().ToString())
                             {
-
+                                dis = DRs[a];
                                 lbEmergencyID.Text = DRs[a].GetEmergency().GetEmergency_ID().ToString();
 
                             }
@@ -72,6 +75,11 @@ namespace Rescue_911
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             double Bill;
+
+            dis.SetStatus("Finished");
+            
+            dis.GetResponseTeam().SetStatusByDispatch("Available");
+            
 
             // Existence checks
             if (txtHospital.Text.Trim() == string.Empty)

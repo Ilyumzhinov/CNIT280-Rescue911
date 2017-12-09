@@ -32,7 +32,7 @@ namespace Rescue_911
                 {
                     emergencyControl.EmergencySelected += new EventHandler(Emergency_List_Item_Selected);
 
-                    emergencyControl.Setup_Control(ref xcalls, "Actioned", false);
+                    emergencyControl.Setup_Control(ref xcalls, "Accepted", false);
                 }
             }
         }
@@ -54,6 +54,15 @@ namespace Rescue_911
 
         private void btnDispatchTime_Click(object sender, EventArgs e)
         {
+            foreach (Dispatch d in Dispatchs) {
+                if (mSelectedCall.GetEmergency() == d.GetEmergency()){
+
+                    d.setdispatchtime(dtPicker.ToString());
+                    SendStatusUpdate(true, "The dispatch's starting time is recored", "success");
+                }
+               
+              
+                } 
             //try
             //{
             //    if (lstEmergencies.SelectedItems[0] == null)
@@ -69,6 +78,18 @@ namespace Rescue_911
 
         private void btnRecordArrival_Click(object sender, EventArgs e)
         {
+            foreach (Dispatch d in Dispatchs)
+            {
+                if (mSelectedCall.GetEmergency() == d.GetEmergency())
+                {
+
+                    d.setdispatchtime(dtPicker.ToString());
+                    SendStatusUpdate(true, "The dispatch's arrive time is recored", "success");
+                }
+
+
+            }
+
             //try
             //{
             //    if (lstEmergencies.SelectedItems[0] == null)

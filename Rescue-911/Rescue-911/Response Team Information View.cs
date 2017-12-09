@@ -41,7 +41,7 @@ namespace Rescue_911
                 for (int a = 0; a < Dispatches.Count; a++) {
 
 
-                    if (Dispatches[a].getStatus() == "Accepted" && Dispatches[a].GetResponseTeam().GetID()== Current_RT.GetID()) {
+                    if (Dispatches[a].getStatus() == "Waiting For Dispatch" && Dispatches[a].GetResponseTeam().GetID()== Current_RT.GetID()) {
                         rbYes.Enabled = true;
                         rbNo.Enabled = true;
 
@@ -77,12 +77,13 @@ namespace Rescue_911
         // If a team approves an emergency.
         private void rbYes_CheckedChanged(object sender, EventArgs e)
         {
-            mSelectedCall.SetState("Actioned");
+            mSelectedCall.SetState("Accepted");
+            
             for (int a = 0; a < Dispatches.Count; a ++) {
 
                 if (Dispatches[a].GetEmergency() == mSelectedCall.GetEmergency())
-                    Dispatches[a].SetStatus("Actioned");
-
+                    Dispatches[a].GetResponseTeam().SetStatusByDispatch("Dispatched");
+                    Dispatches[a].SetStatus("Dispatched");
             }
             
         }

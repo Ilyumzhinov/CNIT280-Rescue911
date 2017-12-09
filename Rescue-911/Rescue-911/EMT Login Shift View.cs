@@ -61,6 +61,7 @@ namespace Rescue_911
                 lblogtime.Text = CurrentEMT.getstatus();
                 button1.Enabled = false;
                 btnWaitingCall.Enabled = true;
+                SendStatusUpdate(true, "You shift started by: "+ CurrentEMT.getshiftlogintime(), null);
             } else if (temp1 >= 0 && temp1 < 8)
             {
                
@@ -70,6 +71,7 @@ namespace Rescue_911
                 lblogtime.Text = "READY";
                 button1.Enabled = true;
                 btnWaitingCall.Enabled = false;
+                SendStatusUpdate(true, "Ready to start the shift", null);
             }
             else {
                 string b = (DateTime.Now.Hour.ToString());
@@ -79,8 +81,10 @@ namespace Rescue_911
                 lblogtime.Text = "NOT READY";
                 btnWaitingCall.Enabled = false;
                 button1.Enabled = false;
+                SendStatusUpdate(true, "It is not your shift time Yet", "urgent");
+
             }
-           
+
         }
 
         //To-display the view.
@@ -113,6 +117,7 @@ namespace Rescue_911
             
             button1.Enabled = false;
             btnWaitingCall.Enabled = true;
+            SendStatusUpdate(true, "shift started, team currently: "+CurrentEMT.GetResponseTeam().GetTeamstatus()+" Currently avtive emt:"+ CurrentEMT.GetResponseTeam().getemtnum().ToString(), "success");
         }
 
         private void btnWaitingCall_Click(object sender, EventArgs e)
@@ -129,6 +134,7 @@ namespace Rescue_911
             CurrentEMT.GetResponseTeam().SetStatusByEmt(false, CurrentEMT.GetTeamNumber());
             button1.Enabled = true;
             btnWaitingCall.Enabled = false;
+            SendStatusUpdate(true, "You ended you shift, total word hour: "+CurrentEMT.getTotalShiftTime().ToString().Substring(0, 8), null);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

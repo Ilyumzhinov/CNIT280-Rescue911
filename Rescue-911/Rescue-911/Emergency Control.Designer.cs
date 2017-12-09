@@ -101,7 +101,7 @@
             this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View/List";
-            this.segmentMain.Size = new System.Drawing.Size(75, 33);
+            this.segmentMain.Size = new System.Drawing.Size(300, 33);
             this.segmentMain.TabIndex = 13;
             // 
             // lbTitle

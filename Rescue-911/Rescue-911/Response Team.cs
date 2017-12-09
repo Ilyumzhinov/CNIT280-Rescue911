@@ -11,9 +11,13 @@ namespace Rescue_911
         private bool[] Status = new bool[5];
         private string TeamStatus = "Non-Available";
         private BaseStation BaseStation;
+        private int emtnum=0;
 
         public event EventHandler Team_Updated;
+        public int getemtnum() {
 
+            return emtnum;
+        }
         public void SetBaseStation(BaseStation xBaseStation) { BaseStation = xBaseStation; }
         public BaseStation GetBaseStation() { return BaseStation; }
         public void SetStatusByEmt(bool xstatus,int EMTInTeam) {
@@ -24,6 +28,7 @@ namespace Rescue_911
                     temp++;
                 }
             }
+            emtnum = temp;
             if (temp >= 3&&TeamStatus != "Dispatched") {
               TeamStatus = "Available";
             }else if (temp < 3)

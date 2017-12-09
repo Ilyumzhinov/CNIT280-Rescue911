@@ -28,6 +28,8 @@ namespace Rescue_911
             Emergencies = xEmergencies;
             RTs = xRTs;
             dispatch = xDispatch;
+       
+
         }
 
         //To-display the view.
@@ -78,7 +80,8 @@ namespace Rescue_911
 
         private void Emergency_List_Item_Selected(object sender, EventArgs e)
         {
-           // lstTeams.Items.Clear();
+            // lstTeams.Items.Clear();
+         
 
             mSelectedCall = (Emergency_Call)sender;
             
@@ -159,20 +162,23 @@ namespace Rescue_911
             
             // SD.AddDispatch(xDispatch);
            
-            mSelectedCall.SetState("Accepted");
-            mSelectedRT.SetStatusByDispatch("Dispatched");
+            mSelectedCall.SetState("Waiting");
+            mSelectedRT.SetStatusByDispatch("Waiting For Dispatch");
             
             dis.SetEmergency(mSelectedCall.GetEmergency());
             dis.SetResponseTeam(mSelectedRT);
-            dis.SetStatus("Accepted");
+            dis.SetStatus("Waiting For Dispatch");
             dispatch.AddItem(dis);
             rbYes.Checked = false;
+            SendStatusUpdate(true, "Dispatch Created", "success");
+
         }
 
         private void rbNo_CheckedChanged(object sender, EventArgs e)
         {
             mSelectedCall.SetState("Waiting");
             rbNo.Checked = false;
+            SendStatusUpdate(true, "Call Sent to the waiting list");
         }
 
         private void Emergency_Management_View_SizeChanged(object sender, EventArgs e)
