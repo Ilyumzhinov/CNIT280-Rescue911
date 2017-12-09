@@ -45,6 +45,8 @@ namespace Rescue_911
         public Call_Control()
         {
             InitializeComponent();
+            this.HorizontalScroll.Visible = false;
+            this.HorizontalScroll.Enabled = false;
 
             // Setting local View segment Control
             segmentView.SetAvailableSegments("t/t");

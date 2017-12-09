@@ -130,7 +130,7 @@
             this.panelSegments.Location = new System.Drawing.Point(0, 76);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(1120, 415);
+            this.panelSegments.Size = new System.Drawing.Size(1120, 445);
             this.panelSegments.TabIndex = 17;
             // 
             // pnlSpecs
@@ -314,12 +314,13 @@
             this.pnlRelatedData.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRelatedData.MinimumSize = new System.Drawing.Size(320, 0);
             this.pnlRelatedData.Name = "pnlRelatedData";
-            this.pnlRelatedData.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlRelatedData.Size = new System.Drawing.Size(320, 415);
+            this.pnlRelatedData.Padding = new System.Windows.Forms.Padding(5, 5, 5, 35);
+            this.pnlRelatedData.Size = new System.Drawing.Size(320, 445);
             this.pnlRelatedData.TabIndex = 2;
             // 
             // callControlView
             // 
+            this.callControlView.AutoScroll = true;
             this.callControlView.AutoSize = true;
             this.callControlView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.callControlView.AvailableSegments = "f/f/t";
@@ -327,7 +328,6 @@
             this.callControlView.Dock = System.Windows.Forms.DockStyle.Top;
             this.callControlView.Location = new System.Drawing.Point(5, 36);
             this.callControlView.Margin = new System.Windows.Forms.Padding(0);
-            this.callControlView.MinimumSize = new System.Drawing.Size(310, 0);
             this.callControlView.Name = "callControlView";
             this.callControlView.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.callControlView.Size = new System.Drawing.Size(310, 374);
@@ -354,12 +354,12 @@
             this.panelList.Controls.Add(this.lstEmergencies);
             this.panelList.Controls.Add(this.lbpnlEmergencyList);
             this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelList.Location = new System.Drawing.Point(620, 0);
+            this.panelList.Location = new System.Drawing.Point(0, 445);
             this.panelList.Margin = new System.Windows.Forms.Padding(0);
             this.panelList.MinimumSize = new System.Drawing.Size(500, 0);
             this.panelList.Name = "panelList";
             this.panelList.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelList.Size = new System.Drawing.Size(500, 415);
+            this.panelList.Size = new System.Drawing.Size(500, 136);
             this.panelList.TabIndex = 3;
             // 
             // lstEmergencies
@@ -510,7 +510,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Emergency_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(1120, 491);
+            this.Size = new System.Drawing.Size(1120, 521);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);

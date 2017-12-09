@@ -108,17 +108,16 @@
             // segmentMain
             // 
             this.segmentMain.AutoSize = true;
-            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.segmentMain.AvailableSegments = "t/t/t";
             this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.segmentMain.Location = new System.Drawing.Point(52, 0);
             this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MaximumSize = new System.Drawing.Size(0, 33);
+            this.segmentMain.MaximumSize = new System.Drawing.Size(300, 33);
             this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View";
-            this.segmentMain.Size = new System.Drawing.Size(75, 33);
+            this.segmentMain.Size = new System.Drawing.Size(226, 33);
             this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
@@ -702,10 +701,11 @@
             this.segmentView.Dock = System.Windows.Forms.DockStyle.Left;
             this.segmentView.Location = new System.Drawing.Point(87, 0);
             this.segmentView.Margin = new System.Windows.Forms.Padding(0);
+            this.segmentView.MaximumSize = new System.Drawing.Size(300, 33);
             this.segmentView.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentView.Name = "segmentView";
             this.segmentView.Segments = "Overview/Detail";
-            this.segmentView.Size = new System.Drawing.Size(75, 33);
+            this.segmentView.Size = new System.Drawing.Size(152, 33);
             this.segmentView.TabIndex = 0;
             // 
             // label9

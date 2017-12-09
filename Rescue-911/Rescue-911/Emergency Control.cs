@@ -50,6 +50,8 @@ namespace Rescue_911
         public Emergency_Control()
         {
             InitializeComponent();
+            this.HorizontalScroll.Visible = false;
+            this.HorizontalScroll.Enabled = false;
         }
         //
 

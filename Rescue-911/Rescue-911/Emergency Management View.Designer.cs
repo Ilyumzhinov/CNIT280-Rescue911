@@ -97,10 +97,10 @@
             this.panel2.Controls.Add(this.RTList);
             this.panel2.Controls.Add(this.emergencyControl);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(7, 101);
+            this.panel2.Location = new System.Drawing.Point(7, 104);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(436, 774);
+            this.panel2.Size = new System.Drawing.Size(436, 625);
             this.panel2.TabIndex = 34;
             // 
             // RTList
@@ -109,7 +109,7 @@
             this.RTList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.RTList.BackColor = System.Drawing.Color.White;
             this.RTList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RTList.Location = new System.Drawing.Point(0, 640);
+            this.RTList.Location = new System.Drawing.Point(0, 491);
             this.RTList.Margin = new System.Windows.Forms.Padding(0);
             this.RTList.MinimumSize = new System.Drawing.Size(330, 0);
             this.RTList.Name = "RTList";
@@ -119,6 +119,7 @@
             // 
             // emergencyControl
             // 
+            this.emergencyControl.AutoScroll = true;
             this.emergencyControl.AutoSize = true;
             this.emergencyControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.emergencyControl.AvailableSegments = "f/f/t/t";
@@ -126,9 +127,10 @@
             this.emergencyControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.emergencyControl.Location = new System.Drawing.Point(0, 0);
             this.emergencyControl.Margin = new System.Windows.Forms.Padding(0);
+            this.emergencyControl.MaximumSize = new System.Drawing.Size(800, 0);
             this.emergencyControl.Name = "emergencyControl";
             this.emergencyControl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergencyControl.Size = new System.Drawing.Size(436, 640);
+            this.emergencyControl.Size = new System.Drawing.Size(436, 491);
             this.emergencyControl.TabIndex = 33;
             // 
             // panel1
@@ -140,7 +142,7 @@
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.rbNo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(7, 875);
+            this.panel1.Location = new System.Drawing.Point(7, 729);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.MinimumSize = new System.Drawing.Size(330, 0);
             this.panel1.Name = "panel1";
@@ -158,7 +160,7 @@
             this.MinimumSize = new System.Drawing.Size(450, 0);
             this.Name = "Emergency_Management_View";
             this.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.Size = new System.Drawing.Size(450, 922);
+            this.Size = new System.Drawing.Size(450, 776);
             this.ViewColour = System.Drawing.Color.IndianRed;
             this.ViewDescription = "Select Emergency and a RT to create dispatch";
             this.ViewTitle = "Emergency Management";
