@@ -31,10 +31,6 @@ namespace Rescue_911
         {
             //To-instantiate the view.
             InitializeComponent();
-
-
-            //btnLogin.Image = SystemIcons.Warning.ToBitmap();
-            //btnNewMain.Image = SystemIcons.WinLogo.ToBitmap();
         }
         //
 
@@ -121,7 +117,7 @@ namespace Rescue_911
             }
             else
             {
-                SendStatusUpdate(true, "User found with name " + EmployeesLogins[loginFound].Item1.GetName() + " " + EmployeesLogins[loginFound].Item1.GetLast_Name(), "success");
+                SendStatusUpdate(true, "User found with name " + EmployeesLogins[loginFound].Item1.GetName() + " " + EmployeesLogins[loginFound].Item1.GetLast_Name());
                 txtPassword.Focus();
             }
         }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.segmentMain = new Rescue_911.Segmented_Control();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelSegments = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSpecs = new System.Windows.Forms.Panel();
@@ -45,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbpnlSpecs = new System.Windows.Forms.Label();
             this.pnlRelatedData = new System.Windows.Forms.Panel();
-            this.callControlView = new Rescue_911.Call_Control();
             this.lbpnlRelatedCalls = new System.Windows.Forms.Label();
             this.panelList = new System.Windows.Forms.Panel();
             this.lbWarning = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.callControlView = new Rescue_911.Call_Control();
+            this.segmentMain = new Rescue_911.Segmented_Control();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.pnlSpecs.SuspendLayout();
@@ -88,21 +88,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.panel1.Size = new System.Drawing.Size(1110, 33);
             this.panel1.TabIndex = 16;
-            // 
-            // segmentMain
-            // 
-            this.segmentMain.AutoSize = true;
-            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.segmentMain.AvailableSegments = "t/t/t/t";
-            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.segmentMain.Location = new System.Drawing.Point(95, 0);
-            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
-            this.segmentMain.Name = "segmentMain";
-            this.segmentMain.Segments = "Add/Edit/View/List";
-            this.segmentMain.Size = new System.Drawing.Size(75, 33);
-            this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
             // 
@@ -149,7 +134,7 @@
             this.pnlSpecs.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlSpecs.Name = "pnlSpecs";
             this.pnlSpecs.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSpecs.Size = new System.Drawing.Size(290, 167);
+            this.pnlSpecs.Size = new System.Drawing.Size(290, 0);
             this.pnlSpecs.TabIndex = 1;
             // 
             // pnlUpdateBtn
@@ -225,7 +210,7 @@
             this.panel3.MinimumSize = new System.Drawing.Size(280, 25);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
-            this.panel3.Size = new System.Drawing.Size(280, 35);
+            this.panel3.Size = new System.Drawing.Size(280, 25);
             this.panel3.TabIndex = 31;
             // 
             // cboEmergencyType
@@ -342,21 +327,6 @@
             this.pnlRelatedData.Padding = new System.Windows.Forms.Padding(5, 5, 5, 35);
             this.pnlRelatedData.Size = new System.Drawing.Size(320, 471);
             this.pnlRelatedData.TabIndex = 2;
-            // 
-            // callControlView
-            // 
-            this.callControlView.AutoScroll = true;
-            this.callControlView.AutoSize = true;
-            this.callControlView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.callControlView.AvailableSegments = "f/f/t";
-            this.callControlView.BackColor = System.Drawing.SystemColors.Window;
-            this.callControlView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.callControlView.Location = new System.Drawing.Point(5, 36);
-            this.callControlView.Margin = new System.Windows.Forms.Padding(0);
-            this.callControlView.Name = "callControlView";
-            this.callControlView.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.callControlView.Size = new System.Drawing.Size(310, 400);
-            this.callControlView.TabIndex = 31;
             // 
             // lbpnlRelatedCalls
             // 
@@ -534,6 +504,36 @@
             this.label9.Size = new System.Drawing.Size(77, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "parameters:";
+            // 
+            // callControlView
+            // 
+            this.callControlView.AutoScroll = true;
+            this.callControlView.AutoSize = true;
+            this.callControlView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.callControlView.AvailableSegments = "f/f/t";
+            this.callControlView.BackColor = System.Drawing.SystemColors.Window;
+            this.callControlView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.callControlView.Location = new System.Drawing.Point(5, 36);
+            this.callControlView.Margin = new System.Windows.Forms.Padding(0);
+            this.callControlView.Name = "callControlView";
+            this.callControlView.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.callControlView.Size = new System.Drawing.Size(310, 400);
+            this.callControlView.TabIndex = 31;
+            // 
+            // segmentMain
+            // 
+            this.segmentMain.AutoSize = true;
+            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.segmentMain.AvailableSegments = "t/t/t/t";
+            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.segmentMain.Location = new System.Drawing.Point(95, 0);
+            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
+            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
+            this.segmentMain.Name = "segmentMain";
+            this.segmentMain.Segments = "Add/Edit/View/List";
+            this.segmentMain.Size = new System.Drawing.Size(75, 33);
+            this.segmentMain.TabIndex = 13;
             // 
             // Emergency_Control
             // 

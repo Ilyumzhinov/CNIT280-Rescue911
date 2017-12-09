@@ -97,12 +97,15 @@ namespace Rescue_911
 
             // Setting up the interface
             cmbState.Items.AddRange(new object[] {
+            "Not Logged",
             "Logged",
             "Waiting",
             "Accepted",
             "Actioned",
             "Declined"});
             cmbState.Enabled = xStateCanChange;
+           
+
             cmbState.SelectedItem = xState;
             lstEmergencies.Columns[0].Width = 80;
             lstEmergencies.Columns[1].Width = 80;
@@ -352,6 +355,11 @@ namespace Rescue_911
             {
                 Current_Emergency.SetEType("");
             }
+        }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         //
     }

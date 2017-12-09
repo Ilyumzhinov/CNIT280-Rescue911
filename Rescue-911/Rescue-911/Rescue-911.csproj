@@ -39,8 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\eris_icon_KbSyXB.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.DataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
@@ -339,10 +338,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ERIS icon.ico" />
+    <None Include="Resources\eris_icon_KbSyXB.ico" />
+    <None Include="Resources\ERIS - favicon.ico" />
     <None Include="Resources\ERIS png icon.png" />
     <None Include="Resources\bg-grey.png" />
     <None Include="Resources\bg.png" />
-    <None Include="Resources\eris_icon_KbSyXB.ico" />
     <None Include="Resources\ERIS icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

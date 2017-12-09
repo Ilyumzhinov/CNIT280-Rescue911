@@ -227,7 +227,7 @@ namespace Rescue_911
             int temp2 = 0;
             for (int a = 0; a < 50; a++)
             {
-
+                
                 xEMTs.Add(new EMT());
                 xEMTs[a].SetName("EMT" + a);
                 xEMTs[a].SetEmployee_ID(11 + a);
@@ -258,7 +258,7 @@ namespace Rescue_911
                 else if (a >= 30)
                 {
                     xEMTs[a].setShifttime("7:00");
-                    xEMTs[a].SetManager_ID(11);
+                    xEMTs[a].SetManager_ID(9);
                 }
                 
             }

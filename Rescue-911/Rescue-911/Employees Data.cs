@@ -30,7 +30,6 @@ namespace Rescue_911
             fakePerson.SetLast_Name("Employee");
             fakePerson.SetAddress("Cupertino, California");
 
-            //FakeEmpoyee = new Tuple<Employee, int, string>();
             FakeEmpoyee = Tuple.Create(fakePerson, 666, string.Empty);
             //
         }
@@ -40,7 +39,7 @@ namespace Rescue_911
         // PUBLIC METHODS
         public List<Tuple<Employee,int,string>> GetEmployeesLoginsPasswords()
         {
-            List<Tuple<Employee, int, string>> Employees = new List<Tuple<Employee, int, string>>(); // = new Tuple<Employee, int, string>[8];
+            List<Tuple<Employee, int, string>> Employees = new List<Tuple<Employee, int, string>>();
 
             Employees.AddRange(Operators);
             Employees.AddRange(Supervisors);
@@ -74,16 +73,16 @@ namespace Rescue_911
         {
             EMTs = new Tuple<Employee, int, string>[50];
 
-            // Jane
-            EMTs[0] = Tuple.Create((Employee)EMTs_Existing[0], EMTs_Existing[0].GetEmployee_ID(), "qwerty");
-            // Tyler
-            EMTs[1] = Tuple.Create((Employee)EMTs_Existing[1], EMTs_Existing[1].GetEmployee_ID(), "123");
-            // John
-            EMTs[2] = Tuple.Create((Employee)EMTs_Existing[2], EMTs_Existing[2].GetEmployee_ID(), "john");
-            // Shawn
-            EMTs[3] = Tuple.Create((Employee)EMTs_Existing[3], EMTs_Existing[3].GetEmployee_ID(), "111");
+            //// Jane
+            //EMTs[0] = Tuple.Create((Employee)EMTs_Existing[0], EMTs_Existing[0].GetEmployee_ID(), "qwerty");
+            //// Tyler
+            //EMTs[1] = Tuple.Create((Employee)EMTs_Existing[1], EMTs_Existing[1].GetEmployee_ID(), "123");
+            //// John
+            //EMTs[2] = Tuple.Create((Employee)EMTs_Existing[2], EMTs_Existing[2].GetEmployee_ID(), "john");
+            //// Shawn
+            //EMTs[3] = Tuple.Create((Employee)EMTs_Existing[3], EMTs_Existing[3].GetEmployee_ID(), "111");
 
-            for (int a = 4; a < 50; a++) {
+            for (int a = 0; a < 50; a++) {
                 EMTs[a] = Tuple.Create((Employee)EMTs_Existing[a], EMTs_Existing[a].GetEmployee_ID(), "a");
                 
             }
