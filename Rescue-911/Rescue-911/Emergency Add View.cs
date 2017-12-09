@@ -27,13 +27,16 @@ namespace Rescue_911
             {
                 SendStatusUpdate(true, "To access, you must have Operator access level!", "urgent");
 
-                emergencyControl.EnabledControls(false);
+                emergencyControl.Visible = false;
             }
             else return;
         }
 
         private void AddEmer(object sender, EventArgs e)
         {
+            emergencyControl.Enabled = false;
+
+            ((Call_View)GetPrevious_View()).EnableControls();
             SendStatusUpdate(true, "Emergency ID"+ ((Emergency_Call)sender).GetEmergency().GetEmergency_ID().ToString() + " added", "success");
         }
     }

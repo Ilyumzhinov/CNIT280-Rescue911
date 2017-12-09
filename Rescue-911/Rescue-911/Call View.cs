@@ -56,6 +56,11 @@ namespace Rescue_911
                 SendStatusUpdate(true, "To access, you must have Operator access level!", "urgent");
             }
         }
+
+        public void EnableControls()
+        {
+            callControl.Enabled = false;
+        }
         //
 
         //EVENT HANDLERS

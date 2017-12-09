@@ -85,8 +85,7 @@ namespace Rescue_911
                 SegmentsBtns[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 SegmentsBtns[i].Font = new System.Drawing.Font("Franklin Gothic Medium", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 SegmentsBtns[i].UseVisualStyleBackColor = false;
-                SegmentsBtns[i].BackColor = System.Drawing.Color.Transparent;
-                SegmentsBtns[i].FlatAppearance.BorderColor = Color.White;
+                SegmentsBtns[i].FlatAppearance.BorderColor = Color.Gainsboro;
                 SegmentsBtns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
                 SegmentsBtns[i].FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
                 SegmentsBtns[i].ForeColor = ColourHighlight;
@@ -154,13 +153,13 @@ namespace Rescue_911
                     if (mSelectedSegment != -1)
                     {
                         SegmentsBtns[mSelectedSegment].BackColor = System.Drawing.Color.Transparent;
-                        SegmentsBtns[mSelectedSegment].FlatAppearance.BorderColor = Color.White;
+                        SegmentsBtns[mSelectedSegment].FlatAppearance.BorderColor = Color.Gainsboro;
                         SegmentsBtns[mSelectedSegment].ForeColor = ColourHighlight;
                         SegmentsBtns[mSelectedSegment].Enabled = true;
                     }
 
                     sender.BackColor = Color.Gainsboro;
-                    sender.FlatAppearance.BorderColor = Color.White;
+                    sender.FlatAppearance.BorderColor = Color.Gainsboro;
                     sender.ForeColor = System.Drawing.Color.White;
                     sender.Enabled = false;
 

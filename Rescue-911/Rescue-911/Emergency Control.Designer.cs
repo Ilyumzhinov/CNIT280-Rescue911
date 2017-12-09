@@ -48,6 +48,7 @@
             this.callControlView = new Rescue_911.Call_Control();
             this.lbpnlRelatedCalls = new System.Windows.Forms.Label();
             this.panelList = new System.Windows.Forms.Panel();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.lstEmergencies = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,7 +62,6 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lbWarning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.pnlSpecs.SuspendLayout();
@@ -101,7 +101,7 @@
             this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View/List";
-            this.segmentMain.Size = new System.Drawing.Size(300, 33);
+            this.segmentMain.Size = new System.Drawing.Size(75, 33);
             this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
@@ -131,7 +131,7 @@
             this.panelSegments.Location = new System.Drawing.Point(0, 76);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(1110, 470);
+            this.panelSegments.Size = new System.Drawing.Size(1110, 471);
             this.panelSegments.TabIndex = 17;
             // 
             // pnlSpecs
@@ -149,7 +149,7 @@
             this.pnlSpecs.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlSpecs.Name = "pnlSpecs";
             this.pnlSpecs.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSpecs.Size = new System.Drawing.Size(290, 179);
+            this.pnlSpecs.Size = new System.Drawing.Size(290, 167);
             this.pnlSpecs.TabIndex = 1;
             // 
             // pnlUpdateBtn
@@ -158,24 +158,26 @@
             this.pnlUpdateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdateBtn.Controls.Add(this.btnUpdate);
             this.pnlUpdateBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 135);
+            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 129);
             this.pnlUpdateBtn.Margin = new System.Windows.Forms.Padding(0);
             this.pnlUpdateBtn.Name = "pnlUpdateBtn";
-            this.pnlUpdateBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlUpdateBtn.Size = new System.Drawing.Size(280, 39);
+            this.pnlUpdateBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlUpdateBtn.Size = new System.Drawing.Size(280, 33);
             this.pnlUpdateBtn.TabIndex = 30;
             this.pnlUpdateBtn.Visible = false;
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(4, 8);
+            this.btnUpdate.Location = new System.Drawing.Point(5, 5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(271, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(270, 23);
             this.btnUpdate.TabIndex = 30;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -189,21 +191,22 @@
             this.pnlAddEmergencyBtn.Location = new System.Drawing.Point(5, 96);
             this.pnlAddEmergencyBtn.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAddEmergencyBtn.Name = "pnlAddEmergencyBtn";
-            this.pnlAddEmergencyBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlAddEmergencyBtn.Size = new System.Drawing.Size(280, 39);
+            this.pnlAddEmergencyBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlAddEmergencyBtn.Size = new System.Drawing.Size(280, 33);
             this.pnlAddEmergencyBtn.TabIndex = 4;
             this.pnlAddEmergencyBtn.Visible = false;
             // 
             // btnAddEmer
             // 
-            this.btnAddEmer.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAddEmer.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAddEmer.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddEmer.FlatAppearance.BorderSize = 0;
             this.btnAddEmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEmer.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmer.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmer.ForeColor = System.Drawing.Color.White;
-            this.btnAddEmer.Location = new System.Drawing.Point(4, 8);
+            this.btnAddEmer.Location = new System.Drawing.Point(5, 5);
             this.btnAddEmer.Name = "btnAddEmer";
-            this.btnAddEmer.Size = new System.Drawing.Size(271, 23);
+            this.btnAddEmer.Size = new System.Drawing.Size(270, 23);
             this.btnAddEmer.TabIndex = 30;
             this.btnAddEmer.Text = "Add Emergency";
             this.btnAddEmer.UseVisualStyleBackColor = false;
@@ -251,6 +254,7 @@
             this.cboEmergencyType.Name = "cboEmergencyType";
             this.cboEmergencyType.Size = new System.Drawing.Size(175, 25);
             this.cboEmergencyType.TabIndex = 2;
+            this.cboEmergencyType.SelectedIndexChanged += new System.EventHandler(this.cboEmergencyType_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -336,7 +340,7 @@
             this.pnlRelatedData.MinimumSize = new System.Drawing.Size(320, 0);
             this.pnlRelatedData.Name = "pnlRelatedData";
             this.pnlRelatedData.Padding = new System.Windows.Forms.Padding(5, 5, 5, 35);
-            this.pnlRelatedData.Size = new System.Drawing.Size(320, 470);
+            this.pnlRelatedData.Size = new System.Drawing.Size(320, 471);
             this.pnlRelatedData.TabIndex = 2;
             // 
             // callControlView
@@ -351,7 +355,7 @@
             this.callControlView.Margin = new System.Windows.Forms.Padding(0);
             this.callControlView.Name = "callControlView";
             this.callControlView.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.callControlView.Size = new System.Drawing.Size(310, 399);
+            this.callControlView.Size = new System.Drawing.Size(310, 400);
             this.callControlView.TabIndex = 31;
             // 
             // lbpnlRelatedCalls
@@ -381,8 +385,20 @@
             this.panelList.MinimumSize = new System.Drawing.Size(500, 0);
             this.panelList.Name = "panelList";
             this.panelList.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelList.Size = new System.Drawing.Size(500, 470);
+            this.panelList.Size = new System.Drawing.Size(500, 471);
             this.panelList.TabIndex = 3;
+            // 
+            // lbWarning
+            // 
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbWarning.Location = new System.Drawing.Point(31, 5);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(282, 17);
+            this.lbWarning.TabIndex = 31;
+            this.lbWarning.Text = "To view an emergency, select an item from the list";
+            this.lbWarning.Visible = false;
             // 
             // lstEmergencies
             // 
@@ -519,18 +535,6 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "parameters:";
             // 
-            // lbWarning
-            // 
-            this.lbWarning.AutoSize = true;
-            this.lbWarning.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWarning.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lbWarning.Location = new System.Drawing.Point(31, 5);
-            this.lbWarning.Name = "lbWarning";
-            this.lbWarning.Size = new System.Drawing.Size(282, 17);
-            this.lbWarning.TabIndex = 31;
-            this.lbWarning.Text = "To view an emergency, select an item from the list";
-            this.lbWarning.Visible = false;
-            // 
             // Emergency_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,7 +548,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Emergency_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(1110, 546);
+            this.Size = new System.Drawing.Size(1110, 547);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);

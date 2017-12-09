@@ -341,6 +341,18 @@ namespace Rescue_911
 
             Emergency_Added?.Invoke(Current_Call, e);
         }
+
+        private void cboEmergencyType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Current_Emergency.SetEType((string)cboEmergencyType.SelectedItem);
+            }
+            catch
+            {
+                Current_Emergency.SetEType("");
+            }
+        }
         //
     }
 }

@@ -49,6 +49,9 @@ namespace Rescue_911
                     Current_Call.SetEmergency(iEC.GetEmergency());
                     Current_Call.SetState("Logged");
 
+                    
+                    ((Call_View)GetPrevious_View()).EnableControls();
+
                     SendStatusUpdate(true, "Emergency Call was linked successfully", "success");
 
                     break;

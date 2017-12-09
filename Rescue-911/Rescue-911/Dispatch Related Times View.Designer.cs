@@ -38,28 +38,38 @@
             // 
             // btnRecordArrival
             // 
-            this.btnRecordArrival.Location = new System.Drawing.Point(134, 34);
+            this.btnRecordArrival.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnRecordArrival.FlatAppearance.BorderSize = 0;
+            this.btnRecordArrival.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordArrival.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecordArrival.ForeColor = System.Drawing.Color.White;
+            this.btnRecordArrival.Location = new System.Drawing.Point(237, 34);
             this.btnRecordArrival.Name = "btnRecordArrival";
-            this.btnRecordArrival.Size = new System.Drawing.Size(121, 23);
+            this.btnRecordArrival.Size = new System.Drawing.Size(200, 23);
             this.btnRecordArrival.TabIndex = 24;
             this.btnRecordArrival.Text = "Record Arrival Time";
-            this.btnRecordArrival.UseVisualStyleBackColor = true;
+            this.btnRecordArrival.UseVisualStyleBackColor = false;
             this.btnRecordArrival.Click += new System.EventHandler(this.btnRecordArrival_Click);
             // 
             // btnDispatchTime
             // 
-            this.btnDispatchTime.Location = new System.Drawing.Point(7, 34);
+            this.btnDispatchTime.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDispatchTime.FlatAppearance.BorderSize = 0;
+            this.btnDispatchTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDispatchTime.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDispatchTime.ForeColor = System.Drawing.Color.White;
+            this.btnDispatchTime.Location = new System.Drawing.Point(3, 34);
             this.btnDispatchTime.Name = "btnDispatchTime";
-            this.btnDispatchTime.Size = new System.Drawing.Size(121, 23);
+            this.btnDispatchTime.Size = new System.Drawing.Size(200, 23);
             this.btnDispatchTime.TabIndex = 23;
             this.btnDispatchTime.Text = "Record Dispatch Time";
-            this.btnDispatchTime.UseVisualStyleBackColor = true;
+            this.btnDispatchTime.UseVisualStyleBackColor = false;
             this.btnDispatchTime.Click += new System.EventHandler(this.btnDispatchTime_Click);
             // 
             // dtPicker
             // 
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtPicker.Location = new System.Drawing.Point(7, 8);
+            this.dtPicker.Location = new System.Drawing.Point(3, 8);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(200, 20);
             this.dtPicker.TabIndex = 22;
@@ -72,7 +82,7 @@
             this.panel1.Controls.Add(this.btnRecordArrival);
             this.panel1.Controls.Add(this.btnDispatchTime);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 594);
+            this.panel1.Location = new System.Drawing.Point(5, 650);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 60);
             this.panel1.TabIndex = 25;
@@ -88,7 +98,7 @@
             this.emergencyControl.Margin = new System.Windows.Forms.Padding(0);
             this.emergencyControl.Name = "emergencyControl";
             this.emergencyControl.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.emergencyControl.Size = new System.Drawing.Size(440, 491);
+            this.emergencyControl.Size = new System.Drawing.Size(440, 547);
             this.emergencyControl.TabIndex = 26;
             // 
             // Dispatch_Related_Times_View
@@ -101,9 +111,9 @@
             this.Controls.Add(this.emergencyControl);
             this.MinimumSize = new System.Drawing.Size(450, 0);
             this.Name = "Dispatch_Related_Times_View";
-            this.Size = new System.Drawing.Size(450, 659);
+            this.Size = new System.Drawing.Size(450, 715);
             this.ViewColour = System.Drawing.Color.MediumPurple;
-            this.ViewDescription = "";
+            this.ViewDescription = "Record dispatch time by selecting an item from the list and clicking buttons";
             this.ViewTitle = "Dispatch Related Times";
             this.Controls.SetChildIndex(this.emergencyControl, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

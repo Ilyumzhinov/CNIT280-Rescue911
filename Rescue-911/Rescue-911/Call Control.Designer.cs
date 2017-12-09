@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.segmentMain = new Rescue_911.Segmented_Control();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelSegments = new System.Windows.Forms.FlowLayoutPanel();
             this.panelAdd = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,6 +57,9 @@
             this.pnlEmergencyBtns = new System.Windows.Forms.Panel();
             this.btnAddEmer = new System.Windows.Forms.Button();
             this.btnLinkEmergency = new System.Windows.Forms.Button();
+            this.pnlOperator = new System.Windows.Forms.Panel();
+            this.txtOperator = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,11 +71,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbpnlOtherData = new System.Windows.Forms.Label();
             this.pnlParameters = new System.Windows.Forms.Panel();
-            this.segmentView = new Rescue_911.Segmented_Control();
             this.label9 = new System.Windows.Forms.Label();
-            this.pnlOperator = new System.Windows.Forms.Panel();
-            this.txtOperator = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.segmentView = new Rescue_911.Segmented_Control();
+            this.segmentMain = new Rescue_911.Segmented_Control();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -88,11 +88,11 @@
             this.pnlOtherData.SuspendLayout();
             this.pnlUpdateBtn.SuspendLayout();
             this.pnlEmergencyBtns.SuspendLayout();
+            this.pnlOperator.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnlParameters.SuspendLayout();
-            this.pnlOperator.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,27 +103,11 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.MinimumSize = new System.Drawing.Size(0, 33);
+            this.panel1.MinimumSize = new System.Drawing.Size(0, 35);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel1.Size = new System.Drawing.Size(870, 33);
+            this.panel1.Size = new System.Drawing.Size(870, 35);
             this.panel1.TabIndex = 16;
-            // 
-            // segmentMain
-            // 
-            this.segmentMain.AutoSize = true;
-            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.segmentMain.AvailableSegments = "t/t/t";
-            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.segmentMain.Location = new System.Drawing.Point(52, 0);
-            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
-            this.segmentMain.MaximumSize = new System.Drawing.Size(300, 33);
-            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
-            this.segmentMain.Name = "segmentMain";
-            this.segmentMain.Segments = "Add/Edit/View";
-            this.segmentMain.Size = new System.Drawing.Size(75, 33);
-            this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
             // 
@@ -147,10 +131,10 @@
             this.panelSegments.BackColor = System.Drawing.Color.Transparent;
             this.panelSegments.Controls.Add(this.panelAdd);
             this.panelSegments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSegments.Location = new System.Drawing.Point(0, 76);
+            this.panelSegments.Location = new System.Drawing.Point(0, 78);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(870, 330);
+            this.panelSegments.Size = new System.Drawing.Size(870, 322);
             this.panelSegments.TabIndex = 17;
             // 
             // panelAdd
@@ -166,7 +150,7 @@
             this.panelAdd.Margin = new System.Windows.Forms.Padding(0);
             this.panelAdd.MinimumSize = new System.Drawing.Size(290, 2);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(870, 330);
+            this.panelAdd.Size = new System.Drawing.Size(870, 322);
             this.panelAdd.TabIndex = 0;
             // 
             // pnlCallInfo
@@ -183,7 +167,7 @@
             this.pnlCallInfo.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlCallInfo.Name = "pnlCallInfo";
             this.pnlCallInfo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlCallInfo.Size = new System.Drawing.Size(290, 144);
+            this.pnlCallInfo.Size = new System.Drawing.Size(290, 137);
             this.pnlCallInfo.TabIndex = 1;
             // 
             // panel4
@@ -193,7 +177,7 @@
             this.panel4.Controls.Add(this.numTeams);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 103);
+            this.panel4.Location = new System.Drawing.Point(5, 96);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.MaximumSize = new System.Drawing.Size(280, 0);
             this.panel4.MinimumSize = new System.Drawing.Size(280, 25);
@@ -243,7 +227,7 @@
             this.panel3.Controls.Add(this.cboCallPriority);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(5, 68);
+            this.panel3.Location = new System.Drawing.Point(5, 61);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.MaximumSize = new System.Drawing.Size(280, 0);
             this.panel3.MinimumSize = new System.Drawing.Size(280, 25);
@@ -299,7 +283,7 @@
             this.panel2.MinimumSize = new System.Drawing.Size(280, 25);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
-            this.panel2.Size = new System.Drawing.Size(280, 32);
+            this.panel2.Size = new System.Drawing.Size(280, 25);
             this.panel2.TabIndex = 4;
             // 
             // txtCallDateTime
@@ -314,7 +298,7 @@
             this.txtCallDateTime.MinimumSize = new System.Drawing.Size(175, 22);
             this.txtCallDateTime.Name = "txtCallDateTime";
             this.txtCallDateTime.ReadOnly = true;
-            this.txtCallDateTime.Size = new System.Drawing.Size(175, 22);
+            this.txtCallDateTime.Size = new System.Drawing.Size(175, 15);
             this.txtCallDateTime.TabIndex = 3;
             // 
             // label3
@@ -326,7 +310,7 @@
             this.label3.MaximumSize = new System.Drawing.Size(100, 23);
             this.label3.MinimumSize = new System.Drawing.Size(100, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 22);
+            this.label3.Size = new System.Drawing.Size(100, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Date/Time";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -478,7 +462,7 @@
             this.pnlOtherData.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlOtherData.Name = "pnlOtherData";
             this.pnlOtherData.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlOtherData.Size = new System.Drawing.Size(290, 325);
+            this.pnlOtherData.Size = new System.Drawing.Size(290, 317);
             this.pnlOtherData.TabIndex = 3;
             // 
             // pnlUpdateBtn
@@ -487,7 +471,7 @@
             this.pnlUpdateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdateBtn.Controls.Add(this.btnUpdate);
             this.pnlUpdateBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 281);
+            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 273);
             this.pnlUpdateBtn.Margin = new System.Windows.Forms.Padding(0);
             this.pnlUpdateBtn.Name = "pnlUpdateBtn";
             this.pnlUpdateBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -508,35 +492,98 @@
             // 
             this.pnlEmergencyBtns.AutoSize = true;
             this.pnlEmergencyBtns.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlEmergencyBtns.Controls.Add(this.btnAddEmer);
             this.pnlEmergencyBtns.Controls.Add(this.btnLinkEmergency);
+            this.pnlEmergencyBtns.Controls.Add(this.btnAddEmer);
             this.pnlEmergencyBtns.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEmergencyBtns.Location = new System.Drawing.Point(5, 242);
+            this.pnlEmergencyBtns.Location = new System.Drawing.Point(5, 235);
             this.pnlEmergencyBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlEmergencyBtns.MinimumSize = new System.Drawing.Size(280, 0);
             this.pnlEmergencyBtns.Name = "pnlEmergencyBtns";
-            this.pnlEmergencyBtns.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlEmergencyBtns.Size = new System.Drawing.Size(280, 39);
+            this.pnlEmergencyBtns.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlEmergencyBtns.Size = new System.Drawing.Size(280, 38);
             this.pnlEmergencyBtns.TabIndex = 4;
             // 
             // btnAddEmer
             // 
-            this.btnAddEmer.Location = new System.Drawing.Point(155, 8);
+            this.btnAddEmer.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAddEmer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddEmer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddEmer.FlatAppearance.BorderSize = 0;
+            this.btnAddEmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmer.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmer.ForeColor = System.Drawing.Color.White;
+            this.btnAddEmer.Location = new System.Drawing.Point(5, 5);
+            this.btnAddEmer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddEmer.MaximumSize = new System.Drawing.Size(135, 0);
             this.btnAddEmer.Name = "btnAddEmer";
-            this.btnAddEmer.Size = new System.Drawing.Size(120, 23);
+            this.btnAddEmer.Size = new System.Drawing.Size(135, 28);
             this.btnAddEmer.TabIndex = 30;
             this.btnAddEmer.Text = "Add New Emergency";
-            this.btnAddEmer.UseVisualStyleBackColor = true;
+            this.btnAddEmer.UseVisualStyleBackColor = false;
             this.btnAddEmer.Click += new System.EventHandler(this.btnAddEmer_Click);
             // 
             // btnLinkEmergency
             // 
-            this.btnLinkEmergency.Location = new System.Drawing.Point(4, 8);
+            this.btnLinkEmergency.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLinkEmergency.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkEmergency.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLinkEmergency.FlatAppearance.BorderSize = 0;
+            this.btnLinkEmergency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkEmergency.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLinkEmergency.ForeColor = System.Drawing.Color.White;
+            this.btnLinkEmergency.Location = new System.Drawing.Point(140, 5);
+            this.btnLinkEmergency.Margin = new System.Windows.Forms.Padding(0);
             this.btnLinkEmergency.Name = "btnLinkEmergency";
-            this.btnLinkEmergency.Size = new System.Drawing.Size(120, 23);
+            this.btnLinkEmergency.Size = new System.Drawing.Size(135, 28);
             this.btnLinkEmergency.TabIndex = 29;
             this.btnLinkEmergency.Text = "Link to Emergency";
-            this.btnLinkEmergency.UseVisualStyleBackColor = true;
+            this.btnLinkEmergency.UseVisualStyleBackColor = false;
             this.btnLinkEmergency.Click += new System.EventHandler(this.btnLinkEmergency_Click);
+            // 
+            // pnlOperator
+            // 
+            this.pnlOperator.AutoSize = true;
+            this.pnlOperator.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlOperator.Controls.Add(this.txtOperator);
+            this.pnlOperator.Controls.Add(this.label10);
+            this.pnlOperator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOperator.Location = new System.Drawing.Point(5, 210);
+            this.pnlOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.pnlOperator.MaximumSize = new System.Drawing.Size(280, 0);
+            this.pnlOperator.MinimumSize = new System.Drawing.Size(280, 25);
+            this.pnlOperator.Name = "pnlOperator";
+            this.pnlOperator.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
+            this.pnlOperator.Size = new System.Drawing.Size(280, 25);
+            this.pnlOperator.TabIndex = 34;
+            // 
+            // txtOperator
+            // 
+            this.txtOperator.BackColor = System.Drawing.Color.White;
+            this.txtOperator.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOperator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtOperator.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOperator.Location = new System.Drawing.Point(100, 0);
+            this.txtOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.txtOperator.MaximumSize = new System.Drawing.Size(175, 4);
+            this.txtOperator.MinimumSize = new System.Drawing.Size(175, 22);
+            this.txtOperator.Name = "txtOperator";
+            this.txtOperator.ReadOnly = true;
+            this.txtOperator.Size = new System.Drawing.Size(175, 15);
+            this.txtOperator.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.MaximumSize = new System.Drawing.Size(100, 23);
+            this.label10.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 15);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Operator ID";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel9
             // 
@@ -692,12 +739,26 @@
             this.pnlParameters.Controls.Add(this.segmentView);
             this.pnlParameters.Controls.Add(this.label9);
             this.pnlParameters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlParameters.Location = new System.Drawing.Point(0, 43);
+            this.pnlParameters.Location = new System.Drawing.Point(0, 45);
             this.pnlParameters.Margin = new System.Windows.Forms.Padding(0);
             this.pnlParameters.Name = "pnlParameters";
             this.pnlParameters.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
             this.pnlParameters.Size = new System.Drawing.Size(870, 33);
             this.pnlParameters.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(10, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "parameters:";
             // 
             // segmentView
             // 
@@ -715,64 +776,21 @@
             this.segmentView.Size = new System.Drawing.Size(75, 33);
             this.segmentView.TabIndex = 0;
             // 
-            // label9
+            // segmentMain
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(10, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label9.Size = new System.Drawing.Size(77, 17);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "parameters:";
-            // 
-            // pnlOperator
-            // 
-            this.pnlOperator.AutoSize = true;
-            this.pnlOperator.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlOperator.Controls.Add(this.txtOperator);
-            this.pnlOperator.Controls.Add(this.label10);
-            this.pnlOperator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOperator.Location = new System.Drawing.Point(5, 210);
-            this.pnlOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.pnlOperator.MaximumSize = new System.Drawing.Size(280, 0);
-            this.pnlOperator.MinimumSize = new System.Drawing.Size(280, 25);
-            this.pnlOperator.Name = "pnlOperator";
-            this.pnlOperator.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
-            this.pnlOperator.Size = new System.Drawing.Size(280, 32);
-            this.pnlOperator.TabIndex = 34;
-            // 
-            // txtOperator
-            // 
-            this.txtOperator.BackColor = System.Drawing.Color.White;
-            this.txtOperator.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOperator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtOperator.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOperator.Location = new System.Drawing.Point(100, 0);
-            this.txtOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.txtOperator.MaximumSize = new System.Drawing.Size(175, 4);
-            this.txtOperator.MinimumSize = new System.Drawing.Size(175, 22);
-            this.txtOperator.Name = "txtOperator";
-            this.txtOperator.ReadOnly = true;
-            this.txtOperator.Size = new System.Drawing.Size(175, 22);
-            this.txtOperator.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.MaximumSize = new System.Drawing.Size(100, 23);
-            this.label10.MinimumSize = new System.Drawing.Size(100, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 22);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Operator ID";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.segmentMain.AutoSize = true;
+            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.segmentMain.AvailableSegments = "t/t/t";
+            this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.segmentMain.Location = new System.Drawing.Point(52, 0);
+            this.segmentMain.Margin = new System.Windows.Forms.Padding(0);
+            this.segmentMain.MaximumSize = new System.Drawing.Size(300, 33);
+            this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
+            this.segmentMain.Name = "segmentMain";
+            this.segmentMain.Segments = "Add/Edit/View";
+            this.segmentMain.Size = new System.Drawing.Size(75, 33);
+            this.segmentMain.TabIndex = 13;
             // 
             // Call_Control
             // 
@@ -787,7 +805,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Call_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(870, 406);
+            this.Size = new System.Drawing.Size(870, 400);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);
@@ -811,6 +829,8 @@
             this.pnlOtherData.PerformLayout();
             this.pnlUpdateBtn.ResumeLayout(false);
             this.pnlEmergencyBtns.ResumeLayout(false);
+            this.pnlOperator.ResumeLayout(false);
+            this.pnlOperator.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -819,8 +839,6 @@
             this.panel7.PerformLayout();
             this.pnlParameters.ResumeLayout(false);
             this.pnlParameters.PerformLayout();
-            this.pnlOperator.ResumeLayout(false);
-            this.pnlOperator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
