@@ -80,6 +80,7 @@ namespace Rescue_911
         public void SetLink_Operator_ID(int xID)
         {
             Linked_OperatorID = xID;
+            Call_Updated?.Invoke(this, null);
         }
 
 

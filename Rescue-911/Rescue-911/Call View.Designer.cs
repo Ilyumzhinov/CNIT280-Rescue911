@@ -36,7 +36,7 @@
             this.callControl.AutoScroll = true;
             this.callControl.AutoSize = true;
             this.callControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.callControl.AvailableSegments = "t/t/t";
+            this.callControl.AvailableSegments = "t/f/t";
             this.callControl.BackColor = System.Drawing.Color.Transparent;
             this.callControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.callControl.Location = new System.Drawing.Point(5, 103);

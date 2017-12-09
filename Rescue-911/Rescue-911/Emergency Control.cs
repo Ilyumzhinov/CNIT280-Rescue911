@@ -23,6 +23,7 @@ namespace Rescue_911
 
         //Event Handlers
         public event EventHandler EmergencySelected;
+        public event EventHandler Emergency_Added;
         //
 
 
@@ -137,7 +138,10 @@ namespace Rescue_911
             else if (((Button)sender).Text == "View")
             {
                 if (Current_Call == null)
+                {
+                    lbWarning.Visible = true;
                     return;
+                }
 
                 SetSegment_View(ref Current_Call);
             }
@@ -199,6 +203,7 @@ namespace Rescue_911
             pnlSpecs.Visible = false;
             pnlRelatedData.Visible = false;
             panelList.Visible = false;
+            lbWarning.Visible = false;
 
             if (xEnable == false)
             {
@@ -210,8 +215,6 @@ namespace Rescue_911
             }
 
             cboEmergencyType.Enabled = xEnable;
-
-
         }
         //
 
@@ -323,6 +326,20 @@ namespace Rescue_911
         private void this_SizeChanged(object sender, EventArgs e)
         {
             lstEmergencies.Columns[5].Width = lstEmergencies.Width - 80 * 5 - SystemInformation.VerticalScrollBarWidth;
+        }
+
+        private void btnAddEmer_Click(object sender, EventArgs e)
+        {
+            if (cboEmergencyType.SelectedItem == null)
+            {
+                cboEmergencyType.Focus();
+                return;
+            }
+
+            Current_Call.SetEmergency(Current_Emergency);
+            Current_Call.SetState("Logged");
+
+            Emergency_Added?.Invoke(Current_Call, e);
         }
         //
     }

@@ -71,6 +71,9 @@
             this.pnlParameters = new System.Windows.Forms.Panel();
             this.segmentView = new Rescue_911.Segmented_Control();
             this.label9 = new System.Windows.Forms.Label();
+            this.pnlOperator = new System.Windows.Forms.Panel();
+            this.txtOperator = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.panelAdd.SuspendLayout();
@@ -89,6 +92,7 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnlParameters.SuspendLayout();
+            this.pnlOperator.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,6 +112,7 @@
             // segmentMain
             // 
             this.segmentMain.AutoSize = true;
+            this.segmentMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.segmentMain.AvailableSegments = "t/t/t";
             this.segmentMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.segmentMain.Dock = System.Windows.Forms.DockStyle.Left;
@@ -117,7 +122,7 @@
             this.segmentMain.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentMain.Name = "segmentMain";
             this.segmentMain.Segments = "Add/Edit/View";
-            this.segmentMain.Size = new System.Drawing.Size(226, 33);
+            this.segmentMain.Size = new System.Drawing.Size(75, 33);
             this.segmentMain.TabIndex = 13;
             // 
             // lbTitle
@@ -145,7 +150,7 @@
             this.panelSegments.Location = new System.Drawing.Point(0, 76);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(870, 298);
+            this.panelSegments.Size = new System.Drawing.Size(870, 330);
             this.panelSegments.TabIndex = 17;
             // 
             // panelAdd
@@ -161,7 +166,7 @@
             this.panelAdd.Margin = new System.Windows.Forms.Padding(0);
             this.panelAdd.MinimumSize = new System.Drawing.Size(290, 2);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(870, 298);
+            this.panelAdd.Size = new System.Drawing.Size(870, 330);
             this.panelAdd.TabIndex = 0;
             // 
             // pnlCallInfo
@@ -300,6 +305,7 @@
             // txtCallDateTime
             // 
             this.txtCallDateTime.BackColor = System.Drawing.Color.White;
+            this.txtCallDateTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCallDateTime.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtCallDateTime.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCallDateTime.Location = new System.Drawing.Point(100, 0);
@@ -462,6 +468,7 @@
             this.pnlOtherData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlOtherData.Controls.Add(this.pnlUpdateBtn);
             this.pnlOtherData.Controls.Add(this.pnlEmergencyBtns);
+            this.pnlOtherData.Controls.Add(this.pnlOperator);
             this.pnlOtherData.Controls.Add(this.panel9);
             this.pnlOtherData.Controls.Add(this.panel8);
             this.pnlOtherData.Controls.Add(this.panel7);
@@ -471,7 +478,7 @@
             this.pnlOtherData.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlOtherData.Name = "pnlOtherData";
             this.pnlOtherData.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlOtherData.Size = new System.Drawing.Size(290, 293);
+            this.pnlOtherData.Size = new System.Drawing.Size(290, 325);
             this.pnlOtherData.TabIndex = 3;
             // 
             // pnlUpdateBtn
@@ -480,7 +487,7 @@
             this.pnlUpdateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdateBtn.Controls.Add(this.btnUpdate);
             this.pnlUpdateBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 249);
+            this.pnlUpdateBtn.Location = new System.Drawing.Point(5, 281);
             this.pnlUpdateBtn.Margin = new System.Windows.Forms.Padding(0);
             this.pnlUpdateBtn.Name = "pnlUpdateBtn";
             this.pnlUpdateBtn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -504,7 +511,7 @@
             this.pnlEmergencyBtns.Controls.Add(this.btnAddEmer);
             this.pnlEmergencyBtns.Controls.Add(this.btnLinkEmergency);
             this.pnlEmergencyBtns.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEmergencyBtns.Location = new System.Drawing.Point(5, 210);
+            this.pnlEmergencyBtns.Location = new System.Drawing.Point(5, 242);
             this.pnlEmergencyBtns.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEmergencyBtns.Name = "pnlEmergencyBtns";
             this.pnlEmergencyBtns.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -705,7 +712,7 @@
             this.segmentView.MinimumSize = new System.Drawing.Size(75, 33);
             this.segmentView.Name = "segmentView";
             this.segmentView.Segments = "Overview/Detail";
-            this.segmentView.Size = new System.Drawing.Size(152, 33);
+            this.segmentView.Size = new System.Drawing.Size(75, 33);
             this.segmentView.TabIndex = 0;
             // 
             // label9
@@ -722,6 +729,51 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "parameters:";
             // 
+            // pnlOperator
+            // 
+            this.pnlOperator.AutoSize = true;
+            this.pnlOperator.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlOperator.Controls.Add(this.txtOperator);
+            this.pnlOperator.Controls.Add(this.label10);
+            this.pnlOperator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOperator.Location = new System.Drawing.Point(5, 210);
+            this.pnlOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.pnlOperator.MaximumSize = new System.Drawing.Size(280, 0);
+            this.pnlOperator.MinimumSize = new System.Drawing.Size(280, 25);
+            this.pnlOperator.Name = "pnlOperator";
+            this.pnlOperator.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
+            this.pnlOperator.Size = new System.Drawing.Size(280, 32);
+            this.pnlOperator.TabIndex = 34;
+            // 
+            // txtOperator
+            // 
+            this.txtOperator.BackColor = System.Drawing.Color.White;
+            this.txtOperator.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOperator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtOperator.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOperator.Location = new System.Drawing.Point(100, 0);
+            this.txtOperator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.txtOperator.MaximumSize = new System.Drawing.Size(175, 4);
+            this.txtOperator.MinimumSize = new System.Drawing.Size(175, 22);
+            this.txtOperator.Name = "txtOperator";
+            this.txtOperator.ReadOnly = true;
+            this.txtOperator.Size = new System.Drawing.Size(175, 22);
+            this.txtOperator.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.MaximumSize = new System.Drawing.Size(100, 23);
+            this.label10.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 22);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Operator ID";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Call_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,7 +787,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Call_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(870, 374);
+            this.Size = new System.Drawing.Size(870, 406);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);
@@ -767,6 +819,8 @@
             this.panel7.PerformLayout();
             this.pnlParameters.ResumeLayout(false);
             this.pnlParameters.PerformLayout();
+            this.pnlOperator.ResumeLayout(false);
+            this.pnlOperator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -816,5 +870,8 @@
         private Rescue_911.Segmented_Control segmentView;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlParameters;
+        private System.Windows.Forms.Panel pnlOperator;
+        private System.Windows.Forms.TextBox txtOperator;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -69,6 +69,7 @@ namespace Rescue_911
             Current_Call.SetDateTime(DateTime.Now);
             Current_Call.SetState("Not Logged");
             Current_Call.SetTeams_Required(1);
+            Current_Call.SetLink_Operator_ID(Current_Operator_ID);
             //
 
             // Setting the default segment
@@ -204,6 +205,7 @@ namespace Rescue_911
             Change_ViewSegment(btnTemp, null);
 
             panelAdd.Visible = true;
+            pnlOperator.Visible = true;
         }
 
         // Controls changes between Overview/Detail segmentes of the View segment
@@ -239,6 +241,7 @@ namespace Rescue_911
             txtAddress.Text = xCall.GetAddress();
             txtLandmark.Text = xCall.GetLandmark();
             txtDescription.Text = xCall.GetDescription();
+            txtOperator.Text = xCall.GetLinked_Operator_ID().ToString();
 
             txtPhoneNumber.Text = xCall.GetEmergency_Caller().GetPhone_Number();
             txtCallerName.Text = xCall.GetEmergency_Caller().GetName();
@@ -253,11 +256,11 @@ namespace Rescue_911
             pnlCallInfo.Visible = false;
             pnlCaller.Visible = false;
             pnlOtherData.Visible = false;
+            pnlOperator.Visible = false;
 
 
             if (xEnable == false)
             {
-                txtCallDateTime.BorderStyle = BorderStyle.FixedSingle;
                 cboCallPriority.DropDownStyle = ComboBoxStyle.Simple;
                 numTeams.BorderStyle = BorderStyle.FixedSingle;
 
@@ -270,7 +273,6 @@ namespace Rescue_911
             }
             else
             {
-                txtCallDateTime.BorderStyle = BorderStyle.Fixed3D;
                 cboCallPriority.DropDownStyle = ComboBoxStyle.DropDownList;
                 numTeams.BorderStyle = BorderStyle.Fixed3D;
 

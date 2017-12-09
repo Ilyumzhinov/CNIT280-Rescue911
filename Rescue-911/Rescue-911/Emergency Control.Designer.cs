@@ -61,6 +61,7 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSegments.SuspendLayout();
             this.pnlSpecs.SuspendLayout();
@@ -85,7 +86,7 @@
             this.panel1.MinimumSize = new System.Drawing.Size(0, 33);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel1.Size = new System.Drawing.Size(1120, 33);
+            this.panel1.Size = new System.Drawing.Size(1110, 33);
             this.panel1.TabIndex = 16;
             // 
             // segmentMain
@@ -130,7 +131,7 @@
             this.panelSegments.Location = new System.Drawing.Point(0, 76);
             this.panelSegments.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.panelSegments.Name = "panelSegments";
-            this.panelSegments.Size = new System.Drawing.Size(1120, 445);
+            this.panelSegments.Size = new System.Drawing.Size(1110, 470);
             this.panelSegments.TabIndex = 17;
             // 
             // pnlSpecs
@@ -143,7 +144,7 @@
             this.pnlSpecs.Controls.Add(this.panel2);
             this.pnlSpecs.Controls.Add(this.lbpnlSpecs);
             this.pnlSpecs.Location = new System.Drawing.Point(0, 0);
-            this.pnlSpecs.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pnlSpecs.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSpecs.MaximumSize = new System.Drawing.Size(300, 0);
             this.pnlSpecs.MinimumSize = new System.Drawing.Size(290, 0);
             this.pnlSpecs.Name = "pnlSpecs";
@@ -167,12 +168,17 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(4, 8);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(271, 23);
             this.btnUpdate.TabIndex = 30;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // pnlAddEmergencyBtn
             // 
@@ -190,12 +196,18 @@
             // 
             // btnAddEmer
             // 
+            this.btnAddEmer.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAddEmer.FlatAppearance.BorderSize = 0;
+            this.btnAddEmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmer.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmer.ForeColor = System.Drawing.Color.White;
             this.btnAddEmer.Location = new System.Drawing.Point(4, 8);
             this.btnAddEmer.Name = "btnAddEmer";
             this.btnAddEmer.Size = new System.Drawing.Size(271, 23);
             this.btnAddEmer.TabIndex = 30;
             this.btnAddEmer.Text = "Add Emergency";
-            this.btnAddEmer.UseVisualStyleBackColor = true;
+            this.btnAddEmer.UseVisualStyleBackColor = false;
+            this.btnAddEmer.Click += new System.EventHandler(this.btnAddEmer_Click);
             // 
             // panel3
             // 
@@ -216,13 +228,22 @@
             // cboEmergencyType
             // 
             this.cboEmergencyType.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cboEmergencyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEmergencyType.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEmergencyType.FormattingEnabled = true;
             this.cboEmergencyType.Items.AddRange(new object[] {
-            "1: Minor incident",
-            "2: Stable case",
-            "3: Serious case",
-            "4: Critical trauma"});
+            "Vehicle collision",
+            "Heart attack",
+            "Stroke",
+            "Shooting",
+            "Stabbing",
+            "Drowning",
+            "Allergic reaction",
+            "Choking",
+            "Broken bones",
+            "Child birth",
+            "Poison",
+            "Other"});
             this.cboEmergencyType.Location = new System.Drawing.Point(100, 0);
             this.cboEmergencyType.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.cboEmergencyType.MaximumSize = new System.Drawing.Size(175, 0);
@@ -310,12 +331,12 @@
             this.pnlRelatedData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlRelatedData.Controls.Add(this.callControlView);
             this.pnlRelatedData.Controls.Add(this.lbpnlRelatedCalls);
-            this.pnlRelatedData.Location = new System.Drawing.Point(300, 0);
+            this.pnlRelatedData.Location = new System.Drawing.Point(290, 0);
             this.pnlRelatedData.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRelatedData.MinimumSize = new System.Drawing.Size(320, 0);
             this.pnlRelatedData.Name = "pnlRelatedData";
             this.pnlRelatedData.Padding = new System.Windows.Forms.Padding(5, 5, 5, 35);
-            this.pnlRelatedData.Size = new System.Drawing.Size(320, 445);
+            this.pnlRelatedData.Size = new System.Drawing.Size(320, 470);
             this.pnlRelatedData.TabIndex = 2;
             // 
             // callControlView
@@ -330,7 +351,7 @@
             this.callControlView.Margin = new System.Windows.Forms.Padding(0);
             this.callControlView.Name = "callControlView";
             this.callControlView.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.callControlView.Size = new System.Drawing.Size(310, 374);
+            this.callControlView.Size = new System.Drawing.Size(310, 399);
             this.callControlView.TabIndex = 31;
             // 
             // lbpnlRelatedCalls
@@ -351,15 +372,16 @@
             // 
             this.panelList.AutoSize = true;
             this.panelList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelList.Controls.Add(this.lbWarning);
             this.panelList.Controls.Add(this.lstEmergencies);
             this.panelList.Controls.Add(this.lbpnlEmergencyList);
             this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelList.Location = new System.Drawing.Point(0, 445);
+            this.panelList.Location = new System.Drawing.Point(610, 0);
             this.panelList.Margin = new System.Windows.Forms.Padding(0);
             this.panelList.MinimumSize = new System.Drawing.Size(500, 0);
             this.panelList.Name = "panelList";
             this.panelList.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelList.Size = new System.Drawing.Size(500, 136);
+            this.panelList.Size = new System.Drawing.Size(500, 470);
             this.panelList.TabIndex = 3;
             // 
             // lstEmergencies
@@ -438,7 +460,7 @@
             this.pnlParameters.Location = new System.Drawing.Point(0, 43);
             this.pnlParameters.Name = "pnlParameters";
             this.pnlParameters.Padding = new System.Windows.Forms.Padding(10, 5, 0, 10);
-            this.pnlParameters.Size = new System.Drawing.Size(1120, 33);
+            this.pnlParameters.Size = new System.Drawing.Size(1110, 33);
             this.pnlParameters.TabIndex = 14;
             // 
             // pnlList_Params
@@ -497,6 +519,18 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "parameters:";
             // 
+            // lbWarning
+            // 
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbWarning.Location = new System.Drawing.Point(31, 5);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(282, 17);
+            this.lbWarning.TabIndex = 31;
+            this.lbWarning.Text = "To view an emergency, select an item from the list";
+            this.lbWarning.Visible = false;
+            // 
             // Emergency_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,7 +544,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Emergency_Control";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.Size = new System.Drawing.Size(1120, 521);
+            this.Size = new System.Drawing.Size(1110, 546);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSegments.ResumeLayout(false);
@@ -568,5 +602,6 @@
         private System.Windows.Forms.ColumnHeader State;
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.Label lbpnlEmergencyList;
+        private System.Windows.Forms.Label lbWarning;
     }
 }

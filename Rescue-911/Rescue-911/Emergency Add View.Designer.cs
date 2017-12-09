@@ -46,11 +46,11 @@
             this.emergencyControl.AvailableSegments = "t/f/f/f";
             this.emergencyControl.BackColor = System.Drawing.SystemColors.Window;
             this.emergencyControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emergencyControl.Location = new System.Drawing.Point(5, 100);
-            this.emergencyControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.emergencyControl.Location = new System.Drawing.Point(5, 103);
+            this.emergencyControl.Margin = new System.Windows.Forms.Padding(0);
             this.emergencyControl.Name = "emergencyControl";
             this.emergencyControl.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.emergencyControl.Size = new System.Drawing.Size(390, 743);
+            this.emergencyControl.Size = new System.Drawing.Size(390, 653);
             this.emergencyControl.TabIndex = 6;
             // 
             // Emergency_Add_View
@@ -65,8 +65,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(400, 0);
             this.Name = "Emergency_Add_View";
-            this.Size = new System.Drawing.Size(400, 848);
-            this.ViewColour = System.Drawing.Color.GreenYellow;
+            this.Size = new System.Drawing.Size(400, 761);
+            this.ViewColour = System.Drawing.Color.MediumAquamarine;
             this.ViewDescription = "Select Emergency type and click Add Emergency";
             this.ViewTitle = "Add Emergency";
             this.Controls.SetChildIndex(this.emergencyControl, 0);

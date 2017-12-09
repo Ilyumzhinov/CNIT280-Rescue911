@@ -35,8 +35,6 @@ namespace Rescue_911
         public Call_View(bool toDisplay) : base(toDisplay)
         {
             InitializeComponent();
-
-            //Color.Teal, false, "When all information is filled in, either add or link the Call to an Emergency."
         }
         //
 
@@ -46,7 +44,8 @@ namespace Rescue_911
         {
             if (xPerson is Operator)
             {
-                Current_Operator_ID = ((Operator)xPerson).GetOperator_ID();
+                Current_Operator_ID = ((Operator)xPerson).GetEmployee_ID();
+
                 callControl.SetOperator_ID(Current_Operator_ID);
             }
             else
